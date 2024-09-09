@@ -65,7 +65,7 @@ function Topproducts() {
           
           
           
-    <Link to={`/hastle/service${index + 1}`}>
+    <Link to={`/service${index + 1}`}>
  <div
     key={data.id}
     data-aos={index % 2 === 0 ? 'zoom-left' : 'zoom-right'}

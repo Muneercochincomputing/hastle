@@ -25,25 +25,25 @@ function App() {
     <Router>
       <ScrollToTop /> {/* Add the ScrollToTop component here */}
       <Routes>
-        <Route path="/hastle/" element={<Homepage />} />
-        <Route path="/hastle/about" element={<About />} />
-        <Route path="/hastle/service1" element={<Servicespage />} />
-        <Route path="/hastle/careers" element={<Careerspage />} />
-        <Route path="/hastle/dasbord" element={<Dashbord />} />
-        <Route path="/hastle/blog" element={<Blog />} />
-        <Route path="/hastle/contact" element={<ContactUs />} />
-        <Route path="/hastle/service2" element={<Servicespage2 />} />
-        <Route path="/hastle/service3" element={<Servicespage3 />} />
-        <Route path="/hastle/service4" element={<Servicespage4 />} />
-        <Route path="/hastle/blogcontent1" element={<Blogcontent1 />} />
-        <Route path="/hastle/blogcontent2" element={<Blogcontent2 />} />
-        <Route path="/hastle/blogcontent3" element={<Blogcontent3 />} />
-        <Route path="/hastle/blogcontent4" element={<Blogcontent4 />} />
-        <Route path="/hastle/blogcontent5" element={<Blogcontent5 />} />
-        <Route path="/hastle/blogcontent6" element={<Blogcontent6 />} />
-        <Route path="/hastle/privacypolicy" element={<Privacypolicy />} />
-        <Route path="/hastle/leagalnotice" element={<Leagalnotice />} />
-      </Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/service1" element={<Servicespage />} />
+        <Route path="/careers" element={<Careerspage />} />
+        <Route path="/dasbord" element={<Dashbord />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/contact" element={<ContactUs />} />
+        <Route path="/service2" element={<Servicespage2 />} />
+        <Route path="/service3" element={<Servicespage3 />} />
+        <Route path="/service4" element={<Servicespage4 />} />
+        <Route path="/blogcontent1" element={<Blogcontent1 />} />
+        <Route path="/blogcontent2" element={<Blogcontent2 />} />
+        <Route path="/blogcontent3" element={<Blogcontent3 />} />
+        <Route path="/blogcontent4" element={<Blogcontent4 />} />
+        <Route path="/blogcontent5" element={<Blogcontent5 />} />
+        <Route path="/blogcontent6" element={<Blogcontent6 />} />
+        <Route path="/privacypolicy" element={<Privacypolicy />} />
+        <Route path="/leagalnotice" element={<Leagalnotice />} />
+      </Routes>s
     </Router>
   );
 }

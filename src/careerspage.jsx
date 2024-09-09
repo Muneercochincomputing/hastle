@@ -347,7 +347,7 @@ function Careerspage() {
             <div class="flex items-center col-span-full">
               <input id="checkbox1" type="checkbox"
                 class="w-4 h-4 mr-3 shrink-0" />
-              <label for="checkbox1" class="text-sm text-gray-500">I agree to the <a href="javascript:void(0);" class="underline"></a>  <Link to='/hastle/privacypolicy' class="underline">Privacy Policy</Link></label>
+              <label for="checkbox1" class="text-sm text-gray-500">I agree to the <a href="javascript:void(0);" class="underline"></a>  <Link to='/privacypolicy' class="underline">Privacy Policy</Link></label>
             </div>
               <div>
               <button type='button'

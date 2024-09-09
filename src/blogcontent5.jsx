@@ -258,7 +258,7 @@ o Keep hallways well-lit and free from obstacles.</p>
         
 
         <Link to=
-        '/hastle/blogcontent6'>
+        '/blogcontent6'>
 
 
             <div className="bg-white cursor-pointer rounded overflow-hidden shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] relative top-0 hover:-top-2 transition-all duration-300">
@@ -278,7 +278,7 @@ o Keep hallways well-lit and free from obstacles.</p>
             </Link>
 
             {posts.map((post, index) => (
-      <Link key={index} to={`/hastle/blogcontent${index + 2}`}>
+      <Link key={index} to={`/blogcontent${index + 2}`}>
         <div className="bg-white cursor-pointer rounded overflow-hidden lg:h-[570px] shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] relative top-0 hover:-top-2 transition-all duration-300">
           <img src={post.image} alt={post.title} className="w-full h-60 object-cover" />
           <div className="p-6">

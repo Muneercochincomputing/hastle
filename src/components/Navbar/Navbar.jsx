@@ -45,11 +45,11 @@ const Navbar = ({ onScrollToSubscription }) => {
 
                     {/* Navigation Links */}
                     <div className="hidden lg:flex xl:ml-40  gap-4">
-                        <Link to='/hastle/' className='font-bold text-[#800080] text-[17px] group'>
+                        <Link to='/' className='font-bold text-[#800080] text-[17px] group'>
                             HOME
                             <div className="bg-amber-500 h-[1px] w-0 group-hover:w-[50px] transition-all duration-500"></div>
                         </Link>
-                        <Link to="/hastle/about" className="font-bold text-[#800080] text-[17px] group">
+                        <Link to="/about" className="font-bold text-[#800080] text-[17px] group">
                             ABOUT US
                             <div className="bg-amber-500 h-[1px] w-0 group-hover:w-[80px] transition-all duration-500"></div>
                         </Link>
@@ -62,23 +62,23 @@ const Navbar = ({ onScrollToSubscription }) => {
                             <div className="bg-amber-500 h-[1px] w-0 group-hover:w-[115px] transition-all duration-500"></div>
                             {isServicesOpen && (
                                 <div className="absolute left-0 mt-2 w-48 bg-[#800080] shadow-md rounded-md py-2 z-50">
-                                    <Link to='/hastle/service1' className='block px-4 py-2 text-white text-[15px] hover:bg-white hover:text-[#800080]'>Daily Support/Visiting Care Services</Link>
-                                    <Link to='/hastle/service2' className='block px-4 py-2 text-white text-[15px] hover:bg-white hover:text-[#800080]'>Staying Active & Engaged</Link>
-                                    <Link to='/hastle/service3' className='block px-4 py-2 text-white text-[15px] hover:bg-gray-200 hover:text-[#800080]'>Live-in Care</Link>
-                                    <Link to='/hastle/service4' className='block px-4 py-2 text-white text-[15px] hover:bg-gray-200 hover:text-[#800080]'>Specialised Care</Link>
+                                    <Link to='/service1' className='block px-4 py-2 text-white text-[15px] hover:bg-white hover:text-[#800080]'>Daily Support/Visiting Care Services</Link>
+                                    <Link to='/service2' className='block px-4 py-2 text-white text-[15px] hover:bg-white hover:text-[#800080]'>Staying Active & Engaged</Link>
+                                    <Link to='/service3' className='block px-4 py-2 text-white text-[15px] hover:bg-gray-200 hover:text-[#800080]'>Live-in Care</Link>
+                                    <Link to='/service4' className='block px-4 py-2 text-white text-[15px] hover:bg-gray-200 hover:text-[#800080]'>Specialised Care</Link>
                                 </div>
                             )}
                         </div>
 
-                        <Link to='/hastle/careers' className='font-bold text-[#800080] text-[17px] group'>
+                        <Link to='/careers' className='font-bold text-[#800080] text-[17px] group'>
                             CAREERS
                             <div className="bg-amber-500 h-[1px] w-0 group-hover:w-[70px] transition-all duration-500"></div>
                         </Link>
-                        <Link to='/hastle/blog' className='font-bold text-[#800080] text-[17px] group'>
+                        <Link to='/blog' className='font-bold text-[#800080] text-[17px] group'>
                             BLOGS
                             <div className="bg-amber-500 h-[1px] w-0 group-hover:w-[50px] transition-all duration-500"></div>
                         </Link>
-                        <Link to='/hastle/contact' className='font-bold text-[#800080] text-[17px] group'>
+                        <Link to='/contact' className='font-bold text-[#800080] text-[17px] group'>
                             CONTACT US
                             <div className="bg-amber-500 h-[1px] w-0 group-hover:w-[110px] transition-all duration-500"></div>
                         </Link>
@@ -107,8 +107,8 @@ const Navbar = ({ onScrollToSubscription }) => {
                 {/* Dropdown Menu for tablets and below */}
                 {isMenuOpen && (
                     <div className="lg:hidden bg-white shadow-md rounded-xl p-4 mt-2 absolute w-full z-30">
-                        <Link to='/hastle/' className='block py-2 text-[#800080] text-[17px] font-bold'>HOME</Link>
-                        <Link to='/hastle/about' className='block py-2 text-[#800080] text-[17px] font-bold'>ABOUT US</Link>
+                        <Link to='/' className='block py-2 text-[#800080] text-[17px] font-bold'>HOME</Link>
+                        <Link to='/about' className='block py-2 text-[#800080] text-[17px] font-bold'>ABOUT US</Link>
 
                         {/* OUR SERVICES with Submenu in Mobile */}
                         <div className="block py-2 text-[#800080] text-[17px] font-bold flex justify-between items-center" onClick={toggleMobileServicesDropdown}>
@@ -117,15 +117,15 @@ const Navbar = ({ onScrollToSubscription }) => {
                         </div>
                         {isMobileServicesOpen && (
                             <div className="ml-4">
-                                <Link to='/hastle/service1' className='block py-2 text-[#800080] text-[15px]'>Daily Support/Visiting Care Services</Link>
-                                <Link to='/hastle/service2' className='block py-2 text-[#800080] text-[15px]'>Staying Active & Engaged</Link>
-                                <Link to='/hastle/service3' className='block py-2 text-[#800080] text-[15px]'>Live-in Care</Link>
-                                <Link to='/hastle/service4' className='block py-2 text-[#800080] text-[15px]'>Specialised Care</Link>
+                                <Link to='/service1' className='block py-2 text-[#800080] text-[15px]'>Daily Support/Visiting Care Services</Link>
+                                <Link to='/service2' className='block py-2 text-[#800080] text-[15px]'>Staying Active & Engaged</Link>
+                                <Link to='/service3' className='block py-2 text-[#800080] text-[15px]'>Live-in Care</Link>
+                                <Link to='/service4' className='block py-2 text-[#800080] text-[15px]'>Specialised Care</Link>
                             </div>
                         )}
-                        <Link to='/hastle/careers' className='block py-2 text-[#800080] text-[17px] font-bold'>CAREERS</Link>
-                        <Link to='/hastle/blog' className='block py-2 text-[#800080] text-[17px] font-bold'>BLOGS</Link>
-                        <Link to='/hastle/contact' className='block py-2 text-[#800080] text-[17px] font-bold'>CONTACT US</Link>
+                        <Link to='/careers' className='block py-2 text-[#800080] text-[17px] font-bold'>CAREERS</Link>
+                        <Link to='/blog' className='block py-2 text-[#800080] text-[17px] font-bold'>BLOGS</Link>
+                        <Link to='/contact' className='block py-2 text-[#800080] text-[17px] font-bold'>CONTACT US</Link>
                     </div>
                 )}
             </div>

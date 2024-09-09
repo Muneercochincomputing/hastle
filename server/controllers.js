@@ -1,16 +1,11 @@
 'use strict';
 
 const db = require('./db');
-const { collection, addDoc, getDocs, doc, updateDoc,query, where, writeBatch  } = require('firebase/firestore');
+const { collection, addDoc, getDocs,query, where, writeBatch  } = require('firebase/firestore');
 const Careers = require('./models/careers');
 const Contacts = require('./models/contacts');
 const Subscribers = require('./models/subscribers');
 const Query = require('./models/querys');
-
-
-
-
-
 
 
 

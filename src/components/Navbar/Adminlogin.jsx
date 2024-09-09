@@ -34,7 +34,7 @@ function Adminlogin({ close }) {
         if (admin) {
           alert('Login successful');
           sessionStorage.setItem('sessionId', adminid);
-          navigate('/hastle/dasbord');
+          navigate('/dasbord');
         } else {
           alert('Invalid admin ID or password.');
         }

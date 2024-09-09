@@ -58,7 +58,7 @@ function Banner() {
             <p className='text-lg mb-6'>
             We provide a warm, welcoming environment where your loved ones can enjoy their golden years with dignity and respect. Our dedicated team offers round-the-clock care, ensuring all residents receive the attention and support they need. With a range of activities to keep the mind and body active, along with delicious, nutritious meals, we strive to create a home-like atmosphere that fosters companionship and joy. Whether it's for short-term respite care or a long-term stay, our facility is a place where comfort, care, and community come together to make every day meaningful.
             </p>
-            <Link to='/hastle/about'>
+            <Link to='/about'>
             <button className='bg-[#800080] text-white py-2 px-4 rounded hover:bg-primary-dark transition duration-300'>
               Learn More
             </button>

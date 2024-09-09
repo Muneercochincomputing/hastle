@@ -2,9 +2,6 @@ class subscribers {
     constructor(email) {
         this.name = email;
        
-     
-
-
     }
 }
 

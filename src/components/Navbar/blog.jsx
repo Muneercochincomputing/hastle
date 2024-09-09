@@ -23,7 +23,7 @@ function Blog() {
      data-aos-easing="ease-in-sine" >
    
     
-   <Link to='/hastle/blogcontent1' className="group flex flex-col h-full border border-gray-200 hover:border-transparent hover:shadow-lg focus:outline-none focus:border-transparent focus:shadow-lg transition duration-300 rounded-xl p-5 dark:border-[#800080] dark:hover:border-transparent dark:hover:shadow-black/40 dark:focus:border-transparent dark:focus:shadow-black/40" href="#">
+   <Link to='/blogcontent1' className="group flex flex-col h-full border border-gray-200 hover:border-transparent hover:shadow-lg focus:outline-none focus:border-transparent focus:shadow-lg transition duration-300 rounded-xl p-5 dark:border-[#800080] dark:hover:border-transparent dark:hover:shadow-black/40 dark:focus:border-transparent dark:focus:shadow-black/40" href="#">
       <div className="aspect-w-16 aspect-h-11">
         <img className="w-full object-cover rounded-xl" src={blog1} alt="Blog Image"/>
       </div>
@@ -34,7 +34,7 @@ function Blog() {
         <p className="mt-5 text-gray-600 dark:text-neutral-400">
         Discover the best care for your loved one by researching personalized services, checking reviews, and consulting trusted healthcare providers
         </p>
-        <Link to='/hastle/blogcontent1'  className='text-[#800080] '>Learn more</Link>
+        <Link to='/blogcontent1'  className='text-[#800080] '>Learn more</Link>
       </div>
       <div className="mt-auto flex items-center gap-x-3">
        
@@ -45,7 +45,7 @@ function Blog() {
     </Link>
   
    
-    <Link to='/hastle/blogcontent2' className="group flex flex-col h-full border border-gray-200 hover:border-transparent hover:shadow-lg focus:outline-none focus:border-transparent focus:shadow-lg transition duration-300 rounded-xl p-5 dark:border-[#800080] dark:hover:border-transparent dark:hover:shadow-black/40 dark:focus:border-transparent dark:focus:shadow-black/40" href="#">
+    <Link to='/blogcontent2' className="group flex flex-col h-full border border-gray-200 hover:border-transparent hover:shadow-lg focus:outline-none focus:border-transparent focus:shadow-lg transition duration-300 rounded-xl p-5 dark:border-[#800080] dark:hover:border-transparent dark:hover:shadow-black/40 dark:focus:border-transparent dark:focus:shadow-black/40" href="#">
       <div className="aspect-w-16 aspect-h-11">
         <img className="w-full object-cover rounded-xl" src={blog2} alt="Blog Image"/>
       </div>
@@ -56,7 +56,7 @@ function Blog() {
         <p className="mt-5 text-gray-600 dark:text-neutral-400">
         Caring for the elderly requires compassion, knowledge, and thoughtful planning. Our comprehensive guide provides essential tips and strategies to help you deliver the best care for your aging loved ones. Explore our insights and make a positive difference today!
         </p>
-        <Link to='/hastle/blogcontent2' className='text-[#800080] '>Learn more</Link>
+        <Link to='/blogcontent2' className='text-[#800080] '>Learn more</Link>
       </div>
       <div className="mt-auto flex items-center gap-x-3">
     
@@ -66,7 +66,7 @@ function Blog() {
       </div>
     </Link>
   
-    <Link to='/hastle/blogcontent3' className="group flex flex-col h-full border border-gray-200 hover:border-transparent hover:shadow-lg focus:outline-none focus:border-transparent focus:shadow-lg transition duration-300 rounded-xl p-5 dark:border-[#800080] dark:hover:border-transparent dark:hover:shadow-black/40 dark:focus:border-transparent dark:focus:shadow-black/40" href="#">
+    <Link to='/blogcontent3' className="group flex flex-col h-full border border-gray-200 hover:border-transparent hover:shadow-lg focus:outline-none focus:border-transparent focus:shadow-lg transition duration-300 rounded-xl p-5 dark:border-[#800080] dark:hover:border-transparent dark:hover:shadow-black/40 dark:focus:border-transparent dark:focus:shadow-black/40" href="#">
       <div className="aspect-w-16 aspect-h-11">
         <img className="w-full object-cover rounded-xl" src={blog3} alt="Blog Image"/>
       </div>
@@ -77,7 +77,7 @@ function Blog() {
         <p className="mt-5 text-gray-600 dark:text-neutral-400">
         Have you ever seen a senior smiling ear-to-ear while petting their furry friend? It’s a heartwarming sight that speaks volumes about the therapeutic benefits of pets for older adults. 
         </p>
-        <Link to='/hastle/blogcontent3' className='text-[#800080] '>Learn more</Link>
+        <Link to='/blogcontent3' className='text-[#800080] '>Learn more</Link>
       </div>
       <div className="mt-auto flex items-center gap-x-3">
         
@@ -90,7 +90,7 @@ function Blog() {
   </div>
 
   <div className="mt-12 text-center">
-    <Link to='/hastle/blog' className="py-3 px-4 inline-flex items-center gap-x-1 text-sm font-medium rounded-full border border-gray-200 bg-white text-blue-600 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-blue-500 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800" href="#">
+    <Link to='/blog' className="py-3 px-4 inline-flex items-center gap-x-1 text-sm font-medium rounded-full border border-gray-200 bg-white text-blue-600 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-blue-500 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800" href="#">
       <svg className="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
     </Link>
   </div>

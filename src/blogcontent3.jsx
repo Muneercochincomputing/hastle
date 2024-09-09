@@ -201,7 +201,7 @@ can help to reduce stress levels, lower blood pressure, and improve mood.</p>
         <Link></Link>
         <section id="blog-section" className="container mx-auto px-6 md:px-12 py-16">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-3">
-         <Link to={'/hastle/blogcontent4'}>
+         <Link to={'/blogcontent4'}>
 
            
           <div className="bg-white cursor-pointer rounded overflow-hidden shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] relative top-0 hover:-top-2 transition-all duration-300">
@@ -219,7 +219,7 @@ can help to reduce stress levels, lower blood pressure, and improve mood.</p>
             </div>
 
          </Link>
-              <Link to='/hastle/blogcontent5'>
+              <Link to='/blogcontent5'>
 
             <div className="bg-white cursor-pointer rounded overflow-hidden shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] relative top-0 hover:-top-2 transition-all duration-300">
               <img src={readmoresectionimage2 } alt="Blog Post 1" className="w-full h-60 object-cover" />
@@ -236,7 +236,7 @@ can help to reduce stress levels, lower blood pressure, and improve mood.</p>
             </div>
             </Link>
 
-            <Link to='/hastle/blogcontent6'>
+            <Link to='/blogcontent6'>
             <div className="bg-white cursor-pointer rounded overflow-hidden shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] relative top-0 hover:-top-2 transition-all duration-300">
               <img src={readmoresectionimage3 } alt="Blog Post 1" className="w-full h-60 object-cover" />
               <div className="p-6">

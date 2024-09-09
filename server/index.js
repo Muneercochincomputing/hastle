@@ -5,7 +5,7 @@ const multer = require('multer');
 const { getStorage, ref, uploadBytes, getDownloadURL } = require('firebase/storage');
 const admin = require('firebase-admin');
 const { getFirestore, doc, getDoc, updateDoc, collection, query, where, getDocs } = require('firebase/firestore'); // Add missing imports
-
+const path = require('path'); 
 const userRoutes = require('./routes/studentsroutes');
 const { addContacts, getContacts, addCareers, getCareers, addSubscribers, getSubscribers, addquery, getquery,updateAdmin,getAdmin} = require('./controllers');
 
@@ -31,6 +31,8 @@ admin.initializeApp({
 
 const storage = getStorage();
 const db = getFirestore(); // Initialize Firestore
+app.use(express.static(path.join(__dirname, 'public')));
+console.log(path.join(__dirname, 'public', 'index.html'));
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -58,11 +60,9 @@ app.post('/careers/upload-file', upload.single("file"), async (req, res) => {
     
     // Upload the file to Firebase Storage
     await uploadBytes(storageRef, req.file.buffer);
-    console.log('File uploaded');
 
     // Get the download URL of the uploaded file
     const url = await getDownloadURL(storageRef);
-    console.log('File available at', url);
 
     // Query the collection to find the document with the matching email field
     const careersRef = collection(db, 'careers');
@@ -109,7 +109,11 @@ app.get('/Queries',  getquery);
 app.put('/admin',  updateAdmin);
 app.get('/admin',  getAdmin);
 
-// Additional routes and server setup...
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
 
 const PORT = process.env.PORT || 8082;
 app.listen(PORT, () => {

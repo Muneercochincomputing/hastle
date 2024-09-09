@@ -100,7 +100,7 @@ and preferences.` },
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-3">
           {posts.map((post, index) => (
             <article key={index} className="relative group bg-white rounded-lg shadow-lg overflow-hidden transition duration-300 transform hover:scale-105">
-              <Link to={`/hastle/blogcontent${index + 1}`}>
+              <Link to={`/blogcontent${index + 1}`}>
                 <div className=" bg-gradient-to-b from-transparent to-black opacity-50 group-hover:opacity-70 transition duration-300"></div>
                 <img src={post.image} alt={post.title} className="w-full h-64 object-cover transition duration-300 transform group-hover:scale-110" />
                 <div className=" bottom-0 p-6">
@@ -127,7 +127,7 @@ and preferences.` },
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-6 mt-16 max-md:max-w-lg mx-auto">
-            <Link to='/hastle/blogcontent4'>
+            <Link to='/blogcontent4'>
               <div className="bg-white cursor-pointer rounded overflow-hidden lg:h-[570px] shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] relative top-0 hover:-top-2 transition-all duration-300">
                 <img src={blog4} alt="Blog Post 1" className="w-full h-60 object-cover" />
                 <div className="p-6">
@@ -138,7 +138,7 @@ and preferences.` },
                 </div>
               </div>
             </Link>
-            <Link to='/hastle/blogcontent5'>
+            <Link to='/blogcontent5'>
               <div className="bg-white cursor-pointer lg:h-[570px] rounded overflow-hidden shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] relative top-0 hover:-top-2 transition-all duration-300">
                 <img src={blog5} alt="Blog Post 2" className="w-full h-60 object-cover" />
                 <div className="p-6">
@@ -149,7 +149,7 @@ and preferences.` },
                 </div>
               </div>
             </Link>
-            <Link to='/hastle/blogcontent6'>
+            <Link to='/blogcontent6'>
               <div className="bg-white cursor-pointer rounded overflow-hidden shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] relative top-0 hover:-top-2 transition-all duration-300">
                 <img src={blog6} alt="Blog Post 3" className="w-full h-60 object-cover" />
                 <div className="p-6">

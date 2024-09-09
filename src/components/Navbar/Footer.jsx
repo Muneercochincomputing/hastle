@@ -30,25 +30,25 @@ const Footer = () => {
               Services
             </h6>
             <p className="mb-4">
-            <Link to='/hastle/service1' className="p-2 px-4 group" href="#">
+            <Link to='/service1' className="p-2 px-4 group" href="#">
             Visiting Care Services
         <div class="bg-amber-500 h-[2px] w-0 group-hover:w-[200px] transition-all duration-500"></div>
     </Link>
             </p>
             <p className="mb-4">
-            < Link to='/hastle/service2' className="p-2 px-4 group" href="#">
+            < Link to='/service2' className="p-2 px-4 group" href="#">
             Staying Active & Engaged
         <div class="bg-amber-500 h-[2px] w-0 group-hover:w-[200px] transition-all duration-500"></div>
     </Link>
             </p>
             <p className="mb-4">
-            <Link to='/hastle/service3' className="p-2 px-4 group" href="#">
+            <Link to='/service3' className="p-2 px-4 group" href="#">
             Live in Care
         <div class="bg-amber-500 h-[1px] w-0 group-hover:w-[200px] transition-all duration-500"></div>
     </Link>
             </p>
             <p>
-            <Link to='/hastle/service4' className="p-2 px-4 group" href="#">
+            <Link to='/service4' className="p-2 px-4 group" href="#">
             Specialised Care
         <div class="bg-amber-500 h-[2px] w-0 group-hover:w-[200px] transition-all duration-500"></div>
     </Link>
@@ -62,14 +62,14 @@ const Footer = () => {
             </h6>
             <div className="flex flex-col items-center justify-center p-4 ">
               <div className="lg:mr-20">
-              <Link to="/hastle/privacypolicy" className="p-2 px-4 group mb-4 relative z-10 ">
+              <Link to="/privacypolicy" className="p-2 px-4 group mb-4 relative z-10 ">
     Privacy Policy
     <div className="bg-amber-500 h-[2px] w-0 group-hover:w-[130px] transition-all duration-500"></div>
   </Link>
               </div>
  
     <div>
-    <Link to="/hastle/leagalnotice" className="p-2 px-4 group relative z-10 mt-4 lg:mr-40">
+    <Link to="/leagalnotice" className="p-2 px-4 group relative z-10 mt-4 lg:mr-40">
     Legal Notice
     <div className="bg-amber-500 h-[2px] w-0 group-hover:w-[200px] transition-all duration-500"></div>
   </Link>

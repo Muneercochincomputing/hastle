@@ -290,7 +290,7 @@ hydrated are key components of chronic disease management</p>
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-3">
           {posts.map((post, index) => (
             <article key={index} className="relative group bg-white rounded-lg shadow-lg overflow-hidden transition duration-300 transform hover:scale-105">
-              <Link to={`/hastle/blogcontent${index + 1}`}>
+              <Link to={`/blogcontent${index + 1}`}>
                 <div className=" bg-gradient-to-b from-transparent to-black opacity-50 group-hover:opacity-70 transition duration-300"></div>
                 <img src={post.image} alt={post.title} className="w-full h-64 object-cover transition duration-300 transform group-hover:scale-110" />
                 <div className=" bottom-0 p-6">

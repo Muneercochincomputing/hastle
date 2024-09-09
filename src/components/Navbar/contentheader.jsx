@@ -7,7 +7,7 @@ const Contentheader = () => {
 
   const logout = () => {
     sessionStorage.removeItem('sessionId'); // Correctly remove the item
-    navigate('/hastle/'); // Navigate to the specified route
+    navigate('/'); // Navigate to the specified route
   };
 
   return (

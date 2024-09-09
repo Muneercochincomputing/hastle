@@ -52,7 +52,7 @@ function Blogcontent2() {
       <section id="blog-section" className="container mx-auto px-6 md:px-12 py-16">
   <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-3">
     {posts.map((post, index) => (
-      <Link key={index} to={`/hastle/blogcontent${index + 3}`} className="group">
+      <Link key={index} to={`/blogcontent${index + 3}`} className="group">
         <div className="bg-white cursor-pointer rounded overflow-hidden shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] relative top-0 hover:-top-2 transition-all duration-300">
           <img
             src={post.image}
@@ -70,7 +70,7 @@ function Blogcontent2() {
     ))}
 
     {/* Fourth Blog Post Card */}
-    <Link to="/hastle/blogcontent4" className="group">
+    <Link to="/blogcontent4" className="group">
       <div className="bg-white cursor-pointer rounded overflow-hidden shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] relative top-0 hover:-top-2 transition-all duration-300">
         <img
           src={readmoresectionimage1}
@@ -87,7 +87,7 @@ function Blogcontent2() {
     </Link>
 
     {/* Fifth Blog Post Card */}
-    <Link to="/hastle/blogcontent5" className="group">
+    <Link to="/blogcontent5" className="group">
       <div className="bg-white cursor-pointer rounded overflow-hidden shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] relative top-0 hover:-top-2 transition-all duration-300">
         <img
           src={readmoresectionimage2}
