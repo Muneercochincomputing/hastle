@@ -35,7 +35,7 @@ function Product() {
         </div>
 
         <p className='text-gray-400  text-[16px] sm:text-[20px] w-full p-2 '>
-          At Holistic Care Services, we are dedicated to providing high-quality, personalized home care for the elderly in Liverpool. Our team of experienced caregivers is committed to ensuring the well-being and comfort of your loved ones.
+          At Holistic Care Services, we are dedicated to providing high-quality, personalized home care for the elderly in Liverpool. Our team of experienced caregivers are committed to ensuring the well-being and comfort of your loved ones.
         </p>
 
         {/* body section */}
