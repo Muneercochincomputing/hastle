@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@400..700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    .custom-border-radius {
+      border-radius: 34% 64% 77% 26% / 73% 54% 45% 19%;
+    }
+  }
+/* Custom styles for carousel arrows */
+.carousel-arrow {
+    @apply bg-transparent border-none text-2xl text-gray-600 cursor-pointer;
+  }
+  
+  .prev-arrow {
+    @apply absolute left-4 bottom-4; /* Adjust positioning as needed */
+  }
+  
+  .next-arrow {
+    @apply absolute right-4 bottom-4; /* Adjust positioning as needed */
+  }
+
+
