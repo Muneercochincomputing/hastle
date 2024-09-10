@@ -14,12 +14,12 @@ const ContactSection = forwardRef((props, ref) => {
   const [phonenumber ,setPhonenumber] = useState("");
   const [message ,setMessages] = useState("");
   const [errors, setErrors] = useState({});  
-
+  const url = import.meta.env.VITE_HOST_URL
 
   const handleValidation = () => {
     const newErrors = {};
 
-    const url = import.meta.env.VITE_HOST_URL
+
 
     if (!fullname) newErrors.fullname = true;
     if (!street) newErrors.street = true;
