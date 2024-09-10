@@ -178,13 +178,13 @@ const ContactSectionpage = forwardRef((props, ref) => {
             <li className="flex items-center text-black">
               <MdOutgoingMail />
               <a href="javascript:void(0)" className="text-sm ml-4">
-                <strong>info@holistic-careservices.co.uk</strong>
+                <strong>office@holistic-careservices.co.uk</strong>
               </a>
             </li>
             <li className="flex items-center text-black">
               <MdOutlinePhoneForwarded />
               <a href="" className="text-sm ml-4 ">
-                <strong>44 123 456 7890</strong>
+                <strong>01516650520</strong>
               </a>
             </li>
           </ul>
