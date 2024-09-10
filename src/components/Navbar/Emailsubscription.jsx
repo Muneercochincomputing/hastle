@@ -6,6 +6,8 @@ const Emailsubscription = forwardRef((props, ref) => {
   const [isSubmitting, setIsSubmitting] = useState(false); // State to manage submission status
 
   const addSubscribers = async () => {
+    const url = import.meta.env.VITE_HOST_URL
+
     if (!email || !/\S+@\S+\.\S+/.test(email)) { // Basic email validation
       alert("Please enter a valid email address.");
       return;
@@ -17,7 +19,7 @@ const Emailsubscription = forwardRef((props, ref) => {
 
     try {
       setIsSubmitting(true); // Disable button on submission start
-      await axios.post("http://localhost:8082/subscribers/", subscribers);
+      await axios.post(`${url}/subscribers/`, subscribers);
       console.log("Success");
 
       setEmail(""); // Clear email after successful submission

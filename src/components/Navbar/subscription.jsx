@@ -4,6 +4,8 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 const Subscription = forwardRef((props, ref) => {
+  const url = import.meta.env.VITE_HOST_URL
+
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false); // State for button disable
 
@@ -19,7 +21,7 @@ const Subscription = forwardRef((props, ref) => {
 
     try {
       setIsSubmitting(true); // Disable button on submission start
-      await axios.post("http://localhost:8082/subscribers/", subscribers);
+      await axios.post(`${url}/subscribers/`, subscribers);
       console.log("Success");
       setEmail(""); // Clear email after successful submission
       alert("Contact submitted successfully");

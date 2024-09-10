@@ -13,9 +13,10 @@ function Adminlogin({ close }) {
   const [showPassword, setShowPassword] = useState(false);
 
   const navigate = useNavigate(); // Initialize useNavigate
-  
+  const url = import.meta.env.VITE_HOST_URL
 
   const handleValidation = () => {
+
     const newErrors = {};
     if (!adminid) newErrors.adminid = 'Admin ID is required.';
     if (!password) newErrors.password = 'Password is required.';
@@ -24,9 +25,10 @@ function Adminlogin({ close }) {
   };
 
   const handleLogin = async () => {
+   
     if (!handleValidation()) return;
     try {
-      const response = await axios.get('http://localhost:8082/admin/');
+      const response = await axios.get(`${url}/admin/`);
       if (Array.isArray(response.data)) {
         const admin = response.data.find(
           (admin) => admin.adminid === adminid && admin.password === password
@@ -54,7 +56,7 @@ function Adminlogin({ close }) {
       newPassword: newPassword
     };
     try {
-      await axios.put('http://localhost:8082/admin/', data); // Update the endpoint if needed
+      await axios.put(`${url}/admin/`, data); // Update the endpoint if needed
       alert("Password changed successfully");
       setNewPassword("");
       setShowDialog(false);
@@ -80,7 +82,7 @@ function Adminlogin({ close }) {
         <div className="text-center">
           <img src={logo} className='h-[150px] w-[150px] rounded-full ml-6 p-2' alt="Logo"/>
         </div>
-
+      
         <form className="mt-12 space-y-4" onSubmit={(e) => {
           e.preventDefault();
           if (handleValidation()) {
@@ -101,7 +103,7 @@ function Adminlogin({ close }) {
             />
             {errors.adminid && <p className="text-red-500 text-xs absolute right-4">{errors.adminid}</p>}
           </div>
-
+           
           <div className="relative flex items-center">
             <input 
               name="password" 

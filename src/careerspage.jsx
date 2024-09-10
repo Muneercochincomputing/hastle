@@ -31,6 +31,7 @@ function Careerspage() {
     const [errors, setErrors] = useState({}); 
 
     const subscriptionRef = useRef(null);
+    const url = import.meta.env.VITE_HOST_URL
 
     const handleValidation = () => {
       const newErrors = {};
@@ -84,12 +85,12 @@ function Careerspage() {
     
       try {
         // Submit career details
-        await axios.post("http://localhost:8082/careers/", careers);
+        await axios.post(`${url}/careers/`, careers);
         console.log("Career details submitted successfully");
     
         // Upload the resume if a file is present
         if (pdfFile) {
-          await axios.post("http://localhost:8082/careers/upload-file/", formData);
+          await axios.post(`${url}/careers/upload-file/`, formData);
           console.log("Resume uploaded successfully");
        
        

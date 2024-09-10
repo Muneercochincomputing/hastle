@@ -17,8 +17,11 @@ const ContactSectionpage = forwardRef((props, ref) => {
 
 
   const handleValidation = () => {
-    const newErrors = {};
 
+    const url = import.meta.env.VITE_HOST_URL
+
+    const newErrors = {};
+     
     if (!fullname) newErrors.fullname = true;
     if (!street) newErrors.street = true;
     if (!city) newErrors.city = true;
@@ -48,7 +51,7 @@ const ContactSectionpage = forwardRef((props, ref) => {
      
   
       try {
-        await axios.post("http://localhost:8082/contacts/", contact);
+        await axios.post(`${url}/contacts/`, contact);
         console.log("Success");
   
         setFullname("");

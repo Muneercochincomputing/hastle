@@ -12,14 +12,16 @@ function Dashbord() {
   const [contacts, setContacts] = useState([]);
   const [notificationVisible, setNotificationVisible] = useState(true);
 
+  const url = import.meta.env.VITE_HOST_URL
+
   useEffect(() => {
     const fetchData = async () => {
       try {
         const [queriesResponse, careersResponse, subscribersResponse, contactsResponse] = await Promise.all([
-          axios.get('http://localhost:8082/Queries/'),
-          axios.get('http://localhost:8082/careers/'),
-          axios.get('http://localhost:8082/subscribers/'),
-          axios.get('http://localhost:8082/contacts/')
+          axios.get(`${url}/Queries/`),
+          axios.get(`${url}/careers/`),
+          axios.get(`${url}/subscribers/`),
+          axios.get(`${url}/contacts/`)
         ]);
         setQueries(queriesResponse.data);
         setCareers(careersResponse.data);
