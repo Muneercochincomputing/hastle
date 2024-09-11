@@ -280,7 +280,7 @@ hydrated are key components of chronic disease management</p>
     READ MORE
     
   </h2>
-  <span className="block  w-[300px] ml-[660px] h-1 mt-4 bg-pink-400  rounded-full  bottom-0 "></span>
+ 
 </div>
 
       {/* Latest Blogs Heading */}
