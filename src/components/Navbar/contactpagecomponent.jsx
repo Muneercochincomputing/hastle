@@ -15,10 +15,10 @@ const ContactSectionpage = forwardRef((props, ref) => {
   const [message ,setMessages] = useState("");
   const [errors, setErrors] = useState({});  
 
+  const url = import.meta.env.VITE_HOST_URL
 
   const handleValidation = () => {
 
-    const url = import.meta.env.VITE_HOST_URL
 
     const newErrors = {};
      
