@@ -40,13 +40,14 @@ function Blogcontent2() {
         Elderly care, often referred to as senior care, encompasses a wide range of services designed to meet the unique needs of older adults as they age. This care can range from basic assistance with daily activities, such as bathing, dressing, and meal preparation, to more comprehensive medical care for those with chronic illnesses or cognitive impairments like dementia and Alzheimer's disease. The goal of elderly care is not only to ensure the physical well-being of seniors but also to support their emotional and mental health, providing a sense of dignity and quality of life. It can be provided in various settings, including the senior's home, assisted living facilities, nursing homes, and specialized memory care units. In-home care is often preferred by seniors who wish to maintain independence while still receiving the necessary support. However, as the aging population grows and life expectancy increases, there are ongoing challenges in providing adequate resources, ensuring the availability of trained caregivers, and managing the financial aspects of care. Family members often play a crucial role in providing informal care, which can be both rewarding and demanding, requiring a balance between personal and professional responsibilities. As societies worldwide grapple with the complexities of an aging population, there is an increasing focus on developing sustainable, compassionate, and personalized care solutions that cater to the diverse needs of the elderly.
       </p>
 
-      {/* Latest Blogs Heading */}
       <div className="text-center my-12">
         <h2 className="text-3xl font-extrabold text-[#333] relative inline-block">
-          READ MORE
+           READ MORE
+          <div className='h-10'></div>
+          <span className="block w-5/6 h-1  bg-pink-400 rounded-full absolute bottom-0 left-1/2 transform -translate-x-1/2"></span>
         </h2>
-        <span className="block w-[200px] mx-auto h-1 mt-4 bg-pink-400 rounded-full"></span>
       </div>
+
 
       {/* Blog Posts Section */}
       <section id="blog-section" className="container mx-auto px-6 md:px-12 py-16">

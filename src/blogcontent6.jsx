@@ -276,12 +276,13 @@ hydrated are key components of chronic disease management</p>
 
       </header>
       <div className="text-center my-12">
-  <h2 className="text-3xl font-extrabold text-[#333] relative inline-block">
-    READ MORE
-    
-  </h2>
- 
-</div>
+        <h2 className="text-3xl font-extrabold text-[#333] relative inline-block">
+           READ MORE
+          <div className='h-10'></div>
+          <span className="block w-5/6 h-1  bg-pink-400 rounded-full absolute bottom-0 left-1/2 transform -translate-x-1/2"></span>
+        </h2>
+      </div>
+
 
       {/* Latest Blogs Heading */}
     

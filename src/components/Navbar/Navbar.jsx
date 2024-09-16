@@ -70,7 +70,7 @@ const Navbar = ({ onScrollToSubscription }) => {
                             )}
                         </div>
 
-                        <Link to='/careers' className='font-bold text-[#800080] text-[17px] group'>
+                        <Link to='/careerspage' className='font-bold text-[#800080] text-[17px] group'>
                             CAREERS
                             <div className="bg-amber-500 h-[1px] w-0 group-hover:w-[70px] transition-all duration-500"></div>
                         </Link>
@@ -78,7 +78,7 @@ const Navbar = ({ onScrollToSubscription }) => {
                             BLOGS
                             <div className="bg-amber-500 h-[1px] w-0 group-hover:w-[50px] transition-all duration-500"></div>
                         </Link>
-                        <Link to='/contact' className='font-bold text-[#800080] text-[17px] group'>
+                        <Link to='/contactpage' className='font-bold text-[#800080] text-[17px] group'>
                             CONTACT US
                             <div className="bg-amber-500 h-[1px] w-0 group-hover:w-[110px] transition-all duration-500"></div>
                         </Link>
@@ -90,7 +90,7 @@ const Navbar = ({ onScrollToSubscription }) => {
                     {/* Subscribe Button */}
                     <button className="group relative min-h-[50px] w-40 overflow-hidden border border-white bg-[#800080] text-white shadow-2xl transition-all before:absolute before:left-0 before:top-0 before:h-0 before:w-1/4 before:bg-white before:duration-500 after:absolute after:bottom-0 after:right-0 after:h-0 after:w-1/4 after:bg-white after:duration-500 hover:text-[#800080] hover:bg-white hover:before:h-full hover:after:h-full rounded-full"
                     onClick={onScrollToSubscription}>
-                        <span className="absolute bottom-0 left-0 right-0 top-0 z-10 flex h-full w-full items-center justify-center group-hover:text-[#800080]">Subscribe</span>
+                        <span className="absolute bottom-0 left-0 right-0 top-0 z-10 flex h-full w-full items-center justify-center group-hover:text-[#800080]">Enuire Now</span>
                     </button>
                 </div>
 

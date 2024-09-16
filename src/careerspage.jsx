@@ -168,7 +168,7 @@ function Careerspage() {
 </div>
 
 
-<p className='xl:px-40 px-4 text-center font-light mt-10 text xl:text-[20px]'>As a member of our dedicated team, you will contribute to creating a nurturing and enriching environment, where your commitment to providing exceptional care will help foster a sense of community and belonging for each of our senior residents</p>
+<p className='xl:px-40 px-4 text-center font-light mt-10 text xl:text-[20px]'>As a member of our dedicated team, you will contribute to creating a nurturing and enriching environment, where your commitment to providing exceptional care will help foster a sense of community and belonging for each of our senior clients</p>
 
  {/* Join Us Banner */}
 <div class="bg-gray-50 mt-20 font-[sans-serif] relative mb-10 max-w-6xl shadow-lg h-[500px] w-full shadow-[#e9d9f3] mx-auto rounded overflow-hidden">
@@ -178,7 +178,7 @@ function Careerspage() {
         <span class="text-gray-800">Become a Valued Member of Our </span> Team
       </h3>
       <h6 class="text-sm sm:text-base md:text-lg text-gray-800 mt-4">
-        Embrace the chance to be part of a meaningful mission, where your efforts will directly impact the quality of life for our cherished residents, helping them to live with joy, respect, and the highest standard of care.
+        Embrace the chance to be part of a meaningful mission, where your efforts will directly impact the quality of life for our cherished clients, helping them to live with joy, respect, and the highest standard of care.
       </h6>
 
       <button type="button" class="bg-[#4e0083] hover:bg-[#4f0083cc] text-white tracking-wide font-semibold text-sm py-3 px-6 rounded-xl mt-8"
@@ -225,7 +225,7 @@ function Careerspage() {
 
       <div class="-mt-28 mb-6  w-full px-4">
         <div class="mx-auto max-w-6xl shadow-lg p-8 relative bg-white rounded-md">
-          <h2 class="text-xl text-gray-800 font-bold">Apply to joint with us</h2>
+          <h2 class="text-xl text-gray-800 font-bold">Apply to join with us</h2>
 
           <form class="mt-8 grid sm:grid-cols-2 xl:grid-cols-2 grid-cols-1 gap-6">
             <div>

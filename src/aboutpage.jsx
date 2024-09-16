@@ -105,6 +105,29 @@ function About() {
 </div>
 
 
+<p className='relative z-20 w-[90%] sm:w-[100%] mx-auto text-black sm:px-40 mt-10 sm:text-[20px]  '>
+At <span className='	font-style: italic font-bold'>Holistic Care Services</span>, we understand that you want to ensure your loved one age gracefully and comfortably in their own home.
+
+To <span className='	font-style: italic font-bold'>achieve</span> that, you need compassionate and reliable care that respects their independence and enhances their quality of life.
+
+The <span className='	font-style: italic font-bold'>problem</span> is that finding trustworthy care that truly understands your loved one's unique needs can be overwhelming and stressful.
+
+We <span className='	font-style: italic font-bold'>believe</span> that everyone deserves to age with dignity, surrounded by love and support.
+
+We <span className='	font-style: italic font-bold'>understand</span> the emotional weight of navigating care options and the desire to provide the very best for your loved one.
+
+<span className='	font-style: italic font-bold'>That's why we're here to guide and support you every step of the way</span>, offering personalised home care services that enables your loved one to flourish.
+
+<span className='	font-style: italic font-bold'>
+Here's how</span> we help you achieve that:
+
+<span className='	font-style: italic font-bold'>
+We listen to your concerns:</span>
+We take the time to understand your loved one's needs, preferences, and goals so we can create a truly personalised care plan.
+
+</p>
+
+
 
       {/* Main content section */}
       <div className="relative z-20 w-[90%] sm:w-[100%] mx-auto text-black p-4">

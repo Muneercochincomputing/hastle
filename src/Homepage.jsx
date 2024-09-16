@@ -14,6 +14,7 @@ import ContactSection from './components/Navbar/contact';
 import Training from './components/Navbar/trainingcourosal';
 import AnimatedContainerMob from './components/Navbar/HoverTestMobile';
 import AnimatedContainerTab from './components/Navbar/hoveresttablets';
+ import Whychooseus from './components/Navbar/whychooseus';
 
 function Homepage() {
 
@@ -39,7 +40,7 @@ function Homepage() {
 
   return (
     <div className='overflow-hidden'>
-      <Navbar onScrollToSubscription={handleScrollToSubscription} />
+      <Navbar onScrollToSubscription={handleScrollToContact} />
       <Hero />
       <AnimatedContainer onScrollToSubscription={handleScrollToContact} />
       <AnimatedContainerMob  onScrollToSubscription={handleScrollToContact}  />
@@ -47,9 +48,9 @@ function Homepage() {
       <Product />
       <TopProducts />
       <Banner />
-      <Training />
+      <Whychooseus />
       <Blog />
-      <Subscription ref={subscriptionRef} />
+      <Subscription ref={contactRef} />
       <Testimonial />
       <ContactSection  ref={contactRef} />
       <Footer />

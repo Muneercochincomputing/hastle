@@ -118,7 +118,7 @@ function Blogcontent3() {
         
         {/* the first item */}
 
-        <div className='' data-aos='fade-right'>
+        <div className='' >
 
         <h1 className="text-2xl md:text-3xl font-extrabold mb-6 text-left text-black ">Cognitive Stimulation</h1>
     <p className="text-lg md:text-1xl text-left text-black ">Pets can help to keep seniors&#39; minds sharp by providing cognitive stimulation. Playing
@@ -130,7 +130,7 @@ can provide a sense of accomplishment and boost self-esteem.</p>
 
         {/* the second item */}
 
-        <div className='xl:mt-[400px]' data-aos='fade-right'>
+        <div className='xl:mt-[400px]' >
 
         <h1 className="text-2xl md:text-3xl font-extrabold mb-6 text-left text-black mt-10">Enhancing Elderly Care with Pets</h1>
     <p className="text-lg md:text-1xl text-left text-black ">Integrating pets into elderly care can significantly improve quality of life. Animals provide not only companionship but also encourage physical activity and social interaction. Engaging with pets can help seniors maintain a sense of purpose and reduce stress, contributing to their overall emotional and physical health.</p> 
@@ -144,7 +144,7 @@ can provide a sense of accomplishment and boost self-esteem.</p>
 
          <div className=' lg:h-[1200px]  '  > 
         
-         <div className=' lg:ml-10 mt-10 lg:mt-[300px]' data-aos='fade-left'>
+         <div className=' lg:ml-10 mt-10 lg:mt-[300px]' >
         <h1 className="text-2xl md:text-3xl font-extrabold lg:mb-6 text-left text-black">Social Interaction</h1>
     <p className="text-lg md:text-1xl text-left text-black ">
     Pets can also be a great way for seniors to meet new people and socialize. Walking a
@@ -157,7 +157,7 @@ can provide a sense of accomplishment and boost self-esteem.</p>
 
         {/* the second item */}
 
-        <div className=' lg:ml-10 xl:mt-[300px] mt-10' data-aos='fade-left '>
+        <div className=' lg:ml-10 xl:mt-[300px] mt-10'  >
         <h1 className="text-2xl md:text-3xl font-extrabold mb-6 text-left text-black">Stress Reduction</h1>
     <p className="text-lg md:text-1xl text-left text-black ">
     Pets have been shown to have a calming effect on humans, which can be especially
@@ -186,14 +186,13 @@ can help to reduce stress levels, lower blood pressure, and improve mood.</p>
         </div>
       </header>
 
-      {/* Latest Blogs Heading */}
       <div className="text-center my-12">
-  <h2 className="text-3xl font-extrabold text-[#333] relative inline-block">
-    READ MORE
-    
-  </h2>
-  <span className="block  w-[200px] ml-[660px] h-1 mt-4 bg-pink-400  rounded-full  bottom-0 "></span>
-</div>
+        <h2 className="text-3xl font-extrabold text-[#333] relative inline-block">
+           READ MORE
+          <div className='h-10'></div>
+          <span className="block w-5/6 h-1  bg-pink-400 rounded-full absolute bottom-0 left-1/2 transform -translate-x-1/2"></span>
+        </h2>
+      </div>
 
 
 

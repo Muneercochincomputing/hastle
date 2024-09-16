@@ -162,12 +162,12 @@ function Blogcontent1() {
 
       {/* Latest Blogs Heading */}
       <div className="text-center my-12">
-  <h2 className="text-3xl font-extrabold text-[#333] relative inline-block">
-    READ MORE
-    
-  </h2>
-  <span className="block  w-[200px] ml-[660px] h-1 mt-4 bg-pink-400  rounded-full  bottom-0 "></span>
-</div>
+        <h2 className="text-3xl font-extrabold text-[#333] relative inline-block">
+           READ MORE
+          <div className='h-10'></div>
+          <span className="block w-5/6 h-1  bg-pink-400 rounded-full absolute bottom-0 left-1/2 transform -translate-x-1/2"></span>
+        </h2>
+      </div>
 
 
 {/* Blog Posts Section */}

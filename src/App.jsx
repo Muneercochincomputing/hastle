@@ -28,10 +28,10 @@ function App() {
         <Route path="/" element={<Homepage />} />
         <Route path="/about" element={<About />} />
         <Route path="/service1" element={<Servicespage />} />
-        <Route path="/careers" element={<Careerspage />} />
+        <Route path="/careerspage" element={<Careerspage />} />
         <Route path="/dasbord" element={<Dashbord />} />
         <Route path="/blog" element={<Blog />} />
-        <Route path="/contact" element={<ContactUs />} />
+        <Route path="/contactpage" element={<ContactUs />} />
         <Route path="/service2" element={<Servicespage2 />} />
         <Route path="/service3" element={<Servicespage3 />} />
         <Route path="/service4" element={<Servicespage4 />} />
