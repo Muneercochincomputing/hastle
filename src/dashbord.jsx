@@ -57,7 +57,7 @@ function Dashbord() {
             <div className="p-4 max-lg:hidden">
               <img src="https://readymadeui.com/image-1.webp" className="object-cover w-full h-full" alt="Banner" />
             </div>
-            <div className="flex flex-col items-end justify-center text-right px-8 relative bg-[#800080] rounded-tl-[206px] z-20 before:absolute before:inset-0 before:bg-gradient-to-r from-[#800080] to-primary before:w-2/3 before:rounded-bl-[206px] before:-z-10">
+            <div className="flex flex-col items-end justify-center text-right px-8 relative bg-[#8D4374] rounded-tl-[206px] z-20 before:absolute before:inset-0 before:bg-gradient-to-r from-[#8D4374] to-primary before:w-2/3 before:rounded-bl-[206px] before:-z-10">
               <h3 className="font-bold sm:text-4xl text-2xl text-yellow-400">Management is doing Things </h3>
               <p className="text-sm text-gray-300 mt-4">Management is doing things right; leadership is doing the right things," highlights the difference between efficiency and effectiveness. While management focuses on executing tasks correctly and following established processes</p>
               <button type="button" className="bg-yellow-400 hover:bg-yellow-500 text-gray-800 py-4 px-8 font-semibold rounded w-max mt-8">
@@ -135,20 +135,20 @@ function Dashbord() {
             careers.map((career, index) => (
               <div key={index} className="bg-gradient-to-r shadow-xl rounded-lg p-6 mb-6 mx-auto transform hover:scale-105 transition-transform duration-300 ease-in-out w-full max-w-md border-t-4 border-indigo-700">
                 <div className="flex items-center mb-4">
-                  <FaRegUser className="text-[#800080] text-4xl mr-4" />
+                  <FaRegUser className="text-[#8D4374] text-4xl mr-4" />
                   <div>
-                    <p className="text-xl font-semibold text-[#800080]">{career.name}</p>
-                    <p className="text-sm text-[#800080]">{career.email}</p>
+                    <p className="text-xl font-semibold text-[#8D4374]">{career.name}</p>
+                    <p className="text-sm text-[#8D4374]">{career.email}</p>
                   </div>
                 </div>
-                <p className="text-[#800080]">{career.message}</p>
+                <p className="text-[#8D4374]">{career.message}</p>
                 <div className="mt-4">
-                  <p className="text-[#800080] flex"><FaBuffer className='mt-2 mr-2' />experiences: {career.experiences} years</p>
-                  <p className="text-[#800080] flex"><FaPhone className='mt-1 mr-2' /> Phone Number: {career.phonenumber} </p>
+                  <p className="text-[#8D4374] flex"><FaBuffer className='mt-2 mr-2' />experiences: {career.experiences} years</p>
+                  <p className="text-[#8D4374] flex"><FaPhone className='mt-1 mr-2' /> Phone Number: {career.phonenumber} </p>
                 </div>
                 <div className="text-right">
                   <a href={career.resume}>
-                    <button className="bg-white text-[#800080] px-6 py-2 rounded-full hover:bg-purple-200 transition-colors duration-300 shadow-md">
+                    <button className="bg-white text-[#8D4374] px-6 py-2 rounded-full hover:bg-purple-200 transition-colors duration-300 shadow-md">
                       Download Resume
                     </button>
                   </a>
@@ -166,7 +166,7 @@ function Dashbord() {
         </div>
 
         {/* Contacts Section */}
-        <h1 className="text-center text-3xl font-bold text-[#800080] mt-10">Contact Messages</h1>
+        <h1 className="text-center text-3xl font-bold text-[#8D4374] mt-10">Contact Messages</h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8 p-6">
           {contacts.length > 0 ? (
             contacts.map((contact, index) => (
@@ -175,7 +175,7 @@ function Dashbord() {
                 className="bg-gradient-to-r from-purple-500 to-pink-500 shadow-lg rounded-xl p-6 mb-8 mx-auto transform hover:scale-105 transition-transform duration-300 ease-in-out w-full max-w-lg">
                 <div className="flex items-center mb-4">
                   <div className="bg-white p-4 rounded-full shadow-md">
-                    <FaRegUser className="text-[#800080] text-3xl" />
+                    <FaRegUser className="text-[#8D4374] text-3xl" />
                   </div>
                   <div className="ml-6">
                     <p className="text-2xl font-bold text-white">{contact.fullname}</p>
@@ -190,7 +190,7 @@ function Dashbord() {
                   <p><strong>Message:</strong> {contact.message || 'No message provided.'}</p>
                 </div>
                 <div className="text-right">
-                  <button className="bg-white text-[#800080] px-6 py-2 rounded-full hover:bg-purple-200 transition-colors duration-300 shadow-md">
+                  <button className="bg-white text-[#8D4374] px-6 py-2 rounded-full hover:bg-purple-200 transition-colors duration-300 shadow-md">
                     Reply
                   </button>
                 </div>

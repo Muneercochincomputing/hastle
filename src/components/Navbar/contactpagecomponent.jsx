@@ -106,7 +106,7 @@ const ContactSectionpage = forwardRef((props, ref) => {
               <input
                 type="text"
                 placeholder="Full Name"
-                className="px-2 py-3 bg-white w-full text-gray-800 text-sm border-b border-gray-300 focus:border-[#800080] outline-none"
+                className="px-2 py-3 bg-white w-full text-gray-800 text-sm border-b border-gray-300 focus:border-[#8D4374] outline-none"
                 onChange={(e) => {
                   setFullname(e.target.value);
                   setErrors((prev) => ({ ...prev, fullname: false }));
@@ -114,7 +114,7 @@ const ContactSectionpage = forwardRef((props, ref) => {
             <input
   type="text"
   placeholder="Street"
-  className="px-2 py-3 bg-white w-full text-gray-800 text-sm border-b border-gray-300 focus:border-[#800080] outline-none"
+  className="px-2 py-3 bg-white w-full text-gray-800 text-sm border-b border-gray-300 focus:border-[#8D4374] outline-none"
   onChange={(e) => {
     setStreet(e.target.value);
     setErrors((prev) => ({ ...prev, street: false }));
@@ -125,7 +125,7 @@ const ContactSectionpage = forwardRef((props, ref) => {
                 <input
                   type="text"
                   placeholder="City"
-                  className="px-2 py-3 bg-white w-full text-gray-800 text-sm border-b border-gray-300 focus:border-[#800080] outline-none"
+                  className="px-2 py-3 bg-white w-full text-gray-800 text-sm border-b border-gray-300 focus:border-[#8D4374] outline-none"
                   onChange={(e) => {
                     setCity(e.target.value);
                     setErrors((prev) => ({ ...prev, city: false }));
@@ -133,7 +133,7 @@ const ContactSectionpage = forwardRef((props, ref) => {
                 <input
                   type="text"
                   placeholder="Postcode"
-                  className="px-2 py-3 bg-white w-full text-gray-800 text-sm border-b border-gray-300 focus:border-[#800080] outline-none"
+                  className="px-2 py-3 bg-white w-full text-gray-800 text-sm border-b border-gray-300 focus:border-[#8D4374] outline-none"
                   onChange={(e) => {
                     setPostalcode(e.target.value);
                     setErrors((prev) => ({ ...prev, postcode: false }));
@@ -142,7 +142,7 @@ const ContactSectionpage = forwardRef((props, ref) => {
               <input
                 type="number"
                 placeholder="Phone No."
-                className="px-2 py-3 bg-white w-full text-gray-800 text-sm border-b border-gray-300 focus:border-[#800080] outline-none"
+                className="px-2 py-3 bg-white w-full text-gray-800 text-sm border-b border-gray-300 focus:border-[#8D4374] outline-none"
                 onChange={(e) => {
                   setPhonenumber(e.target.value);
                   setErrors((prev) => ({ ...prev, phoneNumber: false }));
@@ -150,7 +150,7 @@ const ContactSectionpage = forwardRef((props, ref) => {
               <input
                 type="email"
                 placeholder="Email"
-                className="px-2 py-3 bg-white w-full text-gray-800 text-sm border-b border-gray-300 focus:border-[#800080] outline-none"
+                className="px-2 py-3 bg-white w-full text-gray-800 text-sm border-b border-gray-300 focus:border-[#8D4374] outline-none"
                 onChange={(e) => {
                   setEmail(e.target.value);
                   setErrors((prev) => ({ ...prev, email: false }));
@@ -158,7 +158,7 @@ const ContactSectionpage = forwardRef((props, ref) => {
               <div>
               <textarea
                 placeholder="Write Message"
-                className="px-2 pt-3  z-20 lg:absolute mb-10  w-full text-gray-800 text-sm border-b border-gray-300 focus:border-[#800080] outline-none"
+                className="px-2 pt-3  z-20 lg:absolute mb-10  w-full text-gray-800 text-sm border-b border-gray-300 focus:border-[#8D4374] outline-none"
                 onChange={(e) => {
                   setMessages(e.target.value);
                   setErrors((prev) => ({ ...prev, message: false }));
@@ -168,10 +168,10 @@ const ContactSectionpage = forwardRef((props, ref) => {
 
             <button
               type="button"
-              className="mt-8 lg:mt-20 lg:absolute lg:z-10 hover:text-[#800080] hover:border-[#800080] border-solid border-[2px] flex items-center justify-center text-sm w-full rounded-md px-6 py-3 bg-[#800080] hover:bg-white text-white"
+              className="mt-8 lg:mt-20 lg:absolute lg:z-10 hover:text-[#8D4374] hover:border-[#8D4374] border-solid border-[2px] flex items-center justify-center text-sm w-full rounded-md px-6 py-3 bg-[#8D4374] hover:bg-white text-white"
             onClick={()=>{
               submits()
-            }} ><BsFillSendFill className='mr-5 hover:text-[#800080] '  />
+            }} ><BsFillSendFill className='mr-5 hover:text-[#8D4374] '  />
               Send Message
             </button>
           </form>

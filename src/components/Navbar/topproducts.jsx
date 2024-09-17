@@ -70,7 +70,7 @@ function Topproducts() {
     key={data.id}
     data-aos={index % 2 === 0 ? 'zoom-left' : 'zoom-right'}
     data-aos-delay='300'
-    className='w-full max-w-xs mt-[40px] sm:max-w-sm md:max-w-md  rounded-2xl  relative shadow-xl p-6 flex flex-col items-center transition-colors translate-x-4 duration-1200 group hover:bg-[#800080] bg-white hover:text-white'
+    className='w-full max-w-xs mt-[40px] sm:max-w-sm md:max-w-md  rounded-2xl  relative shadow-xl p-6 flex flex-col items-center transition-colors translate-x-4 duration-1200 group hover:bg-[#8D4374] bg-white hover:text-white'
  
  >
    
@@ -79,7 +79,7 @@ function Topproducts() {
       className='w-[500px] h-auto sm:h-[400px]  object-cover rounded-xl block mx-auto transform transition-transform duration-300 group-hover:scale-105' 
       alt={`Product ${data.id}`} 
     />
-    <p className=' font-bold text-[20px] group-hover:text-[white]  text-[#800080] rounded-xl mb-2 mt-2  '>{data.tittle}</p>
+    <p className=' font-bold text-[20px] group-hover:text-[white]  text-[#8D4374] rounded-xl mb-2 mt-2  '>{data.tittle}</p>
     <p className=' p-2 rounded-xl text-center hover:text-white group-hover:text-[white] text-black' >{data.Description}</p>
    
   </div>

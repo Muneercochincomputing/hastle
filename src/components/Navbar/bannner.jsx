@@ -31,7 +31,7 @@ function Banner() {
           <img
               src={banner2}
               alt='Banner'
-              className='bg-white sm:w-[300px] w-[200px] md:w-[200px] sm:h-[300px] drop-shadow-md object-cover absolute sm:ml-[200px] z-20  ml-[120px] border-solid border-[#800080] border-[10px]' data-aos="zoom-in-up"
+              className='bg-white sm:w-[300px] w-[200px] md:w-[200px] sm:h-[300px] drop-shadow-md object-cover absolute sm:ml-[200px] z-20  ml-[120px] border-solid border-[#8D4374] border-[10px]' data-aos="zoom-in-up"
             />
          
             
@@ -44,7 +44,7 @@ function Banner() {
           <img
               src={banner2}
               alt='Banner'
-              className='bg-white sm:w-[300px] w-[100px] sm:h-[300px] drop-shadow-md object-cover absolute sm:ml-[200px] z-20 border-solid border-[#800080] border-[10px] md:w-[200px] xl:w-[300px] sm:block hidden ' data-aos="zoom-in-up"
+              className='bg-white sm:w-[300px] w-[100px] sm:h-[300px] drop-shadow-md object-cover absolute sm:ml-[200px] z-20 border-solid border-[#8D4374] border-[10px] md:w-[200px] xl:w-[300px] sm:block hidden ' data-aos="zoom-in-up"
             />
           <img
               src={banner3}
@@ -59,7 +59,7 @@ function Banner() {
             We provide a warm, welcoming environment where your loved ones can enjoy their golden years with dignity and respect. Our dedicated team offers round-the-clock care, ensuring all residents receive the attention and support they need. With a range of activities to keep the mind and body active, along with delicious, nutritious meals, we strive to create a home-like atmosphere that fosters companionship and joy. Whether it's for short-term respite care or a long-term stay, our facility is a place where comfort, care, and community come together to make every day meaningful.
             </p>
             <Link to='/about'>
-            <button className='bg-[#800080] text-white py-2 px-4 rounded hover:bg-primary-dark transition duration-300'>
+            <button className='bg-[#8D4374] text-white py-2 px-4 rounded hover:bg-primary-dark transition duration-300'>
               Learn More
             </button>
             </Link>

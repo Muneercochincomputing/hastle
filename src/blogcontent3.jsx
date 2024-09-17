@@ -68,7 +68,7 @@ function Blogcontent3() {
       <Navbar />
       
       {/* Hero Section */}
-      <header className="relative bg-white text-[#800080]  pt-40 overflow-hidden  ">
+      <header className="relative bg-white text-[#8D4374]  pt-40 overflow-hidden  ">
         <div className="absolute inset-0 -75"></div>
         <div className="relative container md:px-12 text-center">
         

@@ -78,7 +78,7 @@ const AnimatedContainertab = () => {
   <div
     className={`text-white text-[28px] text-left sm:text-[24px] md:text-[40px] font-bold transition-opacity duration-[0.9s] ease-out ${textClass}`}
   >
-    Quality Home Care Services<span> in Liverpool</span> <br />
+     Outstanding, compassionate care<span> personalized to your needs</span> <br />
   </div>
   <button className={`${textClass} group mt-4 px-6 py-3 w-[180px] md:w-[250px] lg:w-[200px] border border-white bg-purple-500 text-white shadow-2xl transition-all hover:text-purple-500 hover:bg-white rounded-md`}>
     <span className="font-semibold text-[14px] md:text-[15px] lg:text-[16px]">

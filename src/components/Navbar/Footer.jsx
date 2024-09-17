@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="bg-zinc-50 text-center text-surface/75 dark:bg-[#800080] dark:text-white/75 lg:text-left ">
+    <footer className="bg-zinc-50 text-center text-surface/75 dark:bg-[#8D4374] dark:text-white/75 lg:text-left ">
       <div className="flex items-center justify-center border-b-2 border-neutral-200 p-6 dark:border-white/10 lg:justify-between">
         <div className="me-12 hidden lg:block">
           <span>Get connected with us on social networks:</span>
@@ -118,7 +118,7 @@ const Footer = () => {
               {/* social icon for checking */}
             
 
-              <div class="bg-[#800080] w-full h-auto py-2 flex lg:items-start items-center lg:justify-start  justify-center gap-4 flex-wrap">
+              <div class="bg-[#8D4374] w-full h-auto py-2 flex lg:items-start items-center lg:justify-start  justify-center gap-4 flex-wrap">
 
               <Link to='https://www.facebook.com/holisticcareservicesliverpool?mibextid=ZbWKwL'>
       <button class="w-10 h-10 flex items-center justify-center rounded-lg bg-white  shadow-md shadow-gray-200 group transition-all duration-300">
@@ -199,7 +199,7 @@ const Footer = () => {
               </div>
       </div>
 
-      <div className="bg-zinc-100 p-6 text-center dark:bg-[#800080] dark:text-white/75">
+      <div className="bg-zinc-100 p-6 text-center dark:bg-[#8D4374] dark:text-white/75">
         <span>© 2024 Copyright:</span>
         <a className="font-semibold text-neutral-600 dark:text-white/75" href="#!"> Holistic Care Services</a>
       </div>

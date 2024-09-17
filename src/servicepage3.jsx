@@ -167,7 +167,7 @@ function Servicespage3() {
           </p>
         </h1>
       </div>
-      <div ><h1 className='text-center  text-[30px] text-[#800080] xl:mt-10 '>Live in Care</h1>
+      <div ><h1 className='text-center  text-[30px] text-[#8D4374] xl:mt-10 '>Live in Care</h1>
       <p className='text-center mb-10'>Holistic Care Services encourages our clients to stay active and engaged to promote their overall well-being.</p></div>
       <div className='xl:w-[100%] h-auto xl:h-[900px] lg-[900px] bg-gray-300/20 mb-10  pb-10  shadow-xl'>
       <div className='w-full xl:h-[140px]  grid lg:grid-cols-1 md:grid-cols-2 mb-10 '>
@@ -175,7 +175,7 @@ function Servicespage3() {
         {/* Mission Statement Section */}
         <div className="sm:w-[70%]  md:w-[82%]   sm:ml-80 sm:h-[200px] lg:h-[300px] lg:mx-auto md:h-[450px]  bg-gray-100 md:ml-[75px]  shadow-xl sm:rounded-2xl mb-10 grid sm:grid-cols-2">
           <div className="p-6 sm:p-5">
-            <p className="font-light text-[5vw] sm:text-[40px] md:text[20px] text-[#800080]"  >Live in Care</p>
+            <p className="font-light text-[5vw] sm:text-[40px] md:text[20px] text-[#8D4374]"  >Live in Care</p>
             <p className="font-sans text-[4vw] md-text-[8vw] sm:text-[16px] text-balance">
             Enjoy personalized attention and companionship in the comfort of your own home. Our Live-in Care services provide 24-hour support tailored to meet the individual needs of each client. This service promotes independence and dignity while ensuring safety and well-being through comprehensive care, including personal care, medication management, and assistance with daily activities. 
             </p>
@@ -194,19 +194,19 @@ function Servicespage3() {
   <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-3 gap-5 xl:gap-6 xl:w-[100%] mx-auto xl:mt-40 xl:mb-20'>
     <div className='flex flex-col items-center'>
       <img src={aiimage4} className='w-[100%] xl:h-[450px] sm:w-[70%] md:w-[80%] xl:mt-[28px]' alt='Caring' />
-      <h1 className='text-[16px] sm:text-[18px] md:text-[20px] text-[#800080] font-bold text-center mt-2'>
+      <h1 className='text-[16px] sm:text-[18px] md:text-[20px] text-[#8D4374] font-bold text-center mt-2'>
         Caring
       </h1>
     </div>
     <div className='flex flex-col items-center'>
       <img src={aiimage5} className='w-[100%] xl:h-[450px] sm:w-[70%] md:w-[80%] xl:mt-[28px]' alt='Supportive' />
-      <h1 className='text-[16px] sm:text-[18px] md:text-[20px] text-[#800080] font-bold text-center mt-2'>
+      <h1 className='text-[16px] sm:text-[18px] md:text-[20px] text-[#8D4374] font-bold text-center mt-2'>
         Supportive
       </h1>
     </div>
     <div className='flex flex-col items-center'>
       <img src={aiimage6} className='w-[100%] xl:h-[450px] sm:w-[70%] md:w-[80%] xl:mt-[28px]' alt='Personalized' />
-      <h1 className='text-[16px] sm:text-[18px] md:text-[20px] text-[#800080] font-bold text-center mt-2'>
+      <h1 className='text-[16px] sm:text-[18px] md:text-[20px] text-[#8D4374] font-bold text-center mt-2'>
         Personalized
       </h1>
     </div>

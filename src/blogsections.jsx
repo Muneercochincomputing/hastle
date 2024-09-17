@@ -10,10 +10,10 @@ const GalleryGrid = () => {
     <div className="max-w-screen-xl p-5 mx-auto dark:bg-gray-100 dark:text-gray-800">
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4 md:gap-0 lg:grid-rows-2">
         <div
-          className="relative flex items-end justify-start w-full text-left dark:bg-[#800080] bg-center bg-cover cursor-pointer h-96 md:col-span-2 lg:row-span-2 lg:h-full group"
+          className="relative flex items-end justify-start w-full text-left dark:bg-[#8D4374] bg-center bg-cover cursor-pointer h-96 md:col-span-2 lg:row-span-2 lg:h-full group"
           style={{ backgroundImage: `url(${photogallary1})` }} // Correct image reference
         >
-          <div className="absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-b dark:[#800080] dark:to-[#800080]"></div>
+          <div className="absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-b dark:[#8D4374] dark:to-[#8D4374]"></div>
           <div className="absolute top-0 left-0 right-0 flex items-center justify-between mx-5 mt-3">
             <a
               rel="noopener noreferrer"

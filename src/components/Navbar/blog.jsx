@@ -11,7 +11,7 @@ function Blog() {
     <div className="max-w-[85rem]  px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
 
   <div className="max-w-2xl mx-auto text-center mb-10 lg:mb-14 ">
-  <h2 className="text-2xl font-bold md:text-4xl md:leading-tight dark:text-[#800080]">Latest From Our Blog</h2>
+  <h2 className="text-2xl font-bold md:text-4xl md:leading-tight dark:text-[#8D4374]">Latest From Our Blog</h2>
     <p className="mt-1 text-gray-600 dark:text-neutral-400">
 
       See how game-changing companies are making the most of every engagement with Preline.
@@ -23,18 +23,18 @@ function Blog() {
      data-aos-easing="ease-in-sine" >
    
     
-   <Link to='/blogcontent1' className="group flex flex-col h-full border border-gray-200 hover:border-transparent hover:shadow-lg focus:outline-none focus:border-transparent focus:shadow-lg transition duration-300 rounded-xl p-5 dark:border-[#800080] dark:hover:border-transparent dark:hover:shadow-black/40 dark:focus:border-transparent dark:focus:shadow-black/40" href="#">
+   <Link to='/blogcontent1' className="group flex flex-col h-full border border-gray-200 hover:border-transparent hover:shadow-lg focus:outline-none focus:border-transparent focus:shadow-lg transition duration-300 rounded-xl p-5 dark:border-[#8D4374] dark:hover:border-transparent dark:hover:shadow-black/40 dark:focus:border-transparent dark:focus:shadow-black/40" href="#">
       <div className="aspect-w-16 aspect-h-11">
         <img className="w-full object-cover rounded-xl" src={blog1} alt="Blog Image"/>
       </div>
       <div className="my-6">
-        <h3 className="text-xl font-semibold text-gray-800 dark:text-neutral-300 dark:group-hover:text-[#800080]">
+        <h3 className="text-xl font-semibold text-gray-800 dark:text-neutral-300 dark:group-hover:text-[#8D4374]">
         Caring for the Elderly: A Comprehensive Guide
         </h3>
         <p className="mt-5 text-gray-600 dark:text-neutral-400">
         Discover the best care for your loved one by researching personalized services, checking reviews, and consulting trusted healthcare providers
         </p>
-        <Link to='/blogcontent1'  className='text-[#800080] '>Learn more</Link>
+        <Link to='/blogcontent1'  className='text-[#8D4374] '>Learn more</Link>
       </div>
       <div className="mt-auto flex items-center gap-x-3">
        
@@ -45,18 +45,18 @@ function Blog() {
     </Link>
   
    
-    <Link to='/blogcontent2' className="group flex flex-col h-full border border-gray-200 hover:border-transparent hover:shadow-lg focus:outline-none focus:border-transparent focus:shadow-lg transition duration-300 rounded-xl p-5 dark:border-[#800080] dark:hover:border-transparent dark:hover:shadow-black/40 dark:focus:border-transparent dark:focus:shadow-black/40" href="#">
+    <Link to='/blogcontent2' className="group flex flex-col h-full border border-gray-200 hover:border-transparent hover:shadow-lg focus:outline-none focus:border-transparent focus:shadow-lg transition duration-300 rounded-xl p-5 dark:border-[#8D4374] dark:hover:border-transparent dark:hover:shadow-black/40 dark:focus:border-transparent dark:focus:shadow-black/40" href="#">
       <div className="aspect-w-16 aspect-h-11">
         <img className="w-full object-cover rounded-xl" src={blog2} alt="Blog Image"/>
       </div>
       <div className="my-6">
-        <h3 className="text-xl font-semibold text-gray-800 dark:text-neutral-300 dark:group-hover:text-[#800080]">
+        <h3 className="text-xl font-semibold text-gray-800 dark:text-neutral-300 dark:group-hover:text-[#8D4374]">
         Holistic Elderly Care: Nurturing Health, Happiness, and Connection
         </h3>
         <p className="mt-5 text-gray-600 dark:text-neutral-400">
         Caring for the elderly requires compassion, knowledge, and thoughtful planning. Our comprehensive guide provides essential tips and strategies to help you deliver the best care for your aging loved ones. Explore our insights and make a positive difference today!
         </p>
-        <Link to='/blogcontent2' className='text-[#800080] '>Learn more</Link>
+        <Link to='/blogcontent2' className='text-[#8D4374] '>Learn more</Link>
       </div>
       <div className="mt-auto flex items-center gap-x-3">
     
@@ -66,18 +66,18 @@ function Blog() {
       </div>
     </Link>
   
-    <Link to='/blogcontent3' className="group flex flex-col h-full border border-gray-200 hover:border-transparent hover:shadow-lg focus:outline-none focus:border-transparent focus:shadow-lg transition duration-300 rounded-xl p-5 dark:border-[#800080] dark:hover:border-transparent dark:hover:shadow-black/40 dark:focus:border-transparent dark:focus:shadow-black/40" href="#">
+    <Link to='/blogcontent3' className="group flex flex-col h-full border border-gray-200 hover:border-transparent hover:shadow-lg focus:outline-none focus:border-transparent focus:shadow-lg transition duration-300 rounded-xl p-5 dark:border-[#8D4374] dark:hover:border-transparent dark:hover:shadow-black/40 dark:focus:border-transparent dark:focus:shadow-black/40" href="#">
       <div className="aspect-w-16 aspect-h-11">
         <img className="w-full object-cover rounded-xl" src={blog3} alt="Blog Image"/>
       </div>
       <div className="my-6">
-        <h3 className="text-xl font-semibold text-gray-800 dark:text-neutral-300 dark:group-hover:text-[#800080]">
+        <h3 className="text-xl font-semibold text-gray-800 dark:text-neutral-300 dark:group-hover:text-[#8D4374]">
         Pets as Companions: The Therapeutic Benefits for Seniors
         </h3>
         <p className="mt-5 text-gray-600 dark:text-neutral-400">
         Have you ever seen a senior smiling ear-to-ear while petting their furry friend? It’s a heartwarming sight that speaks volumes about the therapeutic benefits of pets for older adults. 
         </p>
-        <Link to='/blogcontent3' className='text-[#800080] '>Learn more</Link>
+        <Link to='/blogcontent3' className='text-[#8D4374] '>Learn more</Link>
       </div>
       <div className="mt-auto flex items-center gap-x-3">
         

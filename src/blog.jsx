@@ -76,7 +76,7 @@ and preferences.` },
       
       {/* Hero Section */}
       <header className="relative bg-gradient-to-r from-purple-600 to-blue-500 text-white py-32">
-        <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 via-red-500 to-[#800080] opacity-75"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 via-red-500 to-[#8D4374] opacity-75"></div>
         <div className="relative container mx-auto px-6 md:px-12 text-center">
           <h1 className="text-5xl md:text-7xl font-extrabold mb-6 drop-shadow-lg">Explore Our Blog</h1>
           <p className="text-lg md:text-2xl mb-10">Insights, tips, and stories about elderly care, health, and well-being.</p>

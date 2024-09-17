@@ -145,7 +145,7 @@ function Careerspage() {
   />
   <div className='bg-black/60 inset-0 absolute z-5 '></div>
   <div className="absolute inset-0 justify-center items-center  grid xl:grid-cols-2 z-10 ">
-    <div className="xl:w-[800px] xl:mt-[300px]   xl:h-[200px] xl:bg-[#800080]/70 justify-center items-center" data-aos='fade-left'>
+    <div className="xl:w-[800px] xl:mt-[300px]   xl:h-[200px] xl:bg-[#8D4374]/70 justify-center items-center" data-aos='fade-left'>
       <h1 className="text-white xl:text-[60px] text-[30px] mt-2 font-light text-center flex justify-center items-center ">
         Join Our Team
       </h1>
@@ -155,7 +155,7 @@ function Careerspage() {
    
     <div className="absolute  right-0 xl:flex justify-end items-center xl:w-[400px] xl:h-[400px] hidden ">
   <div className="relative flex xl:w-[400px] xl:h-[400px] rounded-full overflow-hidden xl:p-[5px]">
-    <div className="absolute inset-0  rounded-full bg-[conic-gradient(#800080,transparent_120deg)] animate-rotate"></div>
+    <div className="absolute inset-0  rounded-full bg-[conic-gradient(#8D4374,transparent_120deg)] animate-rotate"></div>
     <div className="relative z-10 flex rounded-full bg-[] ">
       <img src={careersimage} className="object-cover p-2 rounded-full w-full h-full" alt="Careers"/>
     </div>
@@ -174,7 +174,7 @@ function Careerspage() {
 <div class="bg-gray-50 mt-20 font-[sans-serif] relative mb-10 max-w-6xl shadow-lg h-[500px] w-full shadow-[#e9d9f3] mx-auto rounded overflow-hidden">
   <div class="grid sm:grid-cols-2 md:grid-cols-1 xl:grid-cols-2 lg-grid-cols-2 gap-6">
     <div class="text-center p-6 flex flex-col justify-center items-center">
-      <h3 class="font-light text-3xl sm:text-4xl md:text-5xl text-[#800080] leading-tight">
+      <h3 class="font-light text-3xl sm:text-4xl md:text-5xl text-[#8D4374] leading-tight">
         <span class="text-gray-800">Become a Valued Member of Our </span> Team
       </h3>
       <h6 class="text-sm sm:text-base md:text-lg text-gray-800 mt-4">
@@ -202,9 +202,9 @@ function Careerspage() {
       </ul>
      
     </div>
-    <div className='w-full h-[200px] xl:hidden sm:flex bg-[#800080] bottom-0  ml-[-50%] rounded-t-[100%] bg-gradient-to-b from-[#796089] via-[#800080] to-[#800080]"'></div>
-    <div class="hidden xl:flex lg:flex justify-center sm:justify-end items-center p-2 bg-gradient-to-b from-[#800080] to-[#796089] rounded-bl-[150px] sm:rounded-bl-[230px] w-full h-full">
-      <div class="h-52 w-52 sm:h-72 sm:w-72 rounded-full bg-gradient-to-tr from-[#800080] to-[#c19ed6] p-5">
+    <div className='w-full h-[200px] xl:hidden sm:flex bg-[#8D4374] bottom-0  ml-[-50%] rounded-t-[100%] bg-gradient-to-b from-[#796089] via-[#8D4374] to-[#8D4374]"'></div>
+    <div class="hidden xl:flex lg:flex justify-center sm:justify-end items-center p-2 bg-gradient-to-b from-[#8D4374] to-[#796089] rounded-bl-[150px] sm:rounded-bl-[230px] w-full h-full">
+      <div class="h-52 w-52 sm:h-72 sm:w-72 rounded-full bg-gradient-to-tr from-[#8D4374] to-[#c19ed6] p-5">
         <img src={bannerimage} class="w-full h-full rounded-full object-cover border-8 border-white" alt="img" />
       </div>
     </div>
@@ -231,7 +231,7 @@ function Careerspage() {
             <div>
               <label class="text-gray-800 text-sm block mb-2">Your Name</label>
               <input type='text' placeholder='Enter Name'
-                class="w-full rounded-md py-2.5 px-4 border border-gray-300 text-sm outline-[#800080]" 
+                class="w-full rounded-md py-2.5 px-4 border border-gray-300 text-sm outline-[#8D4374]" 
                 onChange={(e) => {
                   setName(e.target.value);
                   setErrors((prev) => ({ ...prev, name: false }));
@@ -240,7 +240,7 @@ function Careerspage() {
             <div>
               <label class="text-gray-800 text-sm block mb-2">Your Email</label>
               <input type='email' placeholder='Email'
-                class="w-full rounded-md py-2.5 px-4 border border-gray-300 text-sm outline-[#800080]"
+                class="w-full rounded-md py-2.5 px-4 border border-gray-300 text-sm outline-[#8D4374]"
                 onChange={(e) => {
                   setemail(e.target.value);
                   setErrors((prev) => ({ ...prev, email: false }));
@@ -249,7 +249,7 @@ function Careerspage() {
             <div>
               <label class="text-gray-800 text-sm block mb-2">Your Number</label>
               <input type='number' placeholder='Phone No.'
-                class="w-full rounded-md py-2.5 px-4 border border-gray-300 text-sm outline-[#800080]" 
+                class="w-full rounded-md py-2.5 px-4 border border-gray-300 text-sm outline-[#8D4374]" 
                 onChange={(e) => {
                   setphonenumber(e.target.value);
                   setErrors((prev) => ({ ...prev, phonenumber: false }));
@@ -258,7 +258,7 @@ function Careerspage() {
             <div>
               <label class="text-gray-800 text-sm block mb-2">experience</label>
               <input type='number' placeholder='experience in years'
-                class="w-full rounded-md py-2.5 px-4 border border-gray-300 text-sm outline-[#800080]"
+                class="w-full rounded-md py-2.5 px-4 border border-gray-300 text-sm outline-[#8D4374]"
                 onChange={(e) => {
                   setexperience(e.target.value);
                   setErrors((prev) => ({ ...prev, experience: false }));
@@ -269,7 +269,7 @@ function Careerspage() {
             <div class="col-span-full">
               <label class="text-gray-800 text-sm block mb-2">Message</label>
               <textarea placeholder='Message' rows="6"
-                class="w-full rounded-md px-4 border border-gray-300 text-sm pt-3 outline-[#800080]"
+                class="w-full rounded-md px-4 border border-gray-300 text-sm pt-3 outline-[#8D4374]"
                 onChange={(e) => {
                   setmessage(e.target.value);
                   setErrors((prev) => ({ ...prev, message: false }));
@@ -353,7 +353,7 @@ function Careerspage() {
               <div>
               <button type='button'
             
-              class="text-white w-max bg-[#800080] hover:bg-blue-600 tracking-wide rounded-md text-sm px-6 py-3 mt-4"
+              class="text-white w-max bg-[#8D4374] hover:bg-blue-600 tracking-wide rounded-md text-sm px-6 py-3 mt-4"
               onClick={careersubmit}>
              
               submit
@@ -361,7 +361,7 @@ function Careerspage() {
             <a href='#' className='ml-2'>
             <button type='button'
             
-              class="text-white w-max bg-[#800080] hover:bg-blue-600 tracking-wide rounded-md text-sm px-6 py-3 mt-4"
+              class="text-white w-max bg-[#8D4374] hover:bg-blue-600 tracking-wide rounded-md text-sm px-6 py-3 mt-4"
               onClick={() => window.location.reload()}>
              
               clear

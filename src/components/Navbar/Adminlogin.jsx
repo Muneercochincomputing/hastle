@@ -129,7 +129,7 @@ function Adminlogin({ close }) {
           </div>
 
           <p 
-            className='text-[#800080] cursor-pointer'
+            className='text-[#8D4374] cursor-pointer'
             onClick={() => setShowDialog(true)}
           >
             Forgot password
@@ -138,7 +138,7 @@ function Adminlogin({ close }) {
           <div className="!mt-12">
             <button 
               type="button" 
-              className="w-full py-2.5 px-4 text-base font-semibold rounded-md text-white bg-[#800080] hover:bg-[#1e4272] focus:outline-none"
+              className="w-full py-2.5 px-4 text-base font-semibold rounded-md text-white bg-[#8D4374] hover:bg-[#1e4272] focus:outline-none"
               onClick={handleLogin}
             >
               Log in

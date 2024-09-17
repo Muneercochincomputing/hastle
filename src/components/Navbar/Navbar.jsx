@@ -39,58 +39,65 @@ const Navbar = ({ onScrollToSubscription }) => {
                 {/* Upper section for tablets and desktops */}
                 <div className="bg-white flex justify-between items-center px-4 py-2 sm:px-8 sm:py-4 rounded-full lg:flex hidden">
                     {/* Logo */}
-                    <Link to="/" className="font-bold text-2xl sm:text-3xl flex gap-2 items-center">
-                        <img src={Logo} alt='logo' className='w-16 h-8 sm:w-40 sm:h-[45px]' />
-                    </Link>
+                   
+    <Link to="/" className="font-bold text-2xl sm:text-3xl flex gap-2 items-center bg-red-500">
+        <img 
+            src={Logo} 
+            alt='logo' 
+            className='w-16 h-8 sm:w-40 sm:h-[55px] border-6 border-[#800080] shadow-bulge hover:shadow-xl transition-shadow duration-300 '
+        />
+    </Link>
+
+                    
 
                     {/* Navigation Links */}
                     <div className="hidden lg:flex xl:ml-40  gap-4">
-                        <Link to='/' className='font-bold text-[#800080] text-[17px] group'>
+                        <Link to='/' className='font-bold text-[#8D4374] text-[17px] group'>
                             HOME
                             <div className="bg-amber-500 h-[1px] w-0 group-hover:w-[50px] transition-all duration-500"></div>
                         </Link>
-                        <Link to="/about" className="font-bold text-[#800080] text-[17px] group">
+                        <Link to="/about" className="font-bold text-[#8D4374] text-[17px] group">
                             ABOUT US
                             <div className="bg-amber-500 h-[1px] w-0 group-hover:w-[80px] transition-all duration-500"></div>
                         </Link>
 
                         {/* OUR SERVICES with Dropdown */}
                         <div className="relative">
-                            <button onClick={toggleServicesDropdown} className="font-bold text-[#800080] text-[17px] flex items-center">
+                            <button onClick={toggleServicesDropdown} className="font-bold text-[#8D4374] text-[17px] flex items-center">
                                 OUR SERVICES
                             </button>
                             <div className="bg-amber-500 h-[1px] w-0 group-hover:w-[115px] transition-all duration-500"></div>
                             {isServicesOpen && (
-                                <div className="absolute left-0 mt-2 w-48 bg-[#800080] shadow-md rounded-md py-2 z-50">
-                                    <Link to='/service1' className='block px-4 py-2 text-white text-[15px] hover:bg-white hover:text-[#800080]'>Daily Support/Visiting Care Services</Link>
-                                    <Link to='/service2' className='block px-4 py-2 text-white text-[15px] hover:bg-white hover:text-[#800080]'>Staying Active & Engaged</Link>
-                                    <Link to='/service3' className='block px-4 py-2 text-white text-[15px] hover:bg-gray-200 hover:text-[#800080]'>Live-in Care</Link>
-                                    <Link to='/service4' className='block px-4 py-2 text-white text-[15px] hover:bg-gray-200 hover:text-[#800080]'>Specialised Care</Link>
+                                <div className="absolute left-0 mt-2 w-48 bg-[#8D4374] shadow-md rounded-md py-2 z-50">
+                                    <Link to='/service1' className='block px-4 py-2 text-white text-[15px] hover:bg-white hover:text-[#8D4374]'>Daily Support/Visiting Care Services</Link>
+                                    <Link to='/service2' className='block px-4 py-2 text-white text-[15px] hover:bg-white hover:text-[#8D4374]'>Staying Active & Engaged</Link>
+                                    <Link to='/service3' className='block px-4 py-2 text-white text-[15px] hover:bg-gray-200 hover:text-[#8D4374]'>Live-in Care</Link>
+                                    <Link to='/service4' className='block px-4 py-2 text-white text-[15px] hover:bg-gray-200 hover:text-[#8D4374]'>Specialised Care</Link>
                                 </div>
                             )}
                         </div>
 
-                        <Link to='/careerspage' className='font-bold text-[#800080] text-[17px] group'>
+                        <Link to='/careerspage' className='font-bold text-[#8D4374] text-[17px] group'>
                             CAREERS
                             <div className="bg-amber-500 h-[1px] w-0 group-hover:w-[70px] transition-all duration-500"></div>
                         </Link>
-                        <Link to='/blog' className='font-bold text-[#800080] text-[17px] group'>
+                        <Link to='/blog' className='font-bold text-[#8D4374] text-[17px] group'>
                             BLOGS
                             <div className="bg-amber-500 h-[1px] w-0 group-hover:w-[50px] transition-all duration-500"></div>
                         </Link>
-                        <Link to='/contactpage' className='font-bold text-[#800080] text-[17px] group'>
+                        <Link to='/contactpage' className='font-bold text-[#8D4374] text-[17px] group'>
                             CONTACT US
                             <div className="bg-amber-500 h-[1px] w-0 group-hover:w-[110px] transition-all duration-500"></div>
                         </Link>
-                        <div className='flex ml-20 p-2  md:hidden lg:hidden xl:flex border-solid border-[2px] border-white bg-[#800080] rounded-full'>     
+                        <div className='flex ml-20 p-2  md:hidden lg:hidden xl:flex border-solid border-[2px] border-white bg-[#8D4374] rounded-full'>     
                             <RiAdminLine className='w-[25px] text-white hover:cursor-pointer' onClick={handleAdminLogin} />
                         </div>
                     </div>
 
                     {/* Subscribe Button */}
-                    <button className="group relative min-h-[50px] w-40 overflow-hidden border border-white bg-[#800080] text-white shadow-2xl transition-all before:absolute before:left-0 before:top-0 before:h-0 before:w-1/4 before:bg-white before:duration-500 after:absolute after:bottom-0 after:right-0 after:h-0 after:w-1/4 after:bg-white after:duration-500 hover:text-[#800080] hover:bg-white hover:before:h-full hover:after:h-full rounded-full"
+                    <button className="group relative min-h-[50px] w-40 overflow-hidden border border-white bg-[#8D4374] text-white shadow-2xl transition-all before:absolute before:left-0 before:top-0 before:h-0 before:w-1/4 before:bg-white before:duration-500 after:absolute after:bottom-0 after:right-0 after:h-0 after:w-1/4 after:bg-white after:duration-500 hover:text-[#8D4374] hover:bg-white hover:before:h-full hover:after:h-full rounded-full"
                     onClick={onScrollToSubscription}>
-                        <span className="absolute bottom-0 left-0 right-0 top-0 z-10 flex h-full w-full items-center justify-center group-hover:text-[#800080]">Enuire Now</span>
+                        <span className="absolute bottom-0 left-0 right-0 top-0 z-10 flex h-full w-full items-center justify-center group-hover:text-[#8D4374]">Enuire Now</span>
                     </button>
                 </div>
 
@@ -99,7 +106,7 @@ const Navbar = ({ onScrollToSubscription }) => {
                     <Link to="/" className="font-bold text-xl flex items-center">
                         <img src={Logo} alt='logo' className='w-14 h-7' />
                     </Link>
-                    <button onClick={toggleMenu} className="text-[#800080]  ">
+                    <button onClick={toggleMenu} className="text-[#8D4374]  ">
                         {isMenuOpen ? <FaTimes size={24} /> : <FaCaretDown size={24} />}
                     </button>
                 </div>
@@ -107,25 +114,25 @@ const Navbar = ({ onScrollToSubscription }) => {
                 {/* Dropdown Menu for tablets and below */}
                 {isMenuOpen && (
                     <div className="lg:hidden bg-white shadow-md rounded-xl p-4 mt-2 absolute w-full z-30">
-                        <Link to='/' className='block py-2 text-[#800080] text-[17px] font-bold'>HOME</Link>
-                        <Link to='/about' className='block py-2 text-[#800080] text-[17px] font-bold'>ABOUT US</Link>
+                        <Link to='/' className='block py-2 text-[#8D4374] text-[17px] font-bold'>HOME</Link>
+                        <Link to='/about' className='block py-2 text-[#8D4374] text-[17px] font-bold'>ABOUT US</Link>
 
                         {/* OUR SERVICES with Submenu in Mobile */}
-                        <div className="block py-2 text-[#800080] text-[17px] font-bold flex justify-between items-center" onClick={toggleMobileServicesDropdown}>
+                        <div className="block py-2 text-[#8D4374] text-[17px] font-bold flex justify-between items-center" onClick={toggleMobileServicesDropdown}>
                             OUR SERVICES
                             {isMobileServicesOpen ? <FaAngleUp /> : <FaAngleDown />}
                         </div>
                         {isMobileServicesOpen && (
                             <div className="ml-4">
-                                <Link to='/service1' className='block py-2 text-[#800080] text-[15px]'>Daily Support/Visiting Care Services</Link>
-                                <Link to='/service2' className='block py-2 text-[#800080] text-[15px]'>Staying Active & Engaged</Link>
-                                <Link to='/service3' className='block py-2 text-[#800080] text-[15px]'>Live-in Care</Link>
-                                <Link to='/service4' className='block py-2 text-[#800080] text-[15px]'>Specialised Care</Link>
+                                <Link to='/service1' className='block py-2 text-[#8D4374] text-[15px]'>Daily Support/Visiting Care Services</Link>
+                                <Link to='/service2' className='block py-2 text-[#8D4374] text-[15px]'>Staying Active & Engaged</Link>
+                                <Link to='/service3' className='block py-2 text-[#8D4374] text-[15px]'>Live-in Care</Link>
+                                <Link to='/service4' className='block py-2 text-[#8D4374] text-[15px]'>Specialised Care</Link>
                             </div>
                         )}
-                        <Link to='/careers' className='block py-2 text-[#800080] text-[17px] font-bold'>CAREERS</Link>
-                        <Link to='/blog' className='block py-2 text-[#800080] text-[17px] font-bold'>BLOGS</Link>
-                        <Link to='/contact' className='block py-2 text-[#800080] text-[17px] font-bold'>CONTACT US</Link>
+                        <Link to='/careers' className='block py-2 text-[#8D4374] text-[17px] font-bold'>CAREERS</Link>
+                        <Link to='/blog' className='block py-2 text-[#8D4374] text-[17px] font-bold'>BLOGS</Link>
+                        <Link to='/contact' className='block py-2 text-[#8D4374] text-[17px] font-bold'>CONTACT US</Link>
                     </div>
                 )}
             </div>

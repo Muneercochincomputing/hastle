@@ -77,7 +77,7 @@ const AnimatedContainer = ({ onScrollToSubscription }) => {
             Outstanding, compassionate care<br/> personalized to your needs<br />
             </div>
       
-            <button  onClick={onScrollToSubscription} className={`group relative min-h-[30px] p-6 w-[100px] sm:w-[150px] md:w-[200px] lg:w-[300px] overflow-hidden border border-white bg-[#800080] text-white shadow-2xl transition-all before:absolute before:left-0 before:top-0 before:h-0 before:w-1/4 before:bg-white before:duration-500 after:absolute after:bottom-0 after:right-0 after:h-0 after:w-1/4 after:bg-white after:duration-500 hover:text-purple-500 hover:bg-white hover:before:h-full hover:after:h-full rounded-xl ml-[2px] md:ml-[20px] lg:ml-[70px] mt-10 px-20 ${textClass}`}>
+            <button  onClick={onScrollToSubscription} className={`group relative min-h-[30px] p-6 w-[100px] sm:w-[150px] md:w-[200px] lg:w-[300px] overflow-hidden border border-white bg-[#8D4374] text-white shadow-2xl transition-all before:absolute before:left-0 before:top-0 before:h-0 before:w-1/4 before:bg-white before:duration-500 after:absolute after:bottom-0 after:right-0 after:h-0 after:w-1/4 after:bg-white after:duration-500 hover:text-purple-500 hover:bg-white hover:before:h-full hover:after:h-full rounded-xl ml-[2px] md:ml-[20px] lg:ml-[70px] mt-10 px-20 ${textClass}`}>
               <span className="absolute bottom-0 left-0 right-0 top-0 z-10 flex h-full w-full items-center justify-center group-hover:text-purple-500 text-[10px] sm:text-[12px] md:text-[16px] lg:text-[20px]  ">Schedule a Free Consultation</span>
             </button>
           </div>
@@ -87,21 +87,21 @@ const AnimatedContainer = ({ onScrollToSubscription }) => {
           <div className='grid grid-cols-1 sm:grid-cols-3 gap-10 sm:w-full sm:px-20 px-5 '>
             <div className='flex flex-col items-center text-center sm:text-[25px] text-[15px] font-bold text-gray-500'>
               <img src={whyimage1} className='w-40 h-40 mb-4'/>
-             <p className='text-[#800080] '>We are different</p> 
+             <p className='text-[#8D4374] '>We are different</p> 
               <p className='text-sm font-normal p-4 '>
               Our award-winning team is not just about providing care; it's about creating a family atmosphere. Our care professionals are carefully chosen for their warmth, compassion, and dedication. They will become a trusted friend, someone to chat with, share stories with, and even help with those little things that make a big difference
               </p>
             </div>
             <div className='flex flex-col items-center text-center  sm:text-[25px] text-[15px] font-bold text-gray-500'>
               <img src={whyimage2} className='w-40 h-40 mb-4'/>
-              <p className='text-[#800080]'>Warm Hands, Kind Hearts</p>
+              <p className='text-[#8D4374]'>Warm Hands, Kind Hearts</p>
               <p className='text-sm font-normal p-4'>
               We listen to your needs and create a care plan that is unique to you, adapting as your needs change. They will treat you with dignity and become trusted companions, ready to help with daily tasks or simply share a conversation
               </p>
             </div>
             <div className='flex flex-col items-center text-center sm:text-[25px] text-[15px] font-bold text-gray-500'>
               <img src={whyimage3} className='w-40 h-40 mb-4'/>
-             <p className='text-[#800080]'> We are Always Learning</p>
+             <p className='text-[#8D4374]'> We are Always Learning</p>
               <p className='text-sm font-normal p-4'>
                 We constantly improve our services and knowledge to provide the best possible care.
               </p>

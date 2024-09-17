@@ -169,25 +169,25 @@ function Servicespage4() {
           </p>
         </h1>
       </div>
-      <div ><h1 className='text-center  text-[30px] text-[#800080] xl:mt-10 '>Specialised Care</h1>
+      <div ><h1 className='text-center  text-[30px] text-[#8D4374] xl:mt-10 '>Specialised Care</h1>
       <p className='text-center mb-10'> We provide tailored care to meet the unique needs of each individual, shaped by their specific conditions or situations</p></div>
       <div className='xl:w-[100%] h-auto xl:h-[2300px] lg-[2300px] bg-gray-300/20 mb-10  pb-10  shadow-xl'>
       <div className='w-full xl:h-[400px]  grid lg:grid-cols-3 md:grid-cols-2 mb-10 '>
         <div className='w-[80%] xl:h-[95%] bg-white rounded-3xl border-solid border-[0px] border-black  ml-10  mt-10'>
           <img src={service4image} className='xl:h-[300px] object-fill h-[200px] w-full  xl:w-full  rounded-t-3xl shadow-sm'/>
-          <h1 className='text-[20px] text-[#800080] font-bold text-center
+          <h1 className='text-[20px] text-[#8D4374] font-bold text-center
           '>Dementia Care</h1>
           <p className='text-center font-light xl:px-2 px-2 pb-8'>Our caregivers are trained to support clients with dementia, ensuring their safety and comfort</p>
         </div>
         <div className='w-[80%] xl:h-[95%]  bg-white rounded-3xl border-solid border-[0px] border-black ml-10 mt-10'>
         <img src={service10image} className='   xl:h-[300px] object-cover w-full  h-[200px] rounded-t-3xl shadow-sm'/>
-          <h1 className='text-[20px] text-[#800080] font-bold text-center
+          <h1 className='text-[20px] text-[#8D4374] font-bold text-center
           '>Physical Disabilities Care</h1>
           <p className='text-center font-light xl:px-2 px-2 pb-8'>We provide assistance to clients with physical disabilities to help them maintain their independence and quality of life in socity.</p>
         </div>
         <div className='w-[80%] xl:h-[95%]  bg-white rounded-3xl  border-solid border-[0px] border-black   ml-10 mt-10'>
         <img src={ service6image} className='h-[300px] w-full object-fill  rounded-t-3xl shadow-sm'/>
-          <h1 className='text-[20px] text-[#800080] xl-px-10 font-bold text-center
+          <h1 className='text-[20px] text-[#8D4374] xl-px-10 font-bold text-center
           '>Parkinson’s Disease Care</h1>
           <p className='text-center font-light xl:px-4 px-2 pb-8'>Our team offers specialized care for clients with Parkinson’s disease, helping manage symptoms and improve daily living</p>
         </div>
@@ -198,19 +198,19 @@ function Servicespage4() {
   <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-3 gap-5 xl:gap-6 xl:w-[100%] mx-auto xl:mt-40 xl:mb-20'>
     <div className='flex flex-col items-center'>
       <img src={aiimage7} className='w-[100%] xl:h-[450px] sm:w-[70%] md:w-[80%] xl:mt-[28px]' alt='Caring' />
-      <h1 className='text-[16px] sm:text-[18px] md:text-[20px] text-[#800080] font-bold text-center mt-2'>
+      <h1 className='text-[16px] sm:text-[18px] md:text-[20px] text-[#8D4374] font-bold text-center mt-2'>
         Caring
       </h1>
     </div>
     <div className='flex flex-col items-center'>
       <img src={aiimage8} className='w-[100%] xl:h-[450px] sm:w-[70%] md:w-[80%] xl:mt-[28px]' alt='Supportive' />
-      <h1 className='text-[16px] sm:text-[18px] md:text-[20px] text-[#800080] font-bold text-center mt-2'>
+      <h1 className='text-[16px] sm:text-[18px] md:text-[20px] text-[#8D4374] font-bold text-center mt-2'>
         Supportive
       </h1>
     </div>
     <div className='flex flex-col items-center'>
       <img src={aiimage9} className='w-[100%] xl:h-[450px] sm:w-[70%] md:w-[80%] xl:mt-[28px]' alt='Personalized' />
-      <h1 className='text-[16px] sm:text-[18px] md:text-[20px] text-[#800080] font-bold text-center mt-2'>
+      <h1 className='text-[16px] sm:text-[18px] md:text-[20px] text-[#8D4374] font-bold text-center mt-2'>
         Personalized
       </h1>
     </div>
@@ -225,21 +225,21 @@ function Servicespage4() {
   
 <div className='w-[80%] xl:h-[95%] bg-white rounded-3xl border-solid border-[0px] border-black  ml-10  mt-10'>
           <img src={service8image} className='xl:h-[300px] object-fill h-[200px] w-full bg-red-500 xl:w-full  rounded-t-3xl shadow-sm'/>
-          <h1 className='text-[20px] text-[#800080] font-bold text-center
+          <h1 className='text-[20px] text-[#8D4374] font-bold text-center
           '>Arthritis Care</h1>
           <p className='text-center font-light px-4 pb-8'>We assist clients with arthritis in managing pain and maintaining mobility through tailored care plans.</p>
         </div>
   
         <div className='w-[80%] xl:h-[95%] bg-white rounded-3xl border-solid border-[0px] border-black  ml-10  mt-10'>
           <img src={service9image} className='xl:h-[300px] object-fill h-[200px] w-full bg-red-500 xl:w-full  rounded-t-3xl shadow-sm'/>
-          <h1 className='text-[20px] text-[#800080] font-bold text-center
+          <h1 className='text-[20px] text-[#8D4374] font-bold text-center
           '>Multiple Sclerosis Care</h1>
           <p className='text-center font-light xl:px-4 pb-8'>Our caregivers provide support for clients with multiple sclerosis, focusing on managing symptoms and improving their quality of life.</p>
         </div>
   
         <div className='w-[80%] xl:h-[95%] bg-white rounded-3xl border-solid border-[0px] border-black  ml-10  mt-10'>
           <img src={demservice2 } className='xl:h-[300px] object-fill h-[200px] w-full bg-red-500 xl:w-full  rounded-t-3xl shadow-sm'/>
-          <h1 className='text-[20px] text-[#800080] font-bold text-center
+          <h1 className='text-[20px] text-[#8D4374] font-bold text-center
           '>Palliative and End of Life Care</h1>
           <p className='text-center font-light xl:px-4 pb-8'>We offer compassionate care for clients in the final stages of life, ensuring their comfort and dignity</p>
         </div>
@@ -257,21 +257,21 @@ function Servicespage4() {
   
 <div className='w-[80%] xl:h-[95%] bg-white rounded-3xl border-solid border-[0px] border-black  ml-10  mt-10'>
           <img src={nutritionimage} className='xl:h-[300px] object-fill h-[200px] w-full bg-red-500 xl:w-full  rounded-t-3xl shadow-sm'/>
-          <h1 className='text-[20px] text-[#800080] font-bold text-center
+          <h1 className='text-[20px] text-[#8D4374] font-bold text-center
           '>Stroke Care</h1>
           <p className='text-center font-light px-4 pb-8'>Our team provides rehabilitation and support for clients recovering from a stroke, helping them regain their independence.</p>
         </div>
   
         <div className='w-[80%] xl:h-[95%] bg-white rounded-3xl border-solid border-[0px] border-black  ml-10  mt-10'>
           <img src={overnights} className='xl:h-[300px] object-fill h-[200px] w-full bg-red-500 xl:w-full  rounded-t-3xl shadow-sm'/>
-          <h1 className='text-[20px] text-[#800080] font-bold text-center
+          <h1 className='text-[20px] text-[#8D4374] font-bold text-center
           '>Diabetes Care</h1>
           <p className='text-center font-light xl:px-4 pb-8'>We offer assistance with diabetes management, including monitoring blood sugar levels and providing dietary guidance</p>
         </div>
   
         <div className='w-[80%] xl:h-[95%] bg-white rounded-3xl border-solid border-[0px] border-black  ml-10  mt-10'>
           <img src={servicelist6} className='xl:h-[300px] object-fill h-[200px] w-full bg-red-500 xl:w-full  rounded-t-3xl shadow-sm'/>
-          <h1 className='text-[20px] text-[#800080] font-bold text-center
+          <h1 className='text-[20px] text-[#8D4374] font-bold text-center
           '>Rehabilitation Care</h1>
           <p className='text-center font-light xl:px-4 pb-8'>We support clients in their recovery from surgeries or injuries, helping them regain strength and mobility</p>
         </div>
