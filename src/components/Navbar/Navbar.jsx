@@ -130,9 +130,9 @@ const Navbar = ({ onScrollToSubscription }) => {
                                 <Link to='/service4' className='block py-2 text-[#8D4374] text-[15px]'>Specialised Care</Link>
                             </div>
                         )}
-                        <Link to='/careers' className='block py-2 text-[#8D4374] text-[17px] font-bold'>CAREERS</Link>
+                        <Link to='/careerspage' className='block py-2 text-[#8D4374] text-[17px] font-bold'>CAREERS</Link>
                         <Link to='/blog' className='block py-2 text-[#8D4374] text-[17px] font-bold'>BLOGS</Link>
-                        <Link to='/contact' className='block py-2 text-[#8D4374] text-[17px] font-bold'>CONTACT US</Link>
+                        <Link to='/contactpage' className='block py-2 text-[#8D4374] text-[17px] font-bold'>CONTACT US</Link>
                     </div>
                 )}
             </div>
