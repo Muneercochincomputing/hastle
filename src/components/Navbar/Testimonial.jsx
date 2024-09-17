@@ -1,5 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import testimoniallogo from '../../assets/testimoniallogo.png';
+
+// Define responsive items per page
+const ITEMS_PER_PAGE_DESKTOP = 3;
+const ITEMS_PER_PAGE_MOBILE = 1;
 
 const testimonials = [
   {
@@ -41,75 +45,87 @@ const testimonials = [
   },
 ];
 
-const ITEMS_PER_PAGE = 3;
-
 const Testimonial = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [itemsPerPage, setItemsPerPage] = useState(
+    window.innerWidth >= 1024 ? ITEMS_PER_PAGE_DESKTOP : ITEMS_PER_PAGE_MOBILE
+  );
+
+  useEffect(() => {
+    const handleResize = () => {
+      setItemsPerPage(window.innerWidth >= 1024 ? ITEMS_PER_PAGE_DESKTOP : ITEMS_PER_PAGE_MOBILE);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) =>
-      (prevIndex + ITEMS_PER_PAGE) >= testimonials.length
+      (prevIndex + itemsPerPage) >= testimonials.length
         ? 0
-        : prevIndex + ITEMS_PER_PAGE
+        : prevIndex + itemsPerPage
     );
   };
 
   const prevSlide = () => {
     setCurrentIndex((prevIndex) =>
-      (prevIndex - ITEMS_PER_PAGE) < 0
-        ? testimonials.length - ITEMS_PER_PAGE
-        : prevIndex - ITEMS_PER_PAGE
+      (prevIndex - itemsPerPage) < 0
+        ? testimonials.length - itemsPerPage
+        : prevIndex - itemsPerPage
     );
   };
 
   const visibleTestimonials = testimonials.slice(
     currentIndex,
-    currentIndex + ITEMS_PER_PAGE
+    currentIndex + itemsPerPage
   );
 
   return (
     <>
-      <div className='text-center max-w-[600px] mx-auto '>
+      <div className='text-center max-w-[600px] mx-auto'>
         <img src={testimoniallogo} className='ml-10' alt='Testimonial Logo' />
         <p className='text-sm text-primary'>What our customers are saying</p>
         <h1 className='text-3xl font-bold'>Testimonial</h1>
         <p className='text-xs text-gray-400'>Good products have more qualities</p>
       </div>
 
-      <div className="relative max-w-6xl mx-auto p-4  xl:mb-10 xl:pb-10">
+      <div className="relative max-w-6xl mx-auto p-4 xl:mb-10 xl:pb-10 overflow-hidden">
         <div className="relative overflow-hidden mb-[2px]">
-          <div className="flex transition-transform duration-500 ease-in-out">
+          <div className={'flex transition-transform duration-500 ease-in-out'}>
             {visibleTestimonials.map((testimonial) => (
-              <div key={testimonial.id} className="flex-none w-full lg:w-1/3 p-4">
+              <div key={testimonial.id} className={`flex-none ${itemsPerPage === 1 ? 'inline-block' : 'w-full lg:w-1/3'} p-4`}>
                 <blockquote className="bg-white p-6 rounded-lg shadow-lg">
                   <img
                     src={testimonial.img}
                     alt={`Testimonial from ${testimonial.name}`}
                     className="w-16 h-16 rounded-full mx-auto mb-4"
                   />
-                  <p className="text-[10px] lg:text-[12px] italic">{testimonial.text}</p>
+                  <p className={'text-xs w-[250px] lg:text-sm italic' }>
+                    {testimonial.text}
+                  </p>
                   {testimonial.space}
-                  <footer className="mt-4 text-right font-bold text-sm lg:text-base">
-                   
-                   
+                  <footer className="mt-4 text-right font-bold text-xs lg:text-sm">
                     – {testimonial.name}
                   </footer>
                 </blockquote>
-             
               </div>
             ))}
           </div>
         </div>
-        <div className='w-full, h-[20px] xl:hidden'></div>
-        <div className="absolute inset-x-0 bottom-0 m flex justify-center items-center space-x-8    xl:mb-0  ">
+
+        <div className='w-full h-[20px] xl:hidden'></div>
+
+        {/* Navigation buttons */}
+        <div className="absolute inset-x-0 bottom-0 flex justify-center items-center space-x-8">
           <button
-            className="text-white bg-gray-800 px-4  py-2 rounded-full transform transition-transform duration-300 hover:scale-110 "
+            className="text-white bg-gray-800 px-4 py-2 rounded-full transform transition-transform duration-300 hover:scale-110"
             onClick={prevSlide}
           >
             &lt;
           </button>
           <button
-            className="text-white bg-gray-800 px-4 sm:mb-[20px] lg:mb-[0px]  py-2 rounded-full transform transition-transform duration-300 hover:scale-110"
+            className="text-white bg-gray-800 px-4 py-2 rounded-full transform transition-transform duration-300 hover:scale-110"
             onClick={nextSlide}
           >
             &gt;
@@ -121,4 +137,3 @@ const Testimonial = () => {
 };
 
 export default Testimonial;
-

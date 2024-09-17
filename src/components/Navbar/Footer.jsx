@@ -62,7 +62,7 @@ const Footer = () => {
             </h6>
             <div className="flex flex-col items-center justify-center p-4 ">
               <div className="lg:mr-20">
-              <Link to="/privacypolicy" className="p-2 px-4 group mb-4 relative z-10 ">
+              <Link to="/privacypolicy" className="p-2 xl:px-4 group sm:mb-4 lg:mb-0 xl:mb-4  relative z-10 ">
     Privacy Policy
     <div className="bg-amber-500 h-[2px] w-0 group-hover:w-[130px] transition-all duration-500"></div>
   </Link>
