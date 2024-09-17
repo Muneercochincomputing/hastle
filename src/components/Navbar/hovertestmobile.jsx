@@ -77,11 +77,11 @@ const AnimatedContainermob = ({ onScrollToSubscription }) => {
         <div className='absolute mt-[400px]'>
 
         <div
-          className={`text-white ml-1 text-[24px] sm:text-[24px] md:text-[20px] font-bold transition-opacity duration-[0.9s] ease-out ${textClass}`}
+          className={`text-white  text-[22px] sm:text-[24px] md:text-[20px] font-bold transition-opacity duration-[0.9s] left-0 ease-out ${textClass}`}
         >
-        Outstanding, compassionate care<br/><span className='ml-1'>personalized to your needs</span> <br />
+        Outstanding,compassionate care<br/><span className='ml-1'>personalized to your needs</span> <br />
         </div>
-        <button className={`${textClass} group mt-4 px-2 py-1 ml-2 w-[180px] md:w-[150px] lg:w-[200px] border border-white bg-purple-500 text-white shadow-2xl transition-all hover:text-purple-500 hover:bg-white rounded-md`} onClick={onScrollToSubscription}>
+        <button className={`${textClass} group mt-4 px-2 py-1 ml-2 w-[180px] md:w-[150px] lg:w-[200px] border border-white bg-[#8D4374] text-white shadow-2xl transition-all hover:text-purple-500 hover:bg-white rounded-md`} onClick={onScrollToSubscription}>
             <span className="font-semibold text-[14px] md:text-[12px] lg:text-[16px]">
               Schedule <br/> Free Consultation
             </span>

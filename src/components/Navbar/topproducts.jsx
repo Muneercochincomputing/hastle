@@ -22,7 +22,7 @@ function Topproducts() {
             id:1,
             src:image2,
             tittle:'Medical Care',
-            Description: "Help with medication, appts, catheter, stoma care, medication management, and doctor visit assistance."
+            Description: "Help with medication, appointments, catheter, stoma care, medication management, and doctor visit assistance."
            
         },
         {
