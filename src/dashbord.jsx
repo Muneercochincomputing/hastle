@@ -15,7 +15,7 @@ function Dashbord() {
   const url = import.meta.env.VITE_HOST_URL
 
 
-   useEffect(() => {
+  
   const fetchData = async () => {
     try {
       const [queriesResponse, careersResponse, subscribersResponse, contactsResponse] = await Promise.all([
@@ -34,16 +34,9 @@ function Dashbord() {
   };
 
   // Initial fetch
-  fetchData();
 
-  // Polling every 10 seconds (10000ms)
-  const intervalId = setInterval(() => {
-    fetchData();
-  }, 10000);
 
-  // Cleanup interval on component unmount
-  return () => clearInterval(intervalId);
-}, []);
+
 
   const sessionId = sessionStorage.getItem('sessionId');
 
