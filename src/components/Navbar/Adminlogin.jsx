@@ -36,7 +36,7 @@ function Adminlogin({ close }) {
         if (admin) {
           alert('Login successful');
           sessionStorage.setItem('sessionId', adminid);
-          navigate('/dashbord');
+          navigate('/dasbord');
         } else {
           alert('Invalid admin ID or password.');
         }
