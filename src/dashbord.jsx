@@ -14,26 +14,36 @@ function Dashbord() {
 
   const url = import.meta.env.VITE_HOST_URL
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const [queriesResponse, careersResponse, subscribersResponse, contactsResponse] = await Promise.all([
-          axios.get(`${url}/Queries/`),
-          axios.get(`${url}/careers/`),
-          axios.get(`${url}/subscribers/`),
-          axios.get(`${url}/contacts/`)
-        ]);
-        setQueries(queriesResponse.data);
-        setCareers(careersResponse.data);
-        setSubscribers(subscribersResponse.data);
-        setContacts(contactsResponse.data);
-      } catch (error) {
-        console.error("There was an error fetching the data!", error);
-      }
-    };
 
+   useEffect(() => {
+  const fetchData = async () => {
+    try {
+      const [queriesResponse, careersResponse, subscribersResponse, contactsResponse] = await Promise.all([
+        axios.get(`${url}/Queries/`),
+        axios.get(`${url}/careers/`),
+        axios.get(`${url}/subscribers/`),
+        axios.get(`${url}/contacts/`)
+      ]);
+      setQueries(queriesResponse.data);
+      setCareers(careersResponse.data);
+      setSubscribers(subscribersResponse.data);
+      setContacts(contactsResponse.data);
+    } catch (error) {
+      console.error("There was an error fetching the data!", error);
+    }
+  };
+
+  // Initial fetch
+  fetchData();
+
+  // Polling every 10 seconds (10000ms)
+  const intervalId = setInterval(() => {
     fetchData();
-  }, []);
+  }, 10000);
+
+  // Cleanup interval on component unmount
+  return () => clearInterval(intervalId);
+}, []);
 
   const sessionId = sessionStorage.getItem('sessionId');
 
