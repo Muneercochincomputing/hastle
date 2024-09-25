@@ -5,6 +5,9 @@ import Navbar from './components/Navbar/Navbar';
 import imagenew from './assets/contactformlast.png'
 
 function Brouchurecontacts() {
+
+  const url = import.meta.env.VITE_HOST_URL
+  
   const [formData, setFormData] = useState({
     name: '',
     email: '',
