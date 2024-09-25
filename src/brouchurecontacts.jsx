@@ -36,7 +36,7 @@ function Brouchurecontacts() {
   // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const localHostUrl = 'http://localhost:8082/data/'; // Local host URL for submission
+    const localHostUrl = `${url}/data/`; // Local host URL for submission
     const brochureLink = 'https://drive.google.com/file/d/1aKeDJW7ieJN7NtpumL9J1Pkh4NYXszBK/view';
   
     try {
