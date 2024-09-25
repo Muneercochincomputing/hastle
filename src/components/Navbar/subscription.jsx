@@ -39,7 +39,7 @@ const Subscription = forwardRef((props, ref) => {
 
   return (
     <div
-      className='w-full h-[230px] bg-primary backdrop-blur-sm py-10 mb-20'
+      className='w-full h-[230px] bg-primary backdrop-blur-sm py-10  mt-10'
       data-aos="fade-right"
       ref={ref}
     >

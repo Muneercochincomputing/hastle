@@ -1,69 +1,34 @@
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
-
-import about from '../../assets/aboutimg.jpeg';
-
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 
-function Product() {
+const Product = ({ pageIdentifier }) => {
   useEffect(() => {
-    AOS.init({
-      offset: 100,
-      duration: 800,
-      easing: 'ease-in-sine',
-      delay: 100
-    });
-  }, []);
+    // Create script element
+    const script = document.createElement('script');
+    script.src = `https://api.homecare.co.uk/assets/js/review_widget_carousel.js?displaydiv=tgrcw_0059ab4d_${pageIdentifier}&displayid=65432232653&displaycount=50&displaylogo=true&displayscore=true&displaybackground=true&displayratingreview=true&displaylink=true&displayminoverallrating=0&linksnofollow=false&displayfontsize=large`;
+    script.async = true;
+    script.className = 'tg-review-carousel-widget';
 
-  const productData = [
-    {
-      id: 1,
-     aosdelay: "200"
-    },
-  ];
+    // Append script to body
+    document.body.appendChild(script);
 
-  return (
-    <div>
-      <div className='container'>
-        {/* header section */}
-        <div className='text-center max-w-[400px] mx-auto'>
-          <p className='text-primary text-[30px] sm:text-[40px] md:text-[50px] lg:text-[60px] mt-20 '>
-            About Us
-          </p>
-        </div>
+    return () => {
+      // Cleanup: Remove the script when the component unmounts
+      document.body.removeChild(script);
+      console.log(`Removing review widget script for ${pageIdentifier}`);
+    };
+  }, [pageIdentifier]); // Run effect when pageIdentifier changes
 
-        <p className='text-gray-400  text-[16px] sm:text-[20px] w-full p-2 '>
-          At Holistic Care Services, we are dedicated to providing high-quality, personalized home care for the elderly in Liverpool. Our team of experienced caregivers are committed to ensuring the well-being and comfort of your loved ones.
-        </p>
-
-        {/* body section */}
-        <div className='w-full text-center mb-10'>
-          <Link to='/about'>
-          <button className="text-red px-30 mx-auto sm:rounded-xl rounded-2xl mb-10 hover:before:bg-red border-red-500 relative h-[30px] overflow-hidden border border-[#8D4374] bg-white px-3 text-[#8D4374] shadow-2xl transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-[#8D4374] before:transition-all before:duration-500 hover:text-white hover:shadow-[#8D4374] hover:before:left-0 hover:before:w-full">
-            <span className="relative z-10 text-[20px] ">Learn More</span>
-          </button>
-          </Link>
-          <div className='grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 place-items-center gap-5'>
-            {/* card section */}
-            {productData.map((data) => (
-              <div data-aos='fade-up' data-aos-delay={data.aosdelay} key={data.id}>
-                <div className='p-2'>
-                  <img src={about} className='shadow-bulge  sm:h-[600px] sm:w-[1200px] sm:object-cover object-contain rounded-md' alt={data.title} />
-                  <div>
-                    <h1 className='font-bold text-[18px] mt-4'></h1>
-                    <p className='text-sm text-grey-600'></p>
-                    <div className='flex items-center gap-1'></div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
+  return(
+    <div className='px-20 py-10 mt-10 shadow-bulge rounded-none'>
+      <div className="tg-review-carousel-widget-container" id={`tgrcw_0059ab4d_${pageIdentifier}`}></div>
     </div>
-  );
-}
+  
+  
+
+)};
+
 
 export default Product;

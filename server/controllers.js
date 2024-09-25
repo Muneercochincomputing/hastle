@@ -6,7 +6,7 @@ const Careers = require('./models/careers');
 const Contacts = require('./models/contacts');
 const Subscribers = require('./models/subscribers');
 const Query = require('./models/querys');
-
+const Brouchure = require('./models/brouchure')
 
 
 // Add Career
@@ -19,6 +19,10 @@ const addCareers = async (req, res) => {
         res.status(400).send(error.message);
     }
 };
+
+
+
+
 
 // Get Careers
 const getCareers = async (req, res) => {
@@ -124,6 +128,58 @@ const getSubscribers = async (req, res) => {
         res.status(400).send(error.message);
     }
 };
+
+
+
+// Add Subscriber
+const addBrouchure = async (req, res) => {
+    try {
+        const data = req.body;
+        const docRef = await addDoc(collection(db, 'Brouchure'), data);
+        res.send('contact added successfully');
+    } catch (error) {
+        res.status(400).send(error.message);
+    }
+};
+
+// Get Subscribers
+const getBrouchure = async (req, res) => {
+    try {
+        const subscribersCollection = collection(db, 'Brouchure');
+        const subscribersSnapshot = await getDocs(subscribersCollection);
+        const subscribersArray = [];
+
+        if (subscribersSnapshot.empty) {
+            res.status(404).send('No Brouchure downloaded found');
+        } else {
+            subscribersSnapshot.forEach(doc => {
+                const subscriber = doc.data();
+                const subscriberData = new Brouchure(
+                    subscriber.name,
+                    subscriber.email,
+                    subscriber.phonenumber
+
+
+
+
+                );
+                subscribersArray.push(subscriberData);
+            });
+            res.status(200).send(subscribersArray);
+        }
+    } catch (error) {
+        res.status(400).send(error.message);
+    }
+};
+
+
+
+
+
+
+
+
+
 
 // Add Query
 const addquery = async (req, res) => {
@@ -233,5 +289,7 @@ module.exports = {
     addquery,
     getquery,
     updateAdmin,
-    getAdmin
+    getAdmin,
+    addBrouchure,
+    getBrouchure
 };

@@ -138,7 +138,7 @@ function Adminlogin({ close }) {
           <div className="!mt-12">
             <button 
               type="button" 
-              className="w-full py-2.5 px-4 text-base font-semibold rounded-md text-white bg-[#8D4374] hover:bg-[#1e4272] focus:outline-none"
+              className="w-full py-2.5 px-4 text-base font-semibold rounded-md text-white bg-[#a43579] hover:bg-[#1e4272] focus:outline-none"
               onClick={handleLogin}
             >
               Log in

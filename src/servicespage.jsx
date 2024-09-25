@@ -12,7 +12,8 @@ import servicelist4 from './assets/servicelists3.jpeg'
 import servicelist5 from './assets/servicelisst4.jpeg'
 import servicelist6 from './assets/absnew.jpeg'
 import nutritionimage from './assets/nutritionimage.jpeg'
-import overnightcare from './assets/overnightcare.jpeg'
+import hydration from './assets/IMG_5706 .jpg'
+import overnightcare from './assets/IMG_5819 .jpg'
 import overnights from './assets/overnights.jpeg'
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Navbar/Footer';
@@ -160,7 +161,7 @@ function Servicespage() {
       </div>
       <div ><h1 className='text-center  text-[30px] text-[#8D4374] xl:mt-10 '>Daily Support/Visiting Care Services</h1>
       <p className='text-center mb-10'>We offers a variety of customized visiting care services tailored to provide our clients and their families with the right choices and more possibilities while ensuring they oversee their care</p></div>
-      <div className='xl:w-[100%] h-auto xl:h-[1700px] lg-[1700px] bg-gray-300/20 mb-10  pb-10  shadow-xl'>
+      <div className='xl:w-[100%] h-auto xl:h-[2200px] lg-[2200px] bg-gray-300/20 mb-10  pb-10  shadow-xl'>
       <div className='w-full xl:h-[400px]  grid lg:grid-cols-3 md:grid-cols-2 mb-10 '>
         <div className='w-[80%] xl:h-[95%] bg-white rounded-3xl border-solid border-[0px] border-black  ml-10  mt-10'>
           <img src={overnightcare} className='xl:h-[300px] object-fill h-[200px] w-full  xl:w-full  rounded-t-3xl shadow-sm'/>
@@ -183,7 +184,42 @@ function Servicespage() {
        
        
       </div>
-      <div className='w-full xl:px-0'>
+
+
+
+
+
+<div className='w-full xl:h-[400px] grid gap-6 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 mt-20'>
+  
+<div className='w-[80%] xl:h-[95%] bg-white rounded-3xl border-solid border-[0px] border-black  ml-10  mt-10'>
+          <img src={hydration} className='xl:h-[300px] object-fill h-[200px] w-full bg-red-500 xl:w-full  rounded-t-3xl shadow-sm'/>
+          <h1 className='text-[20px] text-[#8D4374] font-bold text-center
+          '>Nutrition and Hydration</h1>
+          <p className='text-center font-light px-4 pb-8'>Led by Dr. Kunbi Taiwo, our team understands the importance of good nutrition and hydration. We assist with meal planning and preparation to ensure our clients receive balanced and healthy meals.</p>
+        </div>
+  
+        <div className='w-[80%] xl:h-[95%] bg-white rounded-3xl border-solid border-[0px] border-black  ml-10  mt-10'>
+          <img src={overnights} className='xl:h-[300px] object-fill h-[200px] w-full bg-red-500 xl:w-full  rounded-t-3xl shadow-sm'/>
+          <h1 className='text-[20px] text-[#8D4374] font-bold text-center
+          '>Overnight Care</h1>
+          <p className='text-center font-light xl:px-4 pb-8'>Our team provides support during the night, offering reassurance and assistance to ensure a safe and restful night’s sleep for our clients.</p>
+        </div>
+  
+        <div className='w-[80%] xl:h-[95%] bg-white rounded-3xl border-solid border-[0px] border-black  ml-10  mt-10'>
+          <img src={servicelist6} className='xl:h-[300px] object-fill h-[200px] w-full bg-red-500 xl:w-full  rounded-t-3xl shadow-sm'/>
+          <h1 className='text-[20px] text-[#8D4374] font-bold text-center
+          '>Respite Care</h1>
+          <p className='text-center font-light xl:px-4 pb-8'>We offer temporary relief for primary caregivers, allowing them to rest and recharge while we take care of their loved ones.</p>
+        </div>
+        <div className='w-[80%] xl:h-[95%] bg-white rounded-3xl border-solid border-[0px] border-black  ml-10  mt-10'>
+          <img src={nutritionimage} className='xl:h-[300px] object-fill h-[200px] w-full bg-red-500 xl:w-full  rounded-t-3xl shadow-sm'/>
+          <h1 className='text-[20px] text-[#8D4374] font-bold text-center
+          '>Outings& Activities</h1>
+          <p className='text-center font-light xl:px-4 pb-8'> Our caregivers assist with social activities, shopping trips, and appointments to keep our clients socially active and engaged.</p>
+        </div>
+
+</div>
+<div className='w-full xl:px-0 lg:mt-[700px]'>
   <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-3 gap-5 xl:gap-6 xl:w-[100%] mx-auto xl:mt-40 xl:mb-20'>
     <div className='flex flex-col items-center'>
       <img src={pngimage} className='w-[100%] xl:h-[450px] sm:w-[70%] md:w-[80%] xl:mt-[28px]' alt='Caring' />
@@ -206,36 +242,8 @@ function Servicespage() {
   </div>
 </div>
 
-
-
-
-
-<div className='w-full xl:h-[400px] grid gap-6 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 mt-10'>
-  
-<div className='w-[80%] xl:h-[95%] bg-white rounded-3xl border-solid border-[0px] border-black  ml-10  mt-10'>
-          <img src={nutritionimage} className='xl:h-[300px] object-fill h-[200px] w-full bg-red-500 xl:w-full  rounded-t-3xl shadow-sm'/>
-          <h1 className='text-[20px] text-[#8D4374] font-bold text-center
-          '>Nutrition and Hydration</h1>
-          <p className='text-center font-light px-4 pb-8'>Led by Dr. Kunbi Taiwo, our team understands the importance of good nutrition and hydration. We assist with meal planning and preparation to ensure our clients receive balanced and healthy meals.</p>
-        </div>
-  
-        <div className='w-[80%] xl:h-[95%] bg-white rounded-3xl border-solid border-[0px] border-black  ml-10  mt-10'>
-          <img src={overnights} className='xl:h-[300px] object-fill h-[200px] w-full bg-red-500 xl:w-full  rounded-t-3xl shadow-sm'/>
-          <h1 className='text-[20px] text-[#8D4374] font-bold text-center
-          '>Overnight Care</h1>
-          <p className='text-center font-light xl:px-4 pb-8'>Our team provides support during the night, offering reassurance and assistance to ensure a safe and restful night’s sleep for our clients.</p>
-        </div>
-  
-        <div className='w-[80%] xl:h-[95%] bg-white rounded-3xl border-solid border-[0px] border-black  ml-10  mt-10'>
-          <img src={servicelist6} className='xl:h-[300px] object-fill h-[200px] w-full bg-red-500 xl:w-full  rounded-t-3xl shadow-sm'/>
-          <h1 className='text-[20px] text-[#8D4374] font-bold text-center
-          '>Respite Care</h1>
-          <p className='text-center font-light xl:px-4 pb-8'>We offer temporary relief for primary caregivers, allowing them to rest and recharge while we take care of their loved ones.</p>
-        </div>
-
-</div>
-
       </div>
+
      <Testimonial /> 
      <Emailsubscription/>
 

@@ -30,6 +30,7 @@ import mobhero from './assets/mobileservice1.jpg'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Emailsubscription from './components/Navbar/Emailsubscription';
+import Product from './components/Navbar/about';
 
 
 
@@ -230,7 +231,7 @@ function Servicespage2() {
 
 
       </div>
-     <Testimonial /> 
+     <Product/> 
    <Emailsubscription/>
 
       <Footer />

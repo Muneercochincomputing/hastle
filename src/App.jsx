@@ -11,6 +11,7 @@ const Servicespage3 = lazy(() => import('./servicepage3'));
 const Servicespage4 = lazy(() => import('./servicepage4'));
 const Careerspage = lazy(() => import('./careerspage'));
 const Dashbord = lazy(() => import('./dashbord'));
+const Brouchurecontacts = lazy(() => import('./brouchurecontacts'));
 const Blog = lazy(() => import('./blog'));
 const Blogcontent1 = lazy(() => import('./blogcontent1'));
 const Blogcontent2 = lazy(() => import('./bogcontent2'));
@@ -18,6 +19,8 @@ const Blogcontent3 = lazy(() => import('./blogcontent3'));
 const Blogcontent4 = lazy(() => import('./blogcontent4'));
 const Blogcontent5 = lazy(() => import('./blogcontent5'));
 const Blogcontent6 = lazy(() => import('./blogcontent6'));
+const Adminlogin = lazy(() => import('./components/Navbar/Adminlogin'));
+
 const ContactUs = lazy(() => import('./contactus'));
 const Privacypolicy = lazy(() => import('./privacypolicy'));
 const Leagalnotice = lazy(() => import('./Leagalnotice'));
@@ -36,6 +39,9 @@ function App() {
           <Route path="/service4" element={<Servicespage4 />} />
           <Route path="/careerspage" element={<Careerspage />} />
           <Route path="/dasbord" element={<Dashbord />} />
+          <Route path="/download" element={<Brouchurecontacts />} />
+          <Route path="/adminlogin" element={<Adminlogin />} />
+          
           <Route path="/blog" element={<Blog />} />
           <Route path="/blogcontent1" element={<Blogcontent1 />} />
           <Route path="/blogcontent2" element={<Blogcontent2 />} />

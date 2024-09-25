@@ -10,6 +10,7 @@ function Dashbord() {
   const [careers, setCareers] = useState([]);
   const [subscribers, setSubscribers] = useState([]);
   const [contacts, setContacts] = useState([]);
+  const [brouchure, setBrouchure] = useState([]);
   const [notificationVisible, setNotificationVisible] = useState(true);
 
   const url = import.meta.env.VITE_HOST_URL
@@ -18,16 +19,21 @@ function Dashbord() {
    useEffect(() => {
   const fetchData = async () => {
     try {
-      const [queriesResponse, careersResponse, subscribersResponse, contactsResponse] = await Promise.all([
+      const [queriesResponse, careersResponse, subscribersResponse, contactsResponse,newResponse] = await Promise.all([
         axios.get(`${url}/Queries/`),
         axios.get(`${url}/careers/`),
         axios.get(`${url}/subscribers/`),
-        axios.get(`${url}/contacts/`)
+        axios.get(`${url}/contacts/`),
+        axios.get(`http://localhost:8082/data/`)
+      
+
       ]);
       setQueries(queriesResponse.data);
       setCareers(careersResponse.data);
       setSubscribers(subscribersResponse.data);
       setContacts(contactsResponse.data);
+      setBrouchure(newResponse.data);
+
     } catch (error) {
       console.error("There was an error fetching the data!", error);
     }
@@ -137,6 +143,40 @@ function Dashbord() {
             </div>
           )}
         </div>
+
+        {/* Brouchure dounloaded section */}
+
+        <div className="grid xl:grid-cols-2 w-full mt-10 px-4 xl:px-0 gap-8">
+          {/* Customer Queries Section */}
+          {brouchure.length > 0 && (
+            <div className="bg-gradient-to-r text-gray-900 p-6 rounded-lg shadow-xl max-w-2xl w-[80%] h-[40vh] overflow-y-auto mx-auto mb-10 border-l-4 border-purple-700">
+              <div className="flex justify-between items-center mb-4">
+                <h2 className="text-2xl font-semibold">Brouchure Downloaded</h2>
+              </div>
+              <div className="space-y-4">
+                {brouchure.map((query, index) => (
+                  <div key={index} className="bg-gray-200 border border-purple-700 rounded-lg p-4 shadow-md h-[200px]">
+                   <div className='flex'>
+                   <FaRegUser className="text-gray-400 text-2xl mr-4" />
+                   <p className="font-semibold ">{query.name}</p>
+                   </div>
+                    
+                    <p className='mt-2'>{query.email}</p>
+                    <p className='mt-2'>Phonenumber: {query.phonenumber}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+         
+        </div>
+
+
+
+
+
+
 
         {/* Careers Section */}
         <h1 className="text-center xl:text-[30px] mt-10 text-indigo-700 bg-gradient-to-r font-bold">Job Applications</h1>

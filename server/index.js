@@ -7,7 +7,7 @@ const admin = require('firebase-admin');
 const { getFirestore, doc, getDoc, updateDoc, collection, query, where, getDocs } = require('firebase/firestore'); // Add missing imports
 const path = require('path'); 
 const userRoutes = require('./routes/studentsroutes');
-const { addContacts, getContacts, addCareers, getCareers, addSubscribers, getSubscribers, addquery, getquery,updateAdmin,getAdmin} = require('./controllers');
+const { addContacts, getContacts, addCareers, getCareers, addSubscribers, getSubscribers, addquery, getquery,updateAdmin,getAdmin,addBrouchure,getBrouchure} = require('./controllers');
 
 const app = express();
 
@@ -93,6 +93,10 @@ app.post('/careers/upload-file', upload.single("file"), async (req, res) => {
 app.post('/Careers', addCareers);
 app.get('/Careers', getCareers);
 
+
+// Routes for managing Brouchure downloaded
+app.post('/data', addBrouchure);
+app.get('/data', getBrouchure);
 
 // Routes for managing Contacts
 app.post('/Contacts', addContacts);

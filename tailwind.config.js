@@ -12,7 +12,9 @@ export default {
   theme: {
     extend: {
       fontFamily:{
-        about:["Edu VIC WA NT Beginner","cursive"]
+        about:["Edu VIC WA NT Beginner","cursive"],
+        banner:["Playfair Display", "serif"]
+
 
       },
       keyframes: {

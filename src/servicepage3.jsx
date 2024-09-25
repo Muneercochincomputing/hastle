@@ -14,15 +14,16 @@ import servicelist6 from './assets/absnew.jpeg'
 import nutritionimage from './assets/nutritionimage.jpeg'
 import overnightcare from './assets/overnightcare.jpeg'
 import overnights from './assets/overnights.jpeg'
-import welbeing from './assets/Wellbeing.jpg'
+import welbeing from './assets/Servicesimage4.jpg'
 import Navbar from './components/Navbar/Navbar';
+
 import Footer from './components/Navbar/footer';
 import Testimonial from './components/Navbar/Testimonial';
 import pngimage from './assets/caring.png'
 import pngimage2 from './assets/supportive.png'
 import pngimage3 from './assets/proffessional.png'
 import heroservices from './assets/serviceimagescare.jpeg'
-import servicehero2 from './assets/servicehero2.jpg'
+import servicehero2 from './assets/Servises4image1.jpg'
 import servicehero3 from './assets/Liveincarehero.jpg'
 import aiimage4 from './assets/aiimage4.png'
 import aiimage5 from './assets/aiimage5.png'
@@ -30,9 +31,19 @@ import aiimage6 from './assets/aiimage6.png'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Emailsubscription from './components/Navbar/emailsubscription';
+import Product from './components/Navbar/about';
 
 
 function Servicespage3() {
+
+  const script = document.createElement('script');
+  script.src = 'https://api.homecare.co.uk/assets/js/review_widget_carousel.js?displaydiv=tgrcw_0059ab4d&displayid=65432232653&displaycount=50&displaylogo=true&displayscore=true&displaybackground=true&displayratingreview=true&displaylink=true&displayminoverallrating=0&linksnofollow=false&displayfontsize=large';
+  script.async = true;
+  script.className = 'tg-review-carousel-widget';
+
+
+  document.body.appendChild(script);
+
   const [activeService, setActiveService] = useState(0); // Set default to the first item
 
   const servicemainlist = [
@@ -169,7 +180,7 @@ function Servicespage3() {
       </div>
       <div ><h1 className='text-center  text-[30px] text-[#8D4374] xl:mt-10 '>Live in Care</h1>
       <p className='text-center mb-10'>Holistic Care Services encourages our clients to stay active and engaged to promote their overall well-being.</p></div>
-      <div className='xl:w-[100%] h-auto xl:h-[900px] lg-[900px] bg-gray-300/20 mb-10  pb-10  shadow-xl'>
+      <div className='xl:w-[100%] h-auto xl:h-[800px] lg-[1800px] bg-gray-300/20 mb-10  pb-10  shadow-xl'>
       <div className='w-full xl:h-[140px]  grid lg:grid-cols-1 md:grid-cols-2 mb-10 '>
        
         {/* Mission Statement Section */}
@@ -186,12 +197,29 @@ function Servicespage3() {
        {/* second services */}
 
 
+      
+
+        
+
+       
+
+
 
 
 
       </div>
-      <div className='w-full xl:px-0 '>
-  <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-3 gap-5 xl:gap-6 xl:w-[100%] mx-auto xl:mt-40 xl:mb-20'>
+    
+
+      
+    
+
+
+
+
+
+
+      <div className='w-full xl:px-0 xl:mt-[10px] '>
+  <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-3 gap-5 xl:gap-6 xl:w-[100%] mx-auto xl:mt-[900px] xl:mb-20'>
     <div className='flex flex-col items-center'>
       <img src={aiimage4} className='w-[100%] xl:h-[450px] sm:w-[70%] md:w-[80%] xl:mt-[28px]' alt='Caring' />
       <h1 className='text-[16px] sm:text-[18px] md:text-[20px] text-[#8D4374] font-bold text-center mt-2'>
@@ -214,16 +242,14 @@ function Servicespage3() {
 </div>
 
 
-
-
-
-
-
-
-
       </div>
-     <Testimonial /> 
+      <div>
+      
+    
+      </div>
+
    <Emailsubscription/>
+   
       <Footer />
     </div>
   );

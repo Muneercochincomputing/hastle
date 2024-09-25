@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import demo from '../../assets/demo.mp4';
+import demo from '../../assets/IMG_6146.jpg';
 import whyimage1 from '../../assets/charity.png';
 import whyimage2 from '../../assets/family.png';
 import whyimage3 from '../../assets/friends.png';
@@ -7,7 +7,7 @@ import whyimage3 from '../../assets/friends.png';
 const AnimatedContainer = ({ onScrollToSubscription }) => {
   const [style, setStyle] = useState({
     width: '100%',
-    height: '1400px',
+    height: '1200px',
     borderRadius: '0%',
     top: '0px',
   });
@@ -23,7 +23,7 @@ const AnimatedContainer = ({ onScrollToSubscription }) => {
     const progress = Math.min(scrollY / maxScroll, 1);
 
     const width = `${100 - progress * 100}vw`;
-    const height = `${1500 - progress * 1400}px`;
+    const height = `${1400 - progress * 1400}px`;
     const borderRadius = progress > 0 ? '50%' : '0%';
 
     setVideoClass(progress > 0 ? 'rounded-full' : 'rounded-none');
@@ -62,23 +62,30 @@ const AnimatedContainer = ({ onScrollToSubscription }) => {
           }}
           className="bg-white w-full lg:w-[500px] h-[100px]"
         >
-          <video
-            className={`object-cover absolute z-20 w-full h-full md:[1200px] ${videoClass} transition-all duration-500 ${padding}`}
-            autoPlay
-            muted
-            loop
-          >
-            <source src={demo} type="video/mp4" />
-          </video>
+          <div>
+          <img
+          src={demo}
+            className={`object-cover absolute z-20 w-full h-full md:[1400px] ${videoClass} transition-all duration-500 ${padding}`}
+           
+          />
+          <div className={`absolute inset-0 bg-black opacity-50 z-30 ${videoClass} ${padding}`} />
+          </div>
          
+           
           
-          <div className='absolute z-30 mt-[300px] sm:ml-[30px]'>
-            <div className={`text-white text-[36px] md:text-[48px] lg:text-[42px] ml-[50px] sm:ml-[100px] md:ml-[30px] lg:ml-[60px] mt-[100px] font-bold transition-opacity duration-500 ${textClass}`}>
-            Outstanding, compassionate care<br/> personalized to your needs<br />
+          <div className='absolute z-30 mt-[100px] sm:ml-[30px]'>
+            <div className={`text-white text-[36px] md:text-[48px] lg:text-[52px] ml-[50px] sm:ml-[100px] md:ml-[30px] lg:ml-[60px] mt-[100px] font-banner transition-opacity duration-500 ${textClass}`}>
+            Helping you & your loved ones to<br/> age gracefully & comfortably in<br />
+            your home
             </div>
-      
-            <button  onClick={onScrollToSubscription} className={`group relative min-h-[30px] p-6 w-[100px] sm:w-[150px] md:w-[200px] lg:w-[300px] overflow-hidden border border-white bg-[#8D4374] text-white shadow-2xl transition-all before:absolute before:left-0 before:top-0 before:h-0 before:w-1/4 before:bg-white before:duration-500 after:absolute after:bottom-0 after:right-0 after:h-0 after:w-1/4 after:bg-white after:duration-500 hover:text-purple-500 hover:bg-white hover:before:h-full hover:after:h-full rounded-xl ml-[2px] md:ml-[20px] lg:ml-[70px] mt-10 px-20 ${textClass}`}>
-              <span className="absolute bottom-0 left-0 right-0 top-0 z-10 flex h-full w-full items-center justify-center group-hover:text-purple-500 text-[10px] sm:text-[12px] md:text-[16px] lg:text-[20px]  ">Schedule a Free Consultation</span>
+
+             <div className={`text-white text-[36px] md:text-[48px] lg:text-[20px] ml-[50px] sm:ml-[100px] md:ml-[30px] lg:ml-[60px] mt-[30px]  transition-opacity duration-500 ${textClass}`}>
+            Have compassionate and reliable care that respects<br/> your independence and enhances your quality of life <br />
+            
+            </div>
+     
+            <button  onClick={onScrollToSubscription} className={`group relative min-h-[30px] p-6 w-[100px] sm:w-[150px] md:w-[200px] lg:w-[300px] overflow-hidden border border-white bg-[#a43579] text-white shadow-2xl transition-all before:absolute before:left-0 before:top-0 before:h-0 before:w-1/4 before:bg-white before:duration-500 after:absolute after:bottom-0 after:right-0 after:h-0 after:w-1/4 after:bg-white after:duration-500 hover:text-purple-500 hover:bg-white hover:before:h-full hover:after:h-full rounded-xl ml-[2px] md:ml-[20px] lg:ml-[58px] mt-10 px-20 ${textClass}`}>
+              <span className="absolute bottom-0 left-0 right-0 top-0 z-10 flex h-full w-full items-center justify-center group-hover:text-purple-500 text-[10px] sm:text-[12px] md:text-[16px] lg:text-[20px]  ">Book your  Free Consultation</span>
             </button>
           </div>
           <div className={`md:w-full mx-10 md:h-[400px]  mt-[800px] hidden    ${textClass}`}>

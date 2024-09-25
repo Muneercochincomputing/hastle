@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import Navbar from './components/Navbar/Navbar';
 import Hero from './components/Navbar/Hero';
+
 import Product from './components/Navbar/about';
 import TopProducts from './components/Navbar/TopProducts';
 import Banner from './components/Navbar/bannner';
@@ -39,20 +40,24 @@ function Homepage() {
   };
 
   return (
-    <div className='overflow-hidden'>
+    <div className='overflow-hidden overflow-x-hidden'>
       <Navbar onScrollToSubscription={handleScrollToContact} />
       <Hero />
       <AnimatedContainer onScrollToSubscription={handleScrollToContact} />
       <AnimatedContainerMob  onScrollToSubscription={handleScrollToContact}  />
       <AnimatedContainerTab />
-      <Product />
-      <TopProducts />
+      <Product pageIdentifier="Homepage"/>
+      <TopProducts/>
       <Banner />
+      <div className='bg-[#a43579] pt-10 text-white py-10' >
       <Whychooseus />
-      <Blog />
-      <Subscription ref={contactRef} />
-      <Testimonial />
+      </div>
+      
+    
+     
+   
       <ContactSection  ref={contactRef} />
+      <Subscription ref={contactRef} />
       <Footer />
     </div>
   );

@@ -76,7 +76,7 @@ const AnimatedContainertab = () => {
         </video>
         <div className='absolute left-0 top-[400px] ml-4'>
   <div
-    className={`text-white text-[28px] text-left sm:text-[24px] md:text-[40px] font-bold transition-opacity duration-[0.9s] ease-out ${textClass}`}
+    className={`text-white text-[28px] text-left sm:text-[24px] md:text-[40px] font-bold transition-opacity duration-[0.9s] ease-out ${textClass}  shadow-bulge`}
   >
      Outstanding, compassionate care<span> personalized to your needs</span> <br />
   </div>
