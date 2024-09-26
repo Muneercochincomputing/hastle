@@ -79,8 +79,8 @@ const AnimatedContainer = ({ onScrollToSubscription }) => {
   }, []);
 
   return (
-    <div className='hidden lg:flex md:bottom-[1200px] sm:hidden   '>
-      <div className="lg:flex   w-full h-screen justify-center items-center bg-gray-200 overflow-auto">
+    <div className='hidden lg:flex md:bottom-[900px] sm:hidden   '>
+      <div className="lg:flex   w-full h-screen bg-red-500 justify-center items-center bg-gray-200 overflow-auto">
         <div
           style={{
             transition: 'width 1s ease-in-out, height 1s ease-in-out, border-radius 1s ease-in-out, top 1s ease-in-out',
