@@ -23,7 +23,7 @@ const AnimatedContainer = ({ onScrollToSubscription }) => {
     const progress = Math.min(scrollY / maxScroll, 1);
 
     const width = `${100 - progress * 100}vw`;
-    const height = `${1400 - progress * 1400}px`;
+    const height = `${1700 - progress * 1700}px`;
     const borderRadius = progress > 0 ? '50%' : '0%';
 
     setVideoClass(progress > 0 ? 'rounded-full' : 'rounded-none');
