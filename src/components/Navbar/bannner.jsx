@@ -50,7 +50,7 @@ function Banner() {
           <img
               src={banner3}
               alt='Banner'
-              className='bg-white sm:w-[300px] xl:w-[300px]  w-[100px] sm:h-[300px] drop-shadow-md object-cover absolute xl:ml-[400px] mb-[400px]  z-10 hidden sm:block md:w-[200px]' data-aos='flip-left'
+              className='bg-white sm:w-[300px] xl:w-[300px]  w-[100px] sm:h-[250px] drop-shadow-md object-cover absolute xl:ml-[400px] mb-[500px]  z-10 hidden sm:block md:w-[200px]' data-aos='flip-left'
             />
             
           {/* Text detail section */}
