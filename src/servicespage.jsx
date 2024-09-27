@@ -6,14 +6,14 @@ import mainimage3 from './assets/blog1.jpeg';
 import mainimage4 from './assets/blog2.jpeg';
 import servicesmain from './assets/servicemain1.jpeg'
 import servicelist1 from './assets/serviceslist3.jpeg'
-import servicelist2 from './assets/servicelist1.jpeg'
+import servicelist2 from './assets/IMG_5827.jpg'
 import servicelist3 from './assets/servicelists2.jpeg'
 import servicelist4 from './assets/servicelists3.jpeg'
 import servicelist5 from './assets/servicelisst4.jpeg'
 import servicelist6 from './assets/absnew.jpeg'
 import nutritionimage from './assets/nutritionimage.jpeg'
 import hydration from './assets/IMG_5706 .jpg'
-import overnightcare from './assets/IMG_5819 .jpg'
+import overnightcare from './assets/IMG_5820.jpg'
 import overnights from './assets/overnights.jpeg'
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Navbar/Footer';
@@ -21,7 +21,8 @@ import Testimonial from './components/Navbar/Testimonial';
 import pngimage from './assets/caring.png'
 import pngimage2 from './assets/supportive.png'
 import pngimage3 from './assets/proffessional.png'
-import heroservices from './assets/serviceimagescare.jpeg'
+import heroservices from './assets/IMG_5788 2.jpg'
+
 import Emailsubscription from './components/Navbar/Emailsubscription';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -211,6 +212,7 @@ function Servicespage() {
           '>Respite Care</h1>
           <p className='text-center font-light xl:px-4 pb-8'>We offer temporary relief for primary caregivers, allowing them to rest and recharge while we take care of their loved ones.</p>
         </div>
+        <div></div>
         <div className='w-[80%] xl:h-[95%] bg-white rounded-3xl border-solid border-[0px] border-black  ml-10  mt-10'>
           <img src={nutritionimage} className='xl:h-[300px] object-fill h-[200px] w-full bg-red-500 xl:w-full  rounded-t-3xl shadow-sm'/>
           <h1 className='text-[20px] text-[#8D4374] font-bold text-center

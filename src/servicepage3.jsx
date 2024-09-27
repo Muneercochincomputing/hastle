@@ -14,7 +14,7 @@ import servicelist6 from './assets/absnew.jpeg'
 import nutritionimage from './assets/nutritionimage.jpeg'
 import overnightcare from './assets/overnightcare.jpeg'
 import overnights from './assets/overnights.jpeg'
-import welbeing from './assets/Servicesimage4.jpg'
+import welbeing from './assets/serviceseconds.jpeg'
 import Navbar from './components/Navbar/Navbar';
 
 import Footer from './components/Navbar/footer';
@@ -23,7 +23,7 @@ import pngimage from './assets/caring.png'
 import pngimage2 from './assets/supportive.png'
 import pngimage3 from './assets/proffessional.png'
 import heroservices from './assets/serviceimagescare.jpeg'
-import servicehero2 from './assets/Servises4image1.jpg'
+import servicehero2 from './assets/service3mains.jpeg'
 import servicehero3 from './assets/Liveincarehero.jpg'
 import aiimage4 from './assets/aiimage4.png'
 import aiimage5 from './assets/aiimage5.png'
@@ -184,14 +184,14 @@ function Servicespage3() {
       <div className='w-full xl:h-[140px]  grid lg:grid-cols-1 md:grid-cols-2 mb-10 '>
        
         {/* Mission Statement Section */}
-        <div className="sm:w-[70%]  md:w-[82%]   sm:ml-80 sm:h-[200px] lg:h-[300px] lg:mx-auto md:h-[450px]  bg-gray-100 md:ml-[75px]  shadow-xl sm:rounded-2xl mb-10 grid sm:grid-cols-2">
+        <div className="sm:w-[70%]  md:w-[82%]   sm:ml-80 sm:h-[200px] lg:h-[600px] lg:mx-auto md:h-[450px]  bg-gray-100 md:ml-[75px]  shadow-xl sm:rounded-2xl mb-10 grid sm:grid-cols-2 ">
           <div className="p-6 sm:p-5">
-            <p className="font-light text-[5vw] sm:text-[40px] md:text[20px] text-[#8D4374]"  >Live in Care</p>
+            <p className="font-light text-[5vw] sm:text-[40px] md:text[20px] text-[#8D4374] "  >Live in Care</p>
             <p className="font-sans text-[4vw] md-text-[8vw] sm:text-[16px] text-balance">
             Enjoy personalized attention and companionship in the comfort of your own home. Our Live-in Care services provide 24-hour support tailored to meet the individual needs of each client. This service promotes independence and dignity while ensuring safety and well-being through comprehensive care, including personal care, medication management, and assistance with daily activities. 
             </p>
           </div>
-          <img src={welbeing} className="w-full h-[300px] object-cover" alt="Descriptive Alt Text" />
+          <img src={welbeing} className="w-full h-[600px] object-cover" alt="Descriptive Alt Text" />
         </div>
        
        {/* second services */}

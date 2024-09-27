@@ -126,8 +126,8 @@ function Topproducts() {
       </div>
       <div className='w-full  h-[500px] bg-[#a43579] px-10 grid lg:grid-cols-2  grid-cols-1  mt-10   lg:text-[40px] text-[25px] font-sans lg:pl-40'>
         
-          <p className='font-banner text-white  lg:my-[100px]   '>The problem is that finding trustworthy care that truely understands your loved one`s
-            unique needs can be overwhelming and stressfull
+          <p className='font-banner text-white  lg:my-[100px]   '>The problem is that finding trustworthy care that truly understands your loved one`s
+            unique needs can be overwhelming and stressful
           </p>
         
         <div className='lg:w-[550px] w-full h-[400px] lg:ml-20  lg:my-[70px] '>
@@ -147,7 +147,7 @@ function Topproducts() {
           <div className='grid grid-cols-1 sm:grid-cols-3 gap-10 sm:w-full sm:px-20 px-5'>
             <div className='flex flex-col items-center text-center sm:text-[25px] text-[15px] font-bold text-gray-500'>
               
-             <p className='text-[#8D4374]'>1.Call 0151</p> 
+             <p className='text-[#8D4374]'>1.Call 0151 665 0520</p> 
               <p className='text-sm font-normal p-4 '>
              We take the time to understand<br/>your loved one's needs, <br/> prefernces, and goals so we can create a <br/>truly personalised care <br/>plan
               </p>

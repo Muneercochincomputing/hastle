@@ -6,6 +6,7 @@ import manager from './assets/managerimage.jpeg'
 import stock2 from './assets/stock2.jpeg'
 import stock3 from './assets/IMG_6054 .jpg'
 import abouthero from'./assets/abouthero.jpg'
+import kelismyth from './assets/kelismyth.jpeg'
 import stock from './assets/IMG_6135 .jpg'
 import aboutimg2 from './assets/aboutimage2new.jpeg'
 import whyimage1 from './assets/charity.png';
@@ -22,7 +23,8 @@ import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Navbar/Footer';
 import demo from './assets/aboutreview.mp4';
 import directors from './assets/directors.jpeg'
-
+import supervisor1 from './assets/supervisor1.jpeg'
+import supervisor2 from './assets/supervisor2.jpeg'
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -183,9 +185,11 @@ const vedios = [
     That's why we're here to guide and support you every step of the way
   </span>, offering personalised home care services that enable your loved one to flourish.<br/><br/>
   </li>
- <li><span className='italic font-bold text-[#8D4374]'>Here's how</span> we help you achieve that:<br/><br/></li> 
+ 
 
- <li> <span className='italic font-bold text-[#8D4374]'>We listen to your concerns:</span> We take the time to understand your loved one's needs, preferences, and goals so we can create a truly personalised care plan.</li>
+ <p className="text-[4vw] sm:text-[45px] text-center text-[#8D4374] font-thin" data-aos="fade-up">
+ Here's how we help you achieve that
+    </p>
 </p>
 
 </ul>
@@ -448,38 +452,41 @@ const vedios = [
       </section>
     </div>
 
-    <div class="flex justify-center mt-10">
-      <div class=" items-center h-[200px] px-6 py-4 transition-colors duration-300  rounded-xl group ">
-        <img class="w-[300px] h-[300px]  " src={manager} alt="Kevin Smyth"/>
+    
+
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8 mt-10 ">
+      
+    <div class="block items-center h-auto px-6 py-4 transition-colors duration-300 bg-white border rounded-xl group hover:bg-blue-600 dark:border-gray-700 text-center">
+      <img class="w-[300px] h-[300px]  " src={manager} alt="Kevin Smyth"/>
         <div>
-          <h2 class="text-lg sm:text-xl lg:text-2xl font-semibold text-white mt-[10px] group-hover:text-white ml-20">Kevin Smyth</h2>
-          <p class="mt-2 text-sm sm:text-base lg:text-lg text-white group-hover:text-gray-300 ml-20">Deputy Manager</p>
+          <h2 class="text-lg sm:text-xl lg:text-2xl font-semibold text-[#8D4374] group-hover:text-white">Kevin Smyth</h2>
+          <p class="mt-2 text-sm sm:text-base lg:text-lg text-gray-500 group-hover:text-gray-300">Deputy Manager</p>
         </div>
       </div>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 mt-80">
+      
       <div class="block items-center h-auto px-6 py-4 transition-colors duration-300 bg-white border rounded-xl group hover:bg-blue-600 dark:border-gray-700 text-center">
-        <FaRegUser class="text-gray-400 text-2xl mx-auto mb-4" />
+      <img class="w-[300px] h-[300px]  " src={kelismyth} alt="Kevin Smyth"/>
         <div>
-          <h2 class="text-lg sm:text-xl lg:text-2xl font-semibold text-[#8D4374] group-hover:text-white">Paula Smith</h2>
-          <p class="mt-2 text-sm sm:text-base lg:text-lg text-gray-500 group-hover:text-gray-300">Field Care Supervisor</p>
-        </div>
-      </div>
-
-      <div class="block items-center h-auto px-6 py-4 transition-colors duration-300 bg-white border rounded-xl group hover:bg-blue-600 dark:border-gray-700 text-center">
-        <FaRegUser class="text-gray-400 text-2xl mx-auto mb-4" />
-        <div>
-          <h2 class="text-lg sm:text-xl lg:text-2xl font-semibold text-[#8D4374] group-hover:text-white">Kerry Fisher</h2>
-          <p class="mt-2 text-sm sm:text-base lg:text-lg text-gray-500 group-hover:text-gray-300">Field Care Supervisor</p>
+          <h2 class="text-lg sm:text-xl lg:text-2xl font-semibold text-[#8D4374] group-hover:text-white">Kevin Smyth</h2>
+          <p class="mt-2 text-sm sm:text-base lg:text-lg text-gray-500 group-hover:text-gray-300">Deputy Manager</p>
         </div>
       </div>
 
+       
       <div class="block items-center h-auto px-6 py-4 transition-colors duration-300 bg-white border rounded-xl group hover:bg-blue-600 dark:border-gray-700 text-center">
-        <FaRegUser class="text-gray-400 text-2xl mx-auto mb-4" />
+      <img class="w-[300px] h-[300px]  " src={supervisor1} alt="Kevin Smyth"/>
         <div>
-          <h2 class="text-lg sm:text-xl lg:text-2xl font-semibold text-[#8D4374] group-hover:text-white">Jo Mitchell</h2>
-          <p class="mt-2 text-sm sm:text-base lg:text-lg text-gray-500 group-hover:text-gray-300">Recruitment Compliance Officer</p>
+          <h2 class="text-lg sm:text-xl lg:text-2xl font-semibold text-[#8D4374] group-hover:text-white">Kevin Smyth</h2>
+          <p class="mt-2 text-sm sm:text-base lg:text-lg text-gray-500 group-hover:text-gray-300">Deputy Manager</p>
+        </div>
+      </div>
+
+        
+      <div class="block items-center h-auto px-6 py-4 transition-colors duration-300 bg-white border rounded-xl group hover:bg-blue-600 dark:border-gray-700 text-center">
+      <img class="w-[300px] h-[300px]  " src={supervisor2} alt="Kevin Smyth"/>
+        <div>
+          <h2 class="text-lg sm:text-xl lg:text-2xl font-semibold text-[#8D4374] group-hover:text-white">Kevin Smyth</h2>
+          <p class="mt-2 text-sm sm:text-base lg:text-lg text-gray-500 group-hover:text-gray-300">Deputy Manager</p>
         </div>
       </div>
     </div>

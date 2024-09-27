@@ -40,11 +40,12 @@ const AnimatedContainer = ({ onScrollToSubscription }) => {
     width: '100%',
     height: '1200px',
     borderRadius: '0%',
-    top: '0px',
+     top :`${Math.min(scrollY, 500)}px`,
   });
 
   const [videoClass, setVideoClass] = useState('rounded-none');
   const [padding, setPadding] = useState('px-[40px] pb-[400px]');
+  const [display,setdisplay] = useState(null)
   const [textClass, setTextClass] = useState('opacity-100');
 
   const handleScroll = () => {
@@ -52,14 +53,17 @@ const AnimatedContainer = ({ onScrollToSubscription }) => {
     const scrollY = window.scrollY;
 
     const progress = Math.min(scrollY / maxScroll, 1);
-
+  
     const width = `${100 - progress * 100}vw`;
-    const height = `${1700 - progress * 1700}px`;
+    
+    
+    const height = `${1300 - progress * 1300}px`;
     const borderRadius = progress > 0 ? '50%' : '0%';
 
     setVideoClass(progress > 0 ? 'rounded-full' : 'rounded-none');
-    setPadding(progress > 0 ? 'p-0' : 'px-[50px] md:pb-[700px]');
+    setPadding(progress > 0 ? 'p-0' : 'px-[50px] md:pb-[200px]');
     setTextClass(progress > 0 ? 'opacity-0' : 'opacity-100');
+    setdisplay(progress)
 
     const top = `${scrollY}px`;
 
@@ -79,8 +83,8 @@ const AnimatedContainer = ({ onScrollToSubscription }) => {
   }, []);
 
   return (
-    <div className='hidden lg:flex md:bottom-[900px] sm:hidden   '>
-      <div className="lg:flex   w-full h-screen bg-red-500 justify-center items-center bg-gray-200 overflow-auto">
+    <div className='hidden lg:flex md:bottom-[900px] sm:hidden  h-[100vh]  '>
+      <div className="lg:flex   w-full h-[400px]  justify-center items-center bg-gray-200 overflow-hidden">
         <div
           style={{
             transition: 'width 1s ease-in-out, height 1s ease-in-out, border-radius 1s ease-in-out, top 1s ease-in-out',
@@ -91,34 +95,36 @@ const AnimatedContainer = ({ onScrollToSubscription }) => {
             transform: 'translate(-50%, 0)',
             ...style,
           }}
-          className="bg-white w-full lg:w-[500px] h-[100px]"
+          className="bg-white w-full lg:w-[200px] "
         >
+             
+            <img src={demo}
+className={`absolute inset-0 z-30 ${videoClass} ${padding} ${display > 0 ? 'h-full' : 'h-[1400px]'}`}/>
+
           <div>
-          <img
-          src={demo}
-            className={`object-cover absolute z-20 w-full h-full md:[1400px] ${videoClass} transition-all duration-500 ${padding}`}
-           
-          />
+       
+          
+         
           <div className={`absolute inset-0 bg-black opacity-50 z-30 ${videoClass} ${padding}`} />
           </div>
          
            
-          
-          <div className='absolute z-30   h-screen w-full mt-[11%] flex flex-col  ' >
-            <div className={`text-white text-[36px] md:text-[48px] lg:text-[52px] ml-[50px] sm:ml-[100px] md:ml-[30px] lg:ml-[60px] mt-[100px] font-banner transition-opacity duration-500 ${textClass}`}>
+          <div className='absolute z-30   h-screen w-full justify-center flex flex-col  ' >
+            <div className={`group relative min-h-[30px] font-banner  lg:text-[40px] w-[100px] sm:w-[150px] md:w-[200px] lg:w-full overflow-hidden  text-white  transition-all before:absolute before:left-0 before:top-0 before:h-0 before:w-1/4 before:duration-500 after:absolute after:bottom-0 after:right-0 after:h-0 after:w-1/4  after:duration-500   hover:before:h-full hover:after:h-full rounded-xl ml-[2px] md:ml-[20px]  mt-10 px-20 ${textClass}`}>
             Helping you & your loved ones to<br/> age gracefully & comfortably in<br />
             your home
             </div>
 
-             <div className={`text-white text-[36px] md:text-[48px] lg:text-[20px] ml-[50px] sm:ml-[100px] md:ml-[30px] lg:ml-[60px] mt-[30px]  transition-opacity duration-500 ${textClass}`}>
+             <div className={`group relative min-h-[30px] font-banner lg:text-[20px] w-[100px] sm:w-[150px] md:w-[200px] lg:w-full overflow-hidden   text-white shadow-2xl transition-all before:absolute before:left-0 before:top-0 before:h-0 before:w-1/4  before:duration-500 after:absolute after:bottom-0 after:right-0 after:h-0 after:w-1/4  after:duration-500   hover:before:h-full hover:after:h-full rounded-xl ml-[2px] md:ml-[20px]  mt-10 px-20 ${textClass}`}>
             Have compassionate and reliable care that respects<br/> your independence and enhances your quality of life <br />
             
             </div>
      
-            <button  onClick={onScrollToSubscription} className={`group relative min-h-[30px] p-6 w-[100px] sm:w-[150px] md:w-[200px] lg:w-[300px] overflow-hidden border border-white bg-[#a43579] text-white shadow-2xl transition-all before:absolute before:left-0 before:top-0 before:h-0 before:w-1/4 before:bg-white before:duration-500 after:absolute after:bottom-0 after:right-0 after:h-0 after:w-1/4 after:bg-white after:duration-500 hover:text-purple-500 hover:bg-white hover:before:h-full hover:after:h-full rounded-xl ml-[2px] md:ml-[20px] lg:ml-[58px] mt-10 px-20 ${textClass}`}>
+            <button  onClick={onScrollToSubscription} className={`group relative min-h-[30px] p-6 w-[100px] sm:w-[150px] md:w-[200px] lg:w-[300px] overflow-hidden border border-white bg-[#a43579] text-white shadow-2xl transition-all before:absolute before:left-0 before:top-0 before:h-0 before:w-1/4 before:bg-white before:duration-500 after:absolute after:bottom-0 after:right-0 after:h-0 after:w-1/4 after:bg-white after:duration-500 hover:text-purple-500 hover:bg-white hover:before:h-full hover:after:h-full rounded-xl ml-[2px] md:ml-[20px] lg:ml-[108px] mt-10 px-20 ${textClass}`}>
               <span className="absolute bottom-0 left-0 right-0 top-0 z-10 flex h-full w-full items-center justify-center group-hover:text-purple-500 text-[10px] sm:text-[12px] md:text-[16px] lg:text-[20px]  ">Book your  Free Consultation</span>
             </button>
           </div>
+         
           <div className={`md:w-full mx-10 md:h-[400px]  mt-[800px] hidden    ${textClass}`}>
              <div className='sm:mt-[300px] xl:mt-10 '>
         
