@@ -84,7 +84,7 @@ const AnimatedContainer = ({ onScrollToSubscription }) => {
 
   return (
     <div className='hidden lg:flex md:bottom-[900px] sm:hidden  h-[100vh]  '>
-      <div className="lg:flex   w-full h-[400px]  justify-center items-center bg-gray-200 overflow-hidden">
+      <div className="lg:flex   w-[1500px] h-[400px]  justify-center items-center bg-gray-200 overflow-hidden">
         <div
           style={{
             transition: 'width 1s ease-in-out, height 1s ease-in-out, border-radius 1s ease-in-out, top 1s ease-in-out',
@@ -99,7 +99,7 @@ const AnimatedContainer = ({ onScrollToSubscription }) => {
         >
              
             <img src={demo}
-className={`absolute inset-0 z-30 ${videoClass} ${padding} ${display > 0 ? 'h-full' : 'h-[1400px]'}`}/>
+className={`absolute inset-0 w-[100vw] z-30 ${videoClass} ${padding} ${display > 0 ? 'h-full' : 'h-[1400px]'}`}/>
 
           <div>
        
