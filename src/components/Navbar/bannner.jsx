@@ -5,6 +5,7 @@ import banner2 from '../../assets/bannerimage2.jpeg';
 import banner3 from '../../assets/bannerimage3.jpg';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Cqc from './cqc';
 
 function Banner() {
   useEffect(() => {
@@ -57,13 +58,27 @@ function Banner() {
           <div className='text-center sm:text-left sm:w-[500px] md:w-[300px] lg:w-[400px] xl:w-[500px] sm:ml-40' data-aos="fade-left" >
             <h1 className='text-3xl font-bold mb-4'> Your loved ones deserve the best in their golden years—a place where care feels like home</h1>
             <p className='text-lg mb-6'>
-            We provide a warm, welcoming environment where your loved ones can enjoy their golden years with dignity and respect. Our dedicated team offer round-the-clock care, ensuring all clients receive the attention and support they need. With a range of activities to keep the mind and body active, along with delicious, nutritious meals, we strive to create a home-like atmosphere that foster companionship and joy. Whether it's for short-term respite care or a long-term stay, our facility is a place where comfort, care, and community come together to make every day meaningful.
+            We make your home a warm, comforting environment
+where your loved ones can enjoy their golden years with
+dignity and respect. Our dedicated team offer
+round the clock care, ensuring all clients 
+receive the attention and support they need. With a range of
+activities to keep the mind and body active, along with
+delicious and nutritious meals; we strive to create a home-
+like atmosphere that foster not  companionship
+and joy where comfort, care, and community come together
+to make every day meaningful whether it’s for short term
+respite care or ongoing support.
             </p>
+
+
+            
             <Link to='/about'>
             <button className='bg-[#a43579] text-white py-2 px-4 rounded hover:bg-primary-dark transition duration-300'>
               Learn More
             </button>
             </Link>
+            
           </div>
         </div>
       </div>

@@ -115,7 +115,7 @@ className={`absolute inset-0 w-[100vw] z-30 ${videoClass} ${padding} ${display >
             your home
             </div>
 
-             <div className={`group relative min-h-[30px] font-banner lg:text-[20px] w-[100px] sm:w-[150px] md:w-[200px] lg:w-full overflow-hidden   text-white shadow-2xl transition-all before:absolute before:left-0 before:top-0 before:h-0 before:w-1/4  before:duration-500 after:absolute after:bottom-0 after:right-0 after:h-0 after:w-1/4  after:duration-500   hover:before:h-full hover:after:h-full rounded-xl ml-[2px] md:ml-[20px]  mt-10 px-20 ${textClass}`}>
+             <div className={`group relative min-h-[30px] font-banner lg:text-[20px] w-[100px] sm:w-[150px] md:w-[200px] lg:w-full overflow-hidden   text-white  transition-all before:absolute before:left-0 before:top-0 before:h-0 before:w-1/4  before:duration-500 after:absolute after:bottom-0 after:right-0 after:h-0 after:w-1/4  after:duration-500   hover:before:h-full hover:after:h-full rounded-xl ml-[2px] md:ml-[20px]  mt-10 px-20 ${textClass}`}>
             Have compassionate and reliable care that respects<br/> your independence and enhances your quality of life <br />
             
             </div>

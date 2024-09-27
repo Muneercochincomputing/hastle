@@ -34,10 +34,7 @@ const Footer = () => {
     </Link>
             </p>
             <p className="mb-4">
-            < Link to='/service2' className="p-2 px-4 group" href="#">
-            Staying Active & Engaged
-        <div class="bg-amber-500 h-[2px] w-0 group-hover:w-[200px] transition-all duration-500"></div>
-    </Link>
+           
             </p>
             <p className="mb-4">
             <Link to='/service3' className="p-2 px-4 group" href="#">

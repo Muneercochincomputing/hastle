@@ -180,7 +180,7 @@ function Servicespage3() {
       </div>
       <div ><h1 className='text-center  text-[30px] text-[#8D4374] xl:mt-10 '>Live in Care</h1>
       <p className='text-center mb-10'>Holistic Care Services encourages our clients to stay active and engaged to promote their overall well-being.</p></div>
-      <div className='xl:w-[100%] h-auto xl:h-[800px] lg-[1800px] bg-gray-300/20 mb-10  pb-10  shadow-xl'>
+      <div className='xl:w-[100%] h-auto xl:h-[1300px] lg-[1300px] bg-gray-300/20 mb-10  pb-10  shadow-xl'>
       <div className='w-full xl:h-[140px]  grid lg:grid-cols-1 md:grid-cols-2 mb-10 '>
        
         {/* Mission Statement Section */}
@@ -188,7 +188,9 @@ function Servicespage3() {
           <div className="p-6 sm:p-5">
             <p className="font-light text-[5vw] sm:text-[40px] md:text[20px] text-[#8D4374] "  >Live in Care</p>
             <p className="font-sans text-[4vw] md-text-[8vw] sm:text-[16px] text-balance">
-            Enjoy personalized attention and companionship in the comfort of your own home. Our Live-in Care services provide 24-hour support tailored to meet the individual needs of each client. This service promotes independence and dignity while ensuring safety and well-being through comprehensive care, including personal care, medication management, and assistance with daily activities. 
+            Our live-in care service guarantees round-the-clock assistance, giving you and your family peace of mind. You can continue enjoying the comfort of familiar surroundings while receiving the level of care you require. Each care plan is tailored to meet individual needs, ensuring that all aspects of your health, well-being, and daily routine are carefully managed. Our caregivers also offer meaningful companionship, preventing feelings of isolation and enriching daily life.
+
+With Holistic Care Services, you can enjoy the perfect balance of independence and support, allowing you to live comfortably and confidently in your own home.
             </p>
           </div>
           <img src={welbeing} className="w-full h-[600px] object-cover" alt="Descriptive Alt Text" />
@@ -218,8 +220,8 @@ function Servicespage3() {
 
 
 
-      <div className='w-full xl:px-0 xl:mt-[10px] '>
-  <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-3 gap-5 xl:gap-6 xl:w-[100%] mx-auto xl:mt-[900px] xl:mb-20'>
+      <div className='w-full xl:px-0 xl:mt-[500px] '>
+  <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-3 gap-5 xl:gap-6 xl:w-[100%] mx-auto xl:mt-[200px] xl:mb-20'>
     <div className='flex flex-col items-center'>
       <img src={aiimage4} className='w-[100%] xl:h-[450px] sm:w-[70%] md:w-[80%] xl:mt-[28px]' alt='Caring' />
       <h1 className='text-[16px] sm:text-[18px] md:text-[20px] text-[#8D4374] font-bold text-center mt-2'>

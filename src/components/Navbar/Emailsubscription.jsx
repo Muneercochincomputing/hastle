@@ -1,6 +1,6 @@
 import React, { useState, forwardRef } from 'react';
 import axios from 'axios';
-
+import Cqc from './cqc';
 const Emailsubscription = forwardRef((props, ref) => {
   const [email, setEmail] = useState(""); // Initialize email to an empty string
   const [isSubmitting, setIsSubmitting] = useState(false); // State to manage submission status
@@ -62,6 +62,8 @@ const Emailsubscription = forwardRef((props, ref) => {
           </div>
         </div>
       </div>
+      <div className='w-[200px] h-[200px] hidden'  ><Cqc /></div>
+      
     </div>
   );
 });

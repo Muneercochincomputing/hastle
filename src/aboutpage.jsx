@@ -401,7 +401,7 @@ const vedios = [
     </h1>
 
     <p class="max-w-2xl mx-auto my-6 text-center text-gray-500 dark:text-gray-300 text-base sm:text-lg lg:text-xl">
-    Meet Our Team introduces the compassionate professionals who are the heart of our home care service. 
+    Get to Know Our Dedicated Team: Compassionate Care, Professional Support 
     </p>
 
     <h2 class="text-xl sm:text-2xl lg:text-3xl font-semibold text-center text-primary capitalize mt-10 dark:text-primary">
@@ -428,7 +428,7 @@ const vedios = [
                   <path d="M280,416h38.4L496,246.857V16H280ZM312,48H464V233.143L312,377.905Z"></path>
                 </svg>
                 <p class="px-6 py-1 text-sm sm:text-base lg:text-lg italic">
-                  “We were both very close to our grandmothers of beloved memory and in their later years, they needed care due to worsening mobility. This exposed us to the difficulties faced by the elderly in maintaining their independence in their golden age and this birthed the vision to help people age gracefully and flourish in their own homes.”
+                  We were both very close to our grandmothers of beloved memory and in their later years, they needed care due to worsening mobility. This exposed us to the difficulties faced by the elderly in maintaining their independence in their golden age and this birthed the vision to help people age gracefully and flourish in their own homes.
                 </p>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" class="absolute bottom-0 right-0 w-8 h-8 dark:text-gray-300">
                   <path d="M280,185.143V416H496V16H457.6ZM464,384H312V198.857L464,54.1Z"></path>
@@ -467,8 +467,8 @@ const vedios = [
       <div class="block items-center h-auto px-6 py-4 transition-colors duration-300 bg-white border rounded-xl group hover:bg-blue-600 dark:border-gray-700 text-center">
       <img class="w-[300px] h-[300px]  " src={kelismyth} alt="Kevin Smyth"/>
         <div>
-          <h2 class="text-lg sm:text-xl lg:text-2xl font-semibold text-[#8D4374] group-hover:text-white">Kevin Smyth</h2>
-          <p class="mt-2 text-sm sm:text-base lg:text-lg text-gray-500 group-hover:text-gray-300">Deputy Manager</p>
+          <h2 class="text-lg sm:text-xl lg:text-2xl font-semibold text-[#8D4374] group-hover:text-white">Paula Smith</h2>
+          <p class="mt-2 text-sm sm:text-base lg:text-lg text-gray-500 group-hover:text-gray-300">Field Care Supervisor</p>
         </div>
       </div>
 
@@ -476,8 +476,8 @@ const vedios = [
       <div class="block items-center h-auto px-6 py-4 transition-colors duration-300 bg-white border rounded-xl group hover:bg-blue-600 dark:border-gray-700 text-center">
       <img class="w-[300px] h-[300px]  " src={supervisor1} alt="Kevin Smyth"/>
         <div>
-          <h2 class="text-lg sm:text-xl lg:text-2xl font-semibold text-[#8D4374] group-hover:text-white">Kevin Smyth</h2>
-          <p class="mt-2 text-sm sm:text-base lg:text-lg text-gray-500 group-hover:text-gray-300">Deputy Manager</p>
+          <h2 class="text-lg sm:text-xl lg:text-2xl font-semibold text-[#8D4374] group-hover:text-white">Jo Mitchell</h2>
+          <p class="mt-2 text-sm sm:text-base lg:text-lg text-gray-500 group-hover:text-gray-300">Recruitment Compliance Officer</p>
         </div>
       </div>
 
@@ -485,8 +485,8 @@ const vedios = [
       <div class="block items-center h-auto px-6 py-4 transition-colors duration-300 bg-white border rounded-xl group hover:bg-blue-600 dark:border-gray-700 text-center">
       <img class="w-[300px] h-[300px]  " src={supervisor2} alt="Kevin Smyth"/>
         <div>
-          <h2 class="text-lg sm:text-xl lg:text-2xl font-semibold text-[#8D4374] group-hover:text-white">Kevin Smyth</h2>
-          <p class="mt-2 text-sm sm:text-base lg:text-lg text-gray-500 group-hover:text-gray-300">Deputy Manager</p>
+          <h2 class="text-lg sm:text-xl lg:text-2xl font-semibold text-[#8D4374] group-hover:text-white">Kerry Fisher</h2>
+          <p class="mt-2 text-sm sm:text-base lg:text-lg text-gray-500 group-hover:text-gray-300">Field Care Supervisor</p>
         </div>
       </div>
     </div>

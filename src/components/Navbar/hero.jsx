@@ -1,6 +1,7 @@
 import React from 'react'
 
 import Slider from 'react-slick'
+import Cqc from './cqc';
 
 
 function Hero() {
@@ -11,7 +12,6 @@ function Hero() {
       <div className=''></div>
       {/* hero section */}
      
-      
       </div>
     
   )

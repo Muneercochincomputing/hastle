@@ -19,11 +19,28 @@ import section3bannerimage2 from '../../assets/IMG_5926 .jpg'
 import section3bannerimage3 from '../../assets/homecarenew.jpeg'
 import animationData from '../../animaioplaybutton.json'; 
 import Lottie from 'react-lottie';
+import Cqc from './cqc';
 
 
 
 function Topproducts() {
 
+
+
+  useEffect(() => {
+    // Create a script element
+    const script = document.createElement('script');
+    script.src = 'https://www.cqc.org.uk/sites/all/modules/custom/cqc_widget/widget.js?data-id=1-7094940110&data-host=https://www.cqc.org.uk&type=location';
+    script.async = true;
+
+    // Append the script to the div where it needs to be injected
+    const cqcWidgetDiv = document.getElementById('cqc-widget');
+    if (cqcWidgetDiv) {
+      cqcWidgetDiv.appendChild(script);
+    }
+  }, []);
+
+  
   
   const defaultOptions = {
     loop: true,
@@ -34,20 +51,20 @@ function Topproducts() {
     },
   };
 
-
   const testimonials = [
     {
-      name: "Louise L (Mother of Client) ",
-      feedback: "Very professional and reliable service from day one. We first had an introduction meeting where all my son's needs were discussed very thoroughly. The support given to my son was reliable and consistent with the same 2 members of staff throughout our time with holistic care",
+      name: "Louise L (Mother of Client)",
+      feedback: "Very professional and reliable service from day one. We first had an introduction meeting where all my son's needs were discussed very thoroughly. The support given to my son was reliable and consistent with the same 2 members of staff throughout our time with holistic care.",
       title: "CEO, Company A",
     },
+    
     {
       name: "David B (Son of Client)",
-      feedback: "The team members built a great relationship with my Dad and Holistic Care's management team were professional, and caring and showed very good attention to detail. They were great at keeping my Mum informed if changes to the service were expected for whatever reason.",
+      feedback: "The team members built a great relationship with my Dad, and Holistic Care's management team were professional, caring, and showed very good attention to detail. They were great at keeping my Mum informed if changes to the service were expected for whatever reason.",
       title: "CTO, Company B",
-    }
-  ]
-
+    },
+  ];
+  
 
 
 
@@ -140,7 +157,7 @@ function Topproducts() {
 
       <div>
         {/* Additional Content */}
-        <div className='sm:mt-[200px] lg:mt-20 mt-[200px]   px-10  '>
+        <div className='sm:mt-[200px] lg:mt-10 mt-[200px]   px-10  '>
           <h1 className='text-center text-sm sm:text-[40px] mt-10  font-bold text-[#8D4374] sm:mb-10 mb-5 '>
            <p className='text-[25px] lg:text-[40px] font-banner'> Getting Started With Holistic Care is Easy</p>
           </h1>
@@ -195,33 +212,40 @@ function Topproducts() {
 
 
 </div>
-      <div className='w-full  h-[650px] bg-[#a43579] grid grid-cols-1  mt-10   lg:text-[30px] text-[25px] font-sans lg:pl-40'>
-        
-          <p className='font-banner text-white  lg:my-[100px]  px-  '>Let us help you ensure your loved one ages gracefully, surrounded by the care and support they deserve.With our compassionate care, your loved one can enjoy a fulfilling and dignified life in a warm and supportive environment
-          </p>
-        <div>
-          <div>
-          <div className="grid grid-cols-1 md:grid-cols-2  gap-8 lg:ml-20">
-        {testimonials.map((testimonial, index) => (
-          <div
-            key={index}
-            className=" p-6 rounded-lg shadow-lg border-solid border-white border-[5px] border-t-0 border-r-0 border-b-0 hover:shadow-xl transition-shadow duration-300 w-[400px] h-[350px] "
-          >
-            <p className="text-primary italic text-[20px]">"{testimonial.feedback}"</p>
-            <h3 className="mt-4 font-bold text-[20px] text-white">{testimonial.name}</h3>
-
-          </div>
-        ))}
-      </div>
-
+<div className='bg-[#a43579]'>
+<p className=' text-white xl:text-[30px] font-banner mt-10 text-center lg:my-[100px] bg-[#a43579] px-10  '>Let us help you ensure your loved one ages gracefully, surrounded by the care and support they deserve.With our compassionate care, your loved one can enjoy a fulfilling and dignified life in a warm and supportive environment
+</p>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 bg-[#a43579] px-10 ">
      
+        {testimonials.length === 2 ? (
+          <>
+            <div className="p-6 rounded-lg shadow-lg border-solid border-white border-[5px] border-t-0 border-r-0 border-b-0 hover:shadow-xl transition-shadow duration-300 w-[400px] h-[350px]">
+              <p className="text-primary italic text-[20px]">"{testimonials[0].feedback}"</p>
+              <h3 className="mt-4 font-bold text-[20px] text-white">{testimonials[0].name}</h3>
+            </div>
 
+            {/* Centered div for CQC widget */}
+            <div id="cqc-widget" className="flex justify-center items-center">
+              {/* CQC widget will be loaded here */}
+            </div>
 
-          </div>
-        </div>
-       
-        
-
+            <div className="p-6 rounded-lg shadow-lg border-solid border-white border-[5px] border-t-0 border-r-0 border-b-0 hover:shadow-xl transition-shadow duration-300 w-[400px] h-[350px]">
+              <p className="text-primary italic text-[20px]">"{testimonials[1].feedback}"</p>
+              <h3 className="mt-4 font-bold text-[20px] text-white">{testimonials[1].name}</h3>
+            </div>
+          </>
+        ) : (
+          testimonials.map((testimonial, index) => (
+            <div
+              key={index}
+              className="p-6 rounded-lg shadow-lg border-solid border-white border-[5px] border-t-0 border-r-0 border-b-0 hover:shadow-xl transition-shadow duration-300 w-[400px] h-[350px]"
+            >
+              <p className="text-primary italic text-[20px]">"{testimonial.feedback}"</p>
+              <h3 className="mt-4 font-bold text-[20px] text-white">{testimonial.name}</h3>
+            </div>
+          ))
+        )}
+      </div>
     </div>
     <div className="flex justify-center items-center h-[500px] bg-[#a43579] relative ">
   <video

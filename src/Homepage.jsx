@@ -16,6 +16,7 @@ import Training from './components/Navbar/trainingcourosal';
 import AnimatedContainerMob from './components/Navbar/HoverTestMobile';
 import AnimatedContainerTab from './components/Navbar/hoveresttablets';
  import Whychooseus from './components/Navbar/whychooseus';
+ import Cqc from './components/Navbar/cqc';
 
 function Homepage() {
 
@@ -53,7 +54,7 @@ function Homepage() {
       <Whychooseus />
       </div>
       
-    
+   
      
    
       <div className='overflow-hidden'><ContactSection  ref={contactRef} /></div>
@@ -61,6 +62,7 @@ function Homepage() {
       
       <div className='overflow-hidden'> 
       <Footer />
+    
       </div>
       
     </div>
