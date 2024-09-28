@@ -15,7 +15,7 @@ const Footer = () => {
         <div className="grid grid-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* TW Elements section */}
           <div>
-            <img src={Logo} className="w-40 sm:ml-0   ml-[70px]  lg:ml-[90px]"  alt="Logo" />
+            <img src={Logo} className="w-40 sm:ml-0   ml-[70px]  "  alt="Logo" />
             <h6 className="mb-4 flex items-center justify-center font-semibold uppercase md:justify-start">
               Holistic Care Services
             </h6>
