@@ -176,7 +176,7 @@ function Servicespage4() {
       <div ><h1 className='text-center  text-[30px] text-[#8D4374] xl:mt-10 '>Specialised Care</h1>
       <p className='text-center mb-10'> We provide tailored care to meet the unique needs of each individual, shaped by their specific conditions or situations</p></div>
       <div className='xl:w-[100%] h-auto xl:h-[2300px] lg-[2300px] bg-gray-300/20 mb-10  pb-10  shadow-xl'>
-      <div className='w-full xl:h-[400px]  grid lg:grid-cols-3 md:grid-cols-2 mb-10 '>
+      <div className='w-full xl:h-[400px]  grid lg:grid-cols-3 md:grid-cols-2 lg:mb-10 '>
         <div className='w-[80%] xl:h-[95%] bg-white rounded-3xl border-solid border-[0px] border-black  ml-10  mt-10'>
           <img src={service4image} className='xl:h-[300px] object-fill h-[200px] w-full  xl:w-full  rounded-t-3xl shadow-sm'/>
           <h1 className='text-[20px] text-[#8D4374] font-bold text-center
@@ -218,7 +218,7 @@ function Servicespage4() {
         </div>
 
         <div className='w-[80%] xl:h-[95%]  bg-white rounded-3xl  border-solid border-[0px] border-black   ml-10 mt-10'>
-        <img src={ service6image} className='h-[300px] w-full object-fill  rounded-t-3xl shadow-sm'/>
+        <img src={ service6image} className='xl:h-[300px] h-[200px] w-full object-fill  rounded-t-3xl shadow-sm'/>
           <h1 className='text-[20px] text-[#8D4374] xl-px-10 font-bold text-center
           '>Parkinson’s Disease Care</h1>
           <p className='text-center font-light xl:px-4 px-2 pb-8'>Our team offers specialized care for clients with Parkinson’s disease, helping manage symptoms and improve daily living</p>

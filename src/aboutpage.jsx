@@ -197,13 +197,14 @@ const vedios = [
      
       {/* Section with dynamic background image for mobile and desktop */}
       
-      <div className='container mt-10 '>
+      <div className='container mt-10  '>
         {/* Header section */}
         <p className="text-[6vw] md:text-[45px] text-center text-[#8D4374] font-thin" data-aos="fade-up">
  Here's how we help you achieve that
     </p>
-        {/* Body section */}
-        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 hover:text-white  md:gap-10 place-items-center  '>
+       <div  class="flex items-center justify-center  ">
+         {/* Body section */}
+         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 hover:text-white  md:gap-10 mr-10 place-items-center  '>
         {topprodect.map((data, index) => (
           
           
@@ -219,18 +220,27 @@ const vedios = [
    
     <img 
       src={data.src} 
-      className='w-[500px] h-auto sm:h-[400px]  object-cover rounded-xl block mx-auto transform transition-transform duration-300 group-hover:scale-105' 
+      className='w-[500px]  lg:h-[400px] h-[200px] object-cover rounded-xl block mx-auto transform transition-transform duration-300 group-hover:scale-105' 
     
     />
-    <p className=' font-bold text-[20px] group-hover:text-[white]  text-[#8D4374] rounded-xl mb-2 mt-2  '>{data.tittle}</p>
-    <p className=' p-2 rounded-xl text-center hover:text-white group-hover:text-[white] text-black' >{data.Description}</p>
+    <div>
+    <p className='font-bold text-[16px] lg:text-[20px] group-hover:text-[white] text-[#8D4374] rounded-xl mb-2 mt-2 text-center'>
+  {data.tittle}
+</p>
+<p className='p-2 rounded-xl w-full text-center hover:text-white group-hover:text-[white] text-[12px] lg:text-[15px] text-black'>
+  {data.Description}
+</p>
+    </div>
    
+
   </div>
 
 ))}
 
 </div>
 
+       </div>
+       
 <div className="flex flex-col items-center justify-center mt-10">
   <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-center text-gray-800 capitalize mt-10 dark:text-[#8D4374]">
     
@@ -281,7 +291,7 @@ const vedios = [
 
 
 
-      <div className="text-center  mb-4 px-4 ">
+      <div className="text-center  mb-4  ">
 
       <div className='grid grid-cols-1  sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 hover:text-white bg-primary  place-items-center lg:py-10 '>
   {vedios.map((data, index) => (
@@ -301,8 +311,8 @@ const vedios = [
     </div>
   ))}
   
-  <div className="flex flex-col items-left px-4  sm:py-4  ">
-  <p className="text-[30px] sm:text-[45px] sm:ml-10 lg:text-left lg:mr-2 text-black" data-aos="fade-up">
+  <div className="flex flex-col items-left px-4  sm:py-4   ">
+  <p className="text-[30px] sm:text-[45px] sm:ml-10 lg:ml-1 lg:text-left   text-black" data-aos="fade-up">
   Experience the Holistic Difference
 </p>
 
@@ -323,7 +333,7 @@ const vedios = [
 
 
 
-  <h1 className="text-[#8D4374] text-[8vw] sm:text-[60px] md:text-[80px] lg:text-[100px] font-light">
+  <h1 className="text-[#8D4374]  mt-10 text-[10vw] sm:text-[60px] md:text-[80px] lg:text-[100px] font-light">
     About Us
   </h1>
   <p className="text-[10px] sm:text-[20px] text-black sm:px-20 px-4 ">
@@ -362,7 +372,7 @@ const vedios = [
 
 
 <div className="w-full h-full">
-    <h1 className="text-[#8D4374] text-center text-[20px]  sm:text-[30px] xl:text-[40px] mb-2 font-thin">
+    <h1 className="text-[#8D4374] text-center text-[6vw]  lg:text-[30px] xl:text-[40px] mb-2 font-thin">
       A Gentle Touch for a Golden Age
     </h1>
     <p className="text-center text-[10px] sm:text-base sm:px-20 px-10">
@@ -371,7 +381,7 @@ const vedios = [
   </div>
 
   <div className="w-full h-full">
-    <h1 className="text-[#8D4374] text-center text-[20px]  sm:text-[30px] xl:text-[40px] font-thin">
+    <h1 className="text-[#8D4374] text-center text-[6vw]  lg:text-[30px] xl:text-[40px] font-thin">
       Championing Your Independence
     </h1>
     <p className="text-center text-[10px] sm:text-base sm:px-20 px-10">

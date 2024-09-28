@@ -24,7 +24,7 @@ import pngimage2 from './assets/supportive.png'
 import pngimage3 from './assets/proffessional.png'
 import heroservices from './assets/serviceimagescare.jpeg'
 import servicehero2 from './assets/service3mains.jpeg'
-import servicehero3 from './assets/Liveincarehero.jpg'
+import servicehero3 from './assets/overnightcare.jpeg'
 import aiimage4 from './assets/aiimage4.png'
 import aiimage5 from './assets/aiimage5.png'
 import aiimage6 from './assets/aiimage6.png'
@@ -147,13 +147,13 @@ function Servicespage3() {
   };
 
   return (
-    <div className="p-4 overflow-hidden">
+    <div className=" overflow-hidden">
       <Navbar />
 
       <div className='relative'>
-  <div className='mt-20 relative'>
+  <div className=' mt-20 relative'>
     <img src={servicehero2} className='h-[650px] xl:w-[100%] md:flex lg:flex hidden xl:flex' />
-    <img src={servicehero3} className='h-[500px] flex xl:hidden xl:w-[70%] md:hidden xl:ml-60 mx-0 ml-4' />
+    <img src={servicehero3} className='h-[500px] flex xl:hidden xl:w-[70%] md:hidden xl:ml-60 mx-0 ' />
   </div>
   <div className="absolute inset-0 hidden xl:flex lg:flex flex-col justify-center items-center z-50 mt-[420px] text-white">
     <h1 className="text-6xl text-white rounded-full font-thin mb-6 text-center ">

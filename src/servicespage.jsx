@@ -177,9 +177,9 @@ function Servicespage() {
           <p className='text-center font-light xl:px-2 px-2 pb-8'>Our caregivers help with medication reminders and administration to ensure our clients take their medications on time and safely</p>
         </div>
         <div className='w-[80%] xl:h-[95%]  bg-white rounded-3xl  border-solid border-[0px] border-black   ml-10 mt-10'>
-        <img src={servicelist3} className='h-[300px] w-full object-fill  rounded-t-3xl shadow-sm'/>
+        <img src={servicelist3} className='xl:h-[300px] h-[200px] w-full object-fill  rounded-t-3xl shadow-sm'/>
           <h1 className='text-[20px] text-[#8D4374] xl-px-10 font-bold text-center
-          '>Domestic Assistance/Household Tasks</h1>
+          '>Domestic Assistance<br/>Household Tasks</h1>
           <p className='text-center font-light xl:px-4 px-2 pb-8'>We provide support with household chores such as cleaning, laundry, and meal preparation to help maintain a clean and comfortable living environment</p>
         </div>
        
@@ -203,14 +203,14 @@ function Servicespage() {
           <img src={overnights} className='xl:h-[300px] object-fill h-[200px] w-full bg-red-500 xl:w-full  rounded-t-3xl shadow-sm'/>
           <h1 className='text-[20px] text-[#8D4374] font-bold text-center
           '>Overnight Care</h1>
-          <p className='text-center font-light xl:px-4 pb-8'>Our team provides support during the night, offering reassurance and assistance to ensure a safe and restful night’s sleep for our clients.</p>
+          <p className='text-center font-light xl:px-4 px-2 pb-8'>Our team provides support during the night, offering reassurance and assistance to ensure a safe and restful night’s sleep for our clients.</p>
         </div>
   
         <div className='w-[80%] xl:h-[95%] bg-white rounded-3xl border-solid border-[0px] border-black  ml-10  mt-10'>
-          <img src={servicelist6} className='xl:h-[300px] object-fill h-[200px] w-full bg-red-500 xl:w-full  rounded-t-3xl shadow-sm'/>
+          <img src={servicelist6} className='xl:h-[350px] object-fill h-[200px] w-full bg-red-500 xl:w-full  rounded-t-3xl shadow-sm'/>
           <h1 className='text-[20px] text-[#8D4374] font-bold text-center
           '>Respite Care</h1>
-          <p className='text-center font-light xl:px-4 pb-8'>We offer temporary relief for primary caregivers, allowing them to rest and recharge while we take care of their loved ones.</p>
+          <p className='text-center font-light xl:px-4 pb-8 px-2'>We offer temporary relief for primary caregivers, allowing them to rest and recharge while we take care of their loved ones.</p>
         </div>
         <div></div>
         <div className='w-[80%] xl:h-[95%] bg-white rounded-3xl border-solid border-[0px] border-black  ml-10  mt-10'>

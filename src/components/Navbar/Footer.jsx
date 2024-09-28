@@ -15,7 +15,7 @@ const Footer = () => {
         <div className="grid grid-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* TW Elements section */}
           <div>
-            <img src={Logo} className="w-40 sm:ml-0  ml-[90px]"  alt="Logo" />
+            <img src={Logo} className="w-40 sm:ml-0   ml-[60px]  lg:ml-[90px]"  alt="Logo" />
             <h6 className="mb-4 flex items-center justify-center font-semibold uppercase md:justify-start">
               Holistic Care Services
             </h6>
@@ -52,25 +52,26 @@ const Footer = () => {
 
           {/* Useful links section */}
           <div>
-            <h6 className="mb-4 flex justify-center font-semibold uppercase md:justify-start lg:ml-20">
+           
+            <div className="flex flex-col items-center justify-center p-4">
+  <div className="mb-4"> 
+  <h6 className="mb-4 flex justify-center font-semibold uppercase md:justify-start ">
               Useful Links
             </h6>
-            <div className="flex flex-col items-center justify-center p-4 ">
-              <div className="lg:mr-20">
-              <Link to="/privacypolicy" className="p-2 xl:px-4 group sm:mb-4 lg:mb-0 xl:mb-4  relative z-10 ">
-    Privacy Policy
-    <div className="bg-amber-500 h-[2px] w-0 group-hover:w-[130px] transition-all duration-500"></div>
-  </Link>
-              </div>
- 
-    <div>
-    <Link to="/leagalnotice" className="p-2 px-4 group relative z-10 mt-4 lg:mr-40">
-    Legal Notice
-    <div className="bg-amber-500 h-[2px] w-0 group-hover:w-[200px] transition-all duration-500"></div>
-  </Link>
-    </div>
-  
+    <Link to="/privacypolicy" className="p-2 xl:px-4 group relative z-10">
+      Privacy Policy
+      <div className="bg-amber-500 h-[2px] w-0 group-hover:w-[130px] transition-all duration-500"></div>
+    </Link>
+  </div>
+
+  <div>
+    <Link to="/leagalnotice" className="p-2 xl:px-4 group relative z-10 mt-4"> 
+      Legal Notice
+      <div className="bg-amber-500 h-[2px] w-0 group-hover:w-[200px] transition-all duration-500"></div>
+    </Link>
+  </div>
 </div>
+
 
           </div>
           <div className="lg:hidden h-10"></div>
@@ -81,23 +82,23 @@ const Footer = () => {
               Contact
             </h6>
             <p className="mb-4 flex items-center justify-center md:justify-start">
-              <span className="me-3">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5">
+             
+            <span className="me-3">
+              
+              </span>   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5 mb-8">
                   <path d="M11.47 3.84a.75.75 0 011.06 0l8.69 8.69a.75.75 0 101.06-1.06l-8.689-8.69a2.25 2.25 0 00-3.182 0l-8.69 8.69a.75.75 0 001.061 1.06l8.69-8.69z" />
                   <path d="M12 5.432l8.159 8.159v6.198a1.875 1.875 0 01-1.875 1.875H15a.75.75 0 01-.75-.75v-4.5a.75.75 0 00-.75-.75h-3a.75.75 0 00-.75.75V21a.75.75 0 01-.75.75H5.625A1.875 1.875 0 013.75 19.125v-6.198L12 5.432z" />
-                </svg>
-              </span>
-              Unit A4, 25 Goodlass Road<br />
+                </svg>Unit A4, 25 Goodlass Road<br />
               Liverpool, L24 9HJ, UK
             </p>
             <p className="mb-4 flex items-center justify-center md:justify-start">
               <span className="me-3">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5">
+               
+              </span>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5 mb-10 ml-2">
                   <path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z" />
                   <path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z" />
-                </svg>
-              </span>
-              office@holistic-careservices.co.uk<br />
+                </svg>office@holistic-careservices.co.uk<br />
               recruitment@holistic-careservices.co.uk
             </p>
             <p className="mb-4 flex items-center justify-center md:justify-start">

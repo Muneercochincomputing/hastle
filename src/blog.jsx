@@ -51,21 +51,21 @@ and preferences.` },
       title: "Caring for the Elderly: A Comprehensive Guide",
       excerpt: "To ensure the comfort and well-being of elderly loved ones, prioritize their safety by making their living environment fall-proof and accessible. Regularly monitor their health and nutrition, and provide companionship to combat loneliness and support emotional well-being. Engage them in activities that stimulate their mind and body while respecting their independence and preferences.",
       date: "August 18, 2024",
-      author: "John Doe",
+      author: "",
       image: blog1,
     },
     {
       title: "Holistic Elderly Care: Nurturing Health, Happiness, and Connection",
       excerpt: "Caring for the elderly requires compassion, knowledge, and thoughtful planning. Our comprehensive guide provides essential tips and strategies to help you deliver the best care for your aging loved ones. Explore our insights and make a positive difference today!",
       date: "July 25, 2024",
-      author: "Jane Smith",
+      author: "",
       image: blog2,
     },
     {
       title: "Pets as Companions: The Therapeutic Benefits for Seniors",
       excerpt: "Have you ever seen a senior smiling ear-to-ear while petting their furry friend? It’s a heartwarming sight that speaks volumes about the therapeutic benefits of pets for older adults. In this blog post, we’ll dive into the incredible ways that pets can enhance the quality of life for seniors. From offering companionship to reducing feelings of loneliness and anxiety, pets provide a sense of purpose and routine that can be immensely beneficial for mental health. Studies have shown that interacting with pets can lower blood pressure and increase levels of serotonin and dopamine, which promote relaxation and happiness. Moreover, the daily care of a pet encourages physical activity, whether it's a leisurely walk with a dog or playing with a cat at home. Let's explore how the bond between seniors and their pets can foster joy, comfort, and a more fulfilling life..",
       date: "June 15, 2024",
-      author: "Emily Johnson",
+      author: "",
       image: blog3,
     },
   ];
@@ -131,7 +131,7 @@ and preferences.` },
               <div className="bg-white cursor-pointer rounded overflow-hidden lg:h-[570px] shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] relative top-0 hover:-top-2 transition-all duration-300">
                 <img src={blog4} alt="Blog Post 1" className="w-full h-60 object-cover" />
                 <div className="p-6">
-                  <span className="text-sm block text-gray-400 mb-2">10 FEB 2023 | BY JOHN DOE</span>
+                  <span className="text-sm block text-gray-400 mb-2">10 FEB 2023 | </span>
                   <h3 className="text-xl font-bold text-[#333]">The Importance of Mental Health Support in Elderly Home Care</h3>
                   <hr className="my-6" />
                   <p className="text-gray-400 text-sm">As we age, mental health becomes just as crucial as physical health, especially for seniors who receive care at home. In the UK, where elderly home care services are on the rise, there is growing recognition of the need to address the emotional and psychological well-being of older adults. With the right support, seniors can enjoy a higher quality of life, maintain their independence, and stay connected with their loved ones.</p>
@@ -142,7 +142,7 @@ and preferences.` },
               <div className="bg-white cursor-pointer lg:h-[570px] rounded overflow-hidden shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] relative top-0 hover:-top-2 transition-all duration-300">
                 <img src={blog5} alt="Blog Post 2" className="w-full h-60 object-cover" />
                 <div className="p-6">
-                  <span className="text-sm block text-gray-400 mb-2">7 JUN 2023 | BY MARK ADAIR</span>
+                  <span className="text-sm block text-gray-400 mb-2">7 JUN 2023 | </span>
                   <h3 className="text-xl font-bold text-[#333]">How to Prepare Your Home for Elderly Care: Safety Tips and Modifications</h3>
                   <hr className="my-6" />
                   <p className="text-gray-400 text-sm">As the population ages, more families in the UK are choosing to care for their elderly loved ones at home. While this option allows seniors to remain in familiar surroundings, it also requires careful planning and modifications to ensure their safety and comfort.</p>
@@ -153,7 +153,7 @@ and preferences.` },
               <div className="bg-white cursor-pointer rounded overflow-hidden shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] relative top-0 hover:-top-2 transition-all duration-300">
                 <img src={blog6} alt="Blog Post 3" className="w-full h-60 object-cover" />
                 <div className="p-6">
-                  <span className="text-sm block text-gray-400 mb-2">5 OCT 2023 | BY SIMON KONECKI</span>
+                  <span className="text-sm block text-gray-400 mb-2">5 OCT 2023 | </span>
                   <h3 className="text-xl font-bold text-[#333]">Managing Chronic Conditions in Elderly Home Care: A Comprehensive Guide</h3>
                   <hr className="my-6" />
                   <p className="text-gray-400 text-sm">

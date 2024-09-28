@@ -141,13 +141,13 @@ function Topproducts({onScrollToSubscription}) {
 </div>
 
       </div>
-      <div className='w-full  h-[500px] bg-[#a43579] px-10 grid lg:grid-cols-2  grid-cols-1  mt-10   lg:text-[40px] text-[25px] font-sans lg:pl-40'>
+      <div className='w-full  h-[600px] bg-[#a43579] px-10 grid lg:grid-cols-2  grid-cols-1  mt-10   lg:text-[40px] text-[25px] font-sans lg:pl-40'>
         
-          <p className='font-banner text-white  lg:my-[100px]   '>The problem is that finding trustworthy care that truly understands your loved one`s
+          <p className='font-banner text-white  lg:my-[100px ]  mt-10  '>The problem is that finding trustworthy care that truly understands your loved one`s
             unique needs can be overwhelming and stressful
           </p>
-        
-        <div className='lg:w-[550px] w-full h-[400px] lg:ml-20  lg:my-[70px] '>
+        <div className='w-full h-5 lg:hidden'></div>
+        <div className='lg:w-[550px] w-full h-[400px] lg:ml-20  lg:my-[70px] m'>
           <img src={secondbannerimg }/>
       
         </div>
@@ -213,15 +213,16 @@ function Topproducts({onScrollToSubscription}) {
 
 
 </div>
-<div className='bg-[#a43579] lg:py-10 lg:px-10'>
-<p className=' text-white xl:text-[30px] font-banner lg:mt-10 lg:text-center text-left mt-20 md:mt-20 px-10 lg:my-[100px] bg-[#a43579] lg:px-10  '>Let us help you ensure your loved one ages gracefully, surrounded by the care and support they deserve.With our compassionate care, your loved one can enjoy a fulfilling and dignified life in a warm and supportive environment
+<div className='bg-[#a43579] py-10 lg:px-10   '>
+  <div className=' w-full h-[1px] lg:hideden'></div>
+<p className=' text-white   xl:text-[20px] font-banner lg:mt-10 lg:text-center text-left  md:mt-20 px-10 lg:my-[100px] bg-[#a43579] lg:px-10  '>Let us help you ensure your loved one ages gracefully, surrounded by the care and support they deserve.With our compassionate care, your loved one can enjoy a fulfilling and dignified life in a warm and supportive environment
 </p>
       <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-1 gap-8 bg-[#a43579] lg:px-10 ">
      
         {testimonials.length === 2 ? (
           <>
-            <div className="p-6 rounded-lg lg:shadow-lg border-solid lg:border-white lg:border-[5px] lg:border-t-0 lg:border-r-0 lg:border-b-0 hover:shadow-xl transition-shadow duration-300  lg:first-letter md:w-full sm:w-[400px] lg:w-[400px] h-[350px] px-10">
-              <p className="text-primary italic text-[20px]">"{testimonials[0].feedback}"</p>
+            <div className="p-6 rounded-lg  lg:shadow-lg border-solid lg:border-white lg:border-[5px] lg:border-t-0 lg:border-r-0 lg:border-b-0 hover:shadow-xl transition-shadow duration-300  lg:first-letter md:w-full sm:w-[400px] lg:w-[400px] h-[350px] px-10">
+              <p className="text-primary italic text-[15px]">"{testimonials[0].feedback}"</p>
               <h3 className="mt-4 font-bold text-[20px] text-white">{testimonials[0].name}</h3>
             </div>
 
@@ -231,8 +232,8 @@ function Topproducts({onScrollToSubscription}) {
             </div>
 
             <div className="p-6 rounded-lg lg:shadow-lg border-solid lg:border-white lg:border-[5px] lg:border-t-0 lg:border-r-0 lg:border-b-0 hover:shadow-xl transition-shadow duration-300 sm:w-[400px] lg:w-[400px] md:w-full h-[350px] px-10">
-              <p className="text-primary italic text-[20px]">"{testimonials[1].feedback}"</p>
-              <h3 className="mt-4 font-bold text-[20px] text-white">{testimonials[1].name}</h3>
+              <p className="text-primary italic text-[15px]">"{testimonials[1].feedback}"</p>
+              <h3 className="mt-4 font-bold text-[15px] text-white">{testimonials[1].name}</h3>
             </div>
           </>
         ) : (
@@ -242,7 +243,7 @@ function Topproducts({onScrollToSubscription}) {
               className="p-6 rounded-lg shadow-lg border-solid border-white border-[5px] border-t-0 border-r-0 border-b-0 hover:shadow-xl transition-shadow duration-300 w-[400px] h-[350px]"
             >
               <p className="text-primary italic text-[20px]">"{testimonial.feedback}"</p>
-              <h3 className="mt-4 font-bold text-[20px] text-white">{testimonial.name}</h3>
+              <h3 className="mt-4 font-bold text-[15px] text-white">{testimonial.name}</h3>
             </div>
           ))
         )}
