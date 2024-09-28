@@ -187,9 +187,7 @@ const vedios = [
   </li>
  
 
- <p className="text-[4vw] sm:text-[45px] text-center text-[#8D4374] font-thin" data-aos="fade-up">
- Here's how we help you achieve that
-    </p>
+
 </p>
 
 </ul>
@@ -201,7 +199,9 @@ const vedios = [
       
       <div className='container mt-10 '>
         {/* Header section */}
-       
+        <p className="text-[6vw] md:text-[45px] text-center text-[#8D4374] font-thin" data-aos="fade-up">
+ Here's how we help you achieve that
+    </p>
         {/* Body section */}
         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 hover:text-white  md:gap-10 place-items-center  '>
         {topprodect.map((data, index) => (
@@ -213,7 +213,7 @@ const vedios = [
     key={data.id}
    
     
-    className='w-full max-w-xs mt-[40px] sm:max-w-sm md:max-w-md bg-white  rounded-2xl  relative shadow-xl p-6 flex flex-col items-center transition-colors translate-x-4 duration-1200 group hover:bg-[#8D4374]  hover:text-white'
+    className='w-full sm:mr-10 max-w-xs mt-[40px] sm:max-w-sm md:max-w-md bg-white  rounded-2xl  relative shadow-xl p-6 flex flex-col items-center transition-colors translate-x-4 duration-1200 group hover:bg-[#8D4374]  hover:text-white'
  
  >
    
