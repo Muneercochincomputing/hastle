@@ -24,7 +24,7 @@ function Dashbord() {
         axios.get(`${url}/careers/`),
         axios.get(`${url}/subscribers/`),
         axios.get(`${url}/contacts/`),
-        axios.get(`http://localhost:8082/data/`)
+        axios.get(`${url}/data/`)
       
 
       ]);
