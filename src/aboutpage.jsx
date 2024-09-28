@@ -25,7 +25,7 @@ import demo from './assets/aboutreview.mp4';
 import directors from './assets/directors.jpeg'
 import supervisor1 from './assets/supervisor1.jpeg'
 import supervisor2 from './assets/supervisor2.jpeg'
-
+import { Link } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Lottie from 'react-lottie';
@@ -237,12 +237,13 @@ const vedios = [
     <p className="italic font-bold text-[#8D4374]">Take the first step towards peace of mind</p>
     <span className="w-20 h-1 my-2 rounded-lg dark:bg-violet-600"></span>
   </h2>
-
+<Link to='/contactpage'>
   <button className={`group relative min-h-[30px] p-6 w-[100px] sm:w-[150px] md:w-[200px] lg:w-[300px] overflow-hidden border border-white bg-[#a43579] text-white shadow-2xl transition-all before:absolute before:left-0 before:top-0 before:h-0 before:w-1/4 before:bg-white before:duration-500 after:absolute after:bottom-0 after:right-0 after:h-0 after:w-1/4 after:bg-white after:duration-500 hover:text-purple-500 hover:bg-white hover:before:h-full hover:after:h-full rounded-xl mt-4 px-20`}>
     <span className="absolute bottom-0 left-0 right-0 top-0 z-10 flex h-full w-full items-center justify-center group-hover:text-purple-500 text-[10px] sm:text-[12px] md:text-[16px] lg:text-[20px]">
       Schedule a Free Consultation
     </span>
   </button>
+  </Link>
 </div>
       </div>
 
@@ -270,7 +271,19 @@ const vedios = [
        
             {/* Overlay */}
         
-            <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 hover:text-white bg-primary  place-items-center py-10 '>
+        
+        
+
+      
+       
+      </div>
+
+
+
+
+      <div className="text-center  mb-4 px-4 ">
+
+      <div className='grid grid-cols-1  sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 hover:text-white bg-primary  place-items-center lg:py-10 '>
   {vedios.map((data, index) => (
     <div
       key={data.src}
@@ -288,32 +301,32 @@ const vedios = [
     </div>
   ))}
   
-  <div className="flex flex-col items-left px-4 ">
-    <p className="text-[4vw] sm:text-[45px] text-left text-black" data-aos="fade-up">
-      Experience the Holistic Difference
-    </p>
-    <p className="text-[14px] sm:text-[15px] mt-5 text-left text-white mr-[50px]">
-      Imagine waking up in your own home, bathed in warm sunlight, knowing you have everything you need at your fingertips.
-      A gentle hand to assist you, a kind voice to chat with, and a sense of peace knowing you're surrounded by care that understands your unique needs. 
-      We invite you to experience the Holistic difference. Let's sit down together, chat about your hopes and dreams, and craft a personalized care plan that helps you flourish exactly where you want to be – your own home.
-    </p>
+  <div className="flex flex-col items-left px-4  sm:py-4  ">
+  <p className="text-[30px] sm:text-[45px] sm:ml-10 lg:text-left lg:mr-2 text-black" data-aos="fade-up">
+  Experience the Holistic Difference
+</p>
+
+    <p className="text-[14px] sm:text-[15px] text-center mt-5 lg:text-left text-white lg:mr-[50px] sm:text-center sm:px-10 lg:px-0">
+  Imagine waking up in your own home, bathed in warm sunlight, with everything you need at your fingertips—gentle assistance, friendly conversation, and the peace of knowing you're surrounded by care that truly understands your needs. 
+  We invite you to experience the Holistic difference. Let's sit down, discuss your hopes and dreams, and create a personalized care plan that helps you thrive in the place you love most—your home.
+</p>
+<div className='h-20'></div>
+
   </div>
 </div>
 
-        
-
-      
-       
-      </div>
 
 
 
 
-      <div className="text-center  mb-4 px-4 ">
+
+
+
+
   <h1 className="text-[#8D4374] text-[8vw] sm:text-[60px] md:text-[80px] lg:text-[100px] font-light">
     About Us
   </h1>
-  <p className="text-[10px] sm:text-[20px] text-black sm:px-20 px-4">
+  <p className="text-[10px] sm:text-[20px] text-black sm:px-20 px-4 ">
     At Holistic Care Services, we believe in creating a world where our clients flourish. 
     Led by the visionary GP Dr. Kunbi Taiwo and Tola Taiwo, our team of compassionate and 
     highly trained care professionals provide personalized care that goes beyond mere assistance. 
@@ -352,7 +365,7 @@ const vedios = [
     <h1 className="text-[#8D4374] text-center text-[20px]  sm:text-[30px] xl:text-[40px] mb-2 font-thin">
       A Gentle Touch for a Golden Age
     </h1>
-    <p className="text-center text-[10px] sm:text-base sm:px-10">
+    <p className="text-center text-[10px] sm:text-base sm:px-20 px-10">
       At Holistic Care Services, we understand the importance of familiarity and independence, especially as we age. Imagine waking up in the familiar comfort of your own home, sunlight streaming in, a friendly voice greeting you, and a helping hand nearby. Whether it’s a gentle reminder to take your medication, a cup of tea, and a chat, or personalized attention and companionship from a live-in carer, we are here for you.
     </p>
   </div>
@@ -361,7 +374,7 @@ const vedios = [
     <h1 className="text-[#8D4374] text-center text-[20px]  sm:text-[30px] xl:text-[40px] font-thin">
       Championing Your Independence
     </h1>
-    <p className="text-center text-[10px] sm:text-base sm:px-10">
+    <p className="text-center text-[10px] sm:text-base sm:px-20 px-10">
       Many children worry about their parents aging alone. We understand. That’s why we offer a free, no-obligation consultation to discuss your needs and answer any questions you may have. We will come to your home, chat about your hopes and dreams, and create a personalized care plan that allows you to flourish right where you belong.
     </p>
   </div>
@@ -456,39 +469,41 @@ const vedios = [
 
     <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8 mt-10 ">
       
-    <div class="block items-center h-auto px-6 py-4 transition-colors duration-300 bg-white border rounded-xl group hover:bg-blue-600 dark:border-gray-700 text-center">
+    <div class="block items-center h-auto px-6 py-4 transition-colors duration-300 bg-white border rounded-xl group  dark:border-gray-700 text-center">
       <img class="w-[300px] h-[300px]  " src={manager} alt="Kevin Smyth"/>
         <div>
-          <h2 class="text-lg sm:text-xl lg:text-2xl font-semibold text-[#8D4374] group-hover:text-white">Kevin Smyth</h2>
+          <h2 class="text-lg sm:text-xl lg:text-2xl font-semibold text-[#8D4374] ">Kevin Smyth</h2>
           <p class="mt-2 text-sm sm:text-base lg:text-lg text-gray-500 group-hover:text-gray-300">Deputy Manager</p>
         </div>
       </div>
       
-      <div class="block items-center h-auto px-6 py-4 transition-colors duration-300 bg-white border rounded-xl group hover:bg-blue-600 dark:border-gray-700 text-center">
+      <div class="block items-center h-auto px-6 py-4 transition-colors duration-300 bg-white border rounded-xl group  dark:border-gray-700 text-center">
       <img class="w-[300px] h-[300px]  " src={kelismyth} alt="Kevin Smyth"/>
         <div>
-          <h2 class="text-lg sm:text-xl lg:text-2xl font-semibold text-[#8D4374] group-hover:text-white">Paula Smith</h2>
+          <h2 class="text-lg sm:text-xl lg:text-2xl font-semibold text-[#8D4374] ">Paula Smith</h2>
           <p class="mt-2 text-sm sm:text-base lg:text-lg text-gray-500 group-hover:text-gray-300">Field Care Supervisor</p>
         </div>
       </div>
 
-       
-      <div class="block items-center h-auto px-6 py-4 transition-colors duration-300 bg-white border rounded-xl group hover:bg-blue-600 dark:border-gray-700 text-center">
+          
+      <div class="block items-center h-auto px-6 py-4 transition-colors duration-300 bg-white border rounded-xl group  dark:border-gray-700 text-center">
+      <img class="w-[300px] h-[300px]  " src={supervisor2} alt="Kevin Smyth"/>
+        <div>
+          <h2 class="text-lg sm:text-xl lg:text-2xl font-semibold text-[#8D4374] ">Kerry Fisher</h2>
+          <p class="mt-2 text-sm sm:text-base lg:text-lg text-gray-500 group-hover:text-gray-300">Field Care Supervisor</p>
+        </div>
+      </div>
+
+
+      <div class="block items-center h-auto px-6 py-4 transition-colors duration-300 bg-white border rounded-xl group  dark:border-gray-700 text-center">
       <img class="w-[300px] h-[300px]  " src={supervisor1} alt="Kevin Smyth"/>
         <div>
-          <h2 class="text-lg sm:text-xl lg:text-2xl font-semibold text-[#8D4374] group-hover:text-white">Jo Mitchell</h2>
+          <h2 class="text-lg sm:text-xl lg:text-2xl font-semibold text-[#8D4374] ">Jo Mitchell</h2>
           <p class="mt-2 text-sm sm:text-base lg:text-lg text-gray-500 group-hover:text-gray-300">Recruitment Compliance Officer</p>
         </div>
       </div>
 
-        
-      <div class="block items-center h-auto px-6 py-4 transition-colors duration-300 bg-white border rounded-xl group hover:bg-blue-600 dark:border-gray-700 text-center">
-      <img class="w-[300px] h-[300px]  " src={supervisor2} alt="Kevin Smyth"/>
-        <div>
-          <h2 class="text-lg sm:text-xl lg:text-2xl font-semibold text-[#8D4374] group-hover:text-white">Kerry Fisher</h2>
-          <p class="mt-2 text-sm sm:text-base lg:text-lg text-gray-500 group-hover:text-gray-300">Field Care Supervisor</p>
-        </div>
-      </div>
+     
     </div>
   </div>
 </section>

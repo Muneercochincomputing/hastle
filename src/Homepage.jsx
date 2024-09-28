@@ -48,7 +48,7 @@ function Homepage() {
       <div className='overflow-hidden'><AnimatedContainerMob  onScrollToSubscription={handleScrollToContact}  /></div>
       <div className='overflow-hidden'><AnimatedContainerTab /></div>
       <div className='overflow-hidden'><Product pageIdentifier="Homepage"/></div>
-      <div className='overflow-hidden'><TopProducts/></div>
+      <div className='overflow-hidden'><TopProducts onScrollToSubscription={handleScrollToContact}/></div>
       <div className='overflow-hidden'><Banner /></div>
       <div className='bg-[#a43579] pt-10 text-white py-10 overflow-hidden' >
       <Whychooseus />
@@ -58,7 +58,7 @@ function Homepage() {
      
    
       <div className='overflow-hidden'><ContactSection  ref={contactRef} /></div>
-      <div className='overflow-hidden'><Subscription ref={contactRef}  /></div>
+      <div className='overflow-hidden'><Subscription ref={subscriptionRef}  /></div>
       
       <div className='overflow-hidden'> 
       <Footer />

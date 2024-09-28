@@ -106,10 +106,10 @@ const Navbar = ({ onScrollToSubscription }) => {
                                     <Link to='/service1' className='block px-4 py-2 text-white text-[15px] hover:bg-white hover:text-[#8D4374]'>
                                         Daily Support/Visiting Care Services
                                     </Link>
-                                    <Link to='/service3' className='block px-4 py-2 text-white text-[15px] hover:bg-gray-200 hover:text-[#8D4374]'>
+                                    <Link to='/service2' className='block px-4 py-2 text-white text-[15px] hover:bg-gray-200 hover:text-[#8D4374]'>
                                         Live-in Care
                                     </Link>
-                                    <Link to='/service4' className='block px-4 py-2 text-white text-[15px] hover:bg-gray-200 hover:text-[#8D4374]'>
+                                    <Link to='/service3' className='block px-4 py-2 text-white text-[15px] hover:bg-gray-200 hover:text-[#8D4374]'>
                                         Specialised Care
                                     </Link>
                                 </div>
@@ -170,12 +170,12 @@ const Navbar = ({ onScrollToSubscription }) => {
                             {isMobileServicesOpen && (
                                 <div className="mt-2 bg-[#bc3388] rounded-md shadow-md py-2">
                                     <Link to="/service1" className="block px-4 py-2 text-white">Daily Support/Visiting Care Services</Link>
-                                    <Link to="/service3" className="block px-4 py-2 text-white">Live-in Care</Link>
-                                    <Link to="/service4" className="block px-4 py-2 text-white">Specialised Care</Link>
+                                    <Link to="/service2" className="block px-4 py-2 text-white">Live-in Care</Link>
+                                    <Link to="/service3" className="block px-4 py-2 text-white">Specialised Care</Link>
                                 </div>
                             )}
                         </div>
-
+                        <Link to="/download" className="text-[#bc3388] font-bold">Download Brochure</Link>
                         <Link to="/careerspage" className="text-[#bc3388] font-bold">Careers</Link>
                         <Link to="/blog" className="text-[#bc3388] font-bold">Blogs</Link>
                         <Link to="/contactpage" className="text-[#bc3388] font-bold">Contact Us</Link>

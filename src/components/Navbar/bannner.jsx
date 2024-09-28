@@ -41,7 +41,7 @@ function Banner() {
           <img
               src={banner1}
               alt='Banner'
-              className='bg-white  sm:w-[300px] md:hidden xl:flex  w-[100px] sm:h-[300px] drop-shadow-md object-cover absolute sm:mt-[200px]    sm:block hidden 'data-aos='flip-left'
+              className='bg-white  sm:w-[300px] md:hidden xl:flex  w-[100px] sm:h-[300px] drop-shadow-md object-cover absolute sm:mt-[10%]    sm:block hidden 'data-aos='flip-left'
             />
           <img
               src={banner2}
@@ -51,36 +51,35 @@ function Banner() {
           <img
               src={banner3}
               alt='Banner'
-              className='bg-white sm:w-[300px] xl:w-[300px]  w-[100px] sm:h-[250px] drop-shadow-md object-cover absolute xl:ml-[400px] mb-[500px]  z-10 hidden sm:block md:w-[200px]' data-aos='flip-left'
+              className='bg-white sm:w-[300px] xl:w-[300px]  w-[100px] sm:h-[300px] drop-shadow-md object-cover absolute xl:ml-[400px] mb-[500px] sm:mt-[10%]   z-10 hidden sm:block md:w-[200px]' data-aos='flip-left'
             />
             
           {/* Text detail section */}
-          <div className='text-center sm:text-left sm:w-[500px] md:w-[300px] lg:w-[400px] xl:w-[500px] sm:ml-40' data-aos="fade-left" >
-            <h1 className='text-3xl font-bold mb-4'> Your loved ones deserve the best in their golden years—a place where care feels like home</h1>
-            <p className='text-lg mb-6'>
-            We make your home a warm, comforting environment
-where your loved ones can enjoy their golden years with
-dignity and respect. Our dedicated team offer
-round the clock care, ensuring all clients 
-receive the attention and support they need. With a range of
-activities to keep the mind and body active, along with
-delicious and nutritious meals; we strive to create a home-
-like atmosphere that foster not  companionship
-and joy where comfort, care, and community come together
-to make every day meaningful whether it’s for short term
-respite care or ongoing support.
-            </p>
+          <div className='text-center sm:text-left sm:w-[500px] md:w-[300px] lg:w-[400px] xl:w-[500px] sm:ml-40' data-aos="fade-left">
+  <h1 className='text-3xl font-bold mb-4'>
+    Your loved ones deserve the best in their golden years—a place where care feels like home
+  </h1>
+  <p className='text-lg mb-6'>
+    We make your home a warm, comforting environment where your loved ones can enjoy their golden years with dignity and respect.
+    Our dedicated team offer round the clock care, ensuring all clients receive the attention and support they need. 
+    With a range of activities to keep the mind and body active, along with delicious and nutritious meals, we strive to create a 
+    home-like atmosphere that fosters not only companionship and joy but also comfort, care, and community. Every day is meaningful, 
+    whether it’s for short-term respite care or ongoing support.
+    <br />
+    <br />
+    <div className='flex justify-center sm:justify-center md:justify-start'>
+      <Link to='/about'>
+        <button className='bg-[#a43579] text-white py-2 px-20 rounded hover:bg-primary-dark transition duration-300'>
+          Learn More
+        </button>
+      </Link>
+    </div>
+  </p>
+</div>
 
-
-            
-            <Link to='/about'>
-            <button className='bg-[#a43579] text-white py-2 px-4 rounded hover:bg-primary-dark transition duration-300'>
-              Learn More
-            </button>
-            </Link>
-            
-          </div>
         </div>
+           
+       
       </div>
     </div>
   );

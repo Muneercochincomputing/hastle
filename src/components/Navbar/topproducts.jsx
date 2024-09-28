@@ -23,7 +23,7 @@ import Cqc from './cqc';
 
 
 
-function Topproducts() {
+function Topproducts({onScrollToSubscription}) {
 
 
 
@@ -157,7 +157,7 @@ function Topproducts() {
 
       <div>
         {/* Additional Content */}
-        <div className='sm:mt-[200px] lg:mt-10 mt-[200px]   px-10  '>
+        <div className='sm:mt-[200px] lg:mt-10 lg:mt-[200px]   px-10  '>
           <h1 className='text-center text-sm sm:text-[40px] mt-10  font-bold text-[#8D4374] sm:mb-10 mb-5 '>
            <p className='text-[25px] lg:text-[40px] font-banner'> Getting Started With Holistic Care is Easy</p>
           </h1>
@@ -191,6 +191,7 @@ function Topproducts() {
   <div className="relative">
   <img src={section3bannerimage1} className="w-[300px] h-[580px] m-2 shadow-bulge" />
   <button
+  onClick={onScrollToSubscription}
     className="group absolute rounded-lg bottom-[536px] xl:text-[18px] py-10 px-10 left-10 z-10 h-[50px] w-60 overflow-hidden border border-white bg-gradient-to-r from-[#a43579] to-[#a43579] text-white transition-all duration-300 ease-in-out shadow-lg before:absolute before:left-0 before:top-0 before:h-0 before:w-1/4 before:duration-500 after:absolute after:bottom-0 after:right-0 after:h-0 after:w-1/4 after:duration-500 hover:text-[#8D4374] hover:bg-white hover:before:h-full hover:after:h-full flex items-center justify-center"
     
   >
@@ -212,24 +213,24 @@ function Topproducts() {
 
 
 </div>
-<div className='bg-[#a43579]'>
-<p className=' text-white xl:text-[30px] font-banner mt-10 text-center lg:my-[100px] bg-[#a43579] px-10  '>Let us help you ensure your loved one ages gracefully, surrounded by the care and support they deserve.With our compassionate care, your loved one can enjoy a fulfilling and dignified life in a warm and supportive environment
+<div className='bg-[#a43579] lg:py-10 lg:px-10'>
+<p className=' text-white xl:text-[30px] font-banner lg:mt-10 lg:text-center text-left mt-20 md:mt-20 px-10 lg:my-[100px] bg-[#a43579] lg:px-10  '>Let us help you ensure your loved one ages gracefully, surrounded by the care and support they deserve.With our compassionate care, your loved one can enjoy a fulfilling and dignified life in a warm and supportive environment
 </p>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 bg-[#a43579] px-10 ">
+      <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-1 gap-8 bg-[#a43579] lg:px-10 ">
      
         {testimonials.length === 2 ? (
           <>
-            <div className="p-6 rounded-lg shadow-lg border-solid border-white border-[5px] border-t-0 border-r-0 border-b-0 hover:shadow-xl transition-shadow duration-300 w-[400px] h-[350px]">
+            <div className="p-6 rounded-lg lg:shadow-lg border-solid lg:border-white lg:border-[5px] lg:border-t-0 lg:border-r-0 lg:border-b-0 hover:shadow-xl transition-shadow duration-300  lg:first-letter md:w-full sm:w-[400px] lg:w-[400px] h-[350px] px-10">
               <p className="text-primary italic text-[20px]">"{testimonials[0].feedback}"</p>
               <h3 className="mt-4 font-bold text-[20px] text-white">{testimonials[0].name}</h3>
             </div>
 
             {/* Centered div for CQC widget */}
-            <div id="cqc-widget" className="flex justify-center items-center">
+            <div id="cqc-widget" className="flex justify-center items-center ">
               {/* CQC widget will be loaded here */}
             </div>
 
-            <div className="p-6 rounded-lg shadow-lg border-solid border-white border-[5px] border-t-0 border-r-0 border-b-0 hover:shadow-xl transition-shadow duration-300 w-[400px] h-[350px]">
+            <div className="p-6 rounded-lg lg:shadow-lg border-solid lg:border-white lg:border-[5px] lg:border-t-0 lg:border-r-0 lg:border-b-0 hover:shadow-xl transition-shadow duration-300 sm:w-[400px] lg:w-[400px] md:w-full h-[350px] px-10">
               <p className="text-primary italic text-[20px]">"{testimonials[1].feedback}"</p>
               <h3 className="mt-4 font-bold text-[20px] text-white">{testimonials[1].name}</h3>
             </div>

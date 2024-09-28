@@ -24,7 +24,7 @@ import multiple from './assets/IMG_5765.jpg'
 import pngimage from './assets/caring.png'
 import pngimage2 from './assets/supportive.png'
 import pngimage3 from './assets/proffessional.png'
-import servicehero4 from './assets/serviceimagescare.jpeg'
+import servicehero4 from './assets/IMG_5850.jpg'
 import heroservices from './assets/serviceimagescare.jpeg'
 import arthitiscare from './assets/IMG_5756 .jpg'
 import demservice2 from './assets/demservice2.jpg'
@@ -298,7 +298,7 @@ function Servicespage4() {
 
 
       </div>
-     
+      <Testimonial /> 
     <Emailsubscription/>
       <Footer />
     </div>

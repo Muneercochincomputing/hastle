@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import demo from '../../assets/heromob.mp4';
+import demo from '../../assets/IMG_6146.jpg';
 
 const AnimatedContainermob = ({ onScrollToSubscription }) => {
   const [style, setStyle] = useState({
@@ -66,22 +66,21 @@ const AnimatedContainermob = ({ onScrollToSubscription }) => {
           ...style,
         }}
       >
-        <video
-          className={`object-fill w-full h-full ${videoClass} transition-all duration-[0.9s] ease-out`}
-          autoPlay
-          muted
-          loop
-        >
-          <source src={demo} type="video/mp4" />
-        </video>
+        <img
+          className={`object-cover w-screen h-full ${videoClass} overflow-hidden transition-all duration-[0.9s] ease-out`}
+         
+          src={demo} type="video/mp4" 
+       />
+           
+        
         <div className='absolute mt-[400px]'>
 
         <div
-          className={`text-white  text-[22px] sm:text-[24px] md:text-[20px] font-bold transition-opacity duration-[0.9s] left-0 ease-out ${textClass}`}
+          className={`text-white  font-banner text-[22px] sm:text-[22px] md:text-[20px] mx-2 font-bold transition-opacity duration-[0.9s] left-0 ease-out ${textClass}`}
         >
          Helping you & your loved ones to<br/><span className='ml-1'> age gracefully & comfortably in</span> <br />your home
         </div>
-        <button className={`${textClass} group mt-4 px-2 py-1 ml-2 w-[180px] md:w-[150px] lg:w-[200px] border border-white bg-[#8D4374] text-white shadow-2xl transition-all hover:text-purple-500 hover:bg-white rounded-md`} onClick={onScrollToSubscription}>
+        <button className={`${textClass} group mt-4 px-4 py-1 ml-2 w-[180px] md:w-[150px] lg:w-[200px] border border-white bg-[#8D4374] text-white shadow-2xl transition-all hover:text-purple-500 hover:bg-white rounded-md`} onClick={onScrollToSubscription}>
             <span className="font-semibold text-[14px] md:text-[12px] lg:text-[16px]">
               Schedule <br/> Free Consultation
             </span>

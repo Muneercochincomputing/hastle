@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import demo from '../../assets/heromob.mp4';
+import demo from '../../assets/IMG_6146.jpg';
 
 const AnimatedContainertab = () => {
   const [style, setStyle] = useState({
@@ -66,19 +66,17 @@ const AnimatedContainertab = () => {
           ...style,
         }}
       >
-        <video
+        <img
           className={`object-fill w-full h-full ${videoClass} transition-all duration-[0.9s] ease-out`}
-          autoPlay
-          muted
-          loop
-        >
-          <source src={demo} type="video/mp4" />
-        </video>
+          src={demo} type="video/mp4" 
+        />
+          
+        
         <div className='absolute left-0 top-[400px] ml-4'>
   <div
-    className={`text-white text-[28px] text-left sm:text-[24px] md:text-[40px] font-bold transition-opacity duration-[0.9s] ease-out ${textClass}  shadow-bulge`}
+    className={`text-white font-banner text-[28px] text-left sm:text-[24px] md:text-[40px] font-bold transition-opacity duration-[0.9s] ease-out ${textClass}  `}
   >
-     Outstanding, compassionate care<span> personalized to your needs</span> <br />
+       Helping you & your loved ones to<span> age gracefully & comfortably in</span> <br />
   </div>
   <button className={`${textClass} group mt-4 px-6 py-3 w-[180px] md:w-[250px] lg:w-[200px] border border-white bg-purple-500 text-white shadow-2xl transition-all hover:text-purple-500 hover:bg-white rounded-md`}>
     <span className="font-semibold text-[14px] md:text-[15px] lg:text-[16px]">

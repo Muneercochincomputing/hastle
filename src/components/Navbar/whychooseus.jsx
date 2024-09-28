@@ -7,7 +7,7 @@ function Whychooseus() {
   return (
     <div>
         {/* Additional Content */}
-        <div className='sm:mt-[300px] xl:mt-10 mt-10'>
+        <div className='lg:mt-[300px] xl:mt-10 mt-10'>
           <h1 className='text-center text-sm sm:text-[40px] font-bold text-white sm:mb-10 mb-5 '>
            <p className='text-[25px] lg:text-[40px]'> What sets us apart?</p>
           </h1>

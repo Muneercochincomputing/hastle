@@ -185,14 +185,15 @@ const ContactSection = forwardRef((props, ref) => {
             </button>
           </form>
 
-
-          <ul className="lg:mt-[150px]  md:ml-20 lg:ml-10 flex flex-wrap justify-center md:justify-start gap-2  mb-5 mt-5">
+           
+          <ul className="lg:mt-[150px]    flex flex-wrap justify-center md:justify-start gap-2  mb-5 mt-5">
             <li className="flex items-center text-black">
               <MdOutgoingMail />
               <a href="javascript:void(0)" className="text-sm ml-4">
                 <strong>office@holistic-careservices.co.uk</strong>
               </a>
             </li>
+            <div className='w-20 hidden lg:flex'></div>
             <li className="flex items-center text-black">
               <MdOutlinePhoneForwarded />
               <a href="" className="text-sm ml-4 ">

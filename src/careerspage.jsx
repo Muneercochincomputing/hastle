@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import Footer from './components/Navbar/Footer'
 import '@react-pdf-viewer/core/lib/styles/index.css';
 import '@react-pdf-viewer/default-layout/lib/styles/index.css';
-import careersimage from './assets/aboutimage1.jpeg'
+import careersimage from './assets/logologin.jpeg'
 import bannerimage from './assets/image3.jpeg'
 import formimage from './assets/servicemain1.jpeg'
 import Navbar from './components/Navbar/Navbar'
@@ -139,13 +139,13 @@ function Careerspage() {
      
         <div className="relative h-[600px]    w-full bg-white shadow-bulge rounded-b-[150px] overflow-hidden">
   <img 
-    src={careersimage} 
+    src={formimage} 
     alt="Careers" 
     className="h-full w-full object-cover " 
   />
-  <div className='bg-black/60 inset-0 absolute z-5 '></div>
+  <div className='bg-black/40 inset-0 absolute z-5 '></div>
   <div className="absolute inset-0 justify-center items-center  grid xl:grid-cols-2 z-10 ">
-    <div className="xl:w-[800px] xl:mt-[300px]   xl:h-[200px] xl:bg-[#8D4374]/70 justify-center items-center" data-aos='fade-left'>
+    <div className="xl:w-[800px] xl:mt-[300px]   xl:h-[200px] xl:bg-[#a43579]/70 justify-center items-center" >
       <h1 className="text-white xl:text-[60px] text-[30px] mt-2 font-light text-center flex justify-center items-center ">
         Join Our Team
       </h1>
@@ -153,14 +153,14 @@ function Careerspage() {
       
     </div>
    
-    <div className="absolute  right-0 xl:flex justify-end items-center xl:w-[400px] xl:h-[400px] hidden ">
+    {/* <div className="absolute  right-0 xl:flex justify-end items-center xl:w-[400px] xl:h-[400px] hidden ">
   <div className="relative flex xl:w-[400px] xl:h-[400px] rounded-full overflow-hidden xl:p-[5px]">
     <div className="absolute inset-0  rounded-full bg-[conic-gradient(#8D4374,transparent_120deg)] animate-rotate"></div>
     <div className="relative z-10 flex rounded-full bg-[] ">
       <img src={careersimage} className="object-cover p-2 rounded-full w-full h-full" alt="Careers"/>
-    </div>
-  </div>
-</div>
+    </div> */}
+  {/* </div>
+</div> */}
 
 
     
