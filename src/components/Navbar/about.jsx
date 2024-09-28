@@ -22,9 +22,10 @@ const Product = ({ pageIdentifier }) => {
   }, [pageIdentifier]); // Run effect when pageIdentifier changes
 
   return(
-    <div className='px-20 py-10 mt-10 shadow-bulge rounded-none'>
-      <div className="tg-review-carousel-widget-container" id={`tgrcw_0059ab4d_${pageIdentifier}`}></div>
-    </div>
+    <div className='lg:px-20 lg:py-10 mt-10 h-[400px] shadow-bulge rounded-none border border-t-0 border-l-0 border-r-0  '>
+  <div className="tg-review-carousel-widget-container  shadow-bulge " id={`tgrcw_0059ab4d_${pageIdentifier}`}></div>
+</div>
+
   
   
 
