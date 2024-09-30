@@ -4,9 +4,9 @@ import mainhero from './assets/abouthero.jpg'
 import mainimage2 from './assets/blog2.jpeg';
 import mainimage3 from './assets/blog1.jpeg';
 import mainimage4 from './assets/blog2.jpeg';
-import servicesmain from './assets/servicemain1.jpeg'
+import servicesmain from './assets/IMG_5788 2.jpg'
 import servicelist1 from './assets/serviceslist3.jpeg'
-import servicelist2 from './assets/IMG_5827.jpg'
+import servicelist2 from './assets/IMG_5827.jpeg'
 import servicelist3 from './assets/servicelists2.jpeg'
 import servicelist4 from './assets/servicelists3.jpeg'
 import servicelist5 from './assets/servicelisst4.jpeg'
