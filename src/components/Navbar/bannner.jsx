@@ -56,7 +56,7 @@ function Banner() {
             
           {/* Text detail section */}
           <div className='text-center sm:text-left sm:w-[500px] md:w-[300px] lg:w-[400px] xl:w-[500px] sm:ml-40' data-aos="fade-left">
-  <h1 className='text-3xl font-bold mb-4'>
+  <h1 className='text-3xl font-banner mb-4 text-primary'>
     Your loved ones deserve the best in their golden years—a place where care feels like home
   </h1>
   <p className='text-lg mb-6'>

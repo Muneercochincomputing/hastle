@@ -187,7 +187,7 @@ const ContactSection = forwardRef((props, ref) => {
 
            
           <ul className="lg:mt-[150px]    flex flex-wrap justify-center md:justify-start gap-2  mb-5 mt-5">
-            <li className="flex items-center text-black">
+            <li className="flex items-center text-black ml-2">
               <MdOutgoingMail />
               <a href="javascript:void(0)" className="text-sm ml-4">
                 <strong>office@holistic-careservices.co.uk</strong>
