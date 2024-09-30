@@ -101,7 +101,7 @@ function Topproducts({onScrollToSubscription}) {
 
   return (
     <div>
-      <div className='container mt-10 pt:10 lg:px-1 border border-r-0 border-l-0 border-b-0  border-black/40 shadow-[0_-4px_4px_0_rgba(0,0,0,0.25)]'>
+      <div className='container mt-10  lg:mt-20 pt:10  lg:w-full  '>
         {/* Header section */}
         <div className='text-center mb-10 max-w-[900px] mx-auto '>
           <p data-aos='fade-up' data-aos-delay="200"  className='sm:text-[50px] xl:mt-20 mt-20 text-[30px] text-primary '>
