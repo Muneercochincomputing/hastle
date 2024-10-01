@@ -451,7 +451,7 @@ const vedios = [
                   <path d="M232,246.857V16H16V416H54.4ZM48,48H200V233.143L48,377.905Z"></path>
                   <path d="M280,416h38.4L496,246.857V16H280ZM312,48H464V233.143L312,377.905Z"></path>
                 </svg>
-                <p class="px-6 py-1 text-sm sm:text-base lg:text-lg italic">
+                <p class="px-6 py-1 text-sm sm:text-base lg:text-lg italic lg:ml-1  ml-4">
                   We were both very close to our grandmothers of beloved memory and in their later years, they needed care due to worsening mobility. This exposed us to the difficulties faced by the elderly in maintaining their independence in their golden age and this birthed the vision to help people age gracefully and flourish in their own homes.
                 </p>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" class="absolute bottom-0 right-0 w-8 h-8 dark:text-gray-300">

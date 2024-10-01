@@ -186,7 +186,7 @@ function Servicespage4() {
          <div className='w-[80%] xl:h-[95%]  bg-white rounded-3xl border-solid border-[0px] border-black ml-10 mt-10'>
         <img src={service10image} className='   xl:h-[300px] object-cover w-full  h-[200px] rounded-t-3xl shadow-sm'/>
           <h1 className='text-[20px] text-[#8D4374] font-bold text-center
-          '>Learning disability</h1>
+          '>Learning Disability</h1>
           <p className='text-center font-light xl:px-2 px-2 pb-8'>We support with learning disabilities including down`s
           syndrome, autism, developmental disabilities, acquired learning disabilities.</p>
         </div>
@@ -232,7 +232,7 @@ function Servicespage4() {
           <img src={overnights} className='xl:h-[300px] object-fill h-[200px] w-full bg-red-500 xl:w-full  rounded-t-3xl shadow-sm'/>
           <h1 className='text-[20px] text-[#8D4374] font-bold text-center
           '>Diabetes Care</h1>
-          <p className='text-center font-light xl:px-4 pb-8'>We offer assistance with diabetes management, including monitoring blood sugar levels and providing dietary guidance.</p>
+          <p className='text-center font-light xl:px-4 pb-8 px-2'>We offer assistance with diabetes management, including monitoring blood sugar levels and providing dietary guidance.</p>
         </div>
   
      
@@ -267,7 +267,7 @@ function Servicespage4() {
           <img src={multiple } className='xl:h-[300px] object-fill h-[200px] w-full bg-red-500 xl:w-full  rounded-t-3xl shadow-sm'/>
           <h1 className='text-[20px] text-[#8D4374] font-bold text-center
           '>Multiple Sclerosis Care</h1>
-          <p className='text-center font-light xl:px-4 pb-8'>Our <canvas></canvas>aregivers provide support for clients with multiple sclerosis, focusing on managing symptoms and improving their quality of life. </p>
+          <p className='text-center font-light xl:px-4 pb-8'>Our <canvas></canvas>caregivers provide support for clients with multiple sclerosis, focusing on managing symptoms and improving their quality of life. </p>
         </div>
   
        

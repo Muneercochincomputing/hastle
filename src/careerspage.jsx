@@ -168,7 +168,7 @@ function Careerspage() {
 </div>
 
 
-<p className='xl:px-40 px-4 text-center font-light mt-10 text xl:text-[20px]'>As a member of our dedicated team, you will contribute to creating a nurturing and enriching environment, where your commitment to providing exceptional care will help foster a sense of community and belonging for each of our senior clients</p>
+<p className='xl:px-40 px-4 text-center font-light mt-10 text xl:text-[20px]'>As a member of our dedicated team, you will contribute to creating a nurturing and enriching environment, where your commitment to providing exceptional care will help foster a sense of community and belonging for each of our elderly clients</p>
 
  {/* Join Us Banner */}
 <div class="bg-gray-50 mt-20 font-[sans-serif] relative mb-10 max-w-6xl shadow-lg h-[500px] w-full shadow-[#e9d9f3] mx-auto rounded overflow-hidden">

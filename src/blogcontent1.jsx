@@ -44,13 +44,13 @@ function Blogcontent1() {
       title: "Holistic Elderly Care: Nurturing Health, Happiness, and Connection",
       excerpt: "Caring for the elderly requires compassion, knowledge, and thoughtful planning. Our comprehensive guide provides essential tips and strategies to help you deliver the best care for your aging loved ones. Explore our insights and make a positive difference today!",
       date: "July 25, 2024",
-      author: "Jane Smith",
+    
       image: blog2,
     },
     {
       title: "Pets as Companions: The Therapeutic Benefits for Seniors",
       excerpt: "Have you ever seen a senior smiling ear-to-ear while petting their furry friend? It’s a heartwarming sight that speaks volumes about the therapeutic benefits of pets for older adults. In this blog post, we’ll dive into the incredible ways that pets can enhance the quality of life for seniors. From offering companionship to reducing feelings of loneliness and anxiety, pets provide a sense of purpose and routine that can be immensely beneficial for mental health. ",
-      author: "Emily Johnson",
+
       image: blog3,
     },
   ];
