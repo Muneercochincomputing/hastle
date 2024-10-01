@@ -41,21 +41,21 @@ function About() {
         id:1,
         src:stock3,
         tittle:'We Listen to your concerns',
-        Description: "We take the time to understand your loved one`s needs,preferences,and goals so we can create truely personalised care plan"
+        Description: "We take the time to understand your loved one`s needs,preferences,and goals so we can create truly personalised care plan"
        
     },
     {
         id:1,
         src:stock2,
         tittle:'We empower your loved one',
-        Description: "Our compassionate care provide assistance with daiytasks,medication,management and companionship,creating independance and well-being"
+        Description: "Our compassionate care provide assistance with dailytasks,medication,management and companionship,creating independance and well-being"
        
     },
     {
         id:1,
         src:stock,
         tittle:'We give you peace of mind ',
-        Description: " With our relaible and transparent services,you can rust assured that your loved one is reciving the highest quality care"
+        Description: " With our relaible and transparent services,you can trust assured that your loved one is reciving the highest quality care"
 
 
        
