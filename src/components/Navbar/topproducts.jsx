@@ -213,7 +213,7 @@ function Topproducts({onScrollToSubscription}) {
 
 
 </div>
-<div className='bg-[#a43579] py-10 lg:px-10  lg:mt-10  '>
+<div className='bg-[#a43579] py-10 lg:px-10  lg:mt-10 mt-10  '>
   <div className=' w-full h-[1px] lg:hideden'></div>
 <p className=' text-white   xl:text-[30px] font-banner lg:mt-10 lg:text-center text-left  md:mt-20 px-10 lg:my-[100px] bg-[#a43579] lg:px-10  '>Let us help you ensure your loved one ages gracefully, surrounded by the care and support they deserve. With our compassionate care, your loved one can enjoy a fulfilling and dignified life in a warm and supportive environment
 </p>
