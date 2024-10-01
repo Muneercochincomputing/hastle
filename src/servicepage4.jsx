@@ -272,7 +272,7 @@ function Servicespage4() {
   
        
 </div>
-<div className='w-full xl:px-0'>
+<div className='w-full xl:px-0 mt-10 lg:mt-1'>
   <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-3 gap-5 xl:gap-6 xl:w-[100%] mx-auto xl:mt-40 xl:mb-20'>
     <div className='flex flex-col items-center'>
       <img src={aiimage7} className='w-[100%] xl:h-[450px] sm:w-[70%] md:w-[80%] xl:mt-[28px]' alt='Caring' />

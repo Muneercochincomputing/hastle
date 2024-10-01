@@ -78,7 +78,7 @@ function Blogcontent4() {
   <p className='  text-black xl:text-[45px] text-[25px] font-bold'>The Importance of Mental Health Support in Elderly Home Care
   </p>
   <p className="text-lg md:text-1xl text-left text-black  xl:px-10 px-2 mt-10">As we age, mental health becomes just as crucial as physical health, especially for
-seniors who receive care at home. In the UK, where elderly home care services are on
+Seniors who receive care at home. In the UK, where elderly home care services are on
 the rise, there is growing recognition of the need to address the emotional and
 psychological well-being of older adults. With the right support, seniors can enjoy a
 higher quality of life, maintain their independence, and stay connected with their loved
@@ -205,7 +205,7 @@ stress and prevent caregiver burnout.</p>
 
 
   <div className='xl:mt-[50px] xl:mr-10 '>
-    <h1 className="text-2xl md:text-3xl font-extrabold mb-6 text-left text-black">Mental Health Resources </h1>
+    <h1 className="text-2xl md:text-3xl font-extrabold mb-6 text-left text-black mt-10 lg:ml-1 ">Mental Health Resources </h1>
     <p className="text-lg md:text-1xl text-left text-black ">Access to mental health resources is crucial. Many home care providers in the
 UK now include mental health support as part of their services. This may involve
 regular visits from a mental health nurse, access to therapy sessions, or even
