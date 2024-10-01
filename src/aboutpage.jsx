@@ -334,15 +334,15 @@ const vedios = [
 
 
 
-  <h1 className="text-[#8D4374]  mt-10 text-[10vw] sm:text-[60px] md:text-[80px] lg:text-[100px] font-light">
+  <h1 className="text-[#8D4374]  mt-10 text-[10vw] sm:text-[60px] md:text-[80px] lg:text-[100px] font-light xl:px-26 ">
     About Us
   </h1>
-  <p className="text-[10px] sm:text-[20px] text-black sm:px-20 px-4 ">
+  <p className="text-[10px] sm:text-[20px] text-black sm:px-20 px-4  xl:mx-20 ">
     At Holistic Care Services, we believe in creating a world where our clients flourish. 
     Led by the visionary GP Dr. Kunbi Taiwo and Tola Taiwo, our team of compassionate and 
     highly trained care professionals provides personalized care that goes beyond mere assistance. 
     Our mission is to celebrate each triumph, big or small, and remind 
-    our clients that aging is not about limitations but embracing life's possibilities
+    our clients that aging is not about limitations but embracing <br/>life's possibilities
   </p>
 </div>
 
@@ -372,21 +372,21 @@ const vedios = [
 
 
 
-<div className="w-full h-full">
+<div className="w-full h-full xl:px-20">
     <h1 className="text-[#8D4374] text-center text-[6vw]  lg:text-[30px] xl:text-[40px] mb-2 font-thin">
       A Gentle Touch for a Golden Age
     </h1>
-    <p className="text-center text-[10px] sm:text-base sm:px-20 px-10">
+    <p className="text-center text-[10px] sm:text-base sm:px-20 px-10 xl:px-26">
       At Holistic Care Services, we understand the importance of familiarity and independence, especially as we age. Imagine waking up in the familiar comfort of your own home, sunlight streaming in, a friendly voice greeting you, and a helping hand nearby. Whether it’s a gentle reminder to take your medication, a cup of tea and a chat, or personalised attention and companionship from a live-in carer, we are here for you.
     </p>
   </div>
 
-  <div className="w-full h-full">
+  <div className="w-full h-full xl:px-20 xl:mt-2">
     <h1 className="text-[#8D4374] text-center text-[6vw]  lg:text-[30px] xl:text-[40px] font-thin">
       Championing Your Independence
     </h1>
-    <p className="text-center text-[10px] sm:text-base sm:px-20 px-10">
-      Many children worry about their parents aging alone. We understand. That’s why we offer a free, no-obligation consultation to discuss your needs and answer any questions you may have. We will come to your home, chat about your hopes and dreams, and create a personalised care plan that allows you to flourish right where you belong.
+    <p className="text-center text-[10px] sm:text-base sm:px-20 px-10 xl:mx-26 xl:mt-2">
+      Many children worry about their parents aging alone. We understand. That’s why we offer a free, no-obligation consultation to discuss your needs and answer any questions you may have. We will come to your home, chat about your hopes and dreams, and create a personalised care plan that allows you to flourish right <br/>where you belong.
     </p>
   </div>
 
