@@ -139,12 +139,14 @@ const Navbar = ({ onScrollToSubscription }) => {
                     </div>
 
                     {/* Subscribe Button */}
+                    <Link to={'/contactpage'}>
                     <button className="group relative min-h-[50px] w-60 overflow-hidden border border-white bg-gradient-to-r from-[#bc3388] to-[#941d67] text-white transition-all duration-300 ease-in-out shadow-lg before:absolute before:left-0 before:top-0 before:h-0 before:w-1/4 before:duration-500 after:absolute after:bottom-0 after:right-0 after:h-0 after:w-1/4 after:duration-500 hover:text-[#8D4374] hover:bg-white hover:before:h-full hover:after:h-full rounded-full"
-                        onClick={onScrollToSubscription}>
+                        >
                         <span className="absolute bottom-0 left-0 right-0 top-0 z-10 flex h-full w-full items-center justify-center group-hover:text-[#3c112e]">
                             Book Your Free Consultation
                         </span>
                     </button>
+                    </Link>
                 </div>
 
                 {/* Mobile Menu for tablets and below */}

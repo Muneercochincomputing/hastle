@@ -20,7 +20,7 @@ function Privacypolicy() {
         </div>
         <div className="absolute inset-0 hidden xl:flex lg:flex flex-col justify-center items-center z-50 mt-[420px] text-white">
           <h1 className="text-6xl text-white rounded-full font-thin mb-6 text-center ">
-            Privacy-policies
+            Privacy Policy
           </h1>
           <p className="text-lg font-thin text-center">
           A privacy policy is a statement that explains how an organization collects, uses, protects, and shares personal information from users or customers.
