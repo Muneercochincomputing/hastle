@@ -178,7 +178,7 @@ function Blogcontent1() {
         <div className="bg-white cursor-pointer rounded overflow-hidden lg:h-[570px] shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] relative top-0 hover:-top-2 transition-all duration-300">
           <img src={post.image} alt={post.title} className="w-full h-60 object-cover" />
           <div className="p-6">
-            <span className="text-sm block text-gray-400 mb-2">{post.date} | BY {post.author.toUpperCase()}</span>
+            <span className="text-sm block text-gray-400 mb-2">{post.date}  </span>
             <h3 className="text-xl font-bold text-[#333] mb-2">{post.title}</h3>
             <hr className="my-6" />
             <p className="text-gray-400 text-sm">{post.excerpt}</p>
@@ -192,7 +192,7 @@ function Blogcontent1() {
       <div className="bg-white cursor-pointer rounded overflow-hidden lg:h-[570px] shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] relative top-0 hover:-top-2 transition-all duration-300">
         <img src={blog4} alt="Blog Post 1" className="w-full h-60 object-cover" />
         <div className="p-6">
-          <span className="text-sm block text-gray-400 mb-2">10 FEB 2023 | BY JOHN DOE</span>
+          <span className="text-sm block text-gray-400 mb-2">10 FEB 2023 </span>
           <h3 className="text-xl font-bold text-[#333]">Pets as Companions: The Therapeutic Benefits for Seniors</h3>
           <hr className="my-6" />
           <p className="text-gray-400 text-sm">Pets provide seniors with companionship, reduce loneliness, and boost mental health by lowering anxiety and increasing happiness. Caring for a pet also promotes physical activity and adds a sense of purpose to daily life.</p>

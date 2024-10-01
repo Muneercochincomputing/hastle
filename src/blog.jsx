@@ -107,7 +107,7 @@ and preferences.` },
                   <h2 className="text-2xl font-bold text-black mb-2 transition duration-300 group-hover:text-yellow-400">{post.title}</h2>
                   <p className="text-gray-300 text-sm">{post.excerpt}</p>
                   <div className="mt-4 flex items-center justify-between text-sm text-gray-300">
-                    <p>By {post.author}</p>
+                    
                     <p>{post.date}</p>
                   </div>
                 </div>

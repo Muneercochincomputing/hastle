@@ -206,7 +206,7 @@ can help to reduce stress levels, lower blood pressure, and improve mood.</p>
           <div className="bg-white cursor-pointer rounded overflow-hidden shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] relative top-0 hover:-top-2 transition-all duration-300">
               <img src={readmoresectionimage1 } alt="Blog Post 1" className="w-full h-60 object-cover" />
               <div className="p-6">
-                <span className="text-sm block text-gray-400 mb-2">10 FEB 2023 | BY JOHN DOE</span>
+                <span className="text-sm block text-gray-400 mb-2">10 FEB 2023 </span>
                 <h3 className="text-xl font-bold text-[#333]">The Importance of Mental Health Support in Elderly Home Care</h3>
                 <hr className="my-6" />
                 <p className="text-gray-400 text-sm">As we age, mental health becomes just as crucial as physical health, especially for seniors who receive care at home. In the UK, where elderly home care services are on the rise, there is growing recognition of the need to address the emotional and psychological well-being of older adults. With the right support, seniors can enjoy a higher quality of life, maintain their independence, and stay connected with their loved ones.</p>
@@ -223,7 +223,7 @@ can help to reduce stress levels, lower blood pressure, and improve mood.</p>
             <div className="bg-white cursor-pointer rounded overflow-hidden shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] relative top-0 hover:-top-2 transition-all duration-300">
               <img src={readmoresectionimage2 } alt="Blog Post 1" className="w-full h-60 object-cover" />
               <div className="p-6">
-                <span className="text-sm block text-gray-400 mb-2">10 FEB 2023 | BY JOHN DOE</span>
+                <span className="text-sm block text-gray-400 mb-2">10 FEB 2023 </span>
                 <h3 className="text-xl font-bold text-[#333]">How to Prepare Your Home for Elderly Care: Safety Tips and Modifications</h3>
                 <hr className="my-6" />
                 <p className="text-gray-400 text-sm">As the population ages, more families in the UK are choosing to care for their elderly loved ones at home. While this option allows seniors to remain in familiar surroundings, it also requires careful planning and modifications to ensure their safety and comfort.</p>
@@ -239,7 +239,7 @@ can help to reduce stress levels, lower blood pressure, and improve mood.</p>
             <div className="bg-white cursor-pointer rounded overflow-hidden shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] relative top-0 hover:-top-2 transition-all duration-300">
               <img src={readmoresectionimage3 } alt="Blog Post 1" className="w-full h-60 object-cover" />
               <div className="p-6">
-                <span className="text-sm block text-gray-400 mb-2">10 FEB 2023 | BY JOHN DOE</span>
+                <span className="text-sm block text-gray-400 mb-2">10 FEB 2023 </span>
                 <h3 className="text-xl font-bold text-[#333]">Managing Chronic Conditions in Elderly Home Care: A Comprehensive Guide</h3>
                 <hr className="my-6" />
                 <p className="text-gray-400 text-sm">Caring for elderly loved ones at home is a rewarding experience, but it can also present unique challenges, especially when managing chronic conditions. In the UK, where elderly home care services are becoming increasingly prevalent, families and caregivers must be well-equipped to handle a range of health issues that commonly affect seniors. With the right approach, managing chronic conditions at home can improve the quality of life for seniors and help them maintain their independence.</p>

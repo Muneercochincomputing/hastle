@@ -178,7 +178,7 @@ function Careerspage() {
         <span class="text-gray-800">Become a Valued Member of Our </span> Team
       </h3>
       <h6 class="text-sm sm:text-base md:text-lg text-gray-800 mt-4">
-        Embrace the chance to be part of a meaningful mission, where your efforts will directly impact the quality of life for our cherished clients, helping them to live with joy, respect, and the highest standard of care.
+        Embrace the chance to be part of a meaningful mission, where your efforts will directly impact the quality of life for our cherished clients, helping them  live with joy, respect, and the highest standard of care.
       </h6>
 
       <button type="button" class="bg-[#4e0083] hover:bg-[#4f0083cc] text-white tracking-wide font-semibold text-sm py-3 px-6 rounded-xl mt-8"
@@ -256,7 +256,7 @@ function Careerspage() {
                 }}/>
             </div>
             <div>
-              <label class="text-gray-800 text-sm block mb-2">experience</label>
+              <label class="text-gray-800 text-sm block mb-2">Experience</label>
               <input type='number' placeholder='experience in years'
                 class="w-full rounded-md py-2.5 px-4 border border-gray-300 text-sm outline-[#8D4374]"
                 onChange={(e) => {
