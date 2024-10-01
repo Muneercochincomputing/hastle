@@ -342,7 +342,7 @@ const vedios = [
     Led by the visionary GP Dr. Kunbi Taiwo and Tola Taiwo, our team of compassionate and 
     highly trained care professionals provides personalized care that goes beyond mere assistance. 
     Our mission is to celebrate each triumph, big or small, and remind 
-    our clients that aging is not about limitations but embracing <br/>life's possibilities
+    our clients that aging is not about limitations but embracing <br className='hidden lg:flex'/>life's possibilities
   </p>
 </div>
 
