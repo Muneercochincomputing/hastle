@@ -267,7 +267,7 @@ function Servicespage4() {
           <img src={multiple } className='xl:h-[300px] object-fill h-[200px] w-full bg-red-500 xl:w-full  rounded-t-3xl shadow-sm'/>
           <h1 className='text-[20px] text-[#8D4374] font-bold text-center
           '>Multiple Sclerosis Care</h1>
-          <p className='text-center font-light xl:px-4 pb-8'>Our <canvas></canvas>caregivers provide support for clients with multiple sclerosis, focusing on managing symptoms and improving their quality of life. </p>
+          <p className='text-center font-light xl:px-4 pb-8'>Our caregivers provide support for clients with multiple sclerosis, focusing on managing symptoms and improving their quality of life. </p>
         </div>
   
        

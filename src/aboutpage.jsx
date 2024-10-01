@@ -41,14 +41,14 @@ function About() {
         id:1,
         src:stock3,
         tittle:'We listen to your concerns',
-        Description: "We take the time to understand your loved one's needs, preferences, and goals so we can create a truly personalised care plan"
+        Description: "We take the time to understand your loved one's needs, preferences, and goals so we can create a truly personalised care plan."
        
     },
     {
         id:1,
         src:stock2,
         tittle:'We empower your loved one',
-        Description: "Our compassionate carers provide assistance with daily tasks, medication management, and companionship, creating independence and well-being."
+        Description: "Our compassionate carers provide assistance with daily tasks, medication management, and companionship, creating independence and        well-being."
 
        
     },
@@ -72,7 +72,7 @@ const vedios = [
       id:1,
       src:demo,
       tittle:'We empower your loved one',
-      Description: "Our compassionate care provide assistance with daiytasks,medication,management and companionship,creating independance and well-being."
+      Description: `Our compassionate care provide assistance with daiytasks,medication,management and companionship,creating independance and well-being.`
      
   },
   
@@ -132,14 +132,14 @@ const vedios = [
               <img src={whyimage2} className='w-40 h-40 mb-4'/>
              <p className='text-[#8D4374]'>We are different</p> 
               <p className='text-sm font-normal p-4 '>
-              Our award-winning team is not just about providing care; it's about creating a family atmosphere. Our care professionals are carefully chosen for their warmth, compassion, and dedication. They will become a trusted friend, someone to chat with, share stories with, and even help with those little things that make a big difference
+              Our award-winning team is not just about providing care; it's about creating a family atmosphere. Our care professionals are carefully chosen for their warmth, compassion, and dedication. They will become a trusted friend, someone to chat with, share stories with, and even help with those little things that make a big difference.
               </p>
             </div>
             <div className='flex flex-col items-center text-center sm:text-[25px] text-[15px] font-bold text-gray-500'>
               <img src={whyimage1} className='w-40 h-40 mb-4'/>
               <p className='text-[#8D4374]'>Warm Hands, Kind Hearts</p>
               <p className='text-sm font-normal p-4'>
-              We listen to your needs and create a care plan that is unique to you, adapting as your needs change. They will treat you with dignity and become trusted companions, ready to help with daily tasks or simply share a conversation
+              We listen to your needs and create a care plan that is unique to you, adapting as your needs change. They will treat you with dignity and become trusted companions, ready to help with daily tasks or simply share a conversation.
               </p>
             </div>
             <div className='flex flex-col items-center text-center sm:text-[25px] text-[15px] font-bold text-gray-500'>
@@ -319,7 +319,7 @@ const vedios = [
 
     <p className="text-[14px] sm:text-[15px] text-center mt-5 lg:text-left text-white lg:mr-[50px] sm:text-center sm:px-10 lg:px-0">
   Imagine waking up in your own home, bathed in warm sunlight, with everything you need at your fingertips—gentle assistance, friendly conversation, and the peace of knowing you're surrounded by care that truly understands your needs. 
-  We invite you to experience the Holistic difference. Let's sit down, discuss your hopes and dreams, and create a personalized care plan that helps you thrive in the place you love most—your home.
+  We invite you to experience the Holistic difference. Let's sit down, discuss your hopes and dreams, and create a personalised care plan that helps you thrive in the place you love most—your home.
 </p>
 <div className='h-20'></div>
 
@@ -340,7 +340,7 @@ const vedios = [
   <p className="text-[10px] sm:text-[20px] text-black sm:px-20 px-4 ">
     At Holistic Care Services, we believe in creating a world where our clients flourish. 
     Led by the visionary GP Dr. Kunbi Taiwo and Tola Taiwo, our team of compassionate and 
-    highly trained care professionals provide personalized care that goes beyond mere assistance. 
+    highly trained care professionals provides personalized care that goes beyond mere assistance. 
     Our mission is to celebrate each triumph, big or small, and remind 
     our clients that aging is not about limitations but embracing life's possibilities
   </p>
@@ -377,7 +377,7 @@ const vedios = [
       A Gentle Touch for a Golden Age
     </h1>
     <p className="text-center text-[10px] sm:text-base sm:px-20 px-10">
-      At Holistic Care Services, we understand the importance of familiarity and independence, especially as we age. Imagine waking up in the familiar comfort of your own home, sunlight streaming in, a friendly voice greeting you, and a helping hand nearby. Whether it’s a gentle reminder to take your medication, a cup of tea, and a chat, or personalized attention and companionship from a live-in carer, we are here for you.
+      At Holistic Care Services, we understand the importance of familiarity and independence, especially as we age. Imagine waking up in the familiar comfort of your own home, sunlight streaming in, a friendly voice greeting you, and a helping hand nearby. Whether it’s a gentle reminder to take your medication, a cup of tea and a chat, or personalised attention and companionship from a live-in carer, we are here for you.
     </p>
   </div>
 
@@ -386,7 +386,7 @@ const vedios = [
       Championing Your Independence
     </h1>
     <p className="text-center text-[10px] sm:text-base sm:px-20 px-10">
-      Many children worry about their parents aging alone. We understand. That’s why we offer a free, no-obligation consultation to discuss your needs and answer any questions you may have. We will come to your home, chat about your hopes and dreams, and create a personalized care plan that allows you to flourish right where you belong.
+      Many children worry about their parents aging alone. We understand. That’s why we offer a free, no-obligation consultation to discuss your needs and answer any questions you may have. We will come to your home, chat about your hopes and dreams, and create a personalised care plan that allows you to flourish right where you belong.
     </p>
   </div>
 
@@ -398,7 +398,7 @@ const vedios = [
             <p className="font-light text-[5vw] sm:text-[40px] md:text[20px] text-[#8D4374]" data-aos="fade-up">Mission Statement</p>
             <p className="font-sans text-[4vw] md-text-[8vw] sm:text-[16px] text-balance">
               Warm hands meet kind eyes, creating a world where our clients flourish. We go beyond mere assistance,
-              fostering independence through personalized care plans. Meaningful connections blossom around shared
+              fostering independence through personalised care plans. Meaningful connections blossom around shared
               activities and heartfelt conversations, enriching our clients' days with moments of joy and purpose.
               Each triumph, big or small, is celebrated, reminding them that aging is not about limitations, but about
               embracing life's possibilities.
@@ -439,7 +439,7 @@ const vedios = [
       </div>
       <div class="text-white text-center lg:text-left">
         <p class="text-sm sm:text-base lg:text-lg font-thin mt-2 lg:mt-0 italic">
-          Mr.Tola Taiwo and Dr Kunbi Taiwo.<br/> Dr. Kunbi Taiwo is a GP working locally in Liverpool. She came to Liverpool to study medicine in 2005 and loved the city so much she stayed. Tola has a background in the financial sector.
+          Mr.Tola Taiwo and Dr. Kunbi Taiwo.<br/> Dr. Kunbi Taiwo is a GP working locally in Liverpool. She came to Liverpool to study medicine in 2005 and loved the city so much she stayed. Tola has a background in the financial sector.
         </p>
         <section class="my-2">
           <div class="container mx-auto flex flex-col items-left pb-6 mb-4 md:p-10 md:px-12">

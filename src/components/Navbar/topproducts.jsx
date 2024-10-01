@@ -79,8 +79,8 @@ function Topproducts({onScrollToSubscription}) {
         {
             id:1,
             src:image2,
-            tittle:'Live-in-Care',
-            Description: "Personalized care tailored to each older person's unique needs and situations."
+            tittle:'Live-inCare',
+            Description: "Personalised care tailored to each older person's unique needs and situations."
            
         },
         {
@@ -166,7 +166,7 @@ function Topproducts({onScrollToSubscription}) {
               
              <p className='text-[#8D4374]'>1.Call 0151 665 0520</p> 
               <p className='text-sm font-normal p-4 '>
-             We take the time to understand<br/>your loved one's needs, <br/> preferences, and goals so we can create a <br/>truly personalised care <br/>plan.
+             We take the time to understand<br/>your loved one's needs, <br/> preferences, and goals so we can create a <br/>truly personalised care plan.
               </p>
             </div>
             <div className='flex flex-col items-center text-center sm:text-[25px] text-[15px] font-bold text-gray-500'>
@@ -180,7 +180,7 @@ function Topproducts({onScrollToSubscription}) {
             
              <p className='text-[#8D4374]'>3.Regain Your Independence</p>
               <p className='text-sm font-normal p-4'>
-               With our reliable and transparent<br/>services,you can rest assured that your loved one is <br/>receiving the highest quality care.
+               With our reliable and transparent<br/>services, you can rest assured that your loved one is <br/>receiving the highest quality care.
               </p>
             </div>
           </div>
