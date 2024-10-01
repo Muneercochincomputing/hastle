@@ -79,7 +79,7 @@ function Topproducts({onScrollToSubscription}) {
         {
             id:1,
             src:image2,
-            tittle:'Live-inCare',
+            tittle:'Live-in Care',
             Description: "Personalised care tailored to each older person's unique needs and situations."
            
         },
@@ -161,24 +161,24 @@ function Topproducts({onScrollToSubscription}) {
           <h1 className='text-center text-sm sm:text-[40px] mt-10  font-bold text-[#8D4374] sm:mb-10 mb-5 '>
            <p className='text-[25px] lg:text-[40px] font-banner'> Getting Started with Holistic Care is Easy</p>
           </h1>
-          <div className='grid grid-cols-1 sm:grid-cols-3 gap-10 sm:w-full sm:px-20 px-5'>
+          <div className='grid grid-cols-1 sm:grid-cols-3 gap-10 sm:w-full sm:px-20 px-5 xlmt-10'>
             <div className='flex flex-col items-center text-center sm:text-[25px] text-[15px] font-bold text-gray-500'>
               
-             <p className='text-[#8D4374]'>1.Call 0151 665 0520</p> 
+             <p className='text-[#8D4374]'>1. Call 0151 665 0520</p> 
               <p className='text-sm font-normal p-4 '>
              We take the time to understand<br/>your loved one's needs, <br/> preferences, and goals so we can create a <br/>truly personalised care plan.
               </p>
             </div>
             <div className='flex flex-col items-center text-center sm:text-[25px] text-[15px] font-bold text-gray-500'>
              
-              <p className='text-[#8D4374]'>2.Receive Personalised Consultation</p>
+              <p className='text-[#8D4374]'>2. Receive Personalised Consultation</p>
               <p className='text-sm font-normal p-4'>
               Our compassionate carers provide assistance<br/>with daily tasks, medication management and <br/> companionship,creating independence and <br/> well-being. 
               </p>
             </div>
             <div className='flex flex-col items-center text-center sm:text-[25px] text-[15px] font-bold text-gray-500'>
             
-             <p className='text-[#8D4374]'>3.Regain Your Independence</p>
+             <p className='text-[#8D4374]'>3. Regain Your Independence</p>
               <p className='text-sm font-normal p-4'>
                With our reliable and transparent<br/>services, you can rest assured that your loved one is <br/>receiving the highest quality care.
               </p>
