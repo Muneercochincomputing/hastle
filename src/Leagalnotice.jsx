@@ -32,7 +32,7 @@ function Leagalnotice() {
 
       <div className=" xl:hidden lg-hidden ml-5">
         <h1 className="text-5xl text-black mt-10   rounded-full font-thin mb-6 mx-auto text-left ">
-        Leagal Notice
+        Legal Notice
           
           <p className="text-lg font-thin mt-10  text-left  ">
           A legal notice is a formal statement that provides important information about legal rights, obligations, and disclaimers, often found on a website to inform users about terms of use, privacy policies, and legal limitations.
