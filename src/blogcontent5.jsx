@@ -82,7 +82,7 @@ function Blogcontent5() {
         How to Prepare Your Home for Elderly Care: Safety Tips and
         Modifications 
         </h1>
-        <p className="mt-4 text-xl ml-[2] text-gray-500">
+        <p className="mt-4 text-xl ml-[2] xl:ml-[1px] text-gray-500">
         As the population ages, more families in the UK are choosing to care for their elderly
 loved ones at home. While this option allows seniors to remain in familiar surroundings,
 it also requires careful planning and modifications to ensure their safety and comfort.

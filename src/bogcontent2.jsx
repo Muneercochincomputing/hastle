@@ -61,7 +61,7 @@ function Blogcontent2() {
             className="w-full h-60 object-cover transition duration-300 transform group-hover:scale-110"
           />
           <div className="p-6">
-            <span className="text-sm block text-gray-400 mb-2">{post.date} | BY {post.author.toUpperCase()}</span>
+            <span className="text-sm block text-gray-400 mb-2">{post.date} </span>
             <h3 className="text-xl font-bold text-[#333] mb-2 group-hover:text-yellow-400">{post.title}</h3>
             <hr className="my-6" />
             <p className="text-gray-400 text-sm">{post.excerpt}</p>
@@ -79,7 +79,7 @@ function Blogcontent2() {
           className="w-full h-60 object-cover transition duration-300 transform group-hover:scale-110"
         />
         <div className="p-6">
-          <span className="text-sm block text-gray-400 mb-2">10 FEB 2023 | BY JOHN DOE</span>
+          <span className="text-sm block text-gray-400 mb-2">10 FEB 2023 </span>
           <h3 className="text-xl font-bold text-[#333] mb-2 group-hover:text-yellow-400">The Importance of Mental Health Support in Elderly Home Care</h3>
           <hr className="my-6" />
           <p className="text-gray-400 text-sm">As we age, maintaining mental health becomes just as important as physical health, especially for seniors receiving care at home. In the UK, there's a growing emphasis on supporting the emotional well-being of older adults to help them maintain their independence and stay connected with loved ones.</p>
@@ -96,7 +96,7 @@ function Blogcontent2() {
           className="w-full h-60 object-cover transition duration-300 transform group-hover:scale-110"
         />
         <div className="p-6">
-          <span className="text-sm block text-gray-400 mb-2">7 JUN 2023 | BY MARK ADAIR</span>
+          <span className="text-sm block text-gray-400 mb-2">7 JUN 2023 </span>
           <h3 className="text-xl font-bold text-[#333] mb-2 group-hover:text-yellow-400">How to Prepare Your Home for Elderly Care: Safety Tips and Modifications</h3>
           <hr className="my-6" />
           <p className="text-gray-400 text-sm">As the population ages, more families in the UK are choosing to care for their elderly loved ones at home. While this option allows seniors to remain in familiar surroundings, it also requires careful planning and modifications to ensure their safety and comfort.</p>
