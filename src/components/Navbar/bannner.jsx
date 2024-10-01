@@ -63,7 +63,7 @@ function Banner() {
     We make your home a warm, comforting environment where your loved ones can enjoy their golden years with dignity and respect.
     Our dedicated team offer round the clock care, ensuring all clients receive the attention and support they need. 
     With a range of activities to keep the mind and body active, along with delicious and nutritious meals, we strive to create a 
-    home-like atmosphere that fosters not only companionship and joy but also comfort, care, and community. Every day is meaningful, 
+    home-like atmosphere that foster not only companionship and joy but also comfort, care, and community. Every day is meaningful, 
     whether it’s for short-term respite care or ongoing support.
     <br />
     <br />
