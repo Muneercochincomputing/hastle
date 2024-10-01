@@ -122,7 +122,7 @@ function Blogcontent1() {
     <div>
       <h2 class="text-xl font-bold text-gray-800 text-left mt-10" >4.	Nutrition and Hydration</h2>
       <ul class="mt-2 text-gray-700 ">
-        <li>: Balanced meals and adequate water intake are vital. Elderly individuals may need dietary adjustments, so consult a nutritionist if necessary</li>
+        <li>Balanced meals and adequate water intake are vital. Elderly individuals may need dietary adjustments, so consult a nutritionist if necessary</li>
        
       </ul>
     </div>

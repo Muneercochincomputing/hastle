@@ -61,11 +61,7 @@ function Privacypolicy() {
               <p className="text-lg md:text-1xl text-left text-black">We offer numerous services which require you supply personal information. For instance, when you contact us, via our website or our chatbot/webchat, we do request for contact details such as your name, email address and telephone number. When register for our newsletter, we will require personal information including your name and email address. Furthermore, when you apply for a job with us, we will request that you share your name, address, email and telephone number so you could be contacted.</p>
 
               {/* Additional conditions */}
-              <div className='xl:mt-[50px]'>
-                <h1 className="text-2xl md:text-3xl font-extrabold mb-6 text-left text-black">What the information received is used for</h1>
-                <p className="text-lg md:text-1xl text-left text-black">What the information received is used for
-                </p>
-              </div>
+              
 
               <div className='xl:mt-[50px]'>
                 <h1 className="text-2xl md:text-3xl font-extrabold mb-6 text-left text-black">Securing your data</h1>
