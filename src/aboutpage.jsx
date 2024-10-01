@@ -382,11 +382,11 @@ const vedios = [
   </div>
 
   <div className="w-full h-full xl:px-20 xl:mt-2 mt-2">
-    <h1 className="text-[#8D4374] text-center text-[6vw]  lg:text-[30px] xl:text-[40px] font-thin">
+    <h1 className="text-[#8D4374] text-center text-[6vw]  lg:text-[30px] xl:text-[40px] font-thin ">
       Championing Your Independence
     </h1>
-    <p className="text-center  sm:text-base sm:px-20 px-10 xl:mx-26 xl:mt-2 text-[4vw]">
-      Many children worry about their parents aging alone. We understand. That’s why we offer a free, no-obligation consultation to discuss your needs and answer any questions you may have. We will come to your home, chat about your hopes and dreams, and create a personalised care plan that allows you to flourish right <br/>where you belong.
+    <p className="text-center  sm:text-base sm:px-20 px-10 xl:mx-26 xl:mt-2 text-[4vw] mt-2 lg:mt-1">
+      Many children worry about their parents aging alone. We understand. That’s why we offer a free, no-obligation consultation to discuss your needs and answer any questions you may have. We will come to your home, chat about your hopes and dreams, and create a personalised care plan that allows you to flourish right <br className='hidden lg:flex'/>where you belong.
     </p>
   </div>
 
@@ -454,10 +454,13 @@ const vedios = [
                 <p class="px-6 py-1 text-sm sm:text-base lg:text-lg italic lg:ml-1  ml-4">
                   We were both very close to our grandmothers of beloved memory and in their later years, they needed care due to worsening mobility. This exposed us to the difficulties faced by the elderly in maintaining their independence in their golden age and this birthed the vision to help people age gracefully and flourish in their own homes.
                 </p>
+                <div className='mt-2 xl:mt-1'>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" class="absolute bottom-0 right-0 w-8 h-8 dark:text-gray-300">
                   <path d="M280,185.143V416H496V16H457.6ZM464,384H312V198.857L464,54.1Z"></path>
                   <path d="M232,16H193.6L16,185.143V416H232ZM200,384H48V198.857L200,54.1Z"></path>
                 </svg>
+                </div>
+                
               </div>
               <span class="w-12 h-1 my-2 rounded-lg dark:bg-violet-600"></span>
               <p class="font-semibold text-gray-800">Tola Taiwo & Kunbi Taiwo</p>
