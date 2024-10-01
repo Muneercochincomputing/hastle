@@ -85,7 +85,7 @@ const Navbar = ({ onScrollToSubscription }) => {
                     </Link>
 
                     {/* Navigation Links */}
-                    <div className="hidden lg:flex xl:ml-40 gap-4">
+                    <div className="hidden lg:flex xl:ml-6   gap-4">
                         <Link to='/' className='font-bold text-[#bc3388] text-[17px] group [text-shadow:_0_1px_0_rgb(0_0_0_/_40%)]'>
                             HOME
                             <div className="bg-amber-500 h-[1px] w-0 group-hover:w-[50px] transition-all duration-500 "></div>
@@ -120,11 +120,11 @@ const Navbar = ({ onScrollToSubscription }) => {
                             CAREERS
                             <div className="bg-amber-500 h-[1px] w-0 group-hover:w-[70px] transition-all duration-500"></div>
                         </Link>
-                        <Link to='/blog' className='font-bold text-[#bc3388] text-[17px] group [text-shadow:_0_1px_0_rgb(0_0_0_/_40%)]'>
+                        <Link to='/blog' className='font-bold text-[#bc3388]  text-[17px]  group [text-shadow:_0_1px_0_rgb(0_0_0_/_40%)]'>
                             BLOGS
-                            <div className="bg-amber-500 h-[1px] w-0 group-hover:w-[50px] transition-all duration-500"></div>
+                            <div className="bg-amber-500 h-[1px] w-0 group-hover:w-[50px] transition-all duration-500 "></div>
                         </Link>
-                        <Link to='/contactpage' className='font-bold text-[#bc3388] text-[17px] group [text-shadow:_0_1px_0_rgb(0_0_0_/_40%)]'>
+                        <Link to='/contactpage' className='font-bold text-[#bc3388]  text-[17px]  group [text-shadow:_0_1px_0_rgb(0_0_0_/_40%)]'>
                             CONTACT US
                             <div className="bg-amber-500 h-[1px] w-0 group-hover:w-[110px] transition-all duration-500"></div>
                         </Link>

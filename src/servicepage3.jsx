@@ -178,7 +178,7 @@ function Servicespage3() {
           </p>
         </h1>
       </div>
-      <div ><h1 className='text-center  text-[30px] text-[#8D4374] xl:mt-10 '>Live in Care</h1>
+      <div ><h1 className='text-center  text-[30px] text-[#8D4374] xl:mt-10 '>Live-in Care</h1>
       <p className='text-center mb-10'>Holistic Care Services encourages our clients to stay active and engaged to promote their overall well-being.</p></div>
       <div className='xl:w-[100%] h-auto xl:h-[1300px] lg-[1300px] bg-gray-300/20 mb-10  pb-10  shadow-xl'>
       <div className='w-full xl:h-[140px]  grid lg:grid-cols-1 md:grid-cols-2 mb-10 '>
@@ -186,11 +186,13 @@ function Servicespage3() {
         {/* Mission Statement Section */}
         <div className="sm:w-[70%]  lg:w-[82%] md:w-[100vw]  md-h-[600px]  sm:ml-80 sm:h-[200px] lg:h-[600px] lg:mx-auto md:h-[450px]  bg-gray-100 md:ml-[75px]  shadow-xl sm:rounded-2xl mb-10 grid sm:grid-cols-2 ">
           <div className="p-6 sm:p-5">
-            <p className="font-light text-[5vw] sm:text-[40px] md:text[20px] text-[#8D4374] "  >Live in Care</p>
+            <p className="font-light text-[5vw] sm:text-[40px] md:text[20px] text-[#8D4374] "  >Live-in Care</p>
             <p className="font-sans text-[4vw] md-text-[8vw] sm:text-[16px] text-balance">
             Our live-in care service guarantees round-the-clock assistance, giving you and your family peace of mind. You can continue enjoying the comfort of familiar surroundings while receiving the level of care you require. Each care plan is tailored to meet individual needs, ensuring that all aspects of your health, well-being, and daily routine are carefully managed. Our caregivers also offer meaningful companionship, preventing feelings of isolation and enriching daily life.
 
 With Holistic Care Services, you can enjoy the perfect balance of independence and support, allowing you to live comfortably and confidently in your own home.
+           <br/>
+           <br/>
             <span className='hidden lg:block'>
             Our caregivers are specially trained to provide professional and compassionate support while respecting your personal preferences and routines. They are not only there to assist with physical needs but also to foster emotional well-being by building strong, trusting relationships. Whether you need help with mobility, managing a medical condition, or simply having someone to talk to, our live-in care ensures that you are always well-cared for in every aspect of your life. The focus is on helping you live comfortably and confidently, staying connected to the things and people you cherish most.
             </span>

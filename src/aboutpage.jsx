@@ -40,22 +40,23 @@ function About() {
     {
         id:1,
         src:stock3,
-        tittle:'We Listen to your concerns',
-        Description: "We take the time to understand your loved one`s needs,preferences,and goals so we can create truly personalised care plan"
+        tittle:'We listen to your concerns',
+        Description: "We take the time to understand your loved one's needs, preferences, and goals so we can create a truly personalised care plan"
        
     },
     {
         id:1,
         src:stock2,
         tittle:'We empower your loved one',
-        Description: "Our compassionate care provide assistance with dailytasks,medication,management and companionship,creating independance and well-being"
+        Description: "Our compassionate carers provide assistance with daily tasks, medication management, and companionship, creating independence and well-being."
+
        
     },
     {
         id:1,
         src:stock,
-        tittle:'We give you peace of mind ',
-        Description: " With our relaible and transparent services,you can trust assured that your loved one is reciving the highest quality care"
+        tittle:'We give you peace of mind',
+        Description: "With our reliable and transparent services, you can rest assured that your loved one is receiving the highest quality care."
 
 
        
@@ -71,7 +72,7 @@ const vedios = [
       id:1,
       src:demo,
       tittle:'We empower your loved one',
-      Description: "Our compassionate care provide assistance with daiytasks,medication,management and companionship,creating independance and well-being"
+      Description: "Our compassionate care provide assistance with daiytasks,medication,management and companionship,creating independance and well-being."
      
   },
   
@@ -412,7 +413,7 @@ const vedios = [
           <div className="p-6 sm:p-5">
             <p className="font-light text-[5vw] sm:text-[40px] text-[#8D4374]" data-aos="fade-up">Vision Statement</p>
             <p className="font-sans text-[4vw] sm:text-[16px] text-balance">
-            At Holistic Care Services, our incredible Care team doesn't just support; we take the burden off you and your loved ones. With open hearts and caring hands, we weave laughter, love, and unwavering support into your home, helping you live a rich and fulfilling life, just as you deserve
+            At Holistic Care Services, our incredible care team doesn't just support; we take the burden off you and your loved ones. With open hearts and caring hands, we weave laughter, love, and unwavering support into your home, helping you live a rich and fulfilling life, just as you deserve.
             </p>
           </div>
         </div>
@@ -438,7 +439,7 @@ const vedios = [
       </div>
       <div class="text-white text-center lg:text-left">
         <p class="text-sm sm:text-base lg:text-lg font-thin mt-2 lg:mt-0 italic">
-          Mr Tola Taiwo and Dr Kunbi Taiwo. Dr Kunbi Taiwo is a GP working locally in Liverpool. She came to Liverpool to study medicine in 2005 and loved the city so much she stayed. Tola has a background in the financial sector.
+          Mr.Tola Taiwo and Dr Kunbi Taiwo. Dr. Kunbi Taiwo is a GP working locally in Liverpool. She came to Liverpool to study medicine in 2005 and loved the city so much she stayed. Tola has a background in the financial sector.
         </p>
         <section class="my-2">
           <div class="container mx-auto flex flex-col items-left pb-6 mb-4 md:p-10 md:px-12">

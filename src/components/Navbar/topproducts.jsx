@@ -173,7 +173,7 @@ function Topproducts({onScrollToSubscription}) {
              
               <p className='text-[#8D4374]'>2.Receive Personalised Consultation</p>
               <p className='text-sm font-normal p-4'>
-              Our Compassionate Carers provide assistance<br/>with daily tasks, medication management and <br/> companionship,creating independence and <br/> well-being 
+              Our compassionate carers provide assistance<br/>with daily tasks, medication management and <br/> companionship,creating independence and <br/> well-being 
               </p>
             </div>
             <div className='flex flex-col items-center text-center sm:text-[25px] text-[15px] font-bold text-gray-500'>
@@ -215,7 +215,7 @@ function Topproducts({onScrollToSubscription}) {
 </div>
 <div className='bg-[#a43579] py-10 lg:px-10  lg:mt-10  '>
   <div className=' w-full h-[1px] lg:hideden'></div>
-<p className=' text-white   xl:text-[30px] font-banner lg:mt-10 lg:text-center text-left  md:mt-20 px-10 lg:my-[100px] bg-[#a43579] lg:px-10  '>Let us help you ensure your loved one ages gracefully, surrounded by the care and support they deserve.With our compassionate care, your loved one can enjoy a fulfilling and dignified life in a warm and supportive environment
+<p className=' text-white   xl:text-[30px] font-banner lg:mt-10 lg:text-center text-left  md:mt-20 px-10 lg:my-[100px] bg-[#a43579] lg:px-10  '>Let us help you ensure your loved one ages gracefully, surrounded by the care and support they deserve. With our compassionate care, your loved one can enjoy a fulfilling and dignified life in a warm and supportive environment
 </p>
       <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-1 gap-8 bg-[#a43579] lg:px-10 ">
      
