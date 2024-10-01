@@ -439,7 +439,7 @@ const vedios = [
       </div>
       <div class="text-white text-center lg:text-left">
         <p class="text-sm sm:text-base lg:text-lg font-thin mt-2 lg:mt-0 italic">
-          Mr.Tola Taiwo and Dr Kunbi Taiwo. Dr. Kunbi Taiwo is a GP working locally in Liverpool. She came to Liverpool to study medicine in 2005 and loved the city so much she stayed. Tola has a background in the financial sector.
+          Mr.Tola Taiwo and Dr Kunbi Taiwo.<br/> Dr. Kunbi Taiwo is a GP working locally in Liverpool. She came to Liverpool to study medicine in 2005 and loved the city so much she stayed. Tola has a background in the financial sector.
         </p>
         <section class="my-2">
           <div class="container mx-auto flex flex-col items-left pb-6 mb-4 md:p-10 md:px-12">

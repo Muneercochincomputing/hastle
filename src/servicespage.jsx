@@ -168,19 +168,19 @@ function Servicespage() {
           <img src={overnightcare} className='xl:h-[300px] object-fill h-[200px] w-full  xl:w-full  rounded-t-3xl shadow-sm'/>
           <h1 className='text-[20px] text-[#8D4374] font-bold text-center
           '>Personal Care</h1>
-          <p className='text-center font-light xl:px-2 px-2 pb-8'>We assist with daily activities like bathing, dressing, and grooming to ensure our clients maintain their dignity and well-being</p>
+          <p className='text-center font-light xl:px-2 px-2 pb-8'>We assist with daily activities like bathing, dressing, and grooming to ensure our clients maintain their dignity and well-being.</p>
         </div>
         <div className='w-[80%] xl:h-[95%]  bg-white rounded-3xl border-solid border-[0px] border-black ml-10 mt-10'>
         <img src={servicelist2} className='   xl:h-[300px] object-cover w-full  h-[200px] rounded-t-3xl shadow-sm'/>
           <h1 className='text-[20px] text-[#8D4374] font-bold text-center lg:mt-2
           '>Medication Support</h1>
-          <p className='text-center font-light xl:px-2 px-2 pb-8'>Our caregivers help with medication reminders and administration to ensure our clients take their medications on time and safely</p>
+          <p className='text-center font-light xl:px-2 px-2 pb-8'>Our caregivers help with medication reminders and administration to ensure our clients take their medications on time and safely.</p>
         </div>
         <div className='w-[80%] xl:h-[95%]  bg-white rounded-3xl  border-solid border-[0px] border-black   ml-10 mt-10'>
         <img src={servicelist3} className='xl:h-[300px] h-[200px] w-full object-fill  rounded-t-3xl shadow-sm'/>
           <h1 className='text-[20px] text-[#8D4374] xl-px-10 font-bold text-center
           '>Domestic Assistance/<br/>Household Tasks</h1>
-          <p className='text-center font-light xl:px-4 px-2 pb-8'>We provide support with household chores such as cleaning, laundry, and meal preparation to help maintain a clean and comfortable living environment</p>
+          <p className='text-center font-light xl:px-4 px-2 pb-8'>We provide support with household chores such as cleaning, laundry, and meal preparation to help maintain a clean and comfortable living environment.</p>
         </div>
        
        
