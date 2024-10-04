@@ -147,11 +147,11 @@ const Navbar = ({ onScrollToSubscription }) => {
                            
                           {isaboutOpen && (
                                 <div className="absolute left-0 mt-2 w-48 bg-[#bc3388] shadow-md rounded-md py-2 z-50">
-                                    <Link to='/about2' className='block px-4 py-2 text-white text-[15px] hover:bg-white hover:text-[#8D4374]'>
-                                     Meet The Team
+                                    <Link to='/about' className='block px-4 py-2 text-white text-[15px] hover:bg-white hover:text-[#8D4374]'>
+                                    What sets us apart
                                     </Link>
-                                    <Link to='/about' className='block px-4 py-2 text-white text-[15px] hover:bg-gray-200 hover:text-[#8D4374]'>
-                                      What sets us apart
+                                    <Link to='/about2' className='block px-4 py-2 text-white text-[15px] hover:bg-gray-200 hover:text-[#8D4374]'>
+                                    Meet The Team  
                                     </Link>
                                     
                                 </div>
@@ -238,8 +238,8 @@ const Navbar = ({ onScrollToSubscription }) => {
                         </button>
                         {ismobileaboutOpen && (
                                 <div className="mt-2 bg-[#bc3388] rounded-md shadow-md py-2">
-                                    <Link to="/about2" className="block px-4 py-2 text-white"> Meet The Team</Link>
-                                    <Link to="/about" className="block px-4 py-2 text-white"> What sets us apart</Link>
+                                    <Link to="/about" className="block px-4 py-2 text-white">What sets us apart</Link>
+                                    <Link to="/about2" className="block px-4 py-2 text-white"> Meet The Team </Link>
                                    
                                 </div>
                             )}
