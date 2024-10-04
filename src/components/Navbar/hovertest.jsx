@@ -44,7 +44,7 @@ const AnimatedContainer = ({ onScrollToSubscription }) => {
 
   return (
     <div className='hidden lg:flex md:bottom-[900px] sm:hidden  '>
-      <div className="lg:flex w-[1500px] h-[400px] justify-center items-center bg-gray-200 overflow-hidden">
+      <div className="lg:flex w-full h-[400px] justify-center items-center bg-gray-200 overflow-hidden">
         <div
           style={{
             position: 'absolute',
@@ -53,7 +53,7 @@ const AnimatedContainer = ({ onScrollToSubscription }) => {
             top: style.top,
             ...style,
           }}
-          className="bg-white w-full lg:w-[200px]"
+          className="bg-white w-full lg:w-[2px]"
         >
           <img src={demo} className={`absolute inset-0 w-[100vw] z-30 h-full`} />
 
