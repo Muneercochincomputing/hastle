@@ -7,7 +7,7 @@ import whyimage3 from '../../assets/friends.png';
 const AnimatedContainer = ({ onScrollToSubscription }) => {
   const [style, setStyle] = useState({
     width: '100vw',  // Set the image to cover the full width
-    height: '1200px', // Set the height to a fixed value
+     // Set the height to a fixed value
     borderRadius: '0%', // Keep the image as a square/rectangle
     top: '0px', // Fixed top position
   });
@@ -44,8 +44,8 @@ const AnimatedContainer = ({ onScrollToSubscription }) => {
 
   return (
     <div className='hidden lg:flex md:bottom-[900px] sm:hidden  '>
-      <div className="lg:flex w-full h-[400px] justify-center items-center bg-gray-200 overflow-hidden">
-        <div
+      <div className="lg:flex w-full  justify-center items-center bg-gray-200 overflow-hidden">
+        <div 
           style={{
             position: 'absolute',
             zIndex: '10',
@@ -53,7 +53,7 @@ const AnimatedContainer = ({ onScrollToSubscription }) => {
             top: style.top,
             ...style,
           }}
-          className="bg-white w-full lg:w-[2px]"
+          className="bg-white w-full lg:w-[2px] h-screen"
         >
           <img src={demo} className={`absolute inset-0 w-[100vw] z-30 h-full`} />
 
