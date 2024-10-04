@@ -43,7 +43,7 @@ const AnimatedContainer = ({ onScrollToSubscription }) => {
   }, []);
 
   return (
-    <div className='hidden lg:flex md:bottom-[900px] sm:hidden  bg-red-500'>
+    <div className='hidden lg:flex md:bottom-[900px] sm:hidden  '>
       <div className="lg:flex w-[1500px] h-[400px] justify-center items-center bg-gray-200 overflow-hidden">
         <div
           style={{
