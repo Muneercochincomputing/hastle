@@ -32,6 +32,8 @@ import Lottie from 'react-lottie';
 import animationData from './animaioplaybutton.json'; 
 import { FaPhone, FaRegUser, FaBuffer } from "react-icons/fa";
 import Emailsubscription from './components/Navbar/Emailsubscription';
+import Product from './components/Navbar/about';
+import Testimonial from './components/Navbar/Testimonial';
 
 function About() {
 
@@ -334,196 +336,12 @@ const vedios = [
 
 
 
-  <h1 className="text-[#8D4374]  mt-10 text-[10vw] sm:text-[60px] md:text-[80px] lg:text-[100px] font-light xl:px-26 ">
-    About Us
-  </h1>
-  <p className="text-[10px] sm:text-[20px] text-black sm:px-20 px-4  xl:mx-20 text-[4vw]">
-    At Holistic Care Services, we believe in creating a world where our clients flourish. 
-    Led by the visionary GP Dr. Kunbi Taiwo and Tola Taiwo, our team of compassionate and 
-    highly trained care professionals provides personalized care that goes beyond mere assistance. 
-    Our mission is to celebrate each triumph, big or small, and remind 
-    our clients that aging is not about limitations but embracing <br className='hidden lg:flex'/>life's possibilities
-  </p>
-</div>
-
-<div
-  
->
-  {/* Mobile-specific background image */}
- 
-
-  {/* Gradient overlay */}
   
 
-
-
-
-
-
-
-
-
-
-  {/* Content */}
-  <div className="relative flex flex-col items-center px-4">
-    {/* Your content here */}
-  </div>
 </div>
 
 
-
-<div className="w-full h-full xl:px-20">
-    <h1 className="text-[#8D4374] text-center text-[6vw]  lg:text-[30px] xl:text-[40px] mb-2 font-thin">
-      A Gentle Touch for a Golden Age
-    </h1>
-    <p className="text-center text-[10px] sm:text-base sm:px-20 px-10 xl:px-26 text-[4vw]">
-      At Holistic Care Services, we understand the importance of familiarity and independence, especially as we age. Imagine waking up in the familiar comfort of your own home, sunlight streaming in, a friendly voice greeting you, and a helping hand nearby. Whether it’s a gentle reminder to take your medication, a cup of tea and a chat, or personalised attention and companionship from a live-in carer, we are here for you.
-    </p>
-  </div>
-
-  <div className="w-full h-full xl:px-20 xl:mt-2 mt-2">
-    <h1 className="text-[#8D4374] text-center text-[6vw]  lg:text-[30px] xl:text-[40px] font-thin ">
-      Championing Your Independence
-    </h1>
-    <p className="text-center  sm:text-base sm:px-20 px-10 xl:mx-26 xl:mt-2 text-[4vw] mt-2 lg:mt-1">
-      Many children worry about their parents aging alone. We understand. That’s why we offer a free, no-obligation consultation to discuss your needs and answer any questions you may have. We will come to your home, chat about your hopes and dreams, and create a personalised care plan that allows you to flourish right <br className='hidden lg:flex'/>where you belong.
-    </p>
-  </div>
-
-
-  
-
-<div className="sm:w-[70%]  md:w-[82%]  mt-10  sm:ml-80 sm:h-[200px] lg:h-[300px] lg:mx-auto md:h-[450px]  bg-gray-100 md:ml-[75px]  shadow-xl sm:rounded-2xl mb-10 grid sm:grid-cols-2">
-          <div className="p-6 sm:p-5">
-            <p className="font-light text-[5vw] sm:text-[40px] md:text[20px] text-[#8D4374]" data-aos="fade-up">Mission Statement</p>
-            <p className="font-sans text-[4vw] md-text-[8vw] sm:text-[16px] text-balance">
-              Warm hands meet kind eyes, creating a world where our clients flourish. We go beyond mere assistance,
-              fostering independence through personalised care plans. Meaningful connections blossom around shared
-              activities and heartfelt conversations, enriching our clients' days with moments of joy and purpose.
-              Each triumph, big or small, is celebrated, reminding them that aging is not about limitations, but about
-              embracing life's possibilities.
-            </p>
-          </div>
-          <img src={image3} className="w-full h-[300px] object-cover" alt="Descriptive Alt Text" />
-        </div>
-
-        {/* Another Mission Statement Section */}
-        <div className="sm:w-[70%]  md:w-[82%] lg:h-[300px] lg:mx-auto  md:mx-auto md:h-[450px]  bg-gray-200 sm:h-[300px] shadow-2xl sm:ml-[200px]  grid sm:grid-cols-2">
-          <img src={aboutimg2} className="w-full h-[300px] object-cover" alt="Descriptive Alt Text" />
-          <div className="p-6 sm:p-5">
-            <p className="font-light text-[5vw] sm:text-[40px] text-[#8D4374]" data-aos="fade-up">Vision Statement</p>
-            <p className="font-sans text-[4vw] sm:text-[16px] text-balance">
-            At Holistic Care Services, our incredible care team doesn't just support; we take the burden off you and your loved ones. With open hearts and caring hands, we weave laughter, love, and unwavering support into your home, helping you live a rich and fulfilling life, just as you deserve.
-            </p>
-          </div>
-        </div>
-
-        <section class="bg-[#a43579] mt-40">
-  <div class="container px-6 py-10 mx-auto">
-    <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-thin text-center text-gray-800 capitalize dark:text-primary">
-      Meet The Team
-    </h1>
-
-    <p class="max-w-2xl mx-auto my-6 text-center text-gray-500 dark:text-gray-300 text-base sm:text-lg lg:text-xl">
-    Get to Know Our Dedicated Team: Compassionate Care, Professional Support 
-    </p>
-
-    <h2 class="text-xl sm:text-2xl lg:text-3xl font-semibold text-center text-primary capitalize mt-10 dark:text-primary">
-      Meet The Directors
-      <span class="w-20 h-1 my-2 rounded-lg dark:bg-violet-600"></span>
-    </h2>
-
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-10 items-center">
-      <div class="flex justify-center lg:justify-around">
-        <img src={directors} class="w-[300px] h-[400px] lg:w-[400px] lg:h-[500px] object-cover rounded-lg" alt="Directors" />
-      </div>
-      <div class="text-white text-center lg:text-left">
-        <p class="text-sm sm:text-base lg:text-lg font-thin mt-2 lg:mt-0 italic">
-          Mr.Tola Taiwo and Dr. Kunbi Taiwo.<br/> Dr. Kunbi Taiwo is a GP working locally in Liverpool. She came to Liverpool to study medicine in 2005 and loved the city so much she stayed. Tola has a background in the financial sector.
-        </p>
-        <section class="my-2">
-          <div class="container mx-auto flex flex-col items-left pb-6 mb-4 md:p-10 md:px-12">
-          </div>
-          <div class="container mx-auto grid grid-cols-1 gap-8 lg:gap-20 md:px-10 md:pb-10 lg:grid-cols-1">
-            <div class="flex flex-col items-center mx-12 lg:mx-0">
-              <div class="relative text-center">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" class="absolute top-0 left-0 w-8 h-8 dark:text-gray-300">
-                  <path d="M232,246.857V16H16V416H54.4ZM48,48H200V233.143L48,377.905Z"></path>
-                  <path d="M280,416h38.4L496,246.857V16H280ZM312,48H464V233.143L312,377.905Z"></path>
-                </svg>
-                <p class="px-6 py-1 text-sm sm:text-base lg:text-lg italic lg:ml-1  ml-4">
-                  We were both very close to our grandmothers of beloved memory and in their later years, they needed care due to worsening mobility. This exposed us to the difficulties faced by the elderly in maintaining their independence in their golden age and this birthed the vision to help people age gracefully and flourish in their own homes.
-                </p>
-                <div className='mt-2 xl:mt-1'>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" class="absolute bottom-0 right-0 w-8 h-8 dark:text-gray-300">
-                  <path d="M280,185.143V416H496V16H457.6ZM464,384H312V198.857L464,54.1Z"></path>
-                  <path d="M232,16H193.6L16,185.143V416H232ZM200,384H48V198.857L200,54.1Z"></path>
-                </svg>
-                </div>
-                
-              </div>
-              <span class="w-12 h-1 my-2 rounded-lg dark:bg-violet-600"></span>
-              <p class="font-semibold text-gray-800">Tola Taiwo & Kunbi Taiwo</p>
-            </div>
-          </div>
-        </section>
-      </div>
-    </div>
-
-    <div class="w-full bg-[#a43579] px-6 lg:px-10 pt-10 mt-20">
-      <section class="container mx-auto text-center">
-        <h1 class="text-2xl sm:text-2xl lg:text-2xl font-semibold leading-none text-primary">
-          Meet our dedicated team members
-          <span class="w-20 h-1 my-2 rounded-lg dark:bg-violet-600"></span>
-        </h1>
-      </section>
-    </div>
-
-    
-
-    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8 mt-10 ">
-      
-    <div class="block items-center h-auto px-6 py-4 transition-colors duration-300 bg-white border rounded-xl group  dark:border-gray-700 text-center">
-      <img class="w-[300px] h-[300px]  " src={manager} alt="Kevin Smyth"/>
-        <div>
-          <h2 class="text-lg sm:text-xl lg:text-2xl font-semibold text-[#8D4374] ">Kevin Smyth</h2>
-          <p class="mt-2 text-sm sm:text-base lg:text-lg text-gray-500 group-hover:text-gray-300">Deputy Manager</p>
-        </div>
-      </div>
-      
-      <div class="block items-center h-auto px-6 py-4 transition-colors duration-300 bg-white border rounded-xl group  dark:border-gray-700 text-center">
-      <img class="w-[300px] h-[300px]  " src={kelismyth} alt="Kevin Smyth"/>
-        <div>
-          <h2 class="text-lg sm:text-xl lg:text-2xl font-semibold text-[#8D4374] ">Paula Smith</h2>
-          <p class="mt-2 text-sm sm:text-base lg:text-lg text-gray-500 group-hover:text-gray-300">Field Care Supervisor</p>
-        </div>
-      </div>
-
-          
-      <div class="block items-center h-auto px-6 py-4 transition-colors duration-300 bg-white border rounded-xl group  dark:border-gray-700 text-center">
-      <img class="w-[300px] h-[300px]  " src={supervisor2} alt="Kevin Smyth"/>
-        <div>
-          <h2 class="text-lg sm:text-xl lg:text-2xl font-semibold text-[#8D4374] ">Kerry Fisher</h2>
-          <p class="mt-2 text-sm sm:text-base lg:text-lg text-gray-500 group-hover:text-gray-300">Field Care Supervisor</p>
-        </div>
-      </div>
-
-
-      <div class="block items-center h-auto px-6 py-4 transition-colors duration-300 bg-white border rounded-xl group  dark:border-gray-700 text-center">
-      <img class="w-[300px] h-[300px]  " src={supervisor1} alt="Kevin Smyth"/>
-        <div>
-          <h2 class="text-lg sm:text-xl lg:text-2xl font-semibold text-[#8D4374] ">Jo Mitchell</h2>
-          <p class="mt-2 text-sm sm:text-base lg:text-lg text-gray-500 group-hover:text-gray-300">Recruitment Compliance Officer</p>
-        </div>
-      </div>
-
-     
-    </div>
-  </div>
-</section>
-
-
-
+<Testimonial/> 
 
       <Emailsubscription ref={subscriptionRef}/>
 

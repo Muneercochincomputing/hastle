@@ -5,6 +5,7 @@ import ScrollToTop from './ScrollToTop'; // Ensure this component is small or ne
 // Lazy load all the components for code splitting
 const Homepage = lazy(() => import('./Homepage'));
 const About = lazy(() => import('./aboutpage'));
+const About2 = lazy(() => import('./aboutus2'));
 const Servicespage = lazy(() => import('./servicespage'));
 const Servicespage2 = lazy(() => import('./servicepage2'));
 const Servicespage3 = lazy(() => import('./servicepage3'));
@@ -33,6 +34,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/about" element={<About />} />
+          <Route path="/about2" element={<About2 />} />
           <Route path="/service1" element={<Servicespage />} />
           
           <Route path="/service2" element={<Servicespage3 />} />

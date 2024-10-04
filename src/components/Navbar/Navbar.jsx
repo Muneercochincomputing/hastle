@@ -11,10 +11,14 @@ const Navbar = ({ onScrollToSubscription }) => {
     const [showAdminLogin, setShowAdminLogin] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isServicesOpen, setIsServicesOpen] = useState(false);
+    const [isaboutOpen, setIsaboutOpen] = useState(false);
+    const [ismobileaboutOpen, setIsmobileaboutOpen] = useState(false);
     const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
 
     // Refs for dropdowns
     const servicesDropdownRef = useRef(null);
+    const aboutDropdownRef = useRef(null);
+    const mobileaboutDropdownRef = useRef(null);
     const mobileServicesDropdownRef = useRef(null);
 
     const handleAdminLogin = () => {
@@ -31,6 +35,14 @@ const Navbar = ({ onScrollToSubscription }) => {
 
     const toggleServicesDropdown = () => {
         setIsServicesOpen(!isServicesOpen);
+    };
+
+    const toggleaboutDropdown = () => {
+        setIsaboutOpen(!isaboutOpen);
+    };
+
+    const togglemobileaboutDropdown = () => {
+        setIsmobileaboutOpen(!ismobileaboutOpen);
     };
 
     const toggleMobileServicesDropdown = () => {
@@ -52,6 +64,42 @@ const Navbar = ({ onScrollToSubscription }) => {
             document.removeEventListener('mousedown', handleClickOutside);
         };
     }, [servicesDropdownRef]);
+
+
+
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (
+                mobileaboutDropdownRef.current &&
+                !mobileaboutDropdownRef.current.contains(event.target)
+            ) {
+                setIsmobileaboutOpen(false);
+            }
+        };
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [mobileaboutDropdownRef]);
+
+
+
+
+
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (
+                aboutDropdownRef.current &&
+                !aboutDropdownRef.current.contains(event.target)
+            ) {
+                setIsaboutOpen(false);
+            }
+        };
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [aboutDropdownRef]);
 
     // Close dropdown when clicking outside for mobile
     useEffect(() => {
@@ -90,10 +138,29 @@ const Navbar = ({ onScrollToSubscription }) => {
                             HOME
                             <div className="bg-amber-500 h-[1px] w-0 group-hover:w-[50px] transition-all duration-500 "></div>
                         </Link>
-                        <Link to="/about" className="font-bold text-[#bc3388] text-[17px] group [text-shadow:_0_1px_0_rgb(0_0_0_/_40%)]">
-                            ABOUT US
-                            <div className="bg-amber-500 h-[1px] w-0 group-hover:w-[80px] transition-all duration-500"></div>
-                        </Link>
+                        <Link to="" className="font-bold text-[#bc3388] text-[17px] group [text-shadow:_0_1px_0_rgb(0_0_0_/_40%)]">
+                           <div className="relative" ref={aboutDropdownRef}>
+                          <button className='' onClick={toggleaboutDropdown}>
+                          ABOUT US
+                          </button>
+                          <div className="bg-amber-500 h-[1px] w-0 group-hover:w-[80px] transition-all duration-500"></div>
+                           
+                          {isaboutOpen && (
+                                <div className="absolute left-0 mt-2 w-48 bg-[#bc3388] shadow-md rounded-md py-2 z-50">
+                                    <Link to='/about2' className='block px-4 py-2 text-white text-[15px] hover:bg-white hover:text-[#8D4374]'>
+                                     Meet The Team
+                                    </Link>
+                                    <Link to='/about' className='block px-4 py-2 text-white text-[15px] hover:bg-gray-200 hover:text-[#8D4374]'>
+                                      What sets us apart
+                                    </Link>
+                                    
+                                </div>
+                            )}
+                           </div>
+                            
+                         
+                            
+                          </Link>
 
                         {/* OUR SERVICES with Dropdown */}
                         <div className="relative" ref={servicesDropdownRef}>
@@ -162,8 +229,23 @@ const Navbar = ({ onScrollToSubscription }) => {
 
                 {isMenuOpen && (
                     <div className="lg:hidden flex flex-col gap-4 bg-white shadow-lg p-4 rounded-md mt-2">
+                      
                         <Link to="/" className="text-[#bc3388] font-bold">Home</Link>
-                        <Link to="/about" className="text-[#bc3388] font-bold">About Us</Link>
+
+                        <div className='relative' ref={mobileaboutDropdownRef}>
+                        <button onClick={togglemobileaboutDropdown} >
+                        <Link to="" className="text-[#bc3388] font-bold">About Us</Link>
+                        </button>
+                        {ismobileaboutOpen && (
+                                <div className="mt-2 bg-[#bc3388] rounded-md shadow-md py-2">
+                                    <Link to="/about2" className="block px-4 py-2 text-white"> Meet The Team</Link>
+                                    <Link to="/about" className="block px-4 py-2 text-white"> What sets us apart</Link>
+                                   
+                                </div>
+                            )}
+                      
+                        </div>
+                       
 
                         <div className="relative" ref={mobileServicesDropdownRef}>
                             <button onClick={toggleMobileServicesDropdown} className="text-[#bc3388] font-bold flex items-center justify-between">
