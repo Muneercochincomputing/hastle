@@ -105,10 +105,10 @@ function Aboutus2() {
       {/* Meet The Team Section */}
       <section className="bg-[#a43579] mt-40">
         <div className="container px-6 py-10 mx-auto">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-thin text-center text-gray-800">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-thin text-center text-white">
             Meet The Team
           </h1>
-          <p className="max-w-2xl mx-auto my-6 text-center text-gray-500">
+          <p className="max-w-2xl mx-auto my-6 text-center text-white">
             Get to Know Our Dedicated Team: Compassionate Care, Professional Support
           </p>
           <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-center text-primary mt-10">
