@@ -124,11 +124,50 @@ function Aboutus2() {
                 Mr. Tola Taiwo and Dr. Kunbi Taiwo. Dr. Kunbi Taiwo is a GP working locally in Liverpool, and Tola has a background in the financial sector.
               </p>
               <div className="my-2">
-                <p className="px-6 py-1 text-sm sm:text-base lg:text-lg italic">
-                  We were both very close to our grandmothers of beloved memory, which inspired our vision for Holistic Care Services.
-                </p>
-              </div>
-              <p className="font-semibold text-gray-800">Tola Taiwo & Kunbi Taiwo</p>
+  {/* First SVG Icon */}
+  <svg
+    width="24"
+    height="18"
+    viewBox="0 0 24 18"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className="text-gray-400 dark:text-gray-600 fill-current"
+  >
+    <path
+      d="M24 7.3h-5.1L22.3.4H17l-3.4 6.9v10.3H24V7.3zM10.3 17.6V7.3H5L8.6.4H3.4L0 7.3v10.3h10.3z"
+      fill="white"
+    />
+  </svg>
+
+  {/* Paragraph with Text and Closing Quotes */}
+  <p className="px-6 py-1 text-sm sm:text-base lg:text-lg italic flex items-center">
+    We were both very close to our grandmothers of beloved memory and in their
+    later years, they needed care due to worsening mobility. This exposed us to
+    the difficulties faced by the elderly in maintaining their independence in
+    their golden age, and this birthed the vision to help people age gracefully
+    and flourish in their own homes.
+    
+    {/* Second SVG Icon */}
+
+  </p>
+  <svg
+  width="24"
+  height="18"
+  viewBox="0 0 24 18"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+  className="text-gray-400 dark:text-gray-600 fill-current absolute right-10"
+  transform="scale(-1, 1)"
+>
+  <path
+    d="M24 7.3h-5.1L22.3.4H17l-3.4 6.9v10.3H24V7.3zM10.3 17.6V7.3H5L8.6.4H3.4L0 7.3v10.3h10.3z"
+    fill="white"
+  />
+</svg>
+
+</div>
+
+              <p className="font-semibold text-primary text-center">Tola Taiwo & Kunbi Taiwo</p>
             </div>
           </div>
 
