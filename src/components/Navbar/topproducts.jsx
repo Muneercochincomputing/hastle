@@ -252,7 +252,7 @@ function Topproducts({onScrollToSubscription}) {
     <div className="flex justify-center items-center xl:h-[500px] h-[400px]  bg-[#a43579] relative ">
   <video
     id="demoVideo"
-    className="object-fill w-[800px] h-[400px] transition-all duration-[0.9s] ease-out"
+    className="object-fill w-[800px] lg:h-[400px] h-[320px] transition-all duration-[0.9s] ease-out"
     muted
     loop
     controls
