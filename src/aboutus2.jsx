@@ -59,9 +59,8 @@ function Aboutus2() {
           A Gentle Touch for a Golden Age
         </h1>
         <p className="text-center  sm:text-base sm:px-20 px-10 xl:px-26 text-[4vw]">
-          At Holistic Care Services, we understand the importance of familiarity and independence, 
-          especially as we age. Whether it’s a gentle reminder to take your medication, a cup of tea 
-          and a chat, or personalized attention and companionship from a live-in carer, we are here for you.
+        At Holistic Care Services, we understand the importance of familiarity and independence, especially as we age. Imagine waking up in the familiar comfort of your own home, sunlight streaming in, a friendly voice greeting you, and a helping hand nearby. Whether it’s a gentle reminder to take your medication, a cup of tea, and a chat, or personalized attention and companionship from a live-in carer, we are here for you.
+        
         </p>
       </div>
 
