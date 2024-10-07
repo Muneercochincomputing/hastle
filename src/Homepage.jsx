@@ -47,6 +47,7 @@ function Homepage() {
       <AnimatedContainer onScrollToSubscription={handleScrollToContact} />
       <div className='overflow-hidden'><AnimatedContainerMob  onScrollToSubscription={handleScrollToContact}  /></div>
       <div className='overflow-hidden'><AnimatedContainerTab /></div>
+      <div className='h-[100px] '></div>
       <div className='overflow-hidden lg:shadow-bulge'><Product pageIdentifier="Homepage"/></div>
       <div className='overflow-hidden'><TopProducts onScrollToSubscription={handleScrollToContact}/></div>
       <div className='overflow-hidden'><Banner /></div>

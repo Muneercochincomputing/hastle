@@ -186,13 +186,13 @@ function Topproducts({onScrollToSubscription}) {
           </div>
         </div>
         <div className="lg:flex flex-wrap justify-center mx-0 mt-20 hidden ">
-  <img src={section3bannerimage2} className="w-[300px] h-[500px] mt-20 shadow-bulge" />
+  <img src={section3bannerimage2} className="w-[350px] h-[500px] mt-2 shadow-bulge" />
   
   <div className="relative">
-  <img src={section3bannerimage1} className="w-[300px] h-[580px] m-2 shadow-bulge" />
+  <img src={section3bannerimage1} className="w-[350px] h-[500px] m-2 ml-6  shadow-bulge" />
   <button
   onClick={onScrollToSubscription}
-    className="group absolute rounded-lg bottom-[536px] xl:text-[18px] py-10 px-10 left-10 z-10 h-[50px] w-60 overflow-hidden border border-white bg-gradient-to-r from-[#a43579] to-[#a43579] text-white transition-all duration-300 ease-in-out shadow-lg before:absolute before:left-0 before:top-0 before:h-0 before:w-1/4 before:duration-500 after:absolute after:bottom-0 after:right-0 after:h-0 after:w-1/4 after:duration-500 hover:text-[#8D4374] hover:bg-white hover:before:h-full hover:after:h-full flex items-center justify-center"
+    className="group absolute rounded-lg bottom-[516px] ml-10 xl:text-[18px] py-10 px-10 left-10 z-10 h-[50px] w-60 overflow-hidden border border-white bg-gradient-to-r from-[#a43579] to-[#a43579] text-white transition-all duration-300 ease-in-out shadow-lg before:absolute before:left-0 before:top-0 before:h-0 before:w-1/4 before:duration-500 after:absolute after:bottom-0 after:right-0 after:h-0 after:w-1/4 after:duration-500 hover:text-[#8D4374] hover:bg-white hover:before:h-full hover:after:h-full flex items-center justify-center"
     
   >
     Book Your Free <br/> Consultation
@@ -200,7 +200,7 @@ function Topproducts({onScrollToSubscription}) {
 </div>
 
 
-  <img src={section3bannerimage3} className="w-[300px] h-[500px] mt-20 shadow-bulge" />
+  <img src={section3bannerimage3} className="w-[350px] h-[500px] mt-2 ml-4 shadow-bulge" />
 </div>
 
 

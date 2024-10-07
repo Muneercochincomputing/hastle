@@ -71,8 +71,8 @@ function Aboutus2() {
           Championing Your Independence
         </h1>
         <p className="text-center sm:text-base sm:px-20 px-10 xl:mx-26 xl:mt-2 text-[4vw] mt-2 lg:mt-1">
-          Many children worry about their parents aging alone. We understand. That’s why we offer a 
-          free, no-obligation consultation to discuss your needs and answer any questions you may have.
+        Many children worry about their parents aging alone. We understand. That’s why we offer a free, no-obligation consultation to discuss your needs and answer any questions you may have. We will come to your home, chat about your hopes and dreams, and create a personalized care plan that allows you to flourish right where you belong.
+
         </p>
       </div>
 
