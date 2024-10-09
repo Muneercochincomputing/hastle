@@ -5,7 +5,7 @@ import mainimage2 from './assets/blog2.jpeg';
 import mainimage3 from './assets/blog1.jpeg';
 import mainimage4 from './assets/blog2.jpeg';
 import servicesmain from './assets/servicemain1.jpeg'
-import service4image from './assets/demservice2.jpg'
+import service4image from './assets/dementianew.jpeg'
 import service5image from './assets/Services4image2.jpg'
 import service6image from './assets/Servicesimage3.jpg'
 import service7image from './assets/Servicesimage4.jpg'
