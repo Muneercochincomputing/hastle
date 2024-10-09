@@ -19,7 +19,7 @@ import overnights from './assets/overnights.jpeg'
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Navbar/footer';
 import Testimonial from './components/Navbar/Testimonial';
-import physicaldisablty from './assets/IMG_5755.jpg'
+import physicaldisablty from './assets/physicaldiabilitystock.jpeg'
 import multiple from './assets/IMG_5765.jpg'
 import pngimage from './assets/caring.png'
 import pngimage2 from './assets/supportive.png'
