@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import demo from '../../assets/IMG_6146.jpg';
+import demo from '../../assets/newhero.jpg';
 import whyimage1 from '../../assets/charity.png';
 import whyimage2 from '../../assets/family.png';
 import whyimage3 from '../../assets/friends.png';
+import Product from './about';
 
 const AnimatedContainer = ({ onScrollToSubscription }) => {
   const [style, setStyle] = useState({
@@ -58,7 +59,7 @@ const AnimatedContainer = ({ onScrollToSubscription }) => {
           <img src={demo} className={`absolute inset-0 w-[100vw] z-30 h-full`} />
 
           <div>
-            <div className={`absolute inset-0 bg-black opacity-50 z-30`} />
+            <div className={`absolute inset-0 bg-black opacity-5 z-30`} />
           </div>
 
           <div className='absolute z-30 h-screen w-full justify-center flex flex-col'>
@@ -76,8 +77,12 @@ const AnimatedContainer = ({ onScrollToSubscription }) => {
                 Book your Free Consultation
               </span>
             </button>
-          </div>
+            <div className='w-full h-[400px]  group absolute min-h-[30px] z-40  sm:w-[150px] md:w-[200px] lg:w-[85%] overflow-hidden border border-white bg-white text-white shadow-2xl transition-all hover:text-purple-500 hover:bg-white rounded-xl ml-[2px] md:ml-[20px] lg:ml-[108px] mt-[900px] '>
+            <Product pageIdentifier="Homepage"/>
+            </div>
 
+          </div>
+        
           <div className={`md:w-full mx-10 md:h-[400px] mt-[800px] hidden ${textClass}`}>
             <div className='sm:mt-[300px] xl:mt-10'>
               <div className='grid grid-cols-1 sm:grid-cols-3 gap-10 sm:w-full sm:px-20 px-5'>

@@ -101,6 +101,22 @@ function Topproducts({onScrollToSubscription}) {
 
   return (
     <div>
+     
+      <div className='w-full  h-[600px] bg-[#a43579] px-10 grid lg:grid-cols-2 lg:mt-60  lg:pt-10 grid-cols-1  mt-10   lg:text-[40px] text-[25px] font-sans lg:pl-40'>
+        
+          <p className='font-banner text-white  lg:my-[100px ]  mt-10  '>The problem is that finding trustworthy care that truly understands your loved one`s
+            unique needs can be overwhelming and stressful
+          </p>
+        <div className='w-full h-5 lg:hidden'></div>
+        <div className='lg:w-[550px] w-full h-[400px] lg:ml-20  lg:my-[70px] m'>
+          <img src={secondbannerimg }/>
+      
+        </div>
+        
+
+      </div>
+
+
       <div className='container mt-10  lg:mt-20 pt:10  lg:w-full  '>
         {/* Header section */}
         <div className='text-center mb-10 max-w-[900px] mx-auto '>
@@ -141,24 +157,11 @@ function Topproducts({onScrollToSubscription}) {
 </div>
 
       </div>
-      <div className='w-full  h-[600px] bg-[#a43579] px-10 grid lg:grid-cols-2 lg:mt-10  lg:pt-10 grid-cols-1  mt-10   lg:text-[40px] text-[25px] font-sans lg:pl-40'>
-        
-          <p className='font-banner text-white  lg:my-[100px ]  mt-10  '>The problem is that finding trustworthy care that truly understands your loved one`s
-            unique needs can be overwhelming and stressful
-          </p>
-        <div className='w-full h-5 lg:hidden'></div>
-        <div className='lg:w-[550px] w-full h-[400px] lg:ml-20  lg:my-[70px] m'>
-          <img src={secondbannerimg }/>
-      
-        </div>
-        
-
-      </div>
 
       <div>
         {/* Additional Content */}
-        <div className='sm:mt-[200px] lg:mt-10    px-10  '>
-          <h1 className='text-center text-sm sm:text-[40px] mt-10  font-bold text-[#8D4374] sm:mb-10 mb-5 '>
+        <div className='sm:mt-[200px] lg:mt-20    px-10  '>
+          <h1 className='text-center text-sm sm:text-[40px] mt-10  font-bold text-primary sm:mb-10 mb-5 '>
            <p className='text-[25px] lg:text-[40px] font-banner'> Getting Started with Holistic Care is Easy</p>
           </h1>
           <div className='grid grid-cols-1 sm:grid-cols-3 gap-10 sm:w-full sm:px-20 px-5 xlmt-10'>
