@@ -12,6 +12,7 @@ const Servicespage3 = lazy(() => import('./servicepage3'));
 const Servicespage4 = lazy(() => import('./servicepage4'));
 const Careerspage = lazy(() => import('./careerspage'));
 const Dashbord = lazy(() => import('./dashbord'));
+const CMS = lazy(() => import('./components/Navbar/contentManagement'));
 const Brouchurecontacts = lazy(() => import('./brouchurecontacts'));
 const Blog = lazy(() => import('./blog'));
 const Blogcontent1 = lazy(() => import('./blogcontent1'));
@@ -54,6 +55,7 @@ function App() {
           <Route path="/contactpage" element={<ContactUs />} />
           <Route path="/privacypolicy" element={<Privacypolicy />} />
           <Route path="/leagalnotice" element={<Leagalnotice />} />
+          <Route path="/contentManage" element={<CMS />} />
         </Routes>
       </Suspense>
     </Router>

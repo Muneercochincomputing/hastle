@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState,useEffect } from 'react';
 import Navbar from './components/Navbar/Navbar';
 import { Link } from 'react-router-dom';
 import Footer from './components/Navbar/footer';
@@ -20,10 +21,120 @@ import Blogpage4main from './assets/blog4pagemain.jpg'
 import Blogpage5mainimage from './assets/blogpage5mainimage.jpg'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import axios from 'axios';
+import Reactloader from './reactloader';
 
 import Emailsubscription from './components/Navbar/emailsubscription';
 
 function Blogcontent6() {
+
+
+  
+  
+  
+  const [imagesArray, setImagesArray] = useState([]);
+  const [textArray, setTextArray] = useState([]);
+  const [imagesArraySecond, setImagesArraySecond] = useState([]);
+  const [textArraySecond, setTextArraySecond] = useState([]);
+  const [imagesArrayThird, setImagesArrayThird] = useState([]);
+  const [textArrayThird, setTextArrayThird] = useState([]);
+  const [imagesBlogSecond, setImagesBlogSecond] = useState([]);
+  const [textBlogSecond, setTextBlogSecond] = useState([])
+  const [imagesBlogThird, setImagesBlogThird] = useState([]);
+  const [textBlogThird, setTextBlogThird] = useState([])
+  const url = import.meta.env.VITE_HOST_URL;
+  
+
+  useEffect(() => {
+    const fetchCMSData = async () => {
+      try {
+        const result = await axios.get(`${url}/getcms/BlogPage6`);
+        const resultBlog = await axios.get(`${url}/getcms/BlogLandingPage`);
+
+        // Extract data for the first section
+        const extractedImages = result.data
+          .filter(item => item.page === "BlogPage6" && item.label === "BlogPage6 FirstPart  ")
+          .map(item => item.images)
+          .flat();
+
+        const extractedText = result.data
+          .filter(item => item.page === "BlogPage6" && item.label === "BlogPage6 FirstPart  ")
+          .map(item => item.text)
+          .flat();
+
+          const extractedImagesSecond = result.data
+          .filter(item => item.page === "BlogPage6" && item.label === "BlogPage6 SecondPart  ")
+          .map(item => item.images)
+          .flat();
+
+        const extractedTextSecond = result.data
+          .filter(item => item.page === "BlogPage6" && item.label === "BlogPage6 SecondPart  ")
+          .map(item => item.text)
+          .flat();
+
+
+          const extractedImagesThird = result.data
+          .filter(item => item.page === "BlogPage6" && item.label === "BlogPage6 ThirdPart  ")
+          .map(item => item.images)
+          .flat();
+
+        const extractedTextThird = result.data
+          .filter(item => item.page === "BlogPage6" && item.label === "BlogPage6 ThirdPart  ")
+          .map(item => item.text)
+          .flat();
+
+          const extractedBlogcontent1image = resultBlog.data
+          .filter(item => item.page === "BlogLandingPage" && item.label === "BlogPage SecondPart ")
+          .map(item => item.images)
+          .flat();
+          const extractedBlogcontent1text = resultBlog.data
+          .filter(item => item.page === "BlogLandingPage" && item.label === "BlogPage SecondPart ")
+          .map(item => item.text)
+          .flat();
+
+
+
+          const extractedBlogcontent2image = resultBlog.data
+          .filter(item => item.page === "BlogLandingPage" && item.label === "BlogPage ThirdPart ")
+          .map(item => item.images)
+          .flat();
+          const extractedBlogcontent2text = resultBlog.data
+          .filter(item => item.page === "BlogLandingPage" && item.label === "BlogPage ThirdPart ")
+          .map(item => item.text)
+          .flat();
+
+
+
+        
+
+        // Update state variables
+        setImagesArray(extractedImages);
+        setTextArray(extractedText);
+        setImagesArraySecond(extractedImagesSecond);
+        setTextArraySecond(extractedTextSecond);
+        setImagesArrayThird(extractedImagesThird);
+        setTextArrayThird(extractedTextThird);
+        setImagesBlogSecond(extractedBlogcontent1image);
+        setTextBlogSecond(extractedBlogcontent1text);
+        setImagesBlogThird(extractedBlogcontent2image);
+        setTextBlogThird(extractedBlogcontent2text);
+       
+       
+       
+
+    
+      } catch (error) {
+        console.error("Error fetching CMS data:", error);
+        alert("An error occurred while fetching CMS data. Please try again.");
+      }
+    };
+
+    fetchCMSData();
+  }, []); // Dependency array to run only once on mount
+
+
+
+
 
 
     const services = [
@@ -53,32 +164,33 @@ function Blogcontent6() {
 
       const posts = [
         {
-          title: "Caring for the Elderly: A Comprehensive Guide",
-          excerpt: "To ensure the comfort and well-being of elderly loved ones, prioritize their safety by making their living environment fall-proof and accessible. Regularly monitor their health and nutrition, and provide companionship to combat loneliness and support emotional well-being. Engage them in activities that stimulate their mind and body while respecting their independence and preferences.",
-          date: "August 18, 2024",
-          author: "John Doe",
-          image: blog1,
+          title: textArraySecond[0],
+          excerpt: textArraySecond[1],
+          date: textArraySecond[2],
+          author: "",
+          image: imagesArraySecond[0],
         },
         {
-          title: "The Importance of Mental Health in Elderly Care",
-          excerpt: "Understanding and addressing mental health issues in older adults is crucial for their overall well-being.",
-          date: "July 25, 2024",
-          author: "Jane Smith",
-          image: blog2,
+          title: textArraySecond[3],
+          excerpt: textArraySecond[4],
+          date:textArraySecond[5],
+          author: "",
+          image: imagesArraySecond[1],
         },
         {
-          title: "Creating a Safe Home Environment for Seniors",
-          excerpt: "Tips and tricks to make your home a safe haven for elderly family members.",
-          date: "June 15, 2024",
-          author: "Emily Johnson",
-          image: blog3,
+          title: textArraySecond[6],
+          excerpt: textArraySecond[7],
+          date: textArraySecond[8],
+          author: "",
+          image: imagesArraySecond[2],
         },
       ];
+    
   return (
     <div>
       <Navbar />
       
-    
+    <Reactloader/>
 
 
       <header className="relative bg-white text-[#8D4374]  pt-40  pb-10  ">
@@ -88,16 +200,11 @@ function Blogcontent6() {
            {/* sub head */}
          
            <div className='relative grid xl:grid-cols-1'>
-  <p className='  text-black text-[25px] xl:text-[45px] font-bold '>Managing Chronic Conditions in Elderly Home Care: A Comprehensive
-  Guide
+  <p className='  text-black text-[25px] xl:text-[45px] font-bold '>
+  {textArray[0]}
   </p>
-  <p className="text-lg md:text-1xl xl:text-left text-black mt-10  xl:px-10">Caring for elderly loved ones at home is a rewarding experience, but it can also present
-unique challenges, especially when managing chronic conditions. In the UK, where
-elderly home care services are becoming increasingly prevalent, families and caregivers
-must be well-equipped to handle a range of health issues that commonly affect seniors.
-With the right approach, managing chronic conditions at home can improve the quality
-of life for seniors and help them maintain their independence.</p> 
-  <img src={blogimagespage4 } className='mt-10 '  />
+  <p className="text-lg md:text-1xl xl:text-left text-black mt-10  xl:px-10">{textArray[1]}</p> 
+  <img src={imagesArray[0] } className='mt-10 '  />
   <div className='xl:mt-[100px] xl:ml-[100px]'>
     
     
@@ -105,10 +212,8 @@ of life for seniors and help them maintain their independence.</p>
 </div>
 
 <div className=' relative xl:mt-[10px] xl:ml-[100px] mt-4'>
-    <h1 className="text-2xl md:text-3xl font-extrabold mb-6 text-left text-black ">Understanding the Common Chronic Conditions in the Elderly</h1>
-    <p className="text-lg md:text-1xl text-left text-black ">As we age, our bodies undergo changes that can lead to the development of chronic
-health conditions. In the UK, some of the most common chronic conditions among the
-elderly include:</p> 
+    <h1 className="text-2xl md:text-3xl font-extrabold mb-6 text-left text-black ">{textArraySecond[0]}</h1>
+    <p className="text-lg md:text-1xl text-left text-black ">{textArraySecond[1]}</p> 
   </div>
 
      
@@ -117,19 +222,17 @@ elderly include:</p>
 
 
      <div className='grid xl:grid-cols-2 mt-20 '>
-      <img src={blogimage2page4}/>
+      <img src={imagesArraySecond[0]}/>
 
       <div className='xl:ml-[100px]'>
-    <h1 className="text-2xl md:text-3xl font-extrabold mb-6 text-left text-black mt-4">Diabetes</h1>
-    <p className="text-lg md:text-1xl text-left text-black "> A condition that affects the body’s ability to regulate blood sugar
-    levels, leading to serious complications if not managed properly.</p> 
+    <h1 className="text-2xl md:text-3xl font-extrabold mb-6 text-left text-black mt-4">{textArraySecond[2]}</h1>
+    <p className="text-lg md:text-1xl text-left text-black "> {textArraySecond[3]}</p> 
 
 
 {/* // the second */}
 <div className='xl:mt-[50px] '>
-    <h1 className="text-2xl md:text-3xl font-extrabold mb-6 text-left text-black mt-4">Heart Disease </h1>
-    <p className="text-lg md:text-1xl text-left text-black ">This includes conditions like coronary artery disease and heart
-    failure, which can significantly impact an elderly person’s quality of life.</p> 
+    <h1 className="text-2xl md:text-3xl font-extrabold mb-6 text-left text-black mt-4">{textArraySecond[4]}</h1>
+    <p className="text-lg md:text-1xl text-left text-black ">{textArraySecond[5]}</p> 
   </div>
 
 
@@ -138,24 +241,20 @@ elderly include:</p>
 
 
   <div className='xl:mt-[50px] '>
-    <h1 className="text-2xl md:text-3xl font-extrabold mb-6 text-left text-black mt-4">Arthritis </h1>
-    <p className="text-lg md:text-1xl text-left text-black ">A common condition that causes pain, swelling, and stiffness in the
-    joints, making movement difficult for seniors.</p> 
+    <h1 className="text-2xl md:text-3xl font-extrabold mb-6 text-left text-black mt-4">{textArraySecond[6]} </h1>
+    <p className="text-lg md:text-1xl text-left text-black ">{textArraySecond[7]}</p> 
   </div>
 
 
   <div className='xl:mt-[50px] '>
-    <h1 className="text-2xl md:text-3xl font-extrabold mb-6 text-left text-black mt-4">Chronic Obstructive Pulmonary Disease (COPD)</h1>
-    <p className="text-lg md:text-1xl text-left text-black ">A group of lung conditions
-that cause breathing difficulties and can severely limit a senior’s ability to engage
-in daily activities</p> 
+    <h1 className="text-2xl md:text-3xl font-extrabold mb-6 text-left text-black mt-4">{textArraySecond[8]}</h1>
+    <p className="text-lg md:text-1xl text-left text-black ">{textArraySecond[9]}</p> 
   </div>
 
 
   <div className='xl:mt-[50px] '>
-    <h1 className="text-2xl md:text-3xl font-extrabold mb-6 text-left text-black mt-4">Hypertension (High Blood Pressure)</h1>
-    <p className="text-lg md:text-1xl text-left text-black ">A condition that increases the risk of
-    heart attacks, strokes, and other serious health issues.</p> 
+    <h1 className="text-2xl md:text-3xl font-extrabold mb-6 text-left text-black mt-4">{textArraySecond[10]}</h1>
+    <p className="text-lg md:text-1xl text-left text-black ">{textArraySecond[11]}</p> 
   </div>
 
 
@@ -177,11 +276,8 @@ in daily activities</p>
 
 
     <div className=' relative xl:mt-[40px] xl:ml-[100px]'>
-    <h1 className="text-2xl md:text-3xl font-extrabold mb-6 text-left text-black ">Creating a Personalized Care Plan</h1>
-    <p className="text-lg md:text-1xl text-left text-black ">The first step in managing chronic conditions in elderly home care is to develop a
-personalized care plan tailored to the specific needs of the senior. This plan should be
-comprehensive, covering all aspects of care, from medication management to lifestyle
-modifications</p> 
+    <h1 className="text-2xl md:text-3xl font-extrabold mb-6 text-left text-black ">{textArrayThird[0]}</h1>
+    <p className="text-lg md:text-1xl text-left text-black ">{textArrayThird[1]}</p> 
   </div>
 
 
@@ -190,24 +286,14 @@ modifications</p>
    
 
       <div className='xl:mt-[50px] xl:ml-[100px] xl:mr-10'>
-    <h1 className="text-2xl md:text-3xl font-extrabold mb-6 text-left text-black">Medication Management</h1>
-    <p className="text-lg md:text-1xl text-left text-black "> Proper medication management is crucial in controlling chronic conditions.
-Caregivers should ensure that medications are taken as prescribed and that
-there are no missed doses. Using a pill organizer or setting reminders can help
-seniors keep track of their medications. Additionally, it’s important to monitor for
-any side effects and communicate with healthcare providers if there are any
-concerns.</p> 
+    <h1 className="text-2xl md:text-3xl font-extrabold mb-6 text-left text-black">{textArrayThird[2]}</h1>
+    <p className="text-lg md:text-1xl text-left text-black "> {textArrayThird[3]}</p> 
 
 
 {/* // the second */}
 <div className='xl:mt-[50px] xl:mr-10 '>
-    <h1 className="text-2xl md:text-3xl font-extrabold mb-6 text-left text-black mt-4">Regular Health Monitoring</h1>
-    <p className="text-lg md:text-1xl text-left text-black ">Monitoring vital signs such as blood pressure, blood sugar levels, and respiratory
-function is essential in managing chronic conditions. Regular check-ups with
-healthcare providers, either in person or through telehealth services, can help
-keep these conditions under control. Caregivers should also be trained to
-recognize the early signs of complications and know when to seek medical
-attention.</p> 
+    <h1 className="text-2xl md:text-3xl font-extrabold mb-6 text-left text-black mt-4">{textArrayThird[4]}</h1>
+    <p className="text-lg md:text-1xl text-left text-black ">{textArrayThird[5]}</p> 
   </div>
 
 
@@ -216,13 +302,8 @@ attention.</p>
 
 
   <div className='xl:mt-[50px] xl:mr-10 '>
-    <h1 className="text-2xl md:text-3xl font-extrabold mb-6 text-left text-black mt-4">Diet and Nutrition</h1>
-    <p className="text-lg md:text-1xl text-left text-black ">A balanced diet plays a significant role in managing chronic conditions. For
-example, seniors with diabetes need to manage their carbohydrate intake, while
-those with heart disease should focus on a low-sodium diet. Caregivers can work
-with a nutritionist to develop meal plans that meet the specific dietary needs of
-the elderly. Encouraging healthy eating habits and ensuring that seniors stay
-hydrated are key components of chronic disease management</p> 
+    <h1 className="text-2xl md:text-3xl font-extrabold mb-6 text-left text-black mt-4">{textArrayThird[6]}</h1>
+    <p className="text-lg md:text-1xl text-left text-black ">{textArrayThird[7]}</p> 
   </div>
 
 
@@ -239,7 +320,7 @@ hydrated are key components of chronic disease management</p>
 
 
 
-  <img src={blogimage3page4 } className='mt-4'/>
+  <img src={imagesArrayThird[0]} className='mt-4'/>
 
   {/* // the second */}
 

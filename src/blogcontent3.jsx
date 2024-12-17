@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState,useEffect } from 'react';
 import Navbar from './components/Navbar/Navbar';
 import { Link } from 'react-router-dom';
 import Footer from './components/Navbar/Footer';
@@ -15,8 +16,118 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 import Emailsubscription from './components/Navbar/Emailsubscription';
+import axios from 'axios';
+import Reactloader from './reactloader';
 
 function Blogcontent3() {
+
+
+
+
+  
+  const [imagesArray, setImagesArray] = useState([]);
+  const [textArray, setTextArray] = useState([]);
+  const [imagesArraySecond, setImagesArraySecond] = useState([]);
+  const [textArraySecond, setTextArraySecond] = useState([]);
+  const [imagesArrayThird, setImagesArrayThird] = useState([]);
+  const [textArrayThird, setTextArrayThird] = useState([]);
+  const [imagesBlogSecond, setImagesBlogSecond] = useState([]);
+  const [textBlogSecond, setTextBlogSecond] = useState([])
+  const [imagesBlogThird, setImagesBlogThird] = useState([]);
+  const [textBlogThird, setTextBlogThird] = useState([])
+  
+  const url = import.meta.env.VITE_HOST_URL;
+
+  useEffect(() => {
+    const fetchCMSData = async () => {
+      try {
+        const result = await axios.get(`${url}/getcms/BlogPage3`);
+        const resultBlog = await axios.get(`${url}/getcms/BlogLandingPage`);
+
+        // Extract data for the first section
+        const extractedImages = result.data
+          .filter(item => item.page === "BlogPage3" && item.label === "BlogPage3 FirstPart  ")
+          .map(item => item.images)
+          .flat();
+
+        const extractedText = result.data
+          .filter(item => item.page === "BlogPage3" && item.label === "BlogPage3 FirstPart  ")
+          .map(item => item.text)
+          .flat();
+
+          const extractedImagesSecond = result.data
+          .filter(item => item.page === "BlogPage3" && item.label === "BlogPage3 SecondPart  ")
+          .map(item => item.images)
+          .flat();
+
+        const extractedTextSecond = result.data
+          .filter(item => item.page === "BlogPage3" && item.label === "BlogPage3 SecondPart  ")
+          .map(item => item.text)
+          .flat();
+
+
+          const extractedImagesThird = result.data
+          .filter(item => item.page === "BlogPage3" && item.label === "BlogPage3 ThirdPart  ")
+          .map(item => item.images)
+          .flat();
+
+        const extractedTextThird = result.data
+          .filter(item => item.page === "BlogPage3" && item.label === "BlogPage3 ThirdPart  ")
+          .map(item => item.text)
+          .flat();
+
+          const extractedBlogcontent1image = resultBlog.data
+          .filter(item => item.page === "BlogLandingPage" && item.label === "BlogPage SecondPart ")
+          .map(item => item.images)
+          .flat();
+          const extractedBlogcontent1text = resultBlog.data
+          .filter(item => item.page === "BlogLandingPage" && item.label === "BlogPage SecondPart ")
+          .map(item => item.text)
+          .flat();
+
+
+
+          const extractedBlogcontent2image = resultBlog.data
+          .filter(item => item.page === "BlogLandingPage" && item.label === "BlogPage ThirdPart ")
+          .map(item => item.images)
+          .flat();
+          const extractedBlogcontent2text = resultBlog.data
+          .filter(item => item.page === "BlogLandingPage" && item.label === "BlogPage ThirdPart ")
+          .map(item => item.text)
+          .flat();
+
+
+
+        
+
+        // Update state variables
+        setImagesArray(extractedImages);
+        setTextArray(extractedText);
+        setImagesArraySecond(extractedImagesSecond);
+        setTextArraySecond(extractedTextSecond);
+        setImagesArrayThird(extractedImagesThird);
+        setTextArrayThird(extractedTextThird);
+        setImagesBlogSecond(extractedBlogcontent1image);
+        setTextBlogSecond(extractedBlogcontent1text);
+        setImagesBlogThird(extractedBlogcontent2image);
+        setTextBlogThird(extractedBlogcontent2text);
+       
+       
+       
+
+    
+      } catch (error) {
+        console.error("Error fetching CMS data:", error);
+        alert("An error occurred while fetching CMS data. Please try again.");
+      }
+    };
+
+    fetchCMSData();
+  }, []); // Dependency array to run only once on mount
+
+
+
+
 
 
     const services = [
@@ -66,6 +177,8 @@ function Blogcontent3() {
   return (
     <div className='overflow-x-hidden'>
       <Navbar />
+
+      <Reactloader/>
       
       {/* Hero Section */}
       <header className="relative bg-white text-[#8D4374]  pt-40 overflow-hidden  ">
@@ -75,10 +188,9 @@ function Blogcontent3() {
            {/* sub head */}
          
            <div className='relative grid xl:grid-cols-1'>
-  <p className='  text-black xl:text-[50px] text-[30px] font-bold '>Pets as Companions: The Therapeutic Benefits for
-  Seniors</p>
-  <p className="text-lg md:text-1xl text-left text-black  xl:px-10 px-4 mt-10">Have you ever seen a senior smiling ear-to-ear while petting their furry friend? It’s a heartwarming sight that speaks volumes about the therapeutic benefits of pets for older adults. In this blog post, we’ll dive into the incredible ways that pets can enhance the quality of life for seniors. From offering companionship to reducing feelings of loneliness and anxiety, pets provide a sense of purpose and routine that can be immensely beneficial for mental health. Studies have shown that interacting with pets can lower blood pressure and increase levels of serotonin and dopamine, which promote relaxation and happiness. Moreover, the daily care of a pet encourages physical activity, whether it's a leisurely walk with a dog or playing with a cat at home. Let's explore how the bond between seniors and their pets can foster joy, comfort, and a more fulfilling life.</p> 
-  <img src={blog3pageimagemain} className='mt-10 '  />
+  <p className='  text-black xl:text-[50px] text-[30px] font-bold '>{textArray[0]}</p>
+  <p className="text-lg md:text-1xl text-left text-black  xl:px-10 px-4 mt-10">{textArray[1]}</p> 
+  <img src={imagesArray[0]} className='mt-10 '  />
   <div className='xl:mt-[100px] ml-[100px]'>
     
     
@@ -86,8 +198,8 @@ function Blogcontent3() {
 </div>
 
 <div className=' relative xl:mt-[10px] xl:ml-[100px] mt-10'>
-    <h1 className="text-2xl md:text-3xl font-extrabold mb-6 text-left text-black">Involving Professional Help When Needed</h1>
-    <p className="text-lg md:text-1xl text-left text-black ">Sometimes, despite our best efforts, providing care at home may not be enough to meet all the needs of an elderly loved one. In such cases, seeking professional help can be a wise decision. Whether it's hiring an in-home caregiver, exploring adult day care options, or considering assisted living facilities, professional caregivers can provide specialized care that addresses both medical and personal needs. It's important to research and choose services that align with your loved one's preferences and requirements, ensuring they receive the highest standard of care while maintaining their dignity and independence.</p> 
+    <h1 className="text-2xl md:text-3xl font-extrabold mb-6 text-left text-black">{textArraySecond[0]}</h1>
+    <p className="text-lg md:text-1xl text-left text-black ">{textArraySecond[1]}</p> 
   </div>
 
      
@@ -96,15 +208,11 @@ function Blogcontent3() {
 
 
      <div className='grid xl:grid-cols-2 mt-20'>
-      <img src={blog3pageimage1}/>
+      <img src={imagesArraySecond[0]}/>
 
       <div className='xl:mt-[50px] xl:ml-[100px]'>
-    <h1 className="text-2xl md:text-3xl font-extrabold mb-6 text-left text-black mt-10">Physical Health Benefits</h1>
-    <p className="text-lg md:text-1xl text-left text-black ">Beyond emotional support, pets can also have a positive impact on seniors&#39; physical
-   health. Studies have shown that pet owners are more likely to exercise
-   regularly, maintain a healthy weight, and have lower blood pressure. Caring for a pet
-   can also provide a sense of responsibility and routine, which can be beneficial for both
-   mental and physical health.</p> 
+    <h1 className="text-2xl md:text-3xl font-extrabold mb-6 text-left text-black mt-10">{textArraySecond[2]}</h1>
+    <p className="text-lg md:text-1xl text-left text-black ">{textArraySecond[3]}</p> 
   </div>
 
      </div>
@@ -120,11 +228,8 @@ function Blogcontent3() {
 
         <div className='' >
 
-        <h1 className="text-2xl md:text-3xl font-extrabold mb-6 text-left text-black ">Cognitive Stimulation</h1>
-    <p className="text-lg md:text-1xl text-left text-black ">Pets can help to keep seniors&#39; minds sharp by providing cognitive stimulation. Playing
-with a pet, training a dog, or caring for a cat can help to improve
-memory, concentration, and problem-solving skills. Additionally, interacting with a pet
-can provide a sense of accomplishment and boost self-esteem.</p> 
+        <h1 className="text-2xl md:text-3xl font-extrabold mb-6 text-left text-black ">{textArrayThird[0]}</h1>
+    <p className="text-lg md:text-1xl text-left text-black ">{textArrayThird[1]}</p> 
         </div>
         
 
@@ -132,8 +237,8 @@ can provide a sense of accomplishment and boost self-esteem.</p>
 
         <div className='xl:mt-[400px]' >
 
-        <h1 className="text-2xl md:text-3xl font-extrabold mb-6 text-left text-black mt-10">Enhancing Elderly Care with Pets</h1>
-    <p className="text-lg md:text-1xl text-left text-black ">Integrating pets into elderly care can significantly improve quality of life. Animals provide not only companionship but also encourage physical activity and social interaction. Engaging with pets can help seniors maintain a sense of purpose and reduce stress, contributing to their overall emotional and physical health.</p> 
+        <h1 className="text-2xl md:text-3xl font-extrabold mb-6 text-left text-black mt-10">{textArrayThird[2]}</h1>
+    <p className="text-lg md:text-1xl text-left text-black ">{textArrayThird[3]}</p> 
         </div>
         
         
@@ -145,12 +250,9 @@ can provide a sense of accomplishment and boost self-esteem.</p>
          <div className=' lg:h-[1200px]  '  > 
         
          <div className=' lg:ml-10 mt-10 lg:mt-[300px]' >
-        <h1 className="text-2xl md:text-3xl font-extrabold lg:mb-6 text-left text-black">Social Interaction</h1>
+        <h1 className="text-2xl md:text-3xl font-extrabold lg:mb-6 text-left text-black">{textArrayThird[4]}</h1>
     <p className="text-lg md:text-1xl text-left text-black ">
-    Pets can also be a great way for seniors to meet new people and socialize. Walking a
- dog in the park or attending a pet-friendly event can provide opportunities to connect
- with other pet owners and build friendships. These social interactions can help to
- reduce feelings of isolation and improve overall quality of life.</p> 
+   {textArrayThird[5]}</p> 
         </div>
 
 
@@ -158,11 +260,9 @@ can provide a sense of accomplishment and boost self-esteem.</p>
         {/* the second item */}
 
         <div className=' lg:ml-10 xl:mt-[300px] mt-10'  >
-        <h1 className="text-2xl md:text-3xl font-extrabold mb-6 text-left text-black">Stress Reduction</h1>
+        <h1 className="text-2xl md:text-3xl font-extrabold mb-6 text-left text-black">{textArrayThird[6]}</h1>
     <p className="text-lg md:text-1xl text-left text-black ">
-    Pets have been shown to have a calming effect on humans, which can be especially
-beneficial for seniors who may experience stress or anxiety. Simply petting a dog or cat
-can help to reduce stress levels, lower blood pressure, and improve mood.</p> 
+{textArrayThird[7]}</p> 
         </div>
         
         </div>
@@ -204,12 +304,12 @@ can help to reduce stress levels, lower blood pressure, and improve mood.</p>
 
            
           <div className="bg-white cursor-pointer rounded overflow-hidden shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] relative top-0 hover:-top-2 transition-all duration-300">
-              <img src={readmoresectionimage1 } alt="Blog Post 1" className="w-full h-60 object-cover" />
+              <img src={imagesBlogThird[0] } alt="Blog Post 1" className="w-full h-60 object-cover" />
               <div className="p-6">
-                <span className="text-sm block text-gray-400 mb-2">10 FEB 2023 </span>
-                <h3 className="text-xl font-bold text-[#333]">The Importance of Mental Health Support in Elderly Home Care</h3>
+                <span className="text-sm block text-gray-400 mb-2">{textBlogThird[0]} </span>
+                <h3 className="text-xl font-bold text-[#333]">{textBlogThird[1]}</h3>
                 <hr className="my-6" />
-                <p className="text-gray-400 text-sm">As we age, mental health becomes just as crucial as physical health, especially for seniors who receive care at home. In the UK, where elderly home care services are on the rise, there is growing recognition of the need to address the emotional and psychological well-being of older adults. With the right support, seniors can enjoy a higher quality of life, maintain their independence, and stay connected with their loved ones.</p>
+                <p className="text-gray-400 text-sm">{textBlogThird[2]}</p>
               </div>
 
               
@@ -221,12 +321,12 @@ can help to reduce stress levels, lower blood pressure, and improve mood.</p>
               <Link to='/blogcontent5'>
 
             <div className="bg-white cursor-pointer rounded overflow-hidden shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] relative top-0 hover:-top-2 transition-all duration-300">
-              <img src={readmoresectionimage2 } alt="Blog Post 1" className="w-full h-60 object-cover" />
+              <img src={imagesBlogThird[1]} alt="Blog Post 1" className="w-full h-60 object-cover" />
               <div className="p-6">
-                <span className="text-sm block text-gray-400 mb-2">10 FEB 2023 </span>
-                <h3 className="text-xl font-bold text-[#333]">How to Prepare Your Home for Elderly Care: Safety Tips and Modifications</h3>
+                <span className="text-sm block text-gray-400 mb-2">{textBlogThird[3]}</span>
+                <h3 className="text-xl font-bold text-[#333]">{textBlogThird[4]}</h3>
                 <hr className="my-6" />
-                <p className="text-gray-400 text-sm">As the population ages, more families in the UK are choosing to care for their elderly loved ones at home. While this option allows seniors to remain in familiar surroundings, it also requires careful planning and modifications to ensure their safety and comfort.</p>
+                <p className="text-gray-400 text-sm">{textBlogThird[5]}</p>
               </div>
 
              
@@ -237,12 +337,12 @@ can help to reduce stress levels, lower blood pressure, and improve mood.</p>
 
             <Link to='/blogcontent6'>
             <div className="bg-white cursor-pointer rounded overflow-hidden shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] relative top-0 hover:-top-2 transition-all duration-300">
-              <img src={readmoresectionimage3 } alt="Blog Post 1" className="w-full h-60 object-cover" />
+              <img src={imagesBlogThird[2]} alt="Blog Post 1" className="w-full h-60 object-cover" />
               <div className="p-6">
-                <span className="text-sm block text-gray-400 mb-2">10 FEB 2023 </span>
-                <h3 className="text-xl font-bold text-[#333]">Managing Chronic Conditions in Elderly Home Care: A Comprehensive Guide</h3>
+                <span className="text-sm block text-gray-400 mb-2">{textBlogThird[6]}</span>
+                <h3 className="text-xl font-bold text-[#333]">{textBlogThird[7]}</h3>
                 <hr className="my-6" />
-                <p className="text-gray-400 text-sm">Caring for elderly loved ones at home is a rewarding experience, but it can also present unique challenges, especially when managing chronic conditions. In the UK, where elderly home care services are becoming increasingly prevalent, families and caregivers must be well-equipped to handle a range of health issues that commonly affect seniors. With the right approach, managing chronic conditions at home can improve the quality of life for seniors and help them maintain their independence.</p>
+                <p className="text-gray-400 text-sm">{textBlogThird[8]}</p>
               </div>
 
               

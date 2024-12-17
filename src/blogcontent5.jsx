@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState,useEffect } from 'react';
 import Navbar from './components/Navbar/Navbar';
 import { Link } from 'react-router-dom';
 import Footer from './components/Navbar/footer';
@@ -17,10 +18,118 @@ import Blogpage4main from './assets/blog4pagemain.jpg'
 import Blogpage5mainimage from './assets/blogpage5mainimage.jpg'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import axios from 'axios';
+import Reactloader from './reactloader';
 
 import Emailsubscription from './components/Navbar/emailsubscription';
 
 function Blogcontent5() {
+
+
+  
+  
+  const [imagesArray, setImagesArray] = useState([]);
+  const [textArray, setTextArray] = useState([]);
+  const [imagesArraySecond, setImagesArraySecond] = useState([]);
+  const [textArraySecond, setTextArraySecond] = useState([]);
+  const [imagesArrayThird, setImagesArrayThird] = useState([]);
+  const [textArrayThird, setTextArrayThird] = useState([]);
+  const [imagesBlogSecond, setImagesBlogSecond] = useState([]);
+  const [textBlogSecond, setTextBlogSecond] = useState([])
+  const [imagesBlogThird, setImagesBlogThird] = useState([]);
+  const [textBlogThird, setTextBlogThird] = useState([])
+  
+  const url = import.meta.env.VITE_HOST_URL;
+
+  useEffect(() => {
+    const fetchCMSData = async () => {
+      try {
+        const result = await axios.get(`${url}/getcms/BlogPage5`);
+        const resultBlog = await axios.get(`${url}/getcms/BlogLandingPage`);
+
+        // Extract data for the first section
+        const extractedImages = result.data
+          .filter(item => item.page === "BlogPage5" && item.label === "BlogPage5 FirstPart  ")
+          .map(item => item.images)
+          .flat();
+
+        const extractedText = result.data
+          .filter(item => item.page === "BlogPage5" && item.label === "BlogPage5 FirstPart  ")
+          .map(item => item.text)
+          .flat();
+
+          const extractedImagesSecond = result.data
+          .filter(item => item.page === "BlogPage5" && item.label === "BlogPage5 SecondPart  ")
+          .map(item => item.images)
+          .flat();
+
+        const extractedTextSecond = result.data
+          .filter(item => item.page === "BlogPage5" && item.label === "BlogPage5 SecondPart  ")
+          .map(item => item.text)
+          .flat();
+
+
+          const extractedImagesThird = result.data
+          .filter(item => item.page === "BlogPage5" && item.label === "BlogPage5 ThirdPart  ")
+          .map(item => item.images)
+          .flat();
+
+        const extractedTextThird = result.data
+          .filter(item => item.page === "BlogPage5" && item.label === "BlogPage5 ThirdPart  ")
+          .map(item => item.text)
+          .flat();
+
+          const extractedBlogcontent1image = resultBlog.data
+          .filter(item => item.page === "BlogLandingPage" && item.label === "BlogPage SecondPart ")
+          .map(item => item.images)
+          .flat();
+          const extractedBlogcontent1text = resultBlog.data
+          .filter(item => item.page === "BlogLandingPage" && item.label === "BlogPage SecondPart ")
+          .map(item => item.text)
+          .flat();
+
+
+
+          const extractedBlogcontent2image = resultBlog.data
+          .filter(item => item.page === "BlogLandingPage" && item.label === "BlogPage ThirdPart ")
+          .map(item => item.images)
+          .flat();
+          const extractedBlogcontent2text = resultBlog.data
+          .filter(item => item.page === "BlogLandingPage" && item.label === "BlogPage ThirdPart ")
+          .map(item => item.text)
+          .flat();
+
+
+
+        
+
+        // Update state variables
+        setImagesArray(extractedImages);
+        setTextArray(extractedText);
+        setImagesArraySecond(extractedImagesSecond);
+        setTextArraySecond(extractedTextSecond);
+        setImagesArrayThird(extractedImagesThird);
+        setTextArrayThird(extractedTextThird);
+        setImagesBlogSecond(extractedBlogcontent1image);
+        setTextBlogSecond(extractedBlogcontent1text);
+        setImagesBlogThird(extractedBlogcontent2image);
+        setTextBlogThird(extractedBlogcontent2text);
+       
+       
+       
+
+    
+      } catch (error) {
+        console.error("Error fetching CMS data:", error);
+        alert("An error occurred while fetching CMS data. Please try again.");
+      }
+    };
+
+    fetchCMSData();
+  }, []); // Dependency array to run only once on mount
+
+
+
 
 
     const services = [
@@ -52,18 +161,18 @@ function Blogcontent5() {
   const posts = [
   
     {
-      title: "The Importance of Mental Health in Elderly Care",
-      excerpt: "Understanding and addressing mental health issues in older adults is crucial for their overall well-being.",
-      date: "July 25, 2024",
+      title: textBlogSecond[0],
+      excerpt: textBlogSecond[1],
+      date: textBlogSecond[2],
       author: "Jane Smith",
-      image: blog2,
+      image: imagesBlogSecond[0],
     },
     {
-      title: "Creating a Safe Home Environment for Seniors",
-      excerpt: "Tips and tricks to make your home a safe haven for elderly family members.",
-      date: "June 15, 2024",
+      title: textBlogSecond[3],
+      excerpt: textBlogSecond[4],
+      date: textBlogSecond[5],
       author: "Emily Johnson",
-      image: blog3,
+      image: imagesBlogSecond[1],
     },
   ];
 
@@ -71,21 +180,19 @@ function Blogcontent5() {
     <div className='overflow-hidden'>
       <Navbar />
       
+      <Reactloader/>
       {/* Hero Section */}
      <div className=' grid lg:grid-cols-2 pt-20  '>
 
-     <img src={Blogpage5mainimage} className='rounded-full mt-10  ' />
+     <img src={imagesArray[0]} className='rounded-full mt-10  ' />
 
       {/* Hero Text Section */}
       <div className="sm:max-w-xl xl:w-[1200px] pt-20 text-balance xl:ml-40 px-4 ">
         <h1 className="xl:text-[40px] text-[28px]  font-bold tracking-tight text-gray-900 sm:text-[28px] ">
-        How to Prepare Your Home for Elderly Care: Safety Tips and
-        Modifications 
+      {textArray[0]} 
         </h1>
         <p className="mt-4 text-xl ml-[2] xl:ml-[1px] text-gray-500">
-        As the population ages, more families in the UK are choosing to care for their elderly
-loved ones at home. While this option allows seniors to remain in familiar surroundings,
-it also requires careful planning and modifications to ensure their safety and comfort.
+      {textArray[1]}
         </p>
        
       </div>
@@ -105,19 +212,14 @@ it also requires careful planning and modifications to ensure their safety and c
  {/* Hero Text Section */}
  <div className="sm:max-w-lg xl:pt-40 pt-10 text-balance xl:ml-10  px-4">
    <h1 className="xl:text-4xl  text-[25px] font-bold tracking-tight text-gray-900 sm:text-[28px] xl:ml-10 ">
-   Understanding the Importance of a Safe Home Environment
+ {textArray[2]}
    </h1>
    <p className="mt-4 text-xl xl:ml-[3rem] text-gray-500">
-   Creating a safe and comfortable environment is crucial for elderly care at home. The
-home should be a place where seniors feel secure and confident in performing daily
-tasks without fear of injury. In the UK, falls are a leading cause of injury among older
-adults, with one-third of people aged 65 and over experiencing at least one fall each
-year. Many of these falls occur at home, highlighting the need for preventive measures
-and home modifications.
+   {textArray[3]}
    </p>
   
  </div>
- <img src={Blogpage5mainimage} className='rounded-full mt-10' />
+ <img src={imagesArray[1]} className='rounded-full mt-10' />
 </div>
 
 
@@ -125,15 +227,11 @@ and home modifications.
 
 
 <div className='grid lg:grid-cols-2 mt-20'>
-      <img src={blog3pageimage1}/>
+      <img src={imagesArray[2]}/>
 
       <div className='xl:mt-[50px] xl:ml-[100px] px-4'>
-    <h1 className="text-2xl xl:text-2xl font-extrabold mb-6 text-left text-black mt-4">Key Areas to Focus On When Preparing Your Home</h1>
-    <p className="text-lg md:text-1xl text-left text-black xl:px-10 px-2  ">Beyond emotional support, pets can also have a positive impact on seniors&#39; physical
-   health. Studies have shown that pet owners are more likely to exercise
-   regularly, maintain a healthy weight, and have lower blood pressure. Caring for a pet
-   can also provide a sense of responsibility and routine, which can be beneficial for both
-   mental and physical health.</p> 
+    <h1 className="text-2xl xl:text-2xl font-extrabold mb-6 text-left text-black mt-4">{textArray[4]}</h1>
+    <p className="text-lg md:text-1xl text-left text-black xl:px-10 px-2  ">{textArray[5]}</p> 
   </div>
 
      </div>
@@ -149,14 +247,8 @@ and home modifications.
 
         <div className=' ' >
 
-        <h1 className="text-2xl md:text-3xl font-extrabold mb-6 text-left text-black">Entrance and Exits</h1>
-    <p className="text-lg md:text-1xl text-left text-black ">The entryway is the first point of contact for anyone entering the home. Ensure
-that entrances and exits are accessible and safe for seniors:
-o Install sturdy handrails on both sides of any steps leading to the front door.
-o Consider adding a ramp if the entrance involves stairs, making it easier for
-wheelchair users or those with limited mobility to enter and exit the home.
-o Ensure that the door threshold is level with the floor to prevent tripping
-hazards.</p> 
+        <h1 className="text-2xl md:text-3xl font-extrabold mb-6 text-left text-black">{textArraySecond[0]}</h1>
+    <p className="text-lg md:text-1xl text-left text-black ">{textArraySecond[1]}</p> 
         </div>
         
 
@@ -164,41 +256,22 @@ hazards.</p>
 
         <div className=''>
 
-        <h1 className="text-2xl md:text-3xl font-extrabold mb-6 text-left text-black mt-5">Flooring and Walkways</h1>
-    <p className="text-lg md:text-1xl text-left text-black ">Slippery floors and uneven surfaces can be hazardous for seniors:
-o Replace slippery flooring materials, such as polished tiles or hardwood,
-with non-slip alternatives like carpet or non-slip vinyl.
-o Remove any loose rugs or secure them with non-slip backing to prevent
-tripping.
-o Ensure that all walkways are clear of clutter, cords, and obstacles that
-could cause a fall.</p> 
+        <h1 className="text-2xl md:text-3xl font-extrabold mb-6 text-left text-black mt-5">{textArraySecond[2]}</h1>
+    <p className="text-lg md:text-1xl text-left text-black ">{textArraySecond[3]}</p> 
         </div>
         
         
          </div>
          <div className=' ' >
 
-<h1 className="text-2xl md:text-3xl font-extrabold mb-6 text-left text-black mt-5">Lighting</h1>
-<p className="text-lg md:text-1xl text-left text-black ">Proper lighting is essential for preventing accidents and promoting
-independence:
-o Install bright, energy-efficient lighting throughout the home, especially in
-hallways, staircases, and bathrooms.
-o Use motion-sensor lights in areas where seniors might need to move
-around at night, such as near the bed or bathroom.
-o Ensure that light switches are easily accessible and consider adding
-nightlights in key areas.</p> 
+<h1 className="text-2xl md:text-3xl font-extrabold mb-6 text-left text-black mt-5">{textArraySecond[4]}</h1>
+<p className="text-lg md:text-1xl text-left text-black ">{textArraySecond[5]}.</p> 
 </div>
 
 <div className=' ' >
 
-<h1 className="text-2xl md:text-3xl font-extrabold mb-6 text-left text-black mt-5">Staircases and Hallways</h1>
-<p className="text-lg md:text-1xl text-left text-black ">Stairs can be particularly challenging for elderly individuals:
-o Install handrails on both sides of the staircase to provide support.
-o Ensure that stair treads are even and secure, and consider adding non-
-slip strips for extra safety.
-o If the staircase poses a significant challenge, consider installing a stairlift
-to facilitate safe movement between floors.
-o Keep hallways well-lit and free from obstacles.</p> 
+<h1 className="text-2xl md:text-3xl font-extrabold mb-6 text-left text-black mt-5">{textArraySecond[6]}</h1>
+<p className="text-lg md:text-1xl text-left text-black ">{textArraySecond[7]}</p> 
 </div>
           
 
@@ -255,12 +328,12 @@ o Keep hallways well-lit and free from obstacles.</p>
 
 
             <div className="bg-white cursor-pointer rounded overflow-hidden shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] relative top-0 hover:-top-2 transition-all duration-300">
-              <img src={readmoresectionimage3 } alt="Blog Post 1" className="w-full h-60 object-cover" />
+              <img src={imagesBlogThird[2] } alt="Blog Post 1" className="w-full h-60 object-cover" />
               <div className="p-6">
-                <span className="text-sm block text-gray-400 mb-2">10 FEB 2023 </span>
-                <h3 className="text-xl font-bold text-[#333]">A Guide to Igniting Your Imagination</h3>
+                <span className="text-sm block text-gray-400 mb-2">{textBlogThird[6]}</span>
+                <h3 className="text-xl font-bold text-[#333]">{textBlogThird[7]}</h3>
                 <hr className="my-6" />
-                <p className="text-gray-400 text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis accumsan, nunc et tempus blandit, metus mi consectetur felis turpis vitae ligula.</p>
+                <p className="text-gray-400 text-sm">{textBlogThird[8]}</p>
               </div>
 
            

@@ -1,12 +1,17 @@
 'use strict';
 
 const db = require('./db');
-const { collection, addDoc, getDocs,query, where, writeBatch  } = require('firebase/firestore');
+const { collection, addDoc, getDocs,query, where, writeBatch,updateDoc  } = require('firebase/firestore');
 const Careers = require('./models/careers');
 const Contacts = require('./models/contacts');
 const Subscribers = require('./models/subscribers');
 const Query = require('./models/querys');
 const Brouchure = require('./models/brouchure')
+const { getStorage, ref, uploadBytes, getDownloadURL } = require('firebase/storage');
+const sharp = require('sharp'); // for image compression if needed
+const fs = require('fs'); // for file operations
+const path = require('path');
+
 
 
 // Add Career
@@ -279,6 +284,90 @@ const getAdmin = async (req, res) => {
 
 
 
+const addnewcms = async (req, res) => {
+    try {
+        const data = req.body;
+        const docRef = await addDoc(collection(db, 'CMS'), data);
+        res.send('Subscriber added successfully');
+    } catch (error) {
+        res.status(400).send(error.message);
+    }
+};
+
+
+
+
+const getCmsAll = async (req, res) => {
+    try {
+        // Create a reference to the admin collection
+        const adminCollection = collection(db, 'CMS');
+        
+        // Get all documents from the collection
+        const adminSnapshot = await getDocs(adminCollection);
+
+        if (adminSnapshot.empty) {
+            return res.status(404).send('No content found.');
+        }
+
+        // Extract data from the documents
+        const adminsArray = [];
+        adminSnapshot.forEach(doc => {
+            adminsArray.push(doc.data());
+        });
+
+        res.status(200).send(adminsArray);
+    } catch (error) {
+        res.status(400).send(`Error fetching admins: ${error.message}`);
+    }
+};
+
+
+
+
+const getCms = async (req, res) => {
+    try {
+        // Extract the page name from the request (query parameter or request body)
+        const { page } = req.params;  // assuming 'page' is passed as a URL parameter
+        
+        if (!page) {
+            return res.status(400).send('Page name is required.');
+        }
+
+        // Create a reference to the CMS collection
+        const cmsCollection = collection(db, 'CMS');
+        
+        // Get all documents from the collection
+        const cmsSnapshot = await getDocs(cmsCollection);
+
+        if (cmsSnapshot.empty) {
+            return res.status(404).send('No content found.');
+        }
+
+        // Extract and filter data based on the page name
+        const cmsArray = [];
+        cmsSnapshot.forEach(doc => {
+            const data = doc.data();
+            if (data.page === page) {  // Assuming each document has a 'page' field
+                cmsArray.push(data);
+            }
+        });
+
+        if (cmsArray.length === 0) {
+            return res.status(404).send('No content found for the specified page.');
+        }
+
+        res.status(200).send(cmsArray);
+    } catch (error) {
+        res.status(400).send(`Error fetching content: ${error.message}`);
+    }
+};
+
+
+
+
+
+
+
 module.exports = {
     addCareers,
     getCareers,
@@ -291,5 +380,9 @@ module.exports = {
     updateAdmin,
     getAdmin,
     addBrouchure,
-    getBrouchure
+    getBrouchure,
+    
+    getCms,
+    addnewcms,
+    getCmsAll
 };

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import Navbar from './components/Navbar/Navbar';
 import { Link } from 'react-router-dom';
 import Footer from './components/Navbar/Footer';
@@ -9,9 +9,96 @@ import blog4 from './assets/readmoresectionimage1.jpg';
 import blog5 from './assets/readmoresectionimage2.jpg';
 import blog6 from './assets/readmoresectionimage3.jpg';
 import Emailsubscription from './components/Navbar/Emailsubscription';
-
+import axios from 'axios';
+import Reactloader from './reactloader';
 function Blog() {
   const [openIndex, setOpenIndex] = useState(null);
+
+
+
+  const [imagesArray, setImagesArray] = useState([]);
+  const [textArray, setTextArray] = useState([]);
+  const [imagesArraySecond, setImagesArraySecond] = useState([]);
+  const [textArraySecond, setTextArraySecond] = useState([]);
+  const [imagesArrayThird, setImagesArrayThird] = useState([]);
+  const [textArrayThird, setTextArrayThird] = useState([]);
+  const [imagesArrayFourth, setImagesArrayFourth] = useState([]);
+  const [textArrayFourth, setTextArrayFourth] = useState([]);
+
+  const url = import.meta.env.VITE_HOST_URL;
+
+  
+
+  useEffect(() => {
+    const fetchCMSData = async () => {
+      try {
+        const result = await axios.get(`${url}/getcms/BlogLandingPage`);
+
+        // Extract data for the first section
+        const extractedImages = result.data
+          .filter(item => item.page === "BlogLandingPage" && item.label === "BlogPage")
+          .map(item => item.images)
+          .flat();
+          
+
+        const extractedText = result.data
+          .filter(item => item.page === "BlogLandingPage" && item.label === "BlogPage ")
+          .map(item => item.text)
+          .flat();
+
+          console.log(extractedText,'new')
+        // Extract data for the second section
+        const extractedImagesSecond = result.data
+          .filter(item => item.page === "BlogLandingPage" && item.label === "BlogPage SecondPart ")
+          .map(item => item.images)
+          .flat();
+
+        const extractedTextSecond = result.data
+          .filter(item => item.page === "BlogLandingPage" && item.label === "BlogPage SecondPart ")
+          .map(item => item.text)
+          .flat();
+
+          const extractedImagesThird = result.data
+          .filter(item => item.page === "BlogLandingPage" && item.label === "BlogPage ThirdPart ")
+          .map(item => item.images)
+          .flat();
+
+        const extractedTextThird = result.data
+          .filter(item => item.page === "BlogLandingPage" && item.label === "BlogPage ThirdPart ")
+          .map(item => item.text)
+          .flat();
+
+          const extractedImagesFourth = result.data
+          .filter(item => item.page === "BlogLandingPage" && item.label === "FourthSection")
+          .map(item => item.images)
+          .flat();
+
+        const extractedTextFourth = result.data
+          .filter(item => item.page === "BlogLandingPage" && item.label === "FourthSection")
+          .map(item => item.text)
+          .flat();
+
+        // Update state variables
+        setImagesArray(extractedImages);
+        setTextArray(extractedText);
+        setImagesArraySecond(extractedImagesSecond);
+        setTextArraySecond(extractedTextSecond);
+        setImagesArrayThird(extractedImagesThird);
+        setTextArrayThird(extractedTextThird);
+        setImagesArrayFourth(extractedImagesFourth);
+        setTextArrayFourth(extractedTextFourth);
+
+        console.log("First Section Text:", extractedText);
+        console.log("Second Section Text:", extractedTextSecond);
+      } catch (error) {
+        console.error("Error fetching CMS data:", error);
+        alert("An error occurred while fetching CMS data. Please try again.");
+      }
+    };
+
+    fetchCMSData();
+  }, []); // Dependency array to run only once on mount
+
 
   const toggleAccordion = (index) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -48,38 +135,40 @@ and preferences.` },
 
   const posts = [
     {
-      title: "Caring for the Elderly: A Comprehensive Guide",
-      excerpt: "To ensure the comfort and well-being of elderly loved ones, prioritize their safety by making their living environment fall-proof and accessible. Regularly monitor their health and nutrition, and provide companionship to combat loneliness and support emotional well-being. Engage them in activities that stimulate their mind and body while respecting their independence and preferences.",
-      date: "August 18, 2024",
+      title: textArraySecond[0],
+      excerpt: textArraySecond[1],
+      date: textArraySecond[2],
       author: "",
-      image: blog1,
+      image: imagesArraySecond[0],
     },
     {
-      title: "Holistic Elderly Care: Nurturing Health, Happiness, and Connection",
-      excerpt: "Caring for the elderly requires compassion, knowledge, and thoughtful planning. Our comprehensive guide provides essential tips and strategies to help you deliver the best care for your aging loved ones. Explore our insights and make a positive difference today!",
-      date: "July 25, 2024",
+      title: textArraySecond[3],
+      excerpt: textArraySecond[4],
+      date:textArraySecond[5],
       author: "",
-      image: blog2,
+      image: imagesArraySecond[1],
     },
     {
-      title: "Pets as Companions: The Therapeutic Benefits for Seniors",
-      excerpt: "Have you ever seen a senior smiling ear-to-ear while petting their furry friend? It’s a heartwarming sight that speaks volumes about the therapeutic benefits of pets for older adults. In this blog post, we’ll dive into the incredible ways that pets can enhance the quality of life for seniors. From offering companionship to reducing feelings of loneliness and anxiety, pets provide a sense of purpose and routine that can be immensely beneficial for mental health. Studies have shown that interacting with pets can lower blood pressure and increase levels of serotonin and dopamine, which promote relaxation and happiness. Moreover, the daily care of a pet encourages physical activity, whether it's a leisurely walk with a dog or playing with a cat at home. Let's explore how the bond between seniors and their pets can foster joy, comfort, and a more fulfilling life..",
-      date: "June 15, 2024",
+      title: textArraySecond[6],
+      excerpt: textArraySecond[7],
+      date: textArraySecond[8],
       author: "",
-      image: blog3,
+      image: imagesArraySecond[2],
     },
   ];
 
   return (
     <div>
       <Navbar />
+
+      <Reactloader/>
       
       {/* Hero Section */}
       <header className="relative bg-gradient-to-r from-purple-600 to-blue-500 text-white py-32">
         <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 via-red-500 to-[#8D4374] opacity-75"></div>
         <div className="relative container mx-auto px-6 md:px-12 text-center">
-          <h1 className="text-5xl md:text-7xl font-extrabold mb-6 drop-shadow-lg">Explore Our Blog</h1>
-          <p className="text-lg md:text-2xl mb-10">Insights, tips, and stories about elderly care, health, and well-being.</p>
+          <h1 className="text-5xl md:text-7xl font-extrabold mb-6 drop-shadow-lg">{textArray[0]}</h1>
+          <p className="text-lg md:text-2xl mb-10">{textArray[1]}</p>
           <a href="#blog-section" className="inline-block bg-yellow-500 hover:bg-yellow-600 text-gray-900 py-4 px-8 rounded-full text-lg font-semibold transition duration-300 transform hover:scale-105">
             Read Our Blogs
           </a>
@@ -89,7 +178,7 @@ and preferences.` },
       {/* Latest Blogs Heading */}
       <div className="text-center my-12">
         <h2 className="text-3xl font-extrabold text-[#333] relative inline-block">
-          LATEST BLOGS
+          {textArray[2]}
           <div className='h-10'></div>
           <span className="block w-4/6 h-1  bg-pink-400 rounded-full absolute bottom-0 left-1/2 transform -translate-x-1/2"></span>
         </h2>
@@ -129,35 +218,35 @@ and preferences.` },
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-6 mt-16 max-md:max-w-lg mx-auto">
             <Link to='/blogcontent4'>
               <div className="bg-white cursor-pointer rounded overflow-hidden lg:h-[570px] shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] relative top-0 hover:-top-2 transition-all duration-300">
-                <img src={blog4} alt="Blog Post 1" className="w-full h-60 object-cover" />
+                <img src={imagesArrayThird[0]} alt="Blog Post 1" className="w-full h-60 object-cover" />
                 <div className="p-6">
-                  <span className="text-sm block text-gray-400 mb-2">10 FEB 2023 | </span>
-                  <h3 className="text-xl font-bold text-[#333]">The Importance of Mental Health Support in Elderly Home Care</h3>
+                  <span className="text-sm block text-gray-400 mb-2">{textArrayThird[0]} </span>
+                  <h3 className="text-xl font-bold text-[#333]">{textArrayThird[1]}</h3>
                   <hr className="my-6" />
-                  <p className="text-gray-400 text-sm">As we age, mental health becomes just as crucial as physical health, especially for seniors who receive care at home. In the UK, where elderly home care services are on the rise, there is growing recognition of the need to address the emotional and psychological well-being of older adults. With the right support, seniors can enjoy a higher quality of life, maintain their independence, and stay connected with their loved ones.</p>
+                  <p className="text-gray-400 text-sm">{textArrayThird[2]}</p>
                 </div>
               </div>
             </Link>
             <Link to='/blogcontent5'>
               <div className="bg-white cursor-pointer lg:h-[570px] rounded overflow-hidden shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] relative top-0 hover:-top-2 transition-all duration-300">
-                <img src={blog5} alt="Blog Post 2" className="w-full h-60 object-cover" />
+                <img src={imagesArrayThird[1]} alt="Blog Post 2" className="w-full h-60 object-cover" />
                 <div className="p-6">
-                  <span className="text-sm block text-gray-400 mb-2">7 JUN 2023 | </span>
-                  <h3 className="text-xl font-bold text-[#333]">How to Prepare Your Home for Elderly Care: Safety Tips and Modifications</h3>
+                  <span className="text-sm block text-gray-400 mb-2">{textArrayThird[3]} </span>
+                  <h3 className="text-xl font-bold text-[#333]">{textArrayThird[4]}</h3>
                   <hr className="my-6" />
-                  <p className="text-gray-400 text-sm">As the population ages, more families in the UK are choosing to care for their elderly loved ones at home. While this option allows seniors to remain in familiar surroundings, it also requires careful planning and modifications to ensure their safety and comfort.</p>
+                  <p className="text-gray-400 text-sm">{textArrayThird[5]}</p>
                 </div>
               </div>
             </Link>
             <Link to='/blogcontent6'>
               <div className="bg-white cursor-pointer rounded overflow-hidden shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] relative top-0 hover:-top-2 transition-all duration-300">
-                <img src={blog6} alt="Blog Post 3" className="w-full h-60 object-cover" />
+                <img src={imagesArrayThird[2]} alt="Blog Post 3" className="w-full h-60 object-cover" />
                 <div className="p-6">
-                  <span className="text-sm block text-gray-400 mb-2">5 OCT 2023 | </span>
-                  <h3 className="text-xl font-bold text-[#333]">Managing Chronic Conditions in Elderly Home Care: A Comprehensive Guide</h3>
+                  <span className="text-sm block text-gray-400 mb-2">{textArrayThird[6]} </span>
+                  <h3 className="text-xl font-bold text-[#333]">{textArrayThird[7]}</h3>
                   <hr className="my-6" />
                   <p className="text-gray-400 text-sm">
-                  Caring for elderly loved ones at home is rewarding but can be challenging, especially when managing chronic conditions. In the UK, as elderly home care services grow, families and caregivers need the right tools to manage seniors' health, enhancing their quality of life and independence.</p>
+               {textArrayThird[8]}</p>
                 </div>
               </div>
             </Link>

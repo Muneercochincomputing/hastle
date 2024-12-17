@@ -1,17 +1,63 @@
 import React from 'react';
+import { useState,useEffect } from 'react';
 import photogallary1 from './assets/photogallary1.jpg';
 import photogallary2 from './assets/photogallary2.jpg';
 import photogallary3 from './assets/photogallary3.jpg';
 import photogallary4 from './assets/photogallary4.jpg';
 import photogallary5 from './assets/photogallary5.jpg';
+import axios from 'axios';
 
 const GalleryGrid = () => {
+
+
+  const [imagesArray, setImagesArray] = useState([]);
+  const [textArray, setTextArray] = useState([]);
+  
+  const url = import.meta.env.VITE_HOST_URL;
+
+  useEffect(() => {
+    const fetchCMSData = async () => {
+      try {
+        const result = await axios.get(`${url}/getcms/BlogPage2`);
+
+        // Extract data for the first section
+        const extractedImages = result.data
+          .filter(item => item.page === "BlogPage2" && item.label === "BlogPage2 SecondPart ")
+          .map(item => item.images)
+          .flat();
+
+        const extractedText = result.data
+          .filter(item => item.page === "BlogPage2" && item.label === "BlogPage2 SecondPart ")
+          .map(item => item.text)
+          .flat();
+
+        
+
+        // Update state variables
+        setImagesArray(extractedImages);
+        setTextArray(extractedText);
+       
+
+    
+      } catch (error) {
+        console.error("Error fetching CMS data:", error);
+        alert("An error occurred while fetching CMS data. Please try again.");
+      }
+    };
+
+    fetchCMSData();
+  }, []); // Dependency array to run only once on mount
+
+
+
+
+
   return (
     <div className="max-w-screen-xl p-5 mx-auto dark:bg-gray-100 dark:text-gray-800">
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4 md:gap-0 lg:grid-rows-2">
         <div
           className="relative flex items-end justify-start w-full text-left dark:bg-[#8D4374] bg-center bg-cover cursor-pointer h-96 md:col-span-2 lg:row-span-2 lg:h-full group"
-          style={{ backgroundImage: `url(${photogallary1})` }} // Correct image reference
+          style={{ backgroundImage: `url(${imagesArray[0]})` }} // Correct image reference
         >
           <div className="absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-b dark:[#8D4374] dark:to-[#8D4374]"></div>
           <div className="absolute top-0 left-0 right-0 flex items-center justify-between mx-5 mt-3">
@@ -33,7 +79,7 @@ const GalleryGrid = () => {
               href="#"
               className="font-medium text-md group-hover:underline lg:text-[30px]  lg:font-semibold dark:text-white "
             >
-              Elderly care involves offering compassionate support and ensuring dignity and respect in every aspect of their daily lives
+              {textArray[1]}
             </a>
           </h2>
         </div>
@@ -41,27 +87,27 @@ const GalleryGrid = () => {
         {[
           {
             category: 'Activities',
-            date: '04 Aug',
-            title: 'Elderly care activities should focus on enhancing well-being through engaging, meaningful interactions and maintaining physical and mental stimulation',
-            imgSrc: photogallary2, // Corrected image source
+            date: `${textArray[2]}`,
+            title: `${textArray[3]}`,
+            imgSrc: imagesArray[1],  // Corrected image source
           },
           {
             category: 'Health',
-            date: '01 Aug',
-            title: 'Maintaining good health in old age involves a balanced diet, regular exercise, and routine medical check-ups to promote longevity and quality of life.',
-            imgSrc: photogallary3, // Corrected image source
+            date: `${textArray[4]}`,
+            title: `${textArray[5]}`,
+            imgSrc: imagesArray[2], // Corrected image source
           },
           {
             category: 'Creativity',
-            date: '28 Jul',
-            title: 'Creative activities for older adults can stimulate the mind, boost emotional well-being, and provide a sense of accomplishment and joy',
-            imgSrc: photogallary4, // Corrected image source
+            date: `${textArray[6]}`,
+            title: `${textArray[7]}`,
+            imgSrc: imagesArray[3],  // Corrected image source
           },
           {
             category: 'Engagements',
-            date: '19 Jul',
-            title: 'Social engagement in older adults fosters a sense of connection, combats loneliness, and enhances overall well-being.',
-            imgSrc: photogallary5, // Corrected image source
+            date: `${textArray[8]}`,
+            title: `${textArray[9]}`,
+            imgSrc: imagesArray[4],  // Corrected image source
           },
         ].map((data, index) => (
           <div

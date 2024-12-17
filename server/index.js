@@ -7,7 +7,7 @@ const admin = require('firebase-admin');
 const { getFirestore, doc, getDoc, updateDoc, collection, query, where, getDocs } = require('firebase/firestore'); // Add missing imports
 const path = require('path'); 
 const userRoutes = require('./routes/studentsroutes');
-const { addContacts, getContacts, addCareers, getCareers, addSubscribers, getSubscribers, addquery, getquery,updateAdmin,getAdmin,addBrouchure,getBrouchure} = require('./controllers');
+const { addContacts, getContacts, addCareers, getCareers, addSubscribers, getSubscribers, addquery, getquery,updateAdmin,getAdmin,addBrouchure,getBrouchure,getCms, addnewcms,getCmsAll} = require('./controllers');
 
 const app = express();
 
@@ -35,7 +35,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 console.log(path.join(__dirname, 'public', 'index.html'));
 
 app.use(cors());
-app.use(bodyParser.json());
+app.use(bodyParser.json({ limit: '20mb' }));
+app.use(bodyParser.urlencoded({ limit: '20mb', extended: true }));
 
 // Set up multer to store files in memory
 const upload = multer({ storage: multer.memoryStorage() });
@@ -49,31 +50,29 @@ app.post('/careers/upload-file', upload.single("file"), async (req, res) => {
   }
 
   try {
-    // Get file extension
+    
     const fileExtension = req.file.originalname.split('.').pop(); 
     
-    // Create new file name using the email
+    
     const newFileName = `${email}.${fileExtension}`; 
     
-    // Reference to the new file in the 'resume' folder
+   
     const storageRef = ref(storage, `resume/${newFileName}`); 
     
-    // Upload the file to Firebase Storage
     await uploadBytes(storageRef, req.file.buffer);
 
-    // Get the download URL of the uploaded file
+ 
     const url = await getDownloadURL(storageRef);
 
-    // Query the collection to find the document with the matching email field
     const careersRef = collection(db, 'careers');
     const q = query(careersRef, where('email', '==', email));
     const querySnapshot = await getDocs(q);
 
     if (!querySnapshot.empty) {
-      // Assuming there's only one document matching the email
+     
       const docRef = querySnapshot.docs[0].ref;
 
-      // Update the resume field with the URL
+  
       await updateDoc(docRef, {
         resume: url,
       });
@@ -90,6 +89,121 @@ app.post('/careers/upload-file', upload.single("file"), async (req, res) => {
 
 // Routes for operations on Holistic Services
 // Routes for managing Careers
+
+
+
+
+
+
+
+// upload images arrays for CMS 
+
+const { Buffer } = require('buffer');
+const sharp = require('sharp'); // To resize and compress if necessary
+
+// Helper function to upload an image to Firebase Storage
+const uploadImageToFirebase = async (filename, imageBuffer) => {
+    // Remove base64 prefix if it exists
+    const base64Image = imageBuffer.replace(/^data:image\/\w+;base64,/, '');
+    let buffer = Buffer.from(base64Image, 'base64'); // Convert to Buffer
+
+    // Optionally compress the image if it exceeds a certain size
+    const maxSize = 10 * 1024 * 1024; // 10MB
+    if (buffer.length > maxSize) {
+        console.log(`Image size is ${buffer.length / (1024 * 1024)} MB, compressing...`);
+        buffer = await sharp(buffer)
+            .resize({ width: 1920 }) // Resize to max width
+            .jpeg({ quality: 80 }) // Compress with 80% quality
+            .toBuffer();
+        console.log(`Compressed image size is ${buffer.length / (1024 * 1024)} MB`);
+    }
+
+    // Create a reference to Firebase Storage
+    const imageRef = ref(storage, `images/${filename}`);
+    
+    // Upload the image buffer
+    await uploadBytes(imageRef, buffer, { contentType: 'image/jpeg' });
+
+    // Get the download URL of the uploaded image
+    return await getDownloadURL(imageRef);
+};
+
+// Main handler to update text and images
+const updateTextAndImage = async (req, res) => {
+    try {
+        const updates = req.body; // Expecting an object with update details (text and base64 images)
+        console.log(updates);
+
+        if (!updates.label) {
+            throw new Error('The "label" field is required in the update object');
+        }
+
+        // Query Firestore for the document matching the label
+        const querySnapshot = await getDocs(
+            query(collection(db, 'CMS'), where('label', '==', updates.label))
+        );
+
+        if (querySnapshot.empty) {
+            throw new Error(`No matching document found for label: ${updates.label}`);
+        }
+
+        const imageUrls = []; // To collect the URLs of images
+
+        // Get the current document data (assuming one document matches the label)
+        const currentDoc = querySnapshot.docs[0].data();
+
+        // Process images if they are base64 encoded
+        for (let i = 1; i <= 20; i++) {
+            const imageKey = `image${i}`;
+            if (updates[imageKey]) {
+                // If image is a valid URL, use it directly
+                if (updates[imageKey].startsWith('http')) {
+                    imageUrls.push(updates[imageKey]); // Use the provided URL directly
+                } else {
+                    // Otherwise, upload image to Firebase Storage and get the public URL
+                    const imageUrl = await uploadImageToFirebase(
+                        `${updates.label}_image${i}`, // File name based on label and image index
+                        updates[imageKey]
+                    );
+                    imageUrls.push(imageUrl); // Store the new image URL
+                }
+            } else {
+                // Use the existing image URL from the current document if no new image provided
+                imageUrls.push(currentDoc.images?.[i - 1] || null);
+            }
+        }
+
+        // Update the document in Firestore with the new text and image URLs
+        const updateDocPromises = querySnapshot.docs.map((doc) =>
+            updateDoc(doc.ref, {
+                text: updates.text || '', // Update text, default to an empty string if not provided
+                images: imageUrls.filter(Boolean), // Only keep valid image URLs (remove nulls)
+            })
+        );
+
+        // Wait for all updates to complete
+        await Promise.all(updateDocPromises);
+
+        // Respond with success
+        res.send({ message: 'Content updated successfully', imageUrls });
+    } catch (error) {
+        console.error(error);
+        res.status(400).send({ error: `Error updating content: ${error.message}` });
+    }
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
 app.post('/Careers', addCareers);
 app.get('/Careers', getCareers);
 
@@ -112,6 +226,15 @@ app.get('/Queries',  getquery);
 
 app.put('/admin',  updateAdmin);
 app.get('/admin',  getAdmin);
+
+
+
+// content manage ment system crud urls
+
+app.put('/addcms',updateTextAndImage );
+app.get('/getcms/:page',getCms );
+app.get('/getcmsAll',getCmsAll );
+app.post('/addnewcms', addnewcms)
 
 
 app.get('*', (req, res) => {

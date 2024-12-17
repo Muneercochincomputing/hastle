@@ -34,31 +34,88 @@ import { FaPhone, FaRegUser, FaBuffer } from "react-icons/fa";
 import Emailsubscription from './components/Navbar/Emailsubscription';
 import Product from './components/Navbar/about';
 import Testimonial from './components/Navbar/Testimonial';
+import axios from 'axios';
+
+
+import animationDatas from '../Animation - 1734410329680.json'; // Replace with your Lottie JSON file
+
 
 function About() {
+
+
+  const [imagesArray, setImagesArray] = useState([]);
+  const [textArray, setTextArray] = useState([]);
+  const [imagesArraySecond, setImagesArraySecond] = useState([]);
+  const [textArraySecond, setTextArraySecond] = useState([]);
+  const [visible, setVisible] = useState(true);
+
+  const url = import.meta.env.VITE_HOST_URL;
+
+  useEffect(() => {
+    const fetchCMSData = async () => {
+      try {
+        const result = await axios.get(`${url}/getcms/AboutPage1`);
+
+        // Extract data for the first section
+        const extractedImages = result.data
+          .filter(item => item.page === "AboutPage1" && item.label === "Firstsection")
+          .map(item => item.images)
+          .flat();
+
+        const extractedText = result.data
+          .filter(item => item.page === "AboutPage1" && item.label === "Firstsection")
+          .map(item => item.text)
+          .flat();
+
+        // Extract data for the second section
+        const extractedImagesSecond = result.data
+          .filter(item => item.page === "AboutPage1" && item.label === "About_Page_1_SecondSection")
+          .map(item => item.images)
+          .flat();
+
+        const extractedTextSecond = result.data
+          .filter(item => item.page === "AboutPage1" && item.label === "About_Page_1_SecondSection")
+          .map(item => item.text)
+          .flat();
+
+        // Update state variables
+        setImagesArray(extractedImages);
+        setTextArray(extractedText);
+        setImagesArraySecond(extractedImagesSecond);
+        setTextArraySecond(extractedTextSecond);
+
+        console.log("First Section Text:", extractedText);
+        console.log("Second Section Text:", extractedTextSecond);
+      } catch (error) {
+        console.error("Error fetching CMS data:", error);
+        alert("An error occurred while fetching CMS data. Please try again.");
+      }
+    };
+
+    fetchCMSData();
+  }, []); // Dependency array to run only once on mount
+
 
 
   const topprodect = [
     {
         id:1,
-        src:stock3,
-        tittle:'We listen to your concerns',
-        Description: "We take the time to understand your loved one's needs, preferences, and goals so we can create a truly personalised care plan."
+        src:imagesArraySecond[0],
+        tittle:  <p dangerouslySetInnerHTML={{ __html: textArraySecond[1] }}></p>,
+        Description:   <p dangerouslySetInnerHTML={{ __html: textArraySecond[2] }}></p>
+    },
+    {
+        id:1,
+        src:imagesArraySecond[1],
+        tittle:  <p dangerouslySetInnerHTML={{ __html: textArraySecond[3] }}></p>,
+        Description:  <p dangerouslySetInnerHTML={{ __html: textArraySecond[4] }}></p>
        
     },
     {
         id:1,
-        src:stock2,
-        tittle:'We empower your loved one',
-        Description: "Our compassionate carers provide assistance with daily tasks, medication management, and companionship, creating independence and        well-being."
-
-       
-    },
-    {
-        id:1,
-        src:stock,
-        tittle:'We give you peace of mind',
-        Description: "With our reliable and transparent services, you can rest assured that your loved one is receiving the highest quality care."
+        src:imagesArraySecond[2],
+        tittle:  <p dangerouslySetInnerHTML={{ __html: textArraySecond[5] }}></p>,
+        Description:<p dangerouslySetInnerHTML={{ __html: textArraySecond[6] }}></p>
 
 
        
@@ -97,6 +154,20 @@ const vedios = [
 
 
 
+    useEffect(() => {
+  
+        
+  
+        const timer = setTimeout(() => {
+          setVisible(false);
+        }, 8000); // Hide the spinner after 2 seconds
+    
+        return () => clearTimeout(timer); // Clean up the timer on component unmount
+      }, []);
+
+
+
+
 
 
   const [overlayVisible, setOverlayVisible] = useState(true);
@@ -122,33 +193,61 @@ const vedios = [
     <div className="min-h-screen relative">
       <Navbar onScrollToSubscription={handleScrollToSubscription} /> {/* Navbar Component */}
       
-     
+      <div
+  className={`justify-start min-h-screen bg-[#8D4374] bg-opacity-100 shadow-bulge top-0 left-0 right-0 bottom-0 absolute ${visible ? '' : 'hidden'}`}
+  style={{ zIndex: 9999 }}
+>
+  {visible && (
+    <Lottie
+      options={{
+        animationData: animationDatas,
+        loop: true,
+        autoplay: true,
+        speed: 3,
+        rendererSettings: {
+          preserveAspectRatio: 'xMidYMid slice',
+        },
+      }}
+      height={400}
+      width={400}
+    />
+  )}
+  
+  <h1 className="absolute left-1/2 transform -translate-x-1/2 text-white font-bold text-2xl md:text-3xl lg:text-4xl tracking-wider leading-tight drop-shadow-lg transition-transform duration-300 ease-in-out hover:scale-105">
+    <span className="block">HOLISTIC CARE SERVICES</span>
+    <span className="block font-about md:text-sm text-xs">Your loved ones deserve the best care—trust us to deliver</span>
+  </h1>
+</div>
+
+
+
+
 
      {/* Additional Content */}
  <div className='  pt-[150px]'>
           <h1 className='text-center text-sm sm:text-[40px] font-bold text-[#8D4374] sm:mb-10 mb-5 '>
-           <p className='text-[25px] lg:text-[40px]'> What sets us apart?</p>
+           <p className='text-[25px] lg:text-[40px]'> <p dangerouslySetInnerHTML={{ __html: textArray[0] }}></p></p>
           </h1>
           <div className='grid grid-cols-1 sm:grid-cols-3 gap-10 sm:w-full sm:px-20 px-5'>
             <div className='flex flex-col items-center text-center sm:text-[25px] text-[15px] font-bold text-gray-500'>
-              <img src={whyimage2} className='w-40 h-40 mb-4'/>
-             <p className='text-[#8D4374]'>We are different</p> 
+              <img src={imagesArray[0]} className='w-40 h-40 mb-4'/>
+             <p className='text-[#8D4374]'> <p dangerouslySetInnerHTML={{ __html: textArray[1] }}></p></p> 
               <p className='text-sm font-normal p-4 '>
-              Our award-winning team is not just about providing care; it's about creating a family atmosphere. Our care professionals are carefully chosen for their warmth, compassion, and dedication. They will become a trusted friend, someone to chat with, share stories with, and even help with those little things that make a big difference.
+              <p dangerouslySetInnerHTML={{ __html: textArray[2] }}></p>
               </p>
             </div>
             <div className='flex flex-col items-center text-center sm:text-[25px] text-[15px] font-bold text-gray-500'>
-              <img src={whyimage1} className='w-40 h-40 mb-4'/>
-              <p className='text-[#8D4374]'>Warm Hands, Kind Hearts</p>
+              <img src={imagesArray[1]} className='w-40 h-40 mb-4'/>
+              <p className='text-[#8D4374]'> <p dangerouslySetInnerHTML={{ __html: textArray[3] }}></p></p>
               <p className='text-sm font-normal p-4'>
-              We listen to your needs and create a care plan that is unique to you, adapting as your needs change. They will treat you with dignity and become trusted companions, ready to help with daily tasks or simply share a conversation.
+              <p dangerouslySetInnerHTML={{ __html: textArray[4] }}></p>
               </p>
             </div>
             <div className='flex flex-col items-center text-center sm:text-[25px] text-[15px] font-bold text-gray-500'>
-              <img src={whyimage3} className='w-40 h-40 mb-4'/>
-             <p className='text-[#8D4374]'> We are Always Learning</p>
+              <img src={imagesArray[2]} className='w-40 h-40 mb-4'/>
+             <p className='text-[#8D4374]'>  <p dangerouslySetInnerHTML={{ __html: textArray[5] }}></p></p>
               <p className='text-sm font-normal p-4'>
-                We constantly improve our services and knowledge to provide the best possible care.
+              <p dangerouslySetInnerHTML={{ __html: textArray[6] }}></p>
               </p>
             </div>
           </div>
@@ -203,7 +302,7 @@ const vedios = [
       <div className='container mt-10  '>
         {/* Header section */}
         <p className="text-[6vw] md:text-[45px] text-center text-[#8D4374] font-thin" data-aos="fade-up">
- Here's how we help you achieve that
+        <p dangerouslySetInnerHTML={{ __html: textArraySecond[0] }}></p>
     </p>
        <div  class="flex items-center justify-center  ">
          {/* Body section */}

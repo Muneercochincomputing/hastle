@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import mainimage1 from './assets/servicemain2.jpg';
 import mainhero from './assets/abouthero.jpg'
 import mainimage2 from './assets/blog2.jpeg';
@@ -39,9 +39,92 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Emailsubscription from './components/Navbar/emailsubscription';
 import Product from './components/Navbar/about';
+import axios from 'axios';
+import Reactloader from './reactloader';
+
 
 function Servicespage4() {
   const [activeService, setActiveService] = useState(0); // Set default to the first item
+
+  const [imagesArray, setImagesArray] = useState([]);
+  const [textArray, setTextArray] = useState([]);
+  const [imagesArraySecond, setImagesArraySecond] = useState([]);
+  const [textArraySecond, setTextArraySecond] = useState([]);
+  const [imagesArrayThird, setImagesArrayThird] = useState([]);
+  const [textArrayThird, setTextArrayThird] = useState([]);
+  const [imagesArrayFourth, setImagesArrayFourth] = useState([]);
+  const [textArrayFourth, setTextArrayFourth] = useState([]);
+
+  const url = import.meta.env.VITE_HOST_URL;
+
+  useEffect(() => {
+    const fetchCMSData = async () => {
+      try {
+        const result = await axios.get(`${url}/getcms/ServicePage3`);
+
+        // Extract data for the first section
+        const extractedImages = result.data
+          .filter(item => item.page === "ServicePage3" && item.label === "ServicePage 3 FirstPart")
+          .map(item => item.images)
+          .flat();
+
+        const extractedText = result.data
+          .filter(item => item.page === "ServicePage3" && item.label === "ServicePage 3 FirstPart")
+          .map(item => item.text)
+          .flat();
+
+        // Extract data for the second section
+        const extractedImagesSecond = result.data
+          .filter(item => item.page === "ServicePage3" && item.label === "ServicePage 3 SecondPart")
+          .map(item => item.images)
+          .flat();
+
+        const extractedTextSecond = result.data
+          .filter(item => item.page === "ServicePage3" && item.label === "ServicePage 3 SecondPart")
+          .map(item => item.text)
+          .flat();
+
+          const extractedImagesThird = result.data
+          .filter(item => item.page === "ServicePage3" && item.label === "ServicePage 3 ThirdPart")
+          .map(item => item.images)
+          .flat();
+
+        const extractedTextThird = result.data
+          .filter(item => item.page === "ServicePage3" && item.label === "ServicePage 3 ThirdPart")
+          .map(item => item.text)
+          .flat();
+
+          const extractedImagesFourth = result.data
+          .filter(item => item.page === "ServicePage3" && item.label === "ServicePage 3 FourthPart")
+          .map(item => item.images)
+          .flat();
+
+        const extractedTextFourth = result.data
+          .filter(item => item.page === "ServicePage3" && item.label === "ServicePage 3 FourthPart")
+          .map(item => item.text)
+          .flat();
+
+        // Update state variables
+        setImagesArray(extractedImages);
+        setTextArray(extractedText);
+        setImagesArraySecond(extractedImagesSecond);
+        setTextArraySecond(extractedTextSecond);
+        setImagesArrayThird(extractedImagesThird);
+        setTextArrayThird(extractedTextThird);
+        setImagesArrayFourth(extractedImagesFourth);
+        setTextArrayFourth(extractedTextFourth);
+
+        console.log("First Section Text:", extractedText);
+        console.log("Second Section Text:", extractedTextSecond);
+      } catch (error) {
+        console.error("Error fetching CMS data:", error);
+        alert("An error occurred while fetching CMS data. Please try again.");
+      }
+    };
+
+    fetchCMSData();
+  }, []); // Dependency array to run only once on mount
+
 
   const servicemainlist = [
     {
@@ -146,18 +229,18 @@ function Servicespage4() {
   return (
     <div className="p-4 overflow-hidden">
       <Navbar />
-
+<Reactloader/>
       <div className='relative'>
   <div className='mt-20 relative'>
-    <img src={servicehero4} className='h-[600px] xl:w-[100%] md:flex lg:flex hidden xl:flex' />
-    <img src={servicehero4} className='h-[500px] flex xl:hidden xl:w-[70%] md:hidden xl:ml-60 mx-0' />
+    <img src={imagesArray[0]} className='h-[600px] xl:w-[100%] md:flex lg:flex hidden xl:flex' />
+    <img src={imagesArray[0]} className='h-[500px] flex xl:hidden xl:w-[70%] md:hidden xl:ml-60 mx-0' />
   </div>
   <div className="absolute inset-0 hidden xl:flex lg:flex flex-col justify-center items-center z-50 mt-[420px] text-white">
     <h1 className="text-6xl text-white rounded-full font-thin mb-6 text-center ">
-      Our Services
+     {textArray[0]}
     </h1>
     <p className="text-lg font-thin text-center">
-      We provide practical support that enables people to live their best life for as long as possible.
+     {textArray[1]}
     </p>
   </div>
 </div>
@@ -166,36 +249,35 @@ function Servicespage4() {
       
       <div className=" xl:hidden lg-hidden ">
         <h1 className="text-6xl text-black mt-10   rounded-full font-thin mb-6 mx-auto text-center ">
-          Our Services
+         {textArray[0]}
           
           <p className="text-lg font-thin   ">
-            We provide practical support that enables people to live their best life for as long as possible.
+           {textArray[1]}
           </p>
         </h1>
       </div>
-      <div ><h1 className='text-center  text-[30px] text-[#8D4374] xl:mt-10 '>Specialised Care</h1>
-      <p className='text-center mb-10'> We provide tailored care to meet the unique needs of each individual, shaped by their specific conditions or situations.</p></div>
+      <div ><h1 className='text-center  text-[30px] text-[#8D4374] xl:mt-10 '>{textArray[2]}</h1>
+      <p className='text-center mb-10'>{textArray[3]}</p></div>
       <div className='xl:w-[100%] h-auto xl:h-[2300px] lg-[2300px] bg-gray-300/20 mb-10  pb-10  shadow-xl'>
       <div className='w-full xl:h-[400px]  grid lg:grid-cols-3 md:grid-cols-2 lg:mb-10 '>
         <div className='w-[80%] xl:h-[95%] bg-white rounded-3xl border-solid border-[0px] border-black  ml-10  mt-10'>
-          <img src={service4image} className='xl:h-[300px] object-fill h-[200px] w-full  xl:w-full  rounded-t-3xl shadow-sm'/>
+          <img src={imagesArraySecond[0]} className='xl:h-[300px] object-fill h-[200px] w-full  xl:w-full  rounded-t-3xl shadow-sm'/>
           <h1 className='text-[20px] text-[#8D4374] font-bold text-center
-          '>Dementia Care</h1>
-          <p className='text-center font-light xl:px-2 px-2 pb-8'>Our caregivers are trained to support clients with dementia, ensuring their safety and comfort.</p>
+          '>{textArraySecond[0]}</h1>
+          <p className='text-center font-light xl:px-2 px-2 pb-8'>{textArraySecond[1]}</p>
         </div>
          <div className='w-[80%] xl:h-[95%]  bg-white rounded-3xl border-solid border-[0px] border-black ml-10 mt-10'>
-        <img src={service10image} className='   xl:h-[300px] object-cover w-full  h-[200px] rounded-t-3xl shadow-sm'/>
+        <img src={imagesArraySecond[1]} className='   xl:h-[300px] object-cover w-full  h-[200px] rounded-t-3xl shadow-sm'/>
           <h1 className='text-[20px] text-[#8D4374] font-bold text-center
-          '>Learning Disability</h1>
-          <p className='text-center font-light xl:px-2 px-2 pb-8'>We support with learning disabilities including down`s
-          syndrome, autism, developmental disabilities, acquired learning disabilities.</p>
+          '>{textArraySecond[2]}</h1>
+          <p className='text-center font-light xl:px-2 px-2 pb-8'>{textArraySecond[3]}</p>
         </div>
 
         <div className='w-[80%] xl:h-[95%] bg-white rounded-3xl border-solid border-[0px] border-black  ml-10  mt-10'>
-          <img src={service8image} className='xl:h-[300px] object-fill h-[200px] w-full bg-red-500 xl:w-full  rounded-t-3xl shadow-sm'/>
+          <img src={imagesArraySecond[2]} className='xl:h-[300px] object-fill h-[200px] w-full bg-red-500 xl:w-full  rounded-t-3xl shadow-sm'/>
           <h1 className='text-[20px] text-[#8D4374] font-bold text-center
-          '>Arthritis Care</h1>
-          <p className='text-center font-light px-4 pb-8'>We assist clients with arthritis in managing pain and maintaining mobility through tailored care plans.</p>
+          '>{textArraySecond[4]}</h1>
+          <p className='text-center font-light px-4 pb-8'>{textArraySecond[5]}</p>
         </div>
 
 
@@ -211,17 +293,17 @@ function Servicespage4() {
 
 <div className='w-full xl:h-[400px] grid gap-6 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 mt-10'>
 <div className='w-[80%] xl:h-[95%] bg-white rounded-3xl border-solid border-[0px] border-black  ml-10  mt-10'>
-          <img src={nutritionimage} className='xl:h-[300px] object-fill h-[200px] w-full bg-red-500 xl:w-full  rounded-t-3xl shadow-sm'/>
+          <img src={imagesArrayThird[0]} className='xl:h-[300px] object-fill h-[200px] w-full bg-red-500 xl:w-full  rounded-t-3xl shadow-sm'/>
           <h1 className='text-[20px] text-[#8D4374] font-bold text-center
-          '>Stroke & Rehabilitation</h1>
-          <p className='text-center font-light px-4 pb-8'>Our team provides rehabilitation and support for clients recovering from a stroke, helping them regain their independence.</p>
+          '>{textArrayThird[0]}</h1>
+          <p className='text-center font-light px-4 pb-8'>{textArrayThird[1]}</p>
         </div>
 
         <div className='w-[80%] xl:h-[95%]  bg-white rounded-3xl  border-solid border-[0px] border-black   ml-10 mt-10'>
-        <img src={ service6image} className='xl:h-[300px] h-[200px] w-full object-fill  rounded-t-3xl shadow-sm'/>
+        <img src={imagesArrayThird[1]} className='xl:h-[300px] h-[200px] w-full object-fill  rounded-t-3xl shadow-sm'/>
           <h1 className='text-[20px] text-[#8D4374] xl-px-10 font-bold text-center
-          '>Parkinson’s Disease Care</h1>
-          <p className='text-center font-light xl:px-4 px-2 pb-8'>Our team offers specialized care for clients with Parkinson’s disease, helping manage symptoms and improve daily living.</p>
+          '>{textArrayThird[2]}</h1>
+          <p className='text-center font-light xl:px-4 px-2 pb-8'>{textArrayThird[3]}</p>
         </div>
 
 
@@ -229,10 +311,10 @@ function Servicespage4() {
 
 
         <div className='w-[80%] xl:h-[95%] bg-white rounded-3xl border-solid border-[0px] border-black  ml-10  mt-10'>
-          <img src={overnights} className='xl:h-[300px] object-fill h-[200px] w-full bg-red-500 xl:w-full  rounded-t-3xl shadow-sm'/>
+          <img src={imagesArrayThird[2]} className='xl:h-[300px] object-fill h-[200px] w-full bg-red-500 xl:w-full  rounded-t-3xl shadow-sm'/>
           <h1 className='text-[20px] text-[#8D4374] font-bold text-center
-          '>Diabetes Care</h1>
-          <p className='text-center font-light xl:px-4 pb-8 px-2'>We offer assistance with diabetes management, including monitoring blood sugar levels and providing dietary guidance.</p>
+          '>{textArrayThird[4]}</h1>
+          <p className='text-center font-light xl:px-4 pb-8 px-2'>{textArrayThird[5]}</p>
         </div>
   
      
@@ -250,24 +332,24 @@ function Servicespage4() {
   
 
    <div className='w-[80%] xl:h-[95%] bg-white rounded-3xl border-solid border-[0px] border-black  ml-10  mt-10'>
-          <img src={palliative} className='xl:h-[300px] object-fill h-[200px] w-full bg-red-500 xl:w-full  rounded-t-3xl shadow-sm'/>
+          <img src={imagesArrayFourth[0]} className='xl:h-[300px] object-fill h-[200px] w-full bg-red-500 xl:w-full  rounded-t-3xl shadow-sm'/>
           <h1 className='text-[20px] text-[#8D4374] font-bold text-center
-          '>Palliative and End of Life Care</h1>
-          <p className='text-center font-light xl:px-4 pb-8'>We offer compassionate care for clients in the final stages of life, ensuring their comfort and dignity.</p>
+          '>{textArrayFourth[0]}</h1>
+          <p className='text-center font-light xl:px-4 pb-8'>{textArrayFourth[1]}</p>
         </div>
 
         <div className='w-[80%] xl:h-[95%] bg-white rounded-3xl border-solid border-[0px] border-black  ml-10  mt-10'>
-          <img src={physicaldisablty}  className='xl:h-[300px] object-fill h-[200px] w-full bg-red-500 xl:w-full  rounded-t-3xl shadow-sm'/>
+          <img src={imagesArrayFourth[1]}  className='xl:h-[300px] object-fill h-[200px] w-full bg-red-500 xl:w-full  rounded-t-3xl shadow-sm'/>
           <h1 className='text-[20px] text-[#8D4374] font-bold text-center
-          '>Physical Disabilities Care</h1>
-          <p className='text-center font-light xl:px-4 pb-8'> We provide assistance to clients with physical disabilities to help them maintain their independence and quality of life.</p>
+          '>{textArrayFourth[2]}</h1>
+          <p className='text-center font-light xl:px-4 pb-8'> {textArrayFourth[3]}</p>
         </div>
 
         <div className='w-[80%] xl:h-[95%] bg-white rounded-3xl border-solid border-[0px] border-black  ml-10  mt-10'>
-          <img src={multiple } className='xl:h-[300px] object-fill h-[200px] w-full bg-red-500 xl:w-full  rounded-t-3xl shadow-sm'/>
+          <img src={imagesArrayFourth[2] } className='xl:h-[300px] object-fill h-[200px] w-full bg-red-500 xl:w-full  rounded-t-3xl shadow-sm'/>
           <h1 className='text-[20px] text-[#8D4374] font-bold text-center
-          '>Multiple Sclerosis Care</h1>
-          <p className='text-center font-light xl:px-4 pb-8'>Our caregivers provide support for clients with multiple sclerosis, focusing on managing symptoms and improving their quality of life. </p>
+          '>{textArrayFourth[4]}</h1>
+          <p className='text-center font-light xl:px-4 pb-8'>{textArrayFourth[5]}</p>
         </div>
   
        

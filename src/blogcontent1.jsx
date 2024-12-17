@@ -1,4 +1,5 @@
-import React from 'react';
+
+import { useState,useEffect } from 'react';
 import Navbar from './components/Navbar/Navbar';
 import { Link } from 'react-router-dom';
 import Footer from './components/Navbar/Footer';
@@ -8,8 +9,130 @@ import blog3 from './assets/blog3.jpeg';
 import blog4 from './assets/readmoresectionimage1.jpg';
 import blogcontentpage1 from './assets/blogcontentpage1.jpg'
 import Emailsubscription from './components/Navbar/Emailsubscription';
+import axios from 'axios';
+import Reactloader from './reactloader';
 
 function Blogcontent1() {
+
+
+
+  
+  const [imagesArray, setImagesArray] = useState([]);
+  const [textArray, setTextArray] = useState([]);
+  const [imagesArraySecond, setImagesArraySecond] = useState([]);
+  const [textArraySecond, setTextArraySecond] = useState([]);
+  const [imagesArrayThird, setImagesArrayThird] = useState([]);
+  const [textArrayThird, setTextArrayThird] = useState([]);
+  const [imagesBlogSecond, setImagesBlogSecond] = useState([]);
+  const [textBlogSecond, setTextBlogSecond] = useState([])
+  const [imagesBlogThird, setImagesBlogThird] = useState([]);
+  const [textBlogThird, setTextBlogThird] = useState([])
+
+  const url = import.meta.env.VITE_HOST_URL;
+
+
+
+  useEffect(() => {
+    const fetchCMSData = async () => {
+
+      
+
+
+      try {
+        const result = await axios.get(`${url}/getcms/BlogPage1`);
+          console.log(result,'result')
+          const resultBlog = await axios.get(`${url}/getcms/BlogLandingPage`);
+        // Extract data for the first section
+        const extractedImages = result.data  
+          .filter(item => item.page === "BlogPage1" && item.label === "BlogPage1 FirstPart ")
+          .map(item => item.images)
+          .flat();
+           
+          console.log(extractedImages,'imagex')
+
+        const extractedText = result.data
+          .filter(item => item.page === "BlogPage1" && item.label === "BlogPage1 FirstPart ")
+          .map(item => item.text)
+          .flat();
+
+          console.log(extractedText,'new')
+        // Extract data for the second section
+        const extractedImagesSecond = result.data
+          .filter(item => item.page === "BlogPage1" && item.label === "BlogPage1 SecondPart ")
+          .map(item => item.images)
+          .flat();
+
+        const extractedTextSecond = result.data
+          .filter(item => item.page === "BlogPage1" && item.label === "BlogPage1 SecondPart ")
+          .map(item => item.text)
+          .flat();
+console.log(extractedTextSecond,'The extracted text')
+          const extractedImagesThird = result.data
+          .filter(item => item.page === "BlogPage1" && item.label === "BlogPage1 ThirdPart ")
+          .map(item => item.images)
+          .flat();
+
+        const extractedTextThird = result.data
+          .filter(item => item.page === "BlogPage1" && item.label === "BlogPage1 ThirdPart ")
+          .map(item => item.text)
+          .flat();
+
+          const extractedImagesFourth = result.data
+          .filter(item => item.page === "BlogPage1" && item.label === "BlogPage1 FourthPart ")
+          .map(item => item.images)
+          .flat();
+
+        const extractedTextFourth = result.data
+          .filter(item => item.page === "BlogPage1" && item.label === "BlogPage1 FourthPart ")
+          .map(item => item.text)
+          .flat();
+
+          //Read more Blog Items
+
+          const extractedBlogcontent1image = resultBlog.data
+          .filter(item => item.page === "BlogLandingPage" && item.label === "BlogPage SecondPart ")
+          .map(item => item.images)
+          .flat();
+          const extractedBlogcontent1text = resultBlog.data
+          .filter(item => item.page === "BlogLandingPage" && item.label === "BlogPage SecondPart ")
+          .map(item => item.text)
+          .flat();
+
+
+
+          const extractedBlogcontent2image = resultBlog.data
+          .filter(item => item.page === "BlogLandingPage" && item.label === "BlogPage ThirdPart ")
+          .map(item => item.images)
+          .flat();
+          const extractedBlogcontent2text = resultBlog.data
+          .filter(item => item.page === "BlogLandingPage" && item.label === "BlogPage ThirdPart ")
+          .map(item => item.text)
+          .flat();
+
+        // Update state variables
+        setImagesArray(extractedImages);
+        setTextArray(extractedText);
+        setImagesArraySecond(extractedImagesSecond);
+        setTextArraySecond(extractedTextSecond);
+        setImagesArrayThird(extractedImagesThird);
+        setTextArrayThird(extractedTextThird);
+        setImagesBlogSecond(extractedBlogcontent1image);
+        setTextBlogSecond(extractedBlogcontent1text);
+        setImagesBlogThird(extractedBlogcontent2image);
+        setTextBlogThird(extractedBlogcontent2text);
+
+        console.log("First Section Text:", extractedText);
+        console.log("Second Section Text:", extractedTextSecond);
+      } catch (error) {
+        console.error("Error fetching CMS data:", error);
+        alert("An error occurred while fetching CMS data. Please try again.");
+      }
+    };
+
+    fetchCMSData();
+  }, []); // Dependency array to run only once on mount
+
+
 
 
     const services = [
@@ -41,17 +164,17 @@ function Blogcontent1() {
   const posts = [
   
     {
-      title: "Holistic Elderly Care: Nurturing Health, Happiness, and Connection",
-      excerpt: "Caring for the elderly requires compassion, knowledge, and thoughtful planning. Our comprehensive guide provides essential tips and strategies to help you deliver the best care for your aging loved ones. Explore our insights and make a positive difference today!",
-      date: "July 25, 2024",
+      title:textBlogSecond[3],
+      excerpt: textBlogSecond[4],
+      date: textBlogSecond[5],
     
-      image: blog2,
+      image: imagesBlogSecond[1],
     },
     {
-      title: "Pets as Companions: The Therapeutic Benefits for Seniors",
-      excerpt: "Have you ever seen a senior smiling ear-to-ear while petting their furry friend? It’s a heartwarming sight that speaks volumes about the therapeutic benefits of pets for older adults. In this blog post, we’ll dive into the incredible ways that pets can enhance the quality of life for seniors. From offering companionship to reducing feelings of loneliness and anxiety, pets provide a sense of purpose and routine that can be immensely beneficial for mental health. ",
+      title:textBlogSecond[6],
+      excerpt: textBlogSecond[7],
 
-      image: blog3,
+      image: imagesBlogSecond[2],
     },
   ];
 
@@ -59,33 +182,34 @@ function Blogcontent1() {
     <div>
       <Navbar />
       
+      <Reactloader/>
       {/* Hero Section */}
       <header className="relative bg-white text-black py-32">
         <div className="absolute inset-0 -75"></div>
         <div className="relative container md:px-12 text-center">
-          <h1 className="text-5xl md:text-5xl text-[30px] font-extrabold mb-6 ">Caring for the Elderly: A Comprehensive Guide</h1>
-          <p className="text-lg md:text-1xl mb-10 text-black">Caring for the elderly requires compassion, knowledge, and a bit of planning. Our comprehensive guide covers essential tips and strategies to help you provide the best care for your aging loved ones.</p>
+          <h1 className="text-5xl md:text-5xl text-[30px] font-extrabold mb-6 ">{textArray[0]}</h1>
+          <p className="text-lg md:text-1xl mb-10 text-black">{textArray[1]}</p>
          
            {/* sub head */}
-          <h1 className="text-2xl md:text-3xl font-extrabold mb-6 text-left text-black">Understanding Elderly Care</h1>
-          <p className="text-lg md:text-1xl  text-left text-black">Elderly care is a broad term that encompasses various aspects of supporting older adults, from daily activities to medical needs. As people age, they often require more assistance with basic tasks such as bathing, dressing, and eating. Additionally, managing chronic conditions like diabetes or arthritis becomes a part of daily life. Understanding these needs is the first step in providing effective care.</p>
+          <h1 className="text-2xl md:text-3xl font-extrabold mb-6 text-left text-black">{textArray[2]}</h1>
+          <p className="text-lg md:text-1xl  text-left text-black">{textArray[3]}</p>
          <div className='grid xl:grid-cols-2'>
-         <img src={blogcontentpage1}className='mt-10' />
+         <img src={imagesArraySecond[0]}className='mt-10' />
          <div className='xl:mt-[100px] xl:ml-[100px]'>
-         <h1 className="text-2xl md:text-3xl font-extrabold mb-6  text-left text-black mt-10" >Involving Professional Help When Needed</h1>
-         <p className="text-lg md:text-1xl text-left  text-black">Sometimes, despite our best efforts, providing care at home may not be enough to meet all the needs of an elderly loved one. In such cases, seeking professional help can be a wise decision. Whether it's hiring an in-home caregiver, exploring adult day care options, or considering assisted living facilities, professional caregivers can provide specialized care that addresses both medical and personal needs. It's important to research and choose services that align with your loved one's preferences and requirements, ensuring they receive the highest standard of care while maintaining their dignity and independence.</p> 
+         <h1 className="text-2xl md:text-3xl font-extrabold mb-6  text-left text-black mt-10" >{textArraySecond[0]}</h1>
+         <p className="text-lg md:text-1xl text-left  text-black">{textArraySecond[1]}</p> 
          </div>
          
          </div>
 
 
-         <h1 className="text-3xl md:text-2xl font-extrabold mb-6  xl:mt-10  text-left text-black mt-10">Essential Tips for Elderly Care</h1>
+         <h1 className="text-3xl md:text-2xl font-extrabold mb-6  xl:mt-10  text-left text-black mt-10">{textArrayThird[0]}</h1>
       
 <div class="flex items-left">
     <div>
-      <h2 class="text-xl font-bold text-gray-800 text-left" >1.	Health Management</h2>
+      <h2 class="text-xl font-bold text-gray-800 text-left" >{textArrayThird[1]}</h2>
       <ul class="mt-2 text-gray-700 text-left ">
-        <li> Regular medical check-ups are crucial. Keep a detailed record of medications, appointments, and any changes in health.</li>
+        <li> {textArrayThird[2]}</li>
        
       </ul>
     </div>
@@ -96,9 +220,9 @@ function Blogcontent1() {
 
 <div class="flex items-left">
     <div>
-      <h2 class="text-xl font-bold text-gray-800 text-left mt-10" >2.	Safety First</h2>
+      <h2 class="text-xl font-bold text-gray-800 text-left mt-10" >{textArrayThird[3]}</h2>
       <ul class="mt-2 text-gray-700 ">
-        <li> Ensure the home is safe by installing grab bars, removing trip hazards, and using non-slip mats. Simple modifications can prevent falls, which are a common risk for the elderly.</li>
+        <li>{textArrayThird[4]}</li>
        
       </ul>
     </div>
@@ -108,9 +232,9 @@ function Blogcontent1() {
   
 <div class="flex items-left">
     <div>
-      <h2 class="text-xl font-bold text-gray-800 text-left mt-10" >3.	Emotional Support</h2>
+      <h2 class="text-xl font-bold text-gray-800 text-left mt-10" >{textArrayThird[5]}</h2>
       <ul class="mt-2 text-gray-700 ">
-        <li> Loneliness and isolation are significant issues. Engage in regular conversations, involve them in family activities.</li>
+        <li>{textArrayThird[6]}</li>
        
       </ul>
     </div>
@@ -120,9 +244,9 @@ function Blogcontent1() {
 
 <div class="flex items-left">
     <div>
-      <h2 class="text-xl font-bold text-gray-800 text-left mt-10" >4.	Nutrition and Hydration</h2>
+      <h2 class="text-xl font-bold text-gray-800 text-left mt-10" >{textArrayThird[7]}</h2>
       <ul class="mt-2 text-gray-700 ">
-        <li>Balanced meals and adequate water intake are vital. Elderly individuals may need dietary adjustments, so consult a nutritionist if necessary</li>
+        <li>{textArrayThird[8]}</li>
        
       </ul>
     </div>
@@ -131,9 +255,9 @@ function Blogcontent1() {
 </div>
 <div class="flex items-left">
     <div>
-      <h2 class="text-xl font-bold text-gray-800 text-left mt-10" >5.	Physical Activity</h2>
+      <h2 class="text-xl font-bold text-gray-800 text-left mt-10" >{textArrayThird[9]}</h2>
       <ul class="mt-2 text-gray-700 ">
-        <li>Encourage gentle exercises like walking or stretching. Physical activity helps maintain mobility and improves mood.</li>
+        <li>{textArrayThird[10]}</li>
        
       </ul>
     </div>
@@ -144,9 +268,9 @@ function Blogcontent1() {
 
 <div class="flex items-left">
     <div>
-      <h2 class="text-xl font-bold text-gray-800 text-left mt-10 " >6.	Legal and Financial Planning</h2>
+      <h2 class="text-xl font-bold text-gray-800 text-left mt-10 " >{textArrayThird[11]}</h2>
       <ul class="mt-2 text-gray-700 ">
-        <li>Assist with organizing legal documents and financial plans. This includes power of attorney, wills, and ensuring that all necessary paperwork is up to date.</li>
+        <li>{textArrayThird[12]}</li>
        
       </ul>
     </div>
@@ -190,12 +314,12 @@ function Blogcontent1() {
     {/* Static Third Blog Post Card */}
     <Link to='/blogcontent4'>
       <div className="bg-white cursor-pointer rounded overflow-hidden lg:h-[570px] shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] relative top-0 hover:-top-2 transition-all duration-300">
-        <img src={blog4} alt="Blog Post 1" className="w-full h-60 object-cover" />
+        <img src={imagesBlogThird[0]} alt="Blog Post 1" className="w-full h-60 object-cover" />
         <div className="p-6">
-          <span className="text-sm block text-gray-400 mb-2">10 FEB 2023 </span>
-          <h3 className="text-xl font-bold text-[#333]">Pets as Companions: The Therapeutic Benefits for Seniors</h3>
+          <span className="text-sm block text-gray-400 mb-2">{textBlogThird[0]} </span>
+          <h3 className="text-xl font-bold text-[#333]">{textBlogThird[1]}</h3>
           <hr className="my-6" />
-          <p className="text-gray-400 text-sm">Pets provide seniors with companionship, reduce loneliness, and boost mental health by lowering anxiety and increasing happiness. Caring for a pet also promotes physical activity and adds a sense of purpose to daily life.</p>
+          <p className="text-gray-400 text-sm">{textBlogThird[2]}</p>
         </div>
       </div>
     </Link>

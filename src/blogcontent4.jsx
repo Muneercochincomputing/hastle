@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState,useEffect } from 'react';
 import Navbar from './components/Navbar/Navbar';
 import { Link } from 'react-router-dom';
 import Footer from './components/Navbar/footer';
@@ -16,10 +17,131 @@ import Blogpage4 from './assets/blogpage4image.jpg'
 import Blogpage4main from './assets/blog4pagemain.jpg'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-
+import axios from 'axios';
+import Reactloader from './reactloader';
 import Emailsubscription from './components/Navbar/emailsubscription';
 
 function Blogcontent4() {
+
+
+  const [imagesArray, setImagesArray] = useState([]);
+  const [textArray, setTextArray] = useState([]);
+  const [imagesArraySecond, setImagesArraySecond] = useState([]);
+  const [textArraySecond, setTextArraySecond] = useState([]);
+  const [imagesArrayThird, setImagesArrayThird] = useState([]);
+  const [textArrayThird, setTextArrayThird] = useState([]);
+  const [imagesArrayFourth, setImagesArrayFourth] = useState([]);
+  const [textArrayFourth, setTextArrayFourth] = useState([]);
+  const [imagesBlogSecond, setImagesBlogSecond] = useState([]);
+  const [textBlogSecond, setTextBlogSecond] = useState([])
+  const [imagesBlogThird, setImagesBlogThird] = useState([]);
+  const [textBlogThird, setTextBlogThird] = useState([])
+
+  const url = import.meta.env.VITE_HOST_URL;
+  
+
+  useEffect(() => {
+    const fetchCMSData = async () => {
+      try {
+        const result = await axios.get(`${url}/getcms/BlogPage4`);
+        const resultBlog = await axios.get(`${url}/getcms/BlogLandingPage`);
+
+        // Extract data for the first section
+        const extractedImages = result.data
+          .filter(item => item.page === "BlogPage4" && item.label === "BlogPage4 FirstPart  ")
+          .map(item => item.images)
+          .flat();
+
+        const extractedText = result.data
+          .filter(item => item.page === "BlogPage4" && item.label === "BlogPage4 FirstPart  ")
+          .map(item => item.text)
+          .flat();
+
+          const extractedImagesSecond = result.data
+          .filter(item => item.page === "BlogPage4" && item.label === "BlogPage4 SecondPart  ")
+          .map(item => item.images)
+          .flat();
+
+        const extractedTextSecond = result.data
+          .filter(item => item.page === "BlogPage4" && item.label === "BlogPage4 SecondPart  ")
+          .map(item => item.text)
+          .flat();
+
+
+          const extractedImagesThird = result.data
+          .filter(item => item.page === "BlogPage4" && item.label === "BlogPage4 ThirdPart  ")
+          .map(item => item.images)
+          .flat();
+
+        const extractedTextThird = result.data
+          .filter(item => item.page === "BlogPage4" && item.label === "BlogPage4 ThirdPart  ")
+          .map(item => item.text)
+          .flat();
+
+
+          const extractedImagesFourth = result.data
+          .filter(item => item.page === "BlogPage4" && item.label === "BlogPage4 FourthPart  ")
+          .map(item => item.images)
+          .flat();
+
+        const extractedTextFourth = result.data
+          .filter(item => item.page === "BlogPage4" && item.label === "BlogPage4 FourthPart  ")
+          .map(item => item.text)
+          .flat();
+
+          const extractedBlogcontent1image = resultBlog.data
+          .filter(item => item.page === "BlogLandingPage" && item.label === "BlogPage SecondPart ")
+          .map(item => item.images)
+          .flat();
+          const extractedBlogcontent1text = resultBlog.data
+          .filter(item => item.page === "BlogLandingPage" && item.label === "BlogPage SecondPart ")
+          .map(item => item.text)
+          .flat();
+
+
+
+          const extractedBlogcontent2image = resultBlog.data
+          .filter(item => item.page === "BlogLandingPage" && item.label === "BlogPage ThirdPart ")
+          .map(item => item.images)
+          .flat();
+          const extractedBlogcontent2text = resultBlog.data
+          .filter(item => item.page === "BlogLandingPage" && item.label === "BlogPage ThirdPart ")
+          .map(item => item.text)
+          .flat();
+
+
+
+        
+
+        // Update state variables
+        setImagesArray(extractedImages);
+        setTextArray(extractedText);
+        setImagesArraySecond(extractedImagesSecond);
+        setTextArraySecond(extractedTextSecond);
+        setImagesArrayThird(extractedImagesThird);
+        setTextArrayThird(extractedTextThird);
+        setImagesArrayFourth(extractedImagesFourth);
+        setTextArrayFourth(extractedTextFourth);
+        setImagesBlogSecond(extractedBlogcontent1image);
+        setTextBlogSecond(extractedBlogcontent1text);
+        setImagesBlogThird(extractedBlogcontent2image);
+        setTextBlogThird(extractedBlogcontent2text);
+       
+       
+       
+
+    
+      } catch (error) {
+        console.error("Error fetching CMS data:", error);
+        alert("An error occurred while fetching CMS data. Please try again.");
+      }
+    };
+
+    fetchCMSData();
+  }, []); // Dependency array to run only once on mount
+
+
+
 
 
 
@@ -54,11 +176,11 @@ function Blogcontent4() {
   const posts = [
   
     {
-      title: "The Importance of Mental Health in Elderly Care",
-      excerpt: "Understanding and addressing mental health issues in older adults is crucial for their overall well-being.",
-      date: "July 25, 2024",
+      title: textBlogSecond[0],
+      excerpt: textBlogSecond[1],
+      date: textBlogSecond[2],
       author: "Jane Smith",
-      image: blog2,
+      image: imagesBlogSecond[0],
     },
     
   ];
@@ -66,6 +188,8 @@ function Blogcontent4() {
   return (
     <div className='overflow-hidden'>
       <Navbar />
+
+      <Reactloader/>
       
       {/* Hero Section */}
       <header className="relative bg-white text-[#8D4374]  pt-40  ">
@@ -75,15 +199,11 @@ function Blogcontent4() {
            {/* sub head */}
          
            <div className='relative grid xl:grid-cols-1'>
-  <p className='  text-black xl:text-[45px] text-[25px] font-bold'>The Importance of Mental Health Support in Elderly Home Care
+  <p className='  text-black xl:text-[45px] text-[25px] font-bold'>{textArray[0]}
   </p>
-  <p className="text-lg md:text-1xl text-left text-black  xl:px-10 px-2 mt-10">As we age, mental health becomes just as crucial as physical health, especially for
-Seniors who receive care at home. In the UK, where elderly home care services are on
-the rise, there is growing recognition of the need to address the emotional and
-psychological well-being of older adults. With the right support, seniors can enjoy a
-higher quality of life, maintain their independence, and stay connected with their loved
-ones.</p> 
-  <img src={Blogpage4main } className='mt-10 '  />
+  <p className="text-lg md:text-1xl text-left text-black  xl:px-10 px-2 mt-10">
+{textArray[1]}</p> 
+  <img src={imagesArray[0] } className='mt-10 '  />
   <div className='xl:mt-[100px] ml-[100px]'>
     
     
@@ -91,11 +211,8 @@ ones.</p>
 </div>
 
 <div className=' relative xl:mt-[10px] xl:ml-[100px]'>
-    <h1 className="text-2xl md:text-3xl font-extrabold mb-6 text-left text-black mt-10">Understanding the Mental Health Challenges Faced by Seniors</h1>
-    <p className="text-lg md:text-1xl text-left text-black ">Mental health issues among the elderly are often overlooked, yet they are common and
-can significantly impact a person s overall well-being. In the UK, s estimated that one
-in four older adults experience some form of mental health issue, with depression and
-anxiety being the most prevalent.</p> 
+    <h1 className="text-2xl md:text-3xl font-extrabold mb-6 text-left text-black mt-10">{textArraySecond[0]}</h1>
+    <p className="text-lg md:text-1xl text-left text-black ">{textArraySecond[1]}</p> 
   </div>
 
      
@@ -104,24 +221,17 @@ anxiety being the most prevalent.</p>
 
 
      <div className='grid xl:grid-cols-2  mt-20 '>
-      <img src={Blogpage4}/>
+      <img src={imagesArraySecond[0]}/>
 
       <div className=' xl:ml-[100px]'>
-    <h1 className="text-2xl md:text-3xl font-extrabold mb-6 text-left text-black mt-10">Depression</h1>
-    <p className="text-lg md:text-1xl text-left text-black "> seniors can be triggered by various factors, including the loss of a
-spouse or close friends, chronic illness, or the transition from independent living to
-receiving care. It&#39;s important to recognize that depression in older adults may present
-differently than in younger people. Symptoms such as fatigue, changes in sleep
-patterns, and withdrawal from social activities are common signs that may be
-mistakenly attributed to aging rather than a mental health condition.</p> 
+    <h1 className="text-2xl md:text-3xl font-extrabold mb-6 text-left text-black mt-10">{textArraySecond[2]}</h1>
+    <p className="text-lg md:text-1xl text-left text-black ">{textArraySecond[3]}</p> 
 
 
 {/* // the second */}
 <div className='xl:mt-[50px] '>
-    <h1 className="text-2xl md:text-3xl font-extrabold mb-6 text-left text-black mt-4">Anxiety </h1>
-    <p className="text-lg md:text-1xl text-left text-black ">Anxiety is another common issue, often exacerbated by concerns about health,
-financial stability, or the future. Seniors may worry excessively about their ability to
-manage daily tasks, leading to increased stress and a decline in their quality of life.</p> 
+    <h1 className="text-2xl md:text-3xl font-extrabold mb-6 text-left text-black mt-4">{textArraySecond[4]} </h1>
+    <p className="text-lg md:text-1xl text-left text-black ">{textArraySecond[5]}</p> 
   </div>
 
 
@@ -130,16 +240,14 @@ manage daily tasks, leading to increased stress and a decline in their quality o
 
 
   <div className='xl:mt-[50px] '>
-    <h1 className="text-2xl md:text-3xl font-extrabold mb-6 text-left text-black mt-10">Dementia </h1>
-    <p className="text-lg md:text-1xl text-left text-black ">Dementia and other cognitive impairments also pose significant mental health
-challenges. As these conditions progress, they can lead to confusion, frustration, and
-even depression, making it essential for caregivers to provide the right support.</p> 
+    <h1 className="text-2xl md:text-3xl font-extrabold mb-6 text-left text-black mt-10">{textArraySecond[6]} </h1>
+    <p className="text-lg md:text-1xl text-left text-black ">{textArraySecond[7]}</p> 
   </div>
 
 
   <div className='xl:mt-[50px] '>
-    <h1 className="text-2xl md:text-3xl font-extrabold mb-6 text-left text-black mt-4"> Social Isolation and Loneliness</h1>
-    <p className="text-lg md:text-1xl text-left text-black ">Many seniors face social isolation and loneliness due to factors like retirement, loss of friends and family, reduced mobility, and lack of social networks. Loneliness can have a profound impact on mental health, leading to depression, anxiety, and even physical health problems such as heart disease. Addressing social isolation involves encouraging seniors to engage in social activities, join clubs or community groups, and maintain connections with family and friends. Technology can also play a role in helping seniors stay connected through virtual means.</p> 
+    <h1 className="text-2xl md:text-3xl font-extrabold mb-6 text-left text-black mt-4"> {textArraySecond[8]}</h1>
+    <p className="text-lg md:text-1xl text-left text-black ">{textArraySecond[9]}</p> 
   </div>
 
 
@@ -162,10 +270,8 @@ even depression, making it essential for caregivers to provide the right support
 
 
     <div className=' relative xl:mt-[40px] xl:ml-[100px]'>
-    <h1 className="text-2xl md:text-3xl font-extrabold mb-6 text-left text-black mt-4">The Role of Home Care in Supporting Mental Health</h1>
-    <p className="text-lg md:text-1xl text-left text-black ">Elderly home care in the UK has evolved to include comprehensive mental health
-support, recognizing that emotional well-being is integral to overall health. Here are
-some ways home care services can play a crucial role</p> 
+    <h1 className="text-2xl md:text-3xl font-extrabold mb-6 text-left text-black mt-4">{textArrayThird[0]}</h1>
+    <p className="text-lg md:text-1xl text-left text-black ">{textArrayThird[1]}</p> 
   </div>
 
 
@@ -174,19 +280,14 @@ some ways home care services can play a crucial role</p>
    
 
       <div className='xl:mt-[50px] xl:ml-[100px] xl:mr-10'>
-    <h1 className="text-2xl md:text-3xl font-extrabold mb-6 text-left text-black mt-4">Personalized Care Plans</h1>
-    <p className="text-lg md:text-1xl text-left text-black "> Creating a personalized care plan tailored to the individual&#39;s mental health needs
-is essential. This plan should include regular assessments by mental health
-professionals, ensuring that any emerging issues are addressed promptly</p> 
+    <h1 className="text-2xl md:text-3xl font-extrabold mb-6 text-left text-black mt-4">{textArrayThird[2]}</h1>
+    <p className="text-lg md:text-1xl text-left text-black ">{textArrayThird[3]}</p> 
 
 
 {/* // the second */}
 <div className='xl:mt-[50px] xl:mr-10 '>
-    <h1 className="text-2xl md:text-3xl font-extrabold mb-6 text-left text-black mt-4">Companionship and Social Interaction </h1>
-    <p className="text-lg md:text-1xl text-left text-black ">Loneliness is a significant contributor to mental health problems in seniors. Home
-care services can provide companionship, helping seniors stay socially engaged.
-Caregivers can encourage participation in community activities, virtual events, or
-even regular phone calls with family and friends</p> 
+    <h1 className="text-2xl md:text-3xl font-extrabold mb-6 text-left text-black mt-4">{textArrayThird[4]}</h1>
+    <p className="text-lg md:text-1xl text-left text-black ">{textArrayThird[5]}</p> 
   </div>
 
 
@@ -195,22 +296,15 @@ even regular phone calls with family and friends</p>
 
 
   <div className='xl:mt-[50px] xl:mr-10 '>
-    <h1 className="text-2xl md:text-3xl font-extrabold mb-6 text-left text-black mt-4">Support for Caregivers </h1>
-    <p className="text-lg md:text-1xl text-left text-black ">It s not just the elderly who need support; caregivers also play a vital role in
-maintaining the mental health of their loved ones. Home care services often offer
-respite care, giving family members a much-needed break, which can reduce
-stress and prevent caregiver burnout.</p> 
+    <h1 className="text-2xl md:text-3xl font-extrabold mb-6 text-left text-black mt-4">{textArrayThird[6]}</h1>
+    <p className="text-lg md:text-1xl text-left text-black ">{textArrayThird[7]}</p> 
   </div>
 
 
 
   <div className='xl:mt-[50px] xl:mr-10 '>
-    <h1 className="text-2xl md:text-3xl font-extrabold mb-6 text-left text-black mt-10 lg:ml-1 ">Mental Health Resources </h1>
-    <p className="text-lg md:text-1xl text-left text-black ">Access to mental health resources is crucial. Many home care providers in the
-UK now include mental health support as part of their services. This may involve
-regular visits from a mental health nurse, access to therapy sessions, or even
-training caregivers to recognize and manage mental health issues.
-stress and prevent caregiver burnout.</p> 
+    <h1 className="text-2xl md:text-3xl font-extrabold mb-6 text-left text-black mt-10 lg:ml-1 ">{textArrayThird[8]}</h1>
+    <p className="text-lg md:text-1xl text-left text-black ">{textArrayThird[9]}</p> 
   </div>
 
 
@@ -223,7 +317,7 @@ stress and prevent caregiver burnout.</p>
 
 
 
-  <img src={elderlymentalcareimage1 } className='mt-4'/>
+  <img src={imagesArrayThird[0]} className='mt-4'/>
 
   {/* // the second */}
 
@@ -237,9 +331,9 @@ stress and prevent caregiver burnout.</p>
         </div>
 
         <div className=' relative xl:mt-[70px] xl:ml-[150px] px-4  mt-4'>
-    <h1 className="text-2xl md:text-3xl font-extrabold mb-6 text-left text-black">Promoting Mental Well-being Through Lifestyle Choices</h1>
-    <p className="text-lg md:text-1xl text-left text-black ">Beyond professional support, there are several lifestyle choices that can help promote
-    mental well-being in seniors</p> 
+    <h1 className="text-2xl md:text-3xl font-extrabold mb-6 text-left text-black">{textArrayFourth[0]}</h1>
+    <p className="text-lg md:text-1xl text-left text-black ">{textArrayFourth[1]}
+</p> 
   </div>
 
 
@@ -248,21 +342,17 @@ stress and prevent caregiver burnout.</p>
 
 
   <div className='grid xl:grid-cols-2 mt-20'>
-      <img src={Blogpage4}/>
+      <img src={imagesArrayFourth[0]}/>
 
       <div className='xl:mt-[50px] xl:ml-[100px] px-4'>
-    <h1 className="text-2xl md:text-3xl font-extrabold mb-6 text-left text-black mt-4">Physical Activity</h1>
-    <p className="text-lg md:text-1xl text-left text-black "> Regular exercise has been shown to reduce symptoms of
-depression and anxiety. Even light activities such as walking or gardening can
-have a positive impact</p> 
+    <h1 className="text-2xl md:text-3xl font-extrabold mb-6 text-left text-black mt-4">{textArrayFourth[2]}</h1>
+    <p className="text-lg md:text-1xl text-left text-black ">{textArrayFourth[3]}</p> 
 
 
 {/* // the second */}
 <div className='xl:mt-[50px] '>
-    <h1 className="text-2xl md:text-3xl font-extrabold mb-6 text-left text-black mt-4">Healthy Diet</h1>
-    <p className="text-lg md:text-1xl text-left text-black ">Nutrition plays a significant role in mental health. A diet rich in
-fruits, vegetables, and whole grains can help maintain a balanced mood and
-cognitive function</p> 
+    <h1 className="text-2xl md:text-3xl font-extrabold mb-6 text-left text-black mt-4">{textArrayFourth[4]}</h1>
+    <p className="text-lg md:text-1xl text-left text-black ">{textArrayFourth[5]}</p> 
   </div>
 
 
@@ -271,16 +361,15 @@ cognitive function</p>
 
 
   <div className='xl:mt-[50px] '>
-    <h1 className="text-2xl md:text-3xl font-extrabold mb-6 text-left text-black mt-4">Hobbies and Interests </h1>
-    <p className="text-lg md:text-1xl text-left text-black ">Encouraging seniors to engage in hobbies they enjoy
-    can provide a sense of purpose and reduce feelings of isolation</p> 
+    <h1 className="text-2xl md:text-3xl font-extrabold mb-6 text-left text-black mt-4">{textArrayFourth[6]}</h1>
+    <p className="text-lg md:text-1xl text-left text-black ">{textArrayFourth[7]}</p> 
   </div>
 
 
 
   <div className='xl:mt-[50px] '>
-    <h1 className="text-2xl md:text-3xl font-extrabold mb-6 text-left text-black mt-4">Regular Physical Activity</h1>
-    <p className="text-lg md:text-1xl text-left text-black ">Engaging in regular physical activity is one of the most effective ways to enhance mental well-being. Exercise releases endorphins, which are natural mood lifters that reduce stress and anxiety. Activities like walking, jogging, yoga, or even dancing can help improve mood, boost self-esteem, and enhance cognitive function. Research shows that just 30 minutes of moderate exercise a few times a week can make a substantial difference in mental health. Additionally, exercise can help with better sleep, which is crucial for mental well-being. Incorporating a mix of cardio, strength training, and flexibility exercises ensures a holistic approach to physical fitness and mental health</p> 
+    <h1 className="text-2xl md:text-3xl font-extrabold mb-6 text-left text-black mt-4">{textArrayFourth[8]}</h1>
+    <p className="text-lg md:text-1xl text-left text-black ">{textArrayFourth[9]}</p> 
   </div>
 
 
@@ -331,12 +420,12 @@ cognitive function</p>
               <Link to='/blogcontent5'>
 
             <div className="bg-white cursor-pointer rounded overflow-hidden shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] relative top-0 hover:-top-2 transition-all duration-300">
-              <img src={readmoresectionimage2 } alt="Blog Post 1" className="w-full h-60 object-cover" />
+              <img src={imagesBlogThird[1] } alt="Blog Post 1" className="w-full h-60 object-cover" />
               <div className="p-6">
-                <span className="text-sm block text-gray-400 mb-2">10 FEB 2023 | </span>
-                <h3 className="text-xl font-bold text-[#333]">How to Prepare Your Home for Elderly Care: Safety Tips and Modifications</h3>
+                <span className="text-sm block text-gray-400 mb-2">{textBlogThird[3]} </span>
+                <h3 className="text-xl font-bold text-[#333]">{textBlogThird[4]}</h3>
                 <hr className="my-6" />
-                <p className="text-gray-400 text-sm">As the population ages, more families in the UK are choosing to care for their elderly loved ones at home. While this option allows seniors to remain in familiar surroundings, it also requires careful planning and modifications to ensure their safety and comfort.</p>
+                <p className="text-gray-400 text-sm">{textArrayThird[5]}</p>
               </div>
 
               
@@ -346,12 +435,12 @@ cognitive function</p>
             </Link>
              <Link to='/blogcontent6'>
             <div className="bg-white cursor-pointer rounded overflow-hidden shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] relative top-0 hover:-top-2 transition-all duration-300">
-              <img src={readmoresectionimage3 } alt="Blog Post 1" className="w-full h-60 object-cover" />
+              <img src={imagesBlogThird[2]} alt="Blog Post 1" className="w-full h-60 object-cover" />
               <div className="p-6">
-                <span className="text-sm block text-gray-400 mb-2">10 FEB 2023 | </span>
-                <h3 className="text-xl font-bold text-[#333]">Managing Chronic Conditions in Elderly Home Care: A Comprehensive Guide</h3>
+                <span className="text-sm block text-gray-400 mb-2">{textBlogThird[6]} </span>
+                <h3 className="text-xl font-bold text-[#333]">{textBlogThird[7]}</h3>
                 <hr className="my-6" />
-                <p className="text-gray-400 text-sm">Caring for elderly loved ones at home is a rewarding experience, but it can also present unique challenges, especially when managing chronic conditions. In the UK, where elderly home care services are becoming increasingly prevalent, families and caregivers must be well-equipped to handle a range of health issues that commonly affect seniors. With the right approach, managing chronic conditions at home can improve the quality of life for seniors and help them maintain their independence.</p>
+                <p className="text-gray-400 text-sm">{textBlogThird[8]}</p>
               </div>
 
               

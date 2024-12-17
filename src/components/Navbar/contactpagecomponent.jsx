@@ -52,7 +52,7 @@ const ContactSectionpage = forwardRef((props, ref) => {
   
       try {
         await axios.post(`${url}/contacts/`, contact);
-        console.log("Success");
+
   
         setFullname("");
         setStreet("");

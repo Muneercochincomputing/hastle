@@ -31,7 +31,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Emailsubscription from './components/Navbar/Emailsubscription';
 import Product from './components/Navbar/about';
-
+import Reactloader from './reactloader';
 
 
 function Servicespage2() {
@@ -140,6 +140,7 @@ function Servicespage2() {
   return (
     <div className="p-4 overflow-hidden">
       <Navbar />
+      <Reactloader/>
 
       <div className='relative'>
   <div className='mt-20 relative'>

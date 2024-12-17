@@ -25,6 +25,7 @@ function Dashbord() {
         axios.get(`${url}/subscribers/`),
         axios.get(`${url}/contacts/`),
         axios.get(`${url}/data/`)
+    
       
 
       ]);
@@ -143,6 +144,29 @@ function Dashbord() {
             </div>
           )}
         </div>
+
+
+
+
+
+
+
+       {// The image upload section is here
+
+       }
+
+       
+
+
+
+
+
+
+
+
+
+
+
 
         {/* Brouchure dounloaded section */}
 

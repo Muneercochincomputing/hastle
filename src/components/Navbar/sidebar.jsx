@@ -1,6 +1,6 @@
 import React from 'react';
 import { BiHome, BiBookAlt, BiMessage, BiSolidReport, BiStats, BiTask, BiHelpCircle } from "react-icons/bi";
-
+import { Link } from 'react-router-dom';
 const Sidebar = () => {
   const resturentname = sessionStorage.getItem('resturentname');
   
@@ -15,26 +15,13 @@ const Sidebar = () => {
           <BiHome className="text-xl" />
           <span>Dashboard</span>
         </a>
-        <a href="#" className="flex items-center space-x-2 py-2 px-4 hover:bg-gray-700 rounded-md">
-          <BiTask className="text-xl" />
-          <span>Assignment</span>
+        <a href="" className="flex items-center space-x-2 py-2 px-4 hover:bg-gray-700 rounded-md">
+         <Link to='/contentManage'>
+          
+          <span>Content Managrment</span>
+          </Link>
         </a>
-        <a href="#" className="flex items-center space-x-2 py-2 px-4 hover:bg-gray-700 rounded-md">
-          <BiSolidReport className="text-xl" />
-          <span>Report</span>
-        </a>
-        <a href="#" className="flex items-center space-x-2 py-2 px-4 hover:bg-gray-700 rounded-md">
-          <BiStats className="text-xl" />
-          <span>States</span>
-        </a>
-        <a href="#" className="flex items-center space-x-2 py-2 px-4 hover:bg-gray-700 rounded-md">
-          <BiMessage className="text-xl" />
-          <span>Message</span>
-        </a>
-        <a href="#" className="flex items-center space-x-2 py-2 px-4 hover:bg-gray-700 rounded-md">
-          <BiHelpCircle className="text-xl" />
-          <span>Help</span>
-        </a>
+        
       </div>
     </div>
   );

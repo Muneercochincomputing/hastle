@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect,useState } from 'react';
 import { Link } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -20,10 +20,12 @@ import section3bannerimage3 from '../../assets/homecarenew.jpeg'
 import animationData from '../../animaioplaybutton.json'; 
 import Lottie from 'react-lottie';
 import Cqc from './cqc';
+import axios from 'axios';
 
 
 
-function Topproducts({onScrollToSubscription}) {
+function Topproducts({onScrollToSubscription,imagesArray,textArray,imageTable,textTable,image3rd,text3rd}) {
+
 
 
 
@@ -39,6 +41,8 @@ function Topproducts({onScrollToSubscription}) {
       cqcWidgetDiv.appendChild(script);
     }
   }, []);
+
+
 
   
   
@@ -71,23 +75,23 @@ function Topproducts({onScrollToSubscription}) {
     const topprodect = [
         {
             id:1,
-            src:image3,
-            tittle:'Daily Support/Visiting Care',
-            Description: "Empowering families with dedicated visiting care and control over their care journey."
+            src:imageTable[0],
+            tittle: <p dangerouslySetInnerHTML={{ __html: textTable[1] }}></p>,
+            Description: <p dangerouslySetInnerHTML={{ __html: textTable[2] }}></p>
            
         },
         {
             id:1,
-            src:image2,
-            tittle:'Live-in Care',
-            Description: "Personalised care tailored to each older person's unique needs and situations."
+            src:imageTable[1],
+            tittle:<p dangerouslySetInnerHTML={{ __html: textTable[3] }}></p>,
+            Description: <p dangerouslySetInnerHTML={{ __html: textTable[4] }}></p>
            
         },
         {
             id:1,
-            src:image1,
-            tittle:'Specialised Care',
-            Description: "Expert care for specific conditions—because every individual deserves the right support."
+            src:imageTable[2],
+            tittle:<p dangerouslySetInnerHTML={{ __html: textTable[5] }}></p>,
+            Description: <p dangerouslySetInnerHTML={{ __html: textTable[6] }}></p>
            
 
            
@@ -96,7 +100,7 @@ function Topproducts({onScrollToSubscription}) {
         
     ]
   useEffect(() => {
-    AOS.init({ duration: 1200 });
+    AOS.init({ duration: 1000 });
   }, []);
 
   return (
@@ -104,12 +108,14 @@ function Topproducts({onScrollToSubscription}) {
      
       <div className='w-full  h-[600px] bg-[#a43579] px-10 grid lg:grid-cols-2 lg:mt-60  lg:pt-10 grid-cols-1  mt-10   lg:text-[40px] text-[25px] font-sans lg:pl-40'>
         
-          <p className='font-banner text-white  lg:my-[100px ]  mt-10  '>The problem is that finding trustworthy care that truly understands your loved one`s
-            unique needs can be overwhelming and stressful
+          <p className='font-banner text-white  lg:my-[100px ]  mt-10  '>
+          <p dangerouslySetInnerHTML={{ __html: textArray[0] }}>
+          
+          </p>
           </p>
         <div className='w-full h-5 lg:hidden'></div>
         <div className='lg:w-[550px] w-full h-[400px] lg:ml-20  lg:my-[70px] m'>
-          <img src={secondbannerimg }/>
+          <img src={imagesArray[0]}/>
       
         </div>
         
@@ -120,10 +126,10 @@ function Topproducts({onScrollToSubscription}) {
       <div className='container mt-10  lg:mt-20 pt:10  lg:w-full  '>
         {/* Header section */}
         <div className='text-center mb-10 max-w-[900px] mx-auto '>
-          <p data-aos='fade-up' data-aos-delay="200"  className='sm:text-[50px] xl:mt-20 mt-20 text-[30px] text-primary '>
-             How We Can Help & Support You
+          <p  className='sm:text-[50px] xl:mt-20 mt-20 text-[30px] text-primary '>
+          <p dangerouslySetInnerHTML={{ __html: textTable[0] }}></p>
           </p>
-          <h1 data-aos='fade-up' data-aos-delay="200" className='text-3xl font-bold '>
+          <h1  className='text-3xl font-bold '>
        
           </h1>
         </div>
@@ -136,8 +142,7 @@ function Topproducts({onScrollToSubscription}) {
     <Link to={`/service${index + 1}`}>
  <div
     key={data.id}
-    data-aos={index % 2 === 0 ? 'zoom-left' : 'zoom-right'}
-    data-aos-delay='300'
+    
     className='w-full max-w-xs mt-[40px] sm:max-w-sm md:max-w-md bg-white  rounded-2xl  relative shadow-xl p-6 flex flex-col items-center transition-colors translate-x-4 duration-1200 group hover:bg-[#8D4374]  hover:text-white'
  
  >
@@ -162,37 +167,37 @@ function Topproducts({onScrollToSubscription}) {
         {/* Additional Content */}
         <div className='sm:mt-[200px] lg:mt-20    px-10  '>
           <h1 className='text-center text-sm sm:text-[40px] mt-10  font-bold text-primary sm:mb-10 mb-5 '>
-           <p className='text-[25px] lg:text-[40px] font-banner'> Getting Started with Holistic Care is Easy</p>
+           <p className='text-[25px] lg:text-[40px] font-banner'>  <p dangerouslySetInnerHTML={{ __html: text3rd[0] }}></p></p>
           </h1>
           <div className='grid grid-cols-1 sm:grid-cols-3 gap-10 sm:w-full sm:px-20 px-5 xlmt-10'>
             <div className='flex flex-col items-center text-center sm:text-[25px] text-[15px] font-bold text-gray-500'>
               
-             <p className='text-[#8D4374]'>1. Call 0151 665 0520</p> 
+             <p className='text-[#8D4374]'> <p dangerouslySetInnerHTML={{ __html: text3rd[1] }}></p></p> 
               <p className='text-sm font-normal p-4 '>
-             We take the time to understand<br/>your loved one's needs, <br/> preferences, and goals so we can create a <br/>truly personalised care plan.
+              <p dangerouslySetInnerHTML={{ __html: text3rd[2] }}></p>
               </p>
             </div>
             <div className='flex flex-col items-center text-center sm:text-[25px] text-[15px] font-bold text-gray-500'>
              
-              <p className='text-[#8D4374]'>2. Receive Personalised Consultation</p>
+              <p className='text-[#8D4374]'> <p dangerouslySetInnerHTML={{ __html: text3rd[3] }}></p></p>
               <p className='text-sm font-normal p-4'>
-              Our compassionate carers provide assistance<br/>with daily tasks, medication management and <br/> companionship,creating independence and <br/> well-being. 
+              <p dangerouslySetInnerHTML={{ __html: text3rd[4] }}></p>
               </p>
             </div>
             <div className='flex flex-col items-center text-center sm:text-[25px] text-[15px] font-bold text-gray-500'>
             
-             <p className='text-[#8D4374]'>3. Regain Your Independence</p>
+             <p className='text-[#8D4374]'> <p dangerouslySetInnerHTML={{ __html: text3rd[5] }}></p></p>
               <p className='text-sm font-normal p-4'>
-               With our reliable and transparent<br/>services, you can rest assured that your loved one is <br/>receiving the highest quality care.
+              <p dangerouslySetInnerHTML={{ __html: text3rd[6] }}></p>
               </p>
             </div>
           </div>
         </div>
         <div className="lg:flex flex-wrap justify-center mx-0 mt-20 hidden ">
-  <img src={section3bannerimage2} className="w-[350px] h-[500px] mt-2 shadow-bulge" />
+  <img src={image3rd[0]} className="w-[350px] h-[500px] mt-2 shadow-bulge" />
   
   <div className="relative">
-  <img src={section3bannerimage1} className="w-[350px] h-[500px] m-2 ml-6  shadow-bulge" />
+  <img src={image3rd[1]} className="w-[350px] h-[500px] m-2 ml-6  shadow-bulge" />
   <button
   onClick={onScrollToSubscription}
     className="group absolute rounded-lg bottom-[516px] ml-10 xl:text-[18px] py-10 px-10 left-10 z-10 h-[50px] w-60 overflow-hidden border border-white bg-gradient-to-r from-[#a43579] to-[#a43579] text-white transition-all duration-300 ease-in-out shadow-lg before:absolute before:left-0 before:top-0 before:h-0 before:w-1/4 before:duration-500 after:absolute after:bottom-0 after:right-0 after:h-0 after:w-1/4 after:duration-500 hover:text-[#8D4374] hover:bg-white hover:before:h-full hover:after:h-full flex items-center justify-center"
@@ -203,7 +208,7 @@ function Topproducts({onScrollToSubscription}) {
 </div>
 
 
-  <img src={section3bannerimage3} className="w-[350px] h-[500px] mt-2 ml-4 shadow-bulge" />
+  <img src={image3rd[2]} className="w-[350px] h-[500px] mt-2 ml-4 shadow-bulge" />
 </div>
 
 

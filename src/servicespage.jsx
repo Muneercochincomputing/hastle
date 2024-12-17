@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import mainimage1 from './assets/servicemain2.jpg';
 import mainhero from './assets/abouthero.jpg'
 import mainimage2 from './assets/blog2.jpeg';
@@ -26,9 +26,86 @@ import heroservices from './assets/IMG_5788 2.jpg'
 import Emailsubscription from './components/Navbar/Emailsubscription';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import axios from 'axios';
+import Reactloader from './reactloader';
 
 function Servicespage() {
+
+
+
+
   const [activeService, setActiveService] = useState(0); // Set default to the first item
+
+
+  
+  const [imagesArray, setImagesArray] = useState([]);
+  const [textArray, setTextArray] = useState([]);
+  const [imagesArraySecond, setImagesArraySecond] = useState([]);
+  const [textArraySecond, setTextArraySecond] = useState([]);
+  const [imagesArrayThird, setImagesArrayThird] = useState([]);
+  const [textArrayThird, setTextArrayThird] = useState([]);
+  const [imagesArrayFourth, setImagesArrayFourth] = useState([]);
+  const [textArrayFourth, setTextArrayFourth] = useState([]);
+
+  const url = import.meta.env.VITE_HOST_URL;
+
+  useEffect(() => {
+    const fetchCMSData = async () => {
+      try {
+        const result = await axios.get(`${url}/getcms/ServicePage1`);
+
+        // Extract data for the first section
+        const extractedImages = result.data
+          .filter(item => item.page === "ServicePage1" && item.label === "FirstSection")
+          .map(item => item.images)
+          .flat();
+
+        const extractedText = result.data
+          .filter(item => item.page === "ServicePage1" && item.label === "FirstSection")
+          .map(item => item.text)
+          .flat();
+
+        // Extract data for the second section
+        const extractedImagesSecond = result.data
+          .filter(item => item.page === "ServicePage1" && item.label === "SecondSection")
+          .map(item => item.images)
+          .flat();
+
+        const extractedTextSecond = result.data
+          .filter(item => item.page === "ServicePage1" && item.label === "SecondSection")
+          .map(item => item.text)
+          .flat();
+
+          const extractedImagesThird = result.data
+          .filter(item => item.page === "ServicePage1" && item.label === "ThirdSection")
+          .map(item => item.images)
+          .flat();
+
+        const extractedTextThird = result.data
+          .filter(item => item.page === "ServicePage1" && item.label === "ThirdSection")
+          .map(item => item.text)
+          .flat();
+
+        // Update state variables
+        setImagesArray(extractedImages);
+        setTextArray(extractedText);
+        setImagesArraySecond(extractedImagesSecond);
+        setTextArraySecond(extractedTextSecond);
+        setImagesArrayThird(extractedImagesThird);
+        setTextArrayThird(extractedTextThird);
+      
+
+        console.log("First Section Text:", extractedText);
+        console.log("Second Section Text:", extractedTextSecond);
+      } catch (error) {
+        console.error("Error fetching CMS data:", error);
+        alert("An error occurred while fetching CMS data. Please try again.");
+      }
+    };
+
+    fetchCMSData();
+  }, []); // Dependency array to run only once on mount
+
 
   const servicemainlist = [
     {
@@ -37,19 +114,19 @@ function Servicespage() {
       src: mainimage1,
       submenu: [
         {
-          name: 'Personal Care',
-          image: mainimage1,
-          details: 'We assist with daily activities like bathing, dressing, and grooming to ensure our clients maintain their dignity and well-being.',
+          name: textArraySecond[0],
+          image: imagesArraySecond[0],
+          details: textArraySecond[1]
         },
         {
-          name: 'Medication Support',
-          image: mainimage2,
-          details: 'Our caregivers help with medication reminders and administration to ensure our clients take their medications on time and safely.',
+          name: textArraySecond[2],
+          image: imagesArraySecond[1],
+          details: textArraySecond[3]
         },
         {
-          name: 'Domestic Assistance/Household Tasks',
-          image: mainimage3,
-          details: 'We provide support with household chores such as cleaning, laundry, and meal preparation to help maintain a clean and comfortable living environment.',
+          name: textArraySecond[4],
+          image: imagesArraySecond[2],
+          details: textArraySecond[5]
         },
         {
           name: 'Nutrition and Hydration',
@@ -134,17 +211,19 @@ function Servicespage() {
     <div className="p-4 overflow-hidden">
       <Navbar />
 
+      <Reactloader/>
+
       <div className='relative'>
   <div className='mt-20 relative'>
-    <img src={heroservices} className='h-[600px] xl:w-[100%] md:flex lg:flex hidden xl:flex' />
+    <img src={imagesArray[0]} className='h-[600px] xl:w-[100%] md:flex lg:flex hidden xl:flex' />
     <img src={servicesmain} className='h-[500px] flex xl:hidden xl:w-[70%] md:hidden xl:ml-60 mx-0' />
   </div>
   <div className="absolute inset-0 hidden xl:flex lg:flex flex-col justify-center items-center z-50 mt-[420px] text-white">
     <h1 className="text-6xl text-white rounded-full font-thin mb-6 text-center ">
-      Our Services
+      {textArray[0]}
     </h1>
     <p className="text-lg font-thin text-center">
-      We provide practical support that enables people to live their best life for as long as possible.
+     {textArray[1]}
     </p>
   </div>
 </div>
@@ -153,34 +232,34 @@ function Servicespage() {
       
       <div className=" xl:hidden lg-hidden ">
         <h1 className="text-6xl text-black mt-10   rounded-full font-thin mb-6 mx-auto text-center ">
-          Our Services
+          {textArray[0]}
           
           <p className="text-lg font-thin   ">
-            We provide practical support that enables people to live their best life for as long as possible.
+            {textArray[1]}
           </p>
         </h1>
       </div>
-      <div ><h1 className='text-center  text-[30px] text-[#8D4374] xl:mt-10 '>Daily Support/Visiting Care Services</h1>
-      <p className='text-center mb-10'>We offer a variety of customized visiting care services tailored to provide our clients and their families with the right choices and more possibilities while ensuring they oversee their care</p></div>
+      <div ><h1 className='text-center  text-[30px] text-[#8D4374] xl:mt-10 '>{textArray[2]}</h1>
+      <p className='text-center mb-10'>{textArray[3]}</p></div>
       <div className='xl:w-[100%] h-auto xl:h-[2200px] lg-[2200px] bg-gray-300/20 mb-10  pb-10  shadow-xl'>
       <div className='w-full xl:h-[450px]  grid lg:grid-cols-3 md:grid-cols-2 mb-10 '>
         <div className='w-[80%] xl:h-[95%] bg-white rounded-3xl border-solid border-[0px] border-black  ml-10  mt-10'>
-          <img src={overnightcare} className='xl:h-[300px] object-fill h-[200px] w-full  xl:w-full  rounded-t-3xl shadow-sm'/>
+          <img src={imagesArraySecond[0]} className='xl:h-[300px] object-fill h-[200px] w-full  xl:w-full  rounded-t-3xl shadow-sm'/>
           <h1 className='text-[20px] text-[#8D4374] font-bold text-center
-          '>Personal Care</h1>
-          <p className='text-center font-light xl:px-2 px-2 pb-8'>We assist with daily activities like bathing, dressing, and grooming to ensure our clients maintain their dignity and well-being.</p>
+          '>{textArraySecond[0]}</h1>
+          <p className='text-center font-light xl:px-2 px-2 pb-8'>{textArraySecond[1]}</p>
         </div>
         <div className='w-[80%] xl:h-[95%]  bg-white rounded-3xl border-solid border-[0px] border-black ml-10 mt-10'>
-        <img src={servicelist2} className='   xl:h-[300px] object-cover w-full  h-[200px] rounded-t-3xl shadow-sm'/>
+        <img src={imagesArraySecond[1]} className='   xl:h-[300px] object-cover w-full  h-[200px] rounded-t-3xl shadow-sm'/>
           <h1 className='text-[20px] text-[#8D4374] font-bold text-center lg:mt-2
-          '>Medication Support</h1>
-          <p className='text-center font-light xl:px-2 px-2 pb-8'>Our caregivers help with medication reminders and administration to ensure our clients take their medications on time and safely.</p>
+          '>{textArraySecond[2]}</h1>
+          <p className='text-center font-light xl:px-2 px-2 pb-8'>{textArraySecond[3]}</p>
         </div>
         <div className='w-[80%] xl:h-[95%]  bg-white rounded-3xl  border-solid border-[0px] border-black   ml-10 mt-10'>
-        <img src={servicelist3} className='xl:h-[300px] h-[200px] w-full object-fill  rounded-t-3xl shadow-sm'/>
+        <img src={imagesArraySecond[2]} className='xl:h-[300px] h-[200px] w-full object-fill  rounded-t-3xl shadow-sm'/>
           <h1 className='text-[20px] text-[#8D4374] xl-px-10 font-bold text-center
-          '>Domestic Assistance/<br/>Household Tasks</h1>
-          <p className='text-center font-light xl:px-4 px-2 pb-8'>We provide support with household chores such as cleaning, laundry, and meal preparation to help maintain a clean and comfortable living environment.</p>
+          '> <p dangerouslySetInnerHTML={{ __html: textArraySecond[4] }}></p></h1>
+          <p className='text-center font-light xl:px-4 px-2 pb-8'>{textArraySecond[5]}</p>
         </div>
        
        
@@ -193,31 +272,31 @@ function Servicespage() {
 <div className='w-full xl:h-[400px] grid gap-6 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 mt-20 lg:ml-26'>
   
 <div className='w-[80%] xl:h-[95%] bg-white rounded-3xl border-solid border-[0px] border-black  ml-10  mt-10'>
-          <img src={hydration} className='xl:h-[300px] object-fill h-[200px] w-full bg-red-500 xl:w-full  rounded-t-3xl shadow-sm'/>
+          <img src={imagesArrayThird[0]} className='xl:h-[300px] object-fill h-[200px] w-full  xl:w-full  rounded-t-3xl shadow-sm'/>
           <h1 className='text-[20px] text-[#8D4374] font-bold text-center
-          '>Nutrition and Hydration</h1>
-          <p className='text-center font-light px-4 pb-8'>Led by Dr. Kunbi Taiwo, our team understands the importance of good nutrition and hydration. We assist with meal planning and preparation to ensure our clients receive balanced and healthy meals.</p>
+          '>{textArrayThird[0]}</h1>
+          <p className='text-center font-light px-4 pb-8'>{textArrayThird[1]}</p>
         </div>
   
         <div className='w-[80%] xl:h-[95%] bg-white rounded-3xl border-solid border-[0px] border-black  ml-10  mt-10'>
-          <img src={overnights} className='xl:h-[300px] object-fill h-[200px] w-full bg-red-500 xl:w-full  rounded-t-3xl shadow-sm'/>
+          <img src={imagesArrayThird[1]} className='xl:h-[300px] object-fill h-[200px] w-full  xl:w-full  rounded-t-3xl shadow-sm'/>
           <h1 className='text-[20px] text-[#8D4374] font-bold text-center
-          '>Overnight Care</h1>
-          <p className='text-center font-light xl:px-4 px-2 pb-8'>Our team provides support during the night, offering reassurance and assistance to ensure a safe and restful night’s sleep for our clients.</p>
+          '>{textArrayThird[2]}</h1>
+          <p className='text-center font-light xl:px-4 px-2 pb-8'>{textArrayThird[3]}</p>
         </div>
   
         <div className='w-[80%] xl:h-[95%] bg-white rounded-3xl border-solid border-[0px] border-black  ml-10  mt-10'>
-          <img src={servicelist6} className='xl:h-[350px] object-fill h-[200px] w-full bg-red-500 xl:w-full  rounded-t-3xl shadow-sm'/>
+          <img src={imagesArrayThird[2]} className='xl:h-[350px] object-fill h-[200px] w-full  xl:w-full  rounded-t-3xl shadow-sm'/>
           <h1 className='text-[20px] text-[#8D4374] font-bold text-center
-          '>Respite Care</h1>
-          <p className='text-center font-light xl:px-4 pb-8 px-2'>We offer temporary relief for primary caregivers, allowing them to rest and recharge while we take care of their loved ones.</p>
+          '>{textArrayThird[4]}</h1>
+          <p className='text-center font-light xl:px-4 pb-8 px-2'>{textArrayThird[5]}</p>
         </div>
         <div></div>
         <div className='w-[80%] xl:h-[95%] bg-white rounded-3xl border-solid border-[0px] border-black  ml-10  mt-10'>
-          <img src={nutritionimage} className='xl:h-[300px] object-fill h-[200px] w-full bg-red-500 xl:w-full  rounded-t-3xl shadow-sm'/>
+          <img src={imagesArrayThird[3]} className='xl:h-[300px] object-fill h-[200px] w-full xl:w-full  rounded-t-3xl shadow-sm'/>
           <h1 className='text-[20px] text-[#8D4374] font-bold text-center
-          '>Outings & Activities</h1>
-          <p className='text-center font-light xl:px-4 pb-8'> Our caregivers assist with social activities, shopping trips, and appointments to keep our clients socially active and engaged.</p>
+          '>{textArrayThird[6]}</h1>
+          <p className='text-center font-light xl:px-4 pb-8'> {textArrayThird[7]}</p>
         </div>
 
 </div>

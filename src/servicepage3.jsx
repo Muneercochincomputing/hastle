@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import mainimage1 from './assets/servicemain2.jpg';
 import mainhero from './assets/abouthero.jpg'
 import mainimage2 from './assets/blog2.jpeg';
@@ -32,9 +32,90 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Emailsubscription from './components/Navbar/emailsubscription';
 import Product from './components/Navbar/about';
-
+import axios from 'axios';
+import Reactloader from './reactloader';
 
 function Servicespage3() {
+
+
+
+  
+  
+  const [imagesArray, setImagesArray] = useState([]);
+  const [textArray, setTextArray] = useState([]);
+  const [imagesArraySecond, setImagesArraySecond] = useState([]);
+  const [textArraySecond, setTextArraySecond] = useState([]);
+  const [imagesArrayThird, setImagesArrayThird] = useState([]);
+  const [textArrayThird, setTextArrayThird] = useState([]);
+  const [imagesArrayFourth, setImagesArrayFourth] = useState([]);
+  const [textArrayFourth, setTextArrayFourth] = useState([]);
+
+  const url = import.meta.env.VITE_HOST_URL;
+
+  useEffect(() => {
+    const fetchCMSData = async () => {
+      try {
+        const result = await axios.get(`${url}/getcms/ServicePage2`);
+
+        // Extract data for the first section
+     
+        const extractedImages = result.data
+          .filter(item => item.page === "ServicePage2" && item.label === "ServicePage 2 FirstPart")
+          .map(item => item.images)
+          .flat();
+
+        const extractedText = result.data
+          .filter(item => item.page === "ServicePage2" && item.label === "ServicePage 2 FirstPart")
+          .map(item => item.text)
+          .flat();
+
+        // Extract data for the second section
+        const extractedImagesSecond = result.data
+          .filter(item => item.page === "ServicePage2" && item.label === "ServicePage 2 SecondPart")
+          .map(item => item.images)
+          .flat();
+
+        const extractedTextSecond = result.data
+          .filter(item => item.page === "ServicePage2" && item.label === "ServicePage 2 SecondPart")
+          .map(item => item.text)
+          .flat();
+
+          const extractedImagesThird = result.data
+          .filter(item => item.page === "ServicePage2" && item.label === "ThirdSection")
+          .map(item => item.images)
+          .flat();
+
+        const extractedTextThird = result.data
+          .filter(item => item.page === "ServicePage2" && item.label === "ThirdSection")
+          .map(item => item.text)
+          .flat();
+
+        // Update state variables
+        setImagesArray(extractedImages);
+        setTextArray(extractedText);
+        setImagesArraySecond(extractedImagesSecond);
+        setTextArraySecond(extractedTextSecond);
+        setImagesArrayThird(extractedImagesThird);
+        setTextArrayThird(extractedTextThird);
+      
+
+        console.log("First Section Text:", extractedText);
+        console.log("Second Section Text:", extractedTextSecond);
+      } catch (error) {
+        console.error("Error fetching CMS data:", error);
+        alert("An error occurred while fetching CMS data. Please try again.");
+      }
+    };
+
+    fetchCMSData();
+  }, []); // Dependency array to run only once on mount
+
+
+
+
+
+
+
 
   const script = document.createElement('script');
   script.src = 'https://api.homecare.co.uk/assets/js/review_widget_carousel.js?displaydiv=tgrcw_0059ab4d&displayid=65432232653&displaycount=50&displaylogo=true&displayscore=true&displaybackground=true&displayratingreview=true&displaylink=true&displayminoverallrating=0&linksnofollow=false&displayfontsize=large';
@@ -149,19 +230,20 @@ function Servicespage3() {
   return (
     <div className=" overflow-hidden">
       <Navbar />
+      <Reactloader/>
 
       <div className='relative'>
   <div className=' mt-20 relative'>
-    <img src={servicehero2} className='h-[650px] xl:w-[100%] md:flex lg:flex hidden xl:flex' />
+    <img src={imagesArray[0]} className='h-[650px] xl:w-[100%] md:flex lg:flex hidden xl:flex' />
     <img src={servicehero3} className='h-[500px] flex xl:hidden xl:w-[70%] md:hidden xl:ml-60 mx-0 ' />
   </div>
   <div className="absolute inset-0 hidden xl:flex lg:flex flex-col justify-center items-center z-50 mt-[420px] text-white">
     <h1 className="text-6xl text-white rounded-full font-thin mb-6 text-center ">
-      Our Services
+      {textArray[0]}
     </h1>   
 
     <p className="text-lg font-thin text-center">
-      We provide practical support that enables people to live their best life for as long as possible.
+     {textArray[1]}
     </p>
 
   </div>
@@ -171,34 +253,31 @@ function Servicespage3() {
       
       <div className=" xl:hidden lg-hidden ">
         <h1 className="text-6xl text-black mt-10   rounded-full font-thin mb-6 mx-auto text-center ">
-          Our Services
+         {textArray[0]}
           
           <p className="text-lg font-thin   ">
-            We provide practical support that enables people to live their best life for as long as possible.
+            {textArray[1]}
           </p>
         </h1>
       </div>
-      <div ><h1 className='text-center  text-[30px] text-[#8D4374] xl:mt-10 '>Live-in Care</h1>
-      <p className='text-center mb-10'>Holistic Care Services encourages our clients to stay active and engaged to promote their overall well-being.</p></div>
+      <div ><h1 className='text-center  text-[30px] text-[#8D4374] xl:mt-10 '>{textArray[2]}</h1>
+      <p className='text-center mb-10'>{textArray[3]}</p></div>
       <div className='xl:w-[100%] h-auto xl:h-[1300px] lg-[1300px] bg-gray-300/20 mb-10  pb-10  shadow-xl'>
       <div className='w-full xl:h-[140px]  grid lg:grid-cols-1 md:grid-cols-2 mb-10 '>
        
         {/* Mission Statement Section */}
         <div className="sm:w-[70%]  lg:w-[82%] md:w-[100vw]  md-h-[600px]  sm:ml-80 sm:h-[200px] lg:h-[600px] lg:mx-auto md:h-[450px]  bg-gray-100 md:ml-[75px]  shadow-xl sm:rounded-2xl mb-10 grid sm:grid-cols-2 ">
           <div className="p-6 sm:p-5">
-            <p className="font-light text-[5vw] sm:text-[40px] md:text[20px] text-[#8D4374] "  >Live-in Care</p>
+            <p className="font-light text-[5vw] sm:text-[40px] md:text[20px] text-[#8D4374] "  >{textArraySecond[0]}</p>
             <p className="font-sans text-[4vw] md-text-[8vw] sm:text-[16px] text-balance">
-            Our live-in care service guarantees round-the-clock assistance, giving you and your family peace of mind. You can continue enjoying the comfort of familiar surroundings while receiving the level of care you require. Each care plan is tailored to meet individual needs, ensuring that all aspects of your health, well-being, and daily routine are carefully managed. Our caregivers also offer meaningful companionship, preventing feelings of isolation and enriching daily life.
-
-With Holistic Care Services, you can enjoy the perfect balance of independence and support, allowing you to live comfortably and confidently in your own home.
-           <br/>
+          {textArraySecond[1]}
            <br/>
             <span className='hidden lg:block'>
-            Our caregivers are specially trained to provide professional and compassionate support while respecting your personal preferences and routines. They are not only there to assist with physical needs but also to foster emotional well-being by building strong, trusting relationships. Whether you need help with mobility, managing a medical condition, or simply having someone to talk to, our live-in care ensures that you are always well-cared for in every aspect of your life. The focus is on helping you live comfortably and confidently, staying connected to the things and people you cherish most.
+          {textArraySecond[2]}
             </span>
             </p>
           </div>
-          <img src={welbeing} className="w-full lg:h-[600px] sm:h-[600px] md:mr-[100px] md:h-[400px] object-cover" alt="Descriptive Alt Text" />
+          <img src={imagesArraySecond[0]} className="w-full lg:h-[600px] sm:h-[600px] md:mr-[100px] md:h-[400px] object-cover" alt="Descriptive Alt Text" />
         </div>
        
        {/* second services */}

@@ -17,7 +17,7 @@ const Product = ({ pageIdentifier }) => {
     return () => {
       // Cleanup: Remove the script when the component unmounts
       document.body.removeChild(script);
-      console.log(`Removing review widget script for ${pageIdentifier}`);
+     
     };
   }, [pageIdentifier]); // Run effect when pageIdentifier changes
 
