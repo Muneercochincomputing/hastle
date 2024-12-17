@@ -75,11 +75,9 @@ function Dashbord() {
               <img src="https://readymadeui.com/image-1.webp" className="object-cover w-full h-full" alt="Banner" />
             </div>
             <div className="flex flex-col items-end justify-center text-right px-8 relative bg-[#8D4374] rounded-tl-[206px] z-20 before:absolute before:inset-0 before:bg-gradient-to-r from-[#8D4374] to-primary before:w-2/3 before:rounded-bl-[206px] before:-z-10">
-              <h3 className="font-bold sm:text-4xl text-2xl text-yellow-400">Management is doing Things </h3>
-              <p className="text-sm text-gray-300 mt-4">Management is doing things right; leadership is doing the right things," highlights the difference between efficiency and effectiveness. While management focuses on executing tasks correctly and following established processes</p>
-              <button type="button" className="bg-yellow-400 hover:bg-yellow-500 text-gray-800 py-4 px-8 font-semibold rounded w-max mt-8">
-                Get Started
-              </button>
+              <h3 className="font-bold sm:text-4xl text-2xl text-yellow-400">Trusted Care Solutions </h3>
+              <p className="text-sm text-gray-300 mt-4">At our care services, we prioritize the comfort, dignity, and well-being of those we serve. With a team of trained professionals, we provide personalized support tailored to meet the unique needs of each individual, ensuring a safe and nurturing environment for them to thrive.</p>
+             
             </div>
           </div>
         </div>
@@ -175,7 +173,7 @@ function Dashbord() {
           {brouchure.length > 0 && (
             <div className="bg-gradient-to-r text-gray-900 p-6 rounded-lg shadow-xl max-w-2xl w-[80%] h-[40vh] overflow-y-auto mx-auto mb-10 border-l-4 border-purple-700">
               <div className="flex justify-between items-center mb-4">
-                <h2 className="text-2xl font-semibold">Brouchure Downloaded</h2>
+                <h2 className="text-2xl font-semibold">Brochure Downloaded</h2>
               </div>
               <div className="space-y-4">
                 {brouchure.map((query, index) => (

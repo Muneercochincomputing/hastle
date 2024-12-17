@@ -41,7 +41,7 @@ function App() {
           <Route path="/service2" element={<Servicespage3 />} />
           <Route path="/service3" element={<Servicespage4 />} />
           <Route path="/careerspage" element={<Careerspage />} />
-          <Route path="/dasbord" element={<Dashbord />} />
+          <Route path="/dashboard" element={<Dashbord />} />
           <Route path="/download" element={<Brouchurecontacts />} />
           <Route path="/adminlogin" element={<Adminlogin />} />
           
