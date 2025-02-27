@@ -299,6 +299,7 @@ function Aboutus2() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8 mt-10">
+           
             {/* Deputy Manager */}
             <div className="block items-center h-auto px-6 py-4 bg-white border rounded-xl group text-center">
               <img className="w-[300px] h-[300px]" src={manager} alt="Kevin Smyth" />
@@ -321,13 +322,7 @@ function Aboutus2() {
             </div>
 
             
-      <div class="block items-center h-auto px-6 py-4 transition-colors duration-300 bg-white border rounded-xl group  dark:border-gray-700 text-center">
-      <img class="w-[300px] h-[300px]  " src={supervisor1} alt="Kevin Smyth"/>
-        <div>
-          <h2 class="text-lg sm:text-xl lg:text-2xl font-semibold text-[#8D4374] ">Jo Mitchell</h2>
-          <p class="mt-2 text-sm sm:text-base lg:text-lg text-gray-500 group-hover:text-gray-300">Recruitment Compliance Officer</p>
-        </div>
-      </div>
+      
           </div>
         </div>
       </section>
