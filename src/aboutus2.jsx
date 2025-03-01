@@ -299,7 +299,7 @@ function Aboutus2() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8 mt-10">
-         <div></div>
+         
             {/* Deputy Manager */}
             <div className="block items-center h-auto px-6 py-4 bg-white border rounded-xl group text-center">
               <img className="w-[300px] h-[300px]" src={manager} alt="Kevin Smyth" />
