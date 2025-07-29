@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const multer = require('multer');
 const { getStorage, ref, uploadBytes, getDownloadURL } = require('firebase/storage');
 const admin = require('firebase-admin');
-const { getFirestore, doc, getDoc, updateDoc, collection, query, where, getDocs } = require('firebase/firestore'); // Add missing imports
+const { getFirestore, doc, getDoc, updateDoc, collection, query, where, getDocs, addDoc,orderBy } = require('firebase/firestore'); // Add missing imports
 const path = require('path'); 
 const userRoutes = require('./routes/studentsroutes');
 const { addContacts, getContacts, addCareers, getCareers, addSubscribers, getSubscribers, addquery, getquery,updateAdmin,getAdmin,addBrouchure,getBrouchure,getCms, addnewcms,getCmsAll} = require('./controllers');
@@ -197,6 +197,102 @@ const updateTextAndImage = async (req, res) => {
 
 
 
+const insertBlogContent = async (req, res) => {
+    try {
+        const data = req.body;
+
+        // Validate required main fields
+        if (!data.mainTitle || !data.mainDescription || !data.mainImage) {
+            return res.status(400).json({
+                error: 'mainTitle, mainDescription, and mainImage are required.'
+            });
+        }
+
+        // Upload the main image
+        const mainImageUrl = await uploadImageToFirebase(
+            `blog_main_${Date.now()}`,
+            data.mainImage
+        );
+
+        // Process 3 sub-sections
+        const subSections = [];
+        for (let i = 1; i <= 3; i++) {
+            const subTitle = data[`subTitle${i}`];
+            const subDescription = data[`subDescription${i}`];
+            const subImageBase64 = data[`subImage${i}`];
+
+            let subImageUrl = '';
+            if (subImageBase64) {
+                subImageUrl = await uploadImageToFirebase(
+                    `blog_sub${i}_${Date.now()}`,
+                    subImageBase64
+                );
+            }
+
+            subSections.push({
+                title: subTitle || '',
+                description: subDescription || '',
+                image: subImageUrl
+            });
+        }
+
+        // Create blog document
+        const blogDoc = {
+            mainTitle: data.mainTitle,
+            mainDescription: data.mainDescription,
+            mainImage: mainImageUrl,
+            subSections,
+            createdAt: new Date()
+        };
+
+        // Add to Firestore
+        await addDoc(collection(db, 'blogmanagement'), blogDoc);
+
+        res.status(200).json({
+            message: 'Blog content inserted successfully.',
+            blog: blogDoc
+        });
+
+    } catch (err) {
+        console.error('Error inserting blog:', err);
+        res.status(500).json({
+            error: 'Failed to insert blog content.',
+            details: err.message
+        });
+    }
+};
+
+
+
+
+
+
+
+
+// GET /getbloglist - returns all blogs sorted by createdAt (desc)
+const getBlogsByDate = async (req, res) => {
+  try {
+    const blogsRef = collection(db, "blogmanagement");
+    const q = query(blogsRef, orderBy("createdAt", "desc"));
+    const querySnapshot = await getDocs(q);
+
+    const blogs = [];
+    querySnapshot.forEach((doc) => {
+      blogs.push({ id: doc.id, ...doc.data() });
+    });
+
+    console.log("Fetched blogs:", blogs);
+    res.status(200).json(blogs);
+  } catch (error) {
+    console.error("Error fetching blogs:", error);
+    res.status(500).json({ error: "Error fetching blogs" });
+  }
+};
+
+
+
+
+
 
 
 
@@ -229,13 +325,14 @@ app.get('/admin',  getAdmin);
 
 
 
-// content manage ment system crud urls
+
 
 app.put('/addcms',updateTextAndImage );
 app.get('/getcms/:page',getCms );
+app.get('/getbloglist', getBlogsByDate );
 app.get('/getcmsAll',getCmsAll );
 app.post('/addnewcms', addnewcms)
-
+app.post('/insertBlogContent', insertBlogContent);
 
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));

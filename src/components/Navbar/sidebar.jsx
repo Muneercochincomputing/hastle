@@ -21,7 +21,10 @@ const Sidebar = () => {
           <span>Content Managrment</span>
           </Link>
         </a>
-        
+        <Link to="/addBlogs" className="flex items-center space-x-2 py-2 px-4 hover:bg-gray-700 rounded-md">
+          <BiBookAlt className="text-xl" />
+          <span>Add Blogs</span>
+        </Link>
       </div>
     </div>
   );

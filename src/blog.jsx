@@ -10,7 +10,9 @@ import blog5 from './assets/readmoresectionimage2.jpg';
 import blog6 from './assets/readmoresectionimage3.jpg';
 import Emailsubscription from './components/Navbar/Emailsubscription';
 import axios from 'axios';
-import Reactloader from './reactloader';
+import Reactloader from './reactloader';  
+import MoreBlogs from './components/MoreBlogs';
+import AddBlogs from './components/AddBlogs';
 function Blog() {
   const [openIndex, setOpenIndex] = useState(null);
 
@@ -157,6 +159,34 @@ and preferences.` },
     },
   ];
 
+  const [showMoreBlogs, setShowMoreBlogs] = useState(false);
+  const moreBlogs = [
+    {
+      title: 'How to Choose the Right Home Care Service',
+      excerpt: 'Tips and advice for selecting the best care for your loved ones.',
+      date: '2024-06-01',
+      image: blog4,
+    },
+    {
+      title: 'Benefits of Professional Elderly Care',
+      excerpt: 'Discover the advantages of hiring professional caregivers.',
+      date: '2024-05-20',
+      image: blog5,
+    },
+    {
+      title: 'Understanding Dementia Care',
+      excerpt: 'A guide to providing compassionate care for dementia patients.',
+      date: '2024-05-10',
+      image: blog6,
+    },
+    {
+      title: 'Nutrition Tips for Seniors',
+      excerpt: 'Healthy eating habits to support senior well-being.',
+      date: '2024-04-28',
+      image: blog1,
+    },
+  ];
+
   return (
     <div>
       <Navbar />
@@ -253,6 +283,23 @@ and preferences.` },
           </div>
         </div>
       </div>
+
+      {/* Explore More Blogs Button */}
+      <div className="flex justify-center my-8">
+        <button
+          className="bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300"
+          onClick={() => setShowMoreBlogs(true)}
+        >
+          Explore More Blogs
+        </button>
+      </div>
+
+      {/* MoreBlogs Modal */}
+      <MoreBlogs show={showMoreBlogs} onClose={() => setShowMoreBlogs(false)} blogs={moreBlogs} />
+
+      
+
+
 
       {/* FAQ Section */}
       <div className="mb-8 lg:mx-40 mx-10 mt-10" >

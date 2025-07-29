@@ -23,6 +23,9 @@ const Blogcontent5 = lazy(() => import('./blogcontent5'));
 const Blogcontent6 = lazy(() => import('./blogcontent6'));
 const Adminlogin = lazy(() => import('./components/Navbar/Adminlogin'));
 
+const AddBlogs = lazy(() => import('./components/AddBlogs'));
+const BlogDetails = lazy(() => import('./components/BlogDetails'));
+
 const ContactUs = lazy(() => import('./contactus'));
 const Privacypolicy = lazy(() => import('./privacypolicy'));
 const Leagalnotice = lazy(() => import('./Leagalnotice'));
@@ -56,6 +59,8 @@ function App() {
           <Route path="/privacypolicy" element={<Privacypolicy />} />
           <Route path="/leagalnotice" element={<Leagalnotice />} />
           <Route path="/contentManage" element={<CMS />} />
+          <Route path="/addBlogs" element={<AddBlogs />} />
+          <Route path="/blog-details" element={<BlogDetails />} />
         </Routes>
       </Suspense>
     </Router>
