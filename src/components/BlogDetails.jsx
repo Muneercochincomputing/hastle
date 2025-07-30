@@ -35,7 +35,7 @@ const BlogDetails = () => {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none md:block hidden" />
           {/* Calendar Date Badge */}
-          {blog.createdAt && (
+          {(blog.addingDate || blog.createdAt) && (
             <div
               className="absolute top-4 right-4 z-20 md:top-8 md:right-8 md:w-[110px] md:h-[150px] w-[70px] h-[95px]"
             >
@@ -45,7 +45,12 @@ const BlogDetails = () => {
                 {/* Calendar Header (Month) */}
                 <div className="w-full bg-gray-200 text-gray-800 text-center py-1 md:py-2 font-bold text-base md:text-lg tracking-widest uppercase border-b-2 border-gray-300 relative z-20" style={{ borderTopLeftRadius: 12, borderTopRightRadius: 12 }}>
                   {(() => {
-                    const d = blog.createdAt.seconds ? new Date(blog.createdAt.seconds * 1000) : new Date(blog.createdAt);
+                    let d;
+                    if (blog.addingDate) {
+                      d = blog.addingDate.seconds ? new Date(blog.addingDate.seconds * 1000) : new Date(blog.addingDate);
+                    } else {
+                      d = blog.createdAt.seconds ? new Date(blog.createdAt.seconds * 1000) : new Date(blog.createdAt);
+                    }
                     return d.toLocaleString('default', { month: 'long' });
                   })()}
                 </div>
@@ -53,7 +58,12 @@ const BlogDetails = () => {
                 <div className="flex-1 flex flex-col justify-center items-center bg-white w-full">
                   <span className="text-gray-900 font-extrabold text-3xl md:text-5xl leading-none mt-1 md:mt-2 drop-shadow-sm">
                     {(() => {
-                      const d = blog.createdAt.seconds ? new Date(blog.createdAt.seconds * 1000) : new Date(blog.createdAt);
+                      let d;
+                      if (blog.addingDate) {
+                        d = blog.addingDate.seconds ? new Date(blog.addingDate.seconds * 1000) : new Date(blog.addingDate);
+                      } else {
+                        d = blog.createdAt.seconds ? new Date(blog.createdAt.seconds * 1000) : new Date(blog.createdAt);
+                      }
                       return d.getDate();
                     })()}
                   </span>
@@ -61,7 +71,12 @@ const BlogDetails = () => {
                 {/* Calendar Footer (Year) with tear-off effect */}
                 <div className="w-full bg-gray-100 text-gray-900 text-center py-1 md:py-2 text-[10px] md:text-xs font-extrabold border-t-2 border-dashed border-gray-300 tracking-wider relative z-20" style={{ borderBottomLeftRadius: 12, borderBottomRightRadius: 12 }}>
                   {(() => {
-                    const d = blog.createdAt.seconds ? new Date(blog.createdAt.seconds * 1000) : new Date(blog.createdAt);
+                    let d;
+                    if (blog.addingDate) {
+                      d = blog.addingDate.seconds ? new Date(blog.addingDate.seconds * 1000) : new Date(blog.addingDate);
+                    } else {
+                      d = blog.createdAt.seconds ? new Date(blog.createdAt.seconds * 1000) : new Date(blog.createdAt);
+                    }
                     return d.getFullYear();
                   })()}
                 </div>

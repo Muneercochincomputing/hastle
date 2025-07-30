@@ -14,6 +14,8 @@ const AddBlogs = () => {
   const [mainImagePreview, setMainImagePreview] = useState(null);
   const [mainImageName, setMainImageName] = useState('');
   const [mainDescription, setMainDescription] = useState('');
+  // New: Optional adding date
+  const [addingDate, setAddingDate] = useState('');
 
   const [subtitles, setSubtitles] = useState([
     { subtitle: '', image: null, imagePreview: null, imageName: '', description: '' },
@@ -37,6 +39,7 @@ const AddBlogs = () => {
         { subtitle: '', image: null, imagePreview: null, imageName: '', description: '' },
         { subtitle: '', image: null, imagePreview: null, imageName: '', description: '' },
       ]);
+      setAddingDate('');
     }
   }, [editId]);
 
@@ -57,6 +60,19 @@ const AddBlogs = () => {
         description: blog.subSections?.[i]?.description || '',
       }))
     ]);
+    // Support Firestore Timestamp, ISO string, or date string
+    let dateStr = '';
+    if (blog.addingDate) {
+      if (typeof blog.addingDate === 'object' && blog.addingDate.seconds) {
+        // Firestore Timestamp
+        const d = new Date(blog.addingDate.seconds * 1000);
+        dateStr = d.toISOString().split('T')[0];
+      } else if (typeof blog.addingDate === 'string') {
+        // ISO or date string
+        dateStr = blog.addingDate.split('T')[0];
+      }
+    }
+    setAddingDate(dateStr);
   };
 
   // State for showing blog list in edit mode
@@ -138,6 +154,8 @@ const AddBlogs = () => {
       formData.append('subTitle3', subtitles[2].subtitle);
       formData.append('subDescription3', subtitles[2].description);
       if (subtitles[2].image) formData.append('subImage3', subtitles[2].image);
+      // New: Optional adding date
+      if (addingDate) formData.append('addingDate', addingDate);
 
       const response = await fetch('/insertBlogContent', {
         method: 'POST',
@@ -179,6 +197,8 @@ const AddBlogs = () => {
       formData.append('subTitle3', subtitles[2].subtitle);
       formData.append('subDescription3', subtitles[2].description);
       if (subtitles[2].image) formData.append('subImage3', subtitles[2].image);
+      // New: Optional adding date
+      if (addingDate) formData.append('addingDate', addingDate);
 
       const response = await fetch(`/blog/${editId}`, {
         method: 'PUT',
@@ -302,6 +322,17 @@ const AddBlogs = () => {
         <h2 className="text-3xl font-bold text-center text-white mb-2 tracking-tight font-serif">{editId ? 'Edit Blog' : 'Add New Blog'}</h2>
         <p className="text-center text-gray-300 mb-8 font-normal">{editId ? 'Update the details below to edit the blog post.' : 'Fill in the details below to create a new blog post.'}</p>
         <form onSubmit={handleSubmit} className="">
+          {/* Optional Adding Date */}
+          <div className="mb-6">
+            <label className="block font-semibold mb-2 text-gray-200">Adding Date (optional)</label>
+            <input
+              type="date"
+              className="w-full border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-600 bg-gray-700 text-white transition-all duration-200 shadow-sm placeholder-gray-400"
+              value={addingDate}
+              onChange={e => setAddingDate(e.target.value)}
+            />
+            <div className="text-xs text-gray-400 mt-1">If left empty, the current date will be used.</div>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             {/* Left: Main Blog Info */}
             <div className="flex flex-col gap-8 justify-start">

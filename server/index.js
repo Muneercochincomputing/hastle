@@ -46,12 +46,18 @@ const updateBlogContent = async (req, res) => {
     }
 
     // Update blog document (all fields)
+    // Update blog document (all fields)
+    let addingDate = null;
+    if (data.addingDate) {
+      addingDate = new Date(data.addingDate);
+    }
     const updatedBlog = {
       mainTitle,
       mainDescription,
       mainImage: mainImageUrl,
       subSections,
       // Do not update createdAt
+      ...(addingDate ? { addingDate } : {})
     };
     await updateDoc(blogRef, updatedBlog);
 
@@ -338,13 +344,19 @@ const insertBlogContent = async (req, res) => {
         }
 
         // Create blog document
-        const blogDoc = {
-            mainTitle: data.mainTitle,
-            mainDescription: data.mainDescription,
-            mainImage: mainImageUrl,
-            subSections,
-            createdAt: new Date()
-        };
+    // Create blog document
+    let addingDate = null;
+    if (data.addingDate) {
+        addingDate = new Date(data.addingDate);
+    }
+    const blogDoc = {
+        mainTitle: data.mainTitle,
+        mainDescription: data.mainDescription,
+        mainImage: mainImageUrl,
+        subSections,
+        createdAt: new Date(),
+        addingDate: addingDate || null
+    };
 
         // Add to Firestore
         await addDoc(collection(db, 'blogmanagement'), blogDoc);
