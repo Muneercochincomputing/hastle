@@ -35,56 +35,40 @@ const LatestBlogs = ({ apiUrl }) => {
   return (
     <div className="w-full overflow-x-auto py-4 relative">
       <div className="flex space-x-6 min-w-[700px]">
-        {blogs.slice(0, 8).map((blog, idx) => {
-          const isLatest = idx === 0;
-          return (
-            <Link
-              to={{ pathname: '/blogdetails' }}
-              state={{ blog }}
-              key={blog._id || idx}
-              className={
-                `flex-shrink-0 w-80 rounded-xl overflow-hidden border transition-shadow duration-300 group ` +
-                (isLatest
-                  ? 'bg-gradient-to-br from-yellow-100 to-pink-100 border-pink-400 shadow-2xl ring-2 ring-pink-300 scale-105 z-10'
-                  : 'bg-white border-gray-200 shadow-lg hover:shadow-2xl')
-              }
-              style={isLatest ? { boxShadow: '0 8px 32px 0 rgba(255, 0, 128, 0.18)' } : {}}
-            >
-              <div className="relative h-48 w-full overflow-hidden">
-                <img
-                  src={blog.mainImage}
-                  alt={blog.mainTitle}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-                {/* Date badge */}
-                {blog.createdAt && (
-                  <div className="absolute top-3 right-3 bg-white/90 rounded-lg px-3 py-1 text-xs font-bold text-gray-700 shadow">
-                    {(() => {
-                      const d = blog.createdAt.seconds ? new Date(blog.createdAt.seconds * 1000) : new Date(blog.createdAt);
-                      return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: '2-digit' });
-                    })()}
-                  </div>
-                )}
-                {isLatest && (
-                  <div className="absolute top-3 left-3 bg-pink-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg animate-pulse z-20">
-                    Latest
-                  </div>
-                )}
+        {blogs.slice(0, 8).map((blog, idx) => (
+          <Link
+            to={{ pathname: '/blogdetails' }}
+            state={{ blog }}
+            key={blog._id || idx}
+            className="flex-shrink-0 w-80 rounded-xl overflow-hidden border bg-white border-gray-200 shadow-lg hover:shadow-2xl transition-shadow duration-300 group"
+          >
+            <div className="relative h-48 w-full overflow-hidden">
+              <img
+                src={blog.mainImage}
+                alt={blog.mainTitle}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+              {/* Date badge */}
+              {blog.createdAt && (
+                <div className="absolute top-3 right-3 bg-white/90 rounded-lg px-3 py-1 text-xs font-bold text-gray-700 shadow">
+                  {(() => {
+                    const d = blog.createdAt.seconds ? new Date(blog.createdAt.seconds * 1000) : new Date(blog.createdAt);
+                    return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: '2-digit' });
+                  })()}
+                </div>
+              )}
+            </div>
+            <div className="p-4">
+              <div className="flex justify-center items-center">
+                <h3 className="text-lg font-bold text-gray-900 mb-2 text-center px-6 truncate w-full" style={{lineHeight: 1.25}}>{blog.mainTitle}</h3>
               </div>
-              <div className={isLatest ? "p-5" : "p-4"}>
-                <h3 className={
-                  (isLatest
-                    ? "text-xl font-extrabold text-pink-700 mb-2 truncate drop-shadow"
-                    : "text-lg font-bold text-gray-900 mb-2 truncate")
-                }>{blog.mainTitle}</h3>
-                <p className={isLatest ? "text-gray-800 text-base font-semibold line-clamp-3 mb-2" : "text-gray-600 text-sm line-clamp-3 mb-2"}>
-                  {blog.mainDescription?.slice(0, 120)}{blog.mainDescription?.length > 120 ? '...' : ''}
-                </p>
-                <span className={isLatest ? "text-pink-600 text-sm font-bold" : "text-blue-500 text-xs font-semibold"}>See more</span>
-              </div>
-            </Link>
-          );
-        })}
+              <p className="text-gray-600 text-sm line-clamp-3 mb-2 text-center px-1">
+                {blog.mainDescription?.slice(0, 120)}{blog.mainDescription?.length > 120 ? '...' : ''}
+              </p>
+              <span className="text-blue-500 text-xs font-semibold block text-center">See more</span>
+            </div>
+          </Link>
+        ))}
       </div>
       {/* Right arrow for mobile scroll hint */}
       <div className="block md:hidden absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none z-20">

@@ -9,7 +9,7 @@ const BlogDetails = () => {
     return <div className="p-8 text-center text-gray-500">No blog data found.</div>;
   }
 
-  // Combine all content: mainDescription + subSections
+
   const allSections = [
     { title: blog.mainTitle, image: blog.mainImage, description: blog.mainDescription, isMain: true },
     ...(blog.subSections || []).map(sub => ({ ...sub, isMain: false }))
@@ -18,7 +18,7 @@ const BlogDetails = () => {
   return (
     <div className="min-h-screen w-full bg-gradient-to-br from-white to-blue-50">
       <article className="w-full bg-white shadow-2xl rounded-none md:rounded-3xl overflow-hidden border border-gray-200 animate-fade-in">
-        {/* Main Title (mobile first) */}
+    
         <div className="block md:hidden px-4 pt-8">
           <h1 className="text-xl font-extrabold text-gray-900 text-center leading-tight line-clamp-3 mb-4" style={{ wordBreak: 'break-word' }}>
             {blog.mainTitle}
@@ -68,19 +68,39 @@ const BlogDetails = () => {
               </div>
             </div>
           )}
-          {/* Main Title (desktop, over image) */}
-          <h1 className="hidden md:block absolute bottom-8 left-0 w-full text-center text-4xl md:text-5xl font-extrabold text-white drop-shadow-lg tracking-tight px-4 md:px-0 z-30">
-            {blog.mainTitle}
-          </h1>
+          {/* Main Title (centered within main image, max width, two lines) */}
+          <div className="hidden md:flex absolute bottom-8 left-0 w-full z-30 pointer-events-none">
+            <h1
+              className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white drop-shadow-lg tracking-tight px-8 md:px-0 text-center"
+              style={{
+                maxWidth: '90vw',
+                marginLeft: 'auto',
+                marginRight: 'auto',
+                wordBreak: 'break-word',
+                display: '-webkit-box',
+                WebkitBoxOrient: 'vertical',
+                WebkitLineClamp: 2,
+                overflow: 'hidden',
+                pointerEvents: 'auto',
+                fontSize: 'clamp(1.5rem, 4vw, 3rem)',
+              }}
+              title={blog.mainTitle}
+              dangerouslySetInnerHTML={{
+                __html: (blog.mainTitle || '').replace(/<br\s*\/?\s*>/gi, '<br />')
+              }}
+            />
+          </div>
         </div>
 
         <div className="px-2 sm:px-8 md:px-24 py-8 md:py-14 w-full">
           {/* Main Description */}
-          <div className="prose prose-lg max-w-none text-gray-800 mb-10 text-justify leading-relaxed">
-            {blog.mainDescription}
-          </div>
+          <div className="prose prose-lg max-w-none text-gray-800 mb-10 text-justify leading-relaxed"
+            dangerouslySetInnerHTML={{
+              __html: (blog.mainDescription || '').replace(/<br\s*\/?\s*>/gi, '<br />')
+            }}
+          />
 
-          {/* All sub-sections as part of the main content */}
+          
           {blog.subSections && blog.subSections.length > 0 && (
             <div className="space-y-14">
               {blog.subSections.map((sub, idx) => {
@@ -88,13 +108,13 @@ const BlogDetails = () => {
                 return (
                   <section
                     key={idx}
-                    className={`flex flex-col md:flex-row ${isEven ? 'md:flex-row-reverse' : ''} items-center gap-8 md:gap-12 bg-gray-50 rounded-2xl shadow border border-gray-200 p-6 md:p-10`}
+                    className={`flex flex-col md:flex-row ${isEven ? 'md:flex-row-reverse' : ''} items-center gap-8 md:gap-12 py-6 md:py-10`}
                   >
                     {sub.image && (
                       <img
                         src={sub.image}
                         alt={sub.title}
-                        className="w-full md:w-1/2 h-56 md:h-72 object-cover rounded-xl shadow mb-4 md:mb-0 border border-gray-200"
+                        className="w-full md:w-1/2 h-56 md:h-72 object-cover rounded-xl mb-4 md:mb-0"
                         style={{ maxWidth: 380, minWidth: 180, background: '#fff' }}
                       />
                     )}
@@ -102,9 +122,11 @@ const BlogDetails = () => {
                       <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3 mt-2 font-serif tracking-tight">
                         {sub.title}
                       </h2>
-                      <div className="prose prose-base max-w-none text-gray-700 text-justify">
-                        {sub.description}
-                      </div>
+                      <div className="prose prose-base max-w-none text-gray-700 text-justify"
+                        dangerouslySetInnerHTML={{
+                          __html: (sub.description || '').replace(/<br\s*\/?\s*>/gi, '<br />')
+                        }}
+                      />
                     </div>
                   </section>
                 );

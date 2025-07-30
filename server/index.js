@@ -1,3 +1,76 @@
+// PUT /blog/:id - update an existing blog post
+
+// Handler function for updating a blog (all fields, not just images)
+const updateBlogContent = async (req, res) => {
+  try {
+    const blogId = req.params.id;
+    const data = req.body;
+    const files = req.files;
+    const blogRef = doc(db, 'blogmanagement', blogId);
+    const blogSnap = await getDoc(blogRef);
+    if (!blogSnap.exists()) {
+      return res.status(404).json({ error: 'Blog not found' });
+    }
+    const oldBlog = blogSnap.data();
+
+    // Always update mainTitle and mainDescription from request
+    const mainTitle = data.mainTitle || oldBlog.mainTitle || '';
+    const mainDescription = data.mainDescription || oldBlog.mainDescription || '';
+
+    // Main image: upload new if provided, else keep old
+    let mainImageUrl = oldBlog.mainImage || '';
+    if (files.mainImage && files.mainImage[0]) {
+      mainImageUrl = await uploadImageToFirebase(
+        `blog_main_${Date.now()}`,
+        files.mainImage[0].buffer
+      );
+    }
+
+    // Sub-sections: update each, upload new image if provided, always update text fields
+    const subSections = [];
+    for (let i = 1; i <= 3; i++) {
+      const subTitle = data[`subTitle${i}`] !== undefined ? data[`subTitle${i}`] : (oldBlog.subSections && oldBlog.subSections[i-1]?.title) || '';
+      const subDescription = data[`subDescription${i}`] !== undefined ? data[`subDescription${i}`] : (oldBlog.subSections && oldBlog.subSections[i-1]?.description) || '';
+      let subImageUrl = (oldBlog.subSections && oldBlog.subSections[i-1]?.image) || '';
+      if (files[`subImage${i}`] && files[`subImage${i}`][0]) {
+        subImageUrl = await uploadImageToFirebase(
+          `blog_sub${i}_${Date.now()}`,
+          files[`subImage${i}`][0].buffer
+        );
+      }
+      subSections.push({
+        title: subTitle,
+        description: subDescription,
+        image: subImageUrl
+      });
+    }
+
+    // Update blog document (all fields)
+    const updatedBlog = {
+      mainTitle,
+      mainDescription,
+      mainImage: mainImageUrl,
+      subSections,
+      // Do not update createdAt
+    };
+    await updateDoc(blogRef, updatedBlog);
+
+    res.status(200).json({
+      message: 'Blog updated successfully.',
+      blog: { id: blogId, ...updatedBlog }
+    });
+  } catch (err) {
+    console.error('Error updating blog:', err);
+    res.status(500).json({
+      error: 'Failed to update blog.',
+      details: err.message
+    });
+  }
+};
+
+// Attach the updateBlogContent endpoint in the endpoint section
+
+
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
@@ -102,10 +175,17 @@ const { Buffer } = require('buffer');
 const sharp = require('sharp'); // To resize and compress if necessary
 
 // Helper function to upload an image to Firebase Storage
-const uploadImageToFirebase = async (filename, imageBuffer) => {
-    // Remove base64 prefix if it exists
-    const base64Image = imageBuffer.replace(/^data:image\/\w+;base64,/, '');
-    let buffer = Buffer.from(base64Image, 'base64'); // Convert to Buffer
+const uploadImageToFirebase = async (filename, imageInput) => {
+    let buffer;
+    if (Buffer.isBuffer(imageInput)) {
+        buffer = imageInput;
+    } else if (typeof imageInput === 'string') {
+        // Remove base64 prefix if it exists
+        const base64Image = imageInput.replace(/^data:image\/\w+;base64,/, '');
+        buffer = Buffer.from(base64Image, 'base64');
+    } else {
+        throw new Error('Invalid image input type');
+    }
 
     // Optionally compress the image if it exceeds a certain size
     const maxSize = 10 * 1024 * 1024; // 10MB
@@ -196,13 +276,37 @@ const updateTextAndImage = async (req, res) => {
 
 
 
+// GET /getbloglistgroup - returns all blogs grouped by mainTitle
+app.get('/getbloglistgroup', async (req, res) => {
+  try {
+    const blogsRef = collection(db, 'blogmanagement');
+    const q = query(blogsRef, orderBy('createdAt', 'desc'));
+    const querySnapshot = await getDocs(q);
+    const groups = {};
+    querySnapshot.forEach((doc) => {
+      const data = doc.data();
+      const groupKey = data.mainTitle || 'Other';
+      if (!groups[groupKey]) groups[groupKey] = [];
+      groups[groupKey].push({ id: doc.id, ...data });
+    });
+    res.status(200).json(groups);
+  } catch (error) {
+    console.error('Error fetching grouped blogs:', error);
+    res.status(500).json({ error: 'Error fetching grouped blogs' });
+  }
+});
 
+
+
+
+// Updated insertBlogContent to handle multipart/form-data with multer
 const insertBlogContent = async (req, res) => {
     try {
         const data = req.body;
+        const files = req.files;
 
         // Validate required main fields
-        if (!data.mainTitle || !data.mainDescription || !data.mainImage) {
+        if (!data.mainTitle || !data.mainDescription || !files || !files.mainImage || !files.mainImage[0]) {
             return res.status(400).json({
                 error: 'mainTitle, mainDescription, and mainImage are required.'
             });
@@ -211,7 +315,7 @@ const insertBlogContent = async (req, res) => {
         // Upload the main image
         const mainImageUrl = await uploadImageToFirebase(
             `blog_main_${Date.now()}`,
-            data.mainImage
+            files.mainImage[0].buffer
         );
 
         // Process 3 sub-sections
@@ -219,16 +323,13 @@ const insertBlogContent = async (req, res) => {
         for (let i = 1; i <= 3; i++) {
             const subTitle = data[`subTitle${i}`];
             const subDescription = data[`subDescription${i}`];
-            const subImageBase64 = data[`subImage${i}`];
-
             let subImageUrl = '';
-            if (subImageBase64) {
+            if (files[`subImage${i}`] && files[`subImage${i}`][0]) {
                 subImageUrl = await uploadImageToFirebase(
                     `blog_sub${i}_${Date.now()}`,
-                    subImageBase64
+                    files[`subImage${i}`][0].buffer
                 );
             }
-
             subSections.push({
                 title: subTitle || '',
                 description: subDescription || '',
@@ -323,6 +424,12 @@ app.get('/Queries',  getquery);
 app.put('/admin',  updateAdmin);
 app.get('/admin',  getAdmin);
 
+app.put('/blog/:id', upload.fields([
+  { name: 'mainImage', maxCount: 1 },
+  { name: 'subImage1', maxCount: 1 },
+  { name: 'subImage2', maxCount: 1 },
+  { name: 'subImage3', maxCount: 1 },
+]), updateBlogContent);
 
 
 
@@ -332,7 +439,13 @@ app.get('/getcms/:page',getCms );
 app.get('/getbloglist', getBlogsByDate );
 app.get('/getcmsAll',getCmsAll );
 app.post('/addnewcms', addnewcms)
-app.post('/insertBlogContent', insertBlogContent);
+// Use multer to handle file uploads for blog content
+app.post('/insertBlogContent', upload.fields([
+  { name: 'mainImage', maxCount: 1 },
+  { name: 'subImage1', maxCount: 1 },
+  { name: 'subImage2', maxCount: 1 },
+  { name: 'subImage3', maxCount: 1 },
+]), insertBlogContent);
 
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
