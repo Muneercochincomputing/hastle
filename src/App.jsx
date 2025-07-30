@@ -60,7 +60,7 @@ function App() {
           <Route path="/leagalnotice" element={<Leagalnotice />} />
           <Route path="/contentManage" element={<CMS />} />
           <Route path="/addBlogs" element={<AddBlogs />} />
-          <Route path="/blog-details" element={<BlogDetails />} />
+          <Route path="/blogdetails" element={<BlogDetails />} />
         </Routes>
       </Suspense>
     </Router>

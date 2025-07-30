@@ -18,26 +18,32 @@ const BlogDetails = () => {
   return (
     <div className="min-h-screen w-full bg-gradient-to-br from-white to-blue-50">
       <article className="w-full bg-white shadow-2xl rounded-none md:rounded-3xl overflow-hidden border border-gray-200 animate-fade-in">
-        {/* Main Blog Image */}
-        <div className="relative w-full" style={{ minHeight: 220, maxHeight: 520 }}>
+        {/* Main Title (mobile first) */}
+        <div className="block md:hidden px-4 pt-8">
+          <h1 className="text-xl font-extrabold text-gray-900 text-center leading-tight line-clamp-3 mb-4" style={{ wordBreak: 'break-word' }}>
+            {blog.mainTitle}
+          </h1>
+        </div>
+        {/* Main Image and Calendar (mobile: image after title, desktop: image first) */}
+        <div className="relative w-full flex flex-col md:block" style={{ minHeight: 220, maxHeight: 520 }}>
+          {/* Main Image (mobile below title, desktop as before) */}
           <img
             src={blog.mainImage}
             alt={blog.mainTitle}
-            className="w-full object-cover object-center bg-white transition-transform duration-500"
+            className="w-full object-cover object-center bg-white transition-transform duration-500 md:relative md:z-10"
             style={{ maxHeight: 520, minHeight: 220, height: '40vw', minWidth: '100vw' }}
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none md:block hidden" />
           {/* Calendar Date Badge */}
           {blog.createdAt && (
             <div
-              className="absolute top-8 right-8 z-20"
-              style={{ width: 110, height: 150 }}
+              className="absolute top-4 right-4 z-20 md:top-8 md:right-8 md:w-[110px] md:h-[150px] w-[70px] h-[95px]"
             >
               <div className="w-full h-full rounded-2xl shadow-2xl border border-gray-400 bg-white flex flex-col items-center overflow-hidden relative">
                 {/* Calendar Top Ring */}
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-16 h-3 bg-gray-300 rounded-b-xl shadow-inner z-10" />
+                <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-10 h-2 bg-gray-300 rounded-b-xl shadow-inner z-10 md:w-16 md:h-3" />
                 {/* Calendar Header (Month) */}
-                <div className="w-full bg-gray-200 text-gray-800 text-center py-2 font-bold text-lg tracking-widest uppercase border-b-2 border-gray-300 relative z-20" style={{ borderTopLeftRadius: 12, borderTopRightRadius: 12 }}>
+                <div className="w-full bg-gray-200 text-gray-800 text-center py-1 md:py-2 font-bold text-base md:text-lg tracking-widest uppercase border-b-2 border-gray-300 relative z-20" style={{ borderTopLeftRadius: 12, borderTopRightRadius: 12 }}>
                   {(() => {
                     const d = blog.createdAt.seconds ? new Date(blog.createdAt.seconds * 1000) : new Date(blog.createdAt);
                     return d.toLocaleString('default', { month: 'long' });
@@ -45,7 +51,7 @@ const BlogDetails = () => {
                 </div>
                 {/* Calendar Day */}
                 <div className="flex-1 flex flex-col justify-center items-center bg-white w-full">
-                  <span className="text-gray-900 font-extrabold text-5xl leading-none mt-2 drop-shadow-sm">
+                  <span className="text-gray-900 font-extrabold text-3xl md:text-5xl leading-none mt-1 md:mt-2 drop-shadow-sm">
                     {(() => {
                       const d = blog.createdAt.seconds ? new Date(blog.createdAt.seconds * 1000) : new Date(blog.createdAt);
                       return d.getDate();
@@ -53,7 +59,7 @@ const BlogDetails = () => {
                   </span>
                 </div>
                 {/* Calendar Footer (Year) with tear-off effect */}
-                <div className="w-full bg-gray-100 text-gray-900 text-center py-2 text-xs font-extrabold border-t-2 border-dashed border-gray-300 tracking-wider relative z-20" style={{ borderBottomLeftRadius: 12, borderBottomRightRadius: 12 }}>
+                <div className="w-full bg-gray-100 text-gray-900 text-center py-1 md:py-2 text-[10px] md:text-xs font-extrabold border-t-2 border-dashed border-gray-300 tracking-wider relative z-20" style={{ borderBottomLeftRadius: 12, borderBottomRightRadius: 12 }}>
                   {(() => {
                     const d = blog.createdAt.seconds ? new Date(blog.createdAt.seconds * 1000) : new Date(blog.createdAt);
                     return d.getFullYear();
@@ -62,7 +68,8 @@ const BlogDetails = () => {
               </div>
             </div>
           )}
-          <h1 className="absolute bottom-8 left-0 w-full text-center text-4xl md:text-5xl font-extrabold text-white drop-shadow-lg tracking-tight px-4 md:px-0">
+          {/* Main Title (desktop, over image) */}
+          <h1 className="hidden md:block absolute bottom-8 left-0 w-full text-center text-4xl md:text-5xl font-extrabold text-white drop-shadow-lg tracking-tight px-4 md:px-0 z-30">
             {blog.mainTitle}
           </h1>
         </div>

@@ -12,6 +12,7 @@ import Emailsubscription from './components/Navbar/Emailsubscription';
 import axios from 'axios';
 import Reactloader from './reactloader';  
 import MoreBlogs from './components/MoreBlogs';
+import LatestBlogs from './components/LatestBlogs';
 import AddBlogs from './components/AddBlogs';
 function Blog() {
   const [openIndex, setOpenIndex] = useState(null);
@@ -214,27 +215,52 @@ and preferences.` },
         </h2>
       </div>
 
-      {/* Blog Posts Section */}
+
+
+
+
+
+      {/* Blog Posts Section - Latest Blogs (horizontal scrollable cards) */}
       <section id="blog-section" className="container mx-auto px-6 md:px-12 py-16">
-        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-3">
-          {posts.map((post, index) => (
-            <article key={index} className="relative group bg-white rounded-lg shadow-lg overflow-hidden transition duration-300 transform hover:scale-105">
-              <Link to={`/blogcontent${index + 1}`}>
-                <div className=" bg-gradient-to-b from-transparent to-black opacity-50 group-hover:opacity-70 transition duration-300"></div>
-                <img src={post.image} alt={post.title} className="w-full h-64 object-cover transition duration-300 transform group-hover:scale-110" />
-                <div className=" bottom-0 p-6">
-                  <h2 className="text-2xl font-bold text-black mb-2 transition duration-300 group-hover:text-yellow-400">{post.title}</h2>
-                  <p className="text-gray-300 text-sm">{post.excerpt}</p>
-                  <div className="mt-4 flex items-center justify-between text-sm text-gray-300">
-                    
-                    <p>{post.date}</p>
+        <LatestBlogs apiUrl={url} />
+      </section>
+
+      {/* Popular Blogs Section (using posts array) */}
+      <div className="text-center my-12">
+        <h2 className="text-3xl font-extrabold text-[#333] relative inline-block">
+          Popular Blogs
+          <div className='h-10'></div>
+          <span className="block w-4/6 h-1  bg-yellow-400 rounded-full absolute bottom-0 left-1/2 transform -translate-x-1/2"></span>
+        </h2>
+      </div>
+      <div className="container mx-auto px-6 md:px-12 py-8">
+        <div className={`flex flex-wrap gap-12 justify-center`}>
+          {posts.map((blog, idx) => {
+            // Map each card to its respective blogcontent route
+            const blogContentRoutes = ['/blogcontent1', '/blogcontent2', '/blogcontent3'];
+            return (
+              <Link
+                key={idx}
+                to={blogContentRoutes[idx]}
+                className="relative group bg-white rounded-lg shadow-lg overflow-hidden transition duration-300 transform hover:scale-105 w-[380px]"
+                style={{ textDecoration: 'none' }}
+              >
+                <img src={blog.image} alt={blog.title} className="w-full h-64 object-cover transition duration-300 transform group-hover:scale-110" />
+                <div className="bottom-0 p-6">
+                  <h2 className="text-lg font-bold text-black mb-2 transition duration-300 group-hover:text-yellow-400 line-clamp-3">{blog.title}</h2>
+                  <p className="text-gray-500 text-sm mb-2 line-clamp-7">
+                    {blog.excerpt}
+                    <span className="text-blue-500 font-semibold ml-1">See more</span>
+                  </p>
+                  <div className="mt-2 flex items-center justify-between text-sm text-gray-400">
+                    <p>{blog.date}</p>
                   </div>
                 </div>
-              </Link> 
-            </article>
-          ))}
+              </Link>
+            );
+          })}
         </div>
-      </section>
+      </div>
       
       <Emailsubscription/>
 
@@ -245,41 +271,25 @@ and preferences.` },
             {/* Add any additional content here if needed */}
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-6 mt-16 max-md:max-w-lg mx-auto">
-            <Link to='/blogcontent4'>
-              <div className="bg-white cursor-pointer rounded overflow-hidden lg:h-[570px] shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] relative top-0 hover:-top-2 transition-all duration-300">
-                <img src={imagesArrayThird[0]} alt="Blog Post 1" className="w-full h-60 object-cover" />
-                <div className="p-6">
-                  <span className="text-sm block text-gray-400 mb-2">{textArrayThird[0]} </span>
-                  <h3 className="text-xl font-bold text-[#333]">{textArrayThird[1]}</h3>
-                  <hr className="my-6" />
-                  <p className="text-gray-400 text-sm">{textArrayThird[2]}</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-16 max-md:max-w-lg mx-auto">
+            {[0, 1, 2].map((idx) => (
+              <Link key={idx} to={`/blogcontent${4 + idx}`} className="flex">
+                <div className="bg-white cursor-pointer rounded overflow-hidden shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] relative top-0 hover:-top-2 transition-all duration-300 flex flex-col w-full h-[560px] min-h-[560px] max-h-[560px]">
+                  <img src={imagesArrayThird[idx]} alt={`Blog Post ${idx + 1}`} className="w-full h-60 object-cover" />
+                  <div className="p-6 flex flex-col flex-1 justify-between">
+                    <div>
+                      <span className="text-sm block text-gray-400 mb-2">{textArrayThird[idx * 3]}</span>
+                      <h3 className="text-xl font-bold text-[#333]">{textArrayThird[idx * 3 + 1]}</h3>
+                      <hr className="my-6" />
+                      <p className="text-gray-400 text-sm line-clamp-4 pb-4">
+                        {textArrayThird[idx * 3 + 2]}
+                        <span className="text-blue-500 font-semibold ml-1">See more</span>
+                      </p>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </Link>
-            <Link to='/blogcontent5'>
-              <div className="bg-white cursor-pointer lg:h-[570px] rounded overflow-hidden shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] relative top-0 hover:-top-2 transition-all duration-300">
-                <img src={imagesArrayThird[1]} alt="Blog Post 2" className="w-full h-60 object-cover" />
-                <div className="p-6">
-                  <span className="text-sm block text-gray-400 mb-2">{textArrayThird[3]} </span>
-                  <h3 className="text-xl font-bold text-[#333]">{textArrayThird[4]}</h3>
-                  <hr className="my-6" />
-                  <p className="text-gray-400 text-sm">{textArrayThird[5]}</p>
-                </div>
-              </div>
-            </Link>
-            <Link to='/blogcontent6'>
-              <div className="bg-white cursor-pointer rounded overflow-hidden shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] relative top-0 hover:-top-2 transition-all duration-300">
-                <img src={imagesArrayThird[2]} alt="Blog Post 3" className="w-full h-60 object-cover" />
-                <div className="p-6">
-                  <span className="text-sm block text-gray-400 mb-2">{textArrayThird[6]} </span>
-                  <h3 className="text-xl font-bold text-[#333]">{textArrayThird[7]}</h3>
-                  <hr className="my-6" />
-                  <p className="text-gray-400 text-sm">
-               {textArrayThird[8]}</p>
-                </div>
-              </div>
-            </Link>
+              </Link>
+            ))}
           </div>
         </div>
       </div>
